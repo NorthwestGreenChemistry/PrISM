@@ -1,11 +1,11 @@
 # PrISM
 
 **What is this?**
-This is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) craeted by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. PRoduct Innovation and Social Mapping (PrISM™) was created to support product designers in developing products based on sustainable green chemistry and engineering design principles.
+The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) craeted by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It was designed to support product designers in developing products based on sustainable green chemistry and engineering design principles.
 
 **Where is my data stored?**
 Your data is maintained locally in a file called `prism.json`. It will export at each save and you can load your saved data and re-evaluate at any time.
-Northwest Green Chemistry does not transmit client data to a server or maintain your company data. Please keep track of your local data if you want to revisit your evaluation.
+Northwest Green Chemistry does not transmit client data to a server or maintain your company data. Please keep track of your local data if you wish to revisit your evaluation.
 
 **How do I download it?**
 TBD after packaging. 🙃
@@ -20,17 +20,9 @@ A basic Electron application needs just these files:
 
 You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
 
-# To Use
+-   **If you have installation or compilation issues with this project, please see [electron-react debugging guide](https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues/400)**
 
--   **If you have installation or compilation issues with this project, please see [our debugging guide](https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues/400)**
-
-First, clone the repo via git:
-
-```bash
-git clone --depth=1 https://github.com/electron-react-boilerplate/electron-react-boilerplate.git your-project-name
-```
-
-And then install dependencies with yarn.
+First, clone the repo via git; then install dependencies with yarn.
 
 ```bash
 $ cd PrISM
@@ -78,8 +70,8 @@ $ yarn package-all
 
 ## How to add modules to the project
 
-You will need to add other modules to this boilerplate, depending on the requirements of your project. For example, you may want to add [node-postgres](https://github.com/brianc/node-postgres) to communicate with PostgreSQL database, or
-[material-ui](http://www.material-ui.com/) to reuse react UI components.
+There have been several modules added to this project, including [material-ui](http://www.material-ui.com/) to reuse react UI components.
+Data is managed client-side using [CouchDB](http://couchdb.apache.org/).
 
 ⚠️ Please read the following section before installing any dependencies ⚠️
 
@@ -134,4 +126,4 @@ If you want to import global css libraries (like `bootstrap`), you can just writ
 
 ## License
 
-MIT © [Electron React Boilerplate](https://github.com/electron-react-boilerplate)
+This project was forked from MIT © [Electron React Boilerplate](https://github.com/electron-react-boilerplate)
