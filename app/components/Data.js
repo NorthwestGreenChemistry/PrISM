@@ -52,13 +52,15 @@ class Data {
         console.log('first time calling this');
 
         Data.singleton = this;
-        this.db = this.createDB();
-        return Data.singleton;
+
+        this.createDB().then(db => {
+            this.db = db;
+            return Data.singleton;
+        });
     }
 
     checkIfFirstTime = () => {
-        // const configCollection = this.db.then();
-
+        const configCollection = this.db['config'];
         console.log('inside of check if first time', this.db);
         configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
     }
@@ -90,45 +92,41 @@ class Data {
             }
         );
 
-        db.collection({
+        const configCollection = await db.collection({
             name: 'config',
             schema: configSchema
-        }).then(collection => {
-            console.log('created collection', collection);
-
-            collection.insert({
-                opened: false,
-            }).then(doc => {
-                console.log('successfully inserted', doc);
-            }) ;
-
         });
 
-        db.collection({
+        console.log('created collection', configCollection);
+
+        const configDoc = await configCollection.insert({
+            opened: false,
+        });
+
+        const stepsCollection = await db.collection({
             name: 'steps',
             schema: stepSchema
-        }).then(collection => {
-            console.log('created collection', collection);
+        });
 
-            collection.insert({
+        console.log('created collection', collection);
+
+        const doc = await stepsCollection.insert({
                 step: "introduction",
                 title: "Introduction And Design Principles",
                 content: ["test.md", "other.md"],
                 questions: {},
-            }).then(doc => {
-                console.log('successfully inserted', doc);
             });
+        console.log('waited for doc', doc);
 
 
-            collection.insert({
+        const scope = await stepsCollection.insert({
                 step: "scope",
                 title: "Scoping, Problem Formulation & Design Goals",
                 content: ["test.md", "other.md"],
                 questions: {},
-            }).then(doc => {
-                console.log('successfully inserted', doc);
-            });
         });
+
+        console.log('waited for doc', doc);
 
         console.log('db', db);
         return db

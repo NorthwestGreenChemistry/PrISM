@@ -14,9 +14,9 @@ export default class App extends React.Component<Props> {
   }
 
     render() {
-
         //the data singleton is initialized here at first
         let data = new Data();
+
         const { children } = this.props;
         return <React.Fragment>{children}</React.Fragment>;
     }
