@@ -1,19 +1,15 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
+// @flow
+import React, { Component } from 'react';
 import Prism from '../components/Prism';
-import * as PrismActions from '../actions/prism';
 
-function mapStateToProps(state) {
-    return {
-        currentStep: state.currentStep
-    };
+
+type Props = {};
+
+export default class PrismPage extends Component<Props> {
+    props: Props;
+
+    render() {
+        return <Prism />;
+    }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators(PrismActions, dispatch);
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Prism);
