@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Counter.css';
+import styles from './Prism.css';
 import routes from '../constants/routes';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
     counter: number
 };
 
-export default class Counter extends Component<Props> {
+export default class Prism extends Component<Props> {
     props: Props;
 
     render() {
