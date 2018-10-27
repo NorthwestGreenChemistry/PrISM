@@ -21,7 +21,8 @@ At a minimum, define the primary feedstock used to generate the chemical, materi
 <img src="../assets/2-feedstock/dry-herbaceous-residue.png" alt="Dry herbaceous residues and energy crops">
 <img src="../assets/2-feedstock/wet-herbaceous-residue.png" alt="Wet herbaceous residues and energy crops">
 <img src="../assets/2-feedstock/municipal-solid-wastes.png" alt="Municipal solid wastes">
-[Image source: Department of Energy](https://www.energy.gov/eere/bioenergy/biomass-feedstocks)
+
+[Image source: Department of Energy](https://www.energy.gov/eere/bioenergy/biomass-feedstocks/)
 
 ### TidalVision USA uses waste from sustainable fisheries
 [TidalVision USA](https://tidalvisionusa.com/) is an early stage company based in Bellingham, WA that uses fishery wastes to make high value products. They refer to this as ‘upcycling’ because a low value waste material is used to make a high value product.  Their goal is to add value to the sustainable fishing and crabbing industries by generating value from the waste.  The company treats salmon skins to make salmon leather using benign chemical process and makes wallets, purses, and other high value products.  They also process crab waste to make a variety of useful products based on chitosan that is derived from the chitin in the shell wastes.  The founder of the company is an Alaskan fisherman who was disturbed by the scale of fisheries byproduct wastes and became a social and environmental entrepreneur.  He uses wastes from sustainable fisheries to add value to an industry that strives to operate sustainably.
