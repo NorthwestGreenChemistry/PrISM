@@ -18,9 +18,9 @@ At a minimum, define the primary feedstock used to generate the chemical, materi
 ### Examples of renewable feedstocks
 <img src="../assets/2-feedstock/round-wood.png" alt="Round wood and energy crops">
 <img src="../assets/2-feedstock/woody-residues.png" alt="Woody residues">
-<img src="../assets/2-feedstock/dry-herbaceous-residues.png" alt="Dry herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/wet-herbaceous-residues.png" alt="Wet herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/municipal-solid-waste.png" alt="Municipal solid wastes">
+<img src="../assets/2-feedstock/dry-herbaceous-residue.png" alt="Dry herbaceous residues and energy crops">
+<img src="../assets/2-feedstock/wet-herbaceous-residue.png" alt="Wet herbaceous residues and energy crops">
+<img src="../assets/2-feedstock/municipal-solid-wastes.png" alt="Municipal solid wastes">
 [Image source: Department of Energy](https://www.energy.gov/eere/bioenergy/biomass-feedstocks)
 
 ###TidalVision USA uses waste from sustainable fisheries
