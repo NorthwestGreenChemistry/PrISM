@@ -25,9 +25,7 @@ export default class Prism extends Component<Props> {
     }
 
     handleClick(event) {
-        console.log('EVENT====');
-        console.log(event);
-        let step = 1; // ToDo: get step from event
+        let step = event.currentTarget.getAttribute('data-step');
         this.setState(state => ({
             displayStep: step
         }));
@@ -47,9 +45,19 @@ export default class Prism extends Component<Props> {
                     <Button
                         variant="contained"
                         color="primary"
-                        onClick={(e) => this.handleClick(e)}
+                        data-step="1"
+                        onClick={this.handleClick}
                     >
                         Open Step 1
+                    </Button>
+                    &nbsp;
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        data-step="2"
+                        onClick={this.handleClick}
+                    >
+                        Open Step 2
                     </Button>
                 </div>
             </div>
