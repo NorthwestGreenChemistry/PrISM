@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Counter.css';
 import routes from '../constants/routes';
+import Data from './Data';
 
 type Props = {
     increment: () => void,
@@ -16,6 +17,9 @@ export default class Counter extends Component<Props> {
     props: Props;
 
     render() {
+        let data = new Data();
+        console.log(data.checkIfFirstTime());
+
         const {
             increment,
             incrementIfOdd,
