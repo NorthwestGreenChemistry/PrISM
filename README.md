@@ -3,26 +3,18 @@
 <img src="/app/assets/prism-wheel.png" width="400" height="460" alt="Prism Wheel">
 
 **What is this?**
-The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) craeted by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It was designed to support product designers in developing products based on sustainable green chemistry and engineering design principles.
+The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) created by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It is intended to support material product designers in developing products based on sustainable green chemistry and engineering design principles.
 
 **Where is my data stored?**
 Your data is maintained locally in a file called `prism.json`. It will export at each save and you can load your saved data and re-evaluate at any time.
 Northwest Green Chemistry does not transmit client data to a server or maintain your company data. Please keep track of your local data if you wish to revisit your evaluation.
 
 **How do I download it?**
-TBD after packaging. 🙃
+*TBD after packaging.* 🙃
 
 # For Developers
 
-A basic Electron application needs just these files:
-
--   `package.json` - Points to the app's main file and lists its details and dependencies.
--   `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
--   `index.html` - A web page to render. This is the app's **renderer process**.
-
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
-
--   **If you have installation or compilation issues with this project, please see [electron-react debugging guide](https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues/400)**
+**If you have installation or compilation issues with this project, please see [electron-react debugging guide](https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues/400)**
 
 First, clone the repo via git; then install dependencies with yarn.
 
@@ -32,22 +24,18 @@ $ yarn
 ```
 
 ## Run
-
 Start the app in the `dev` environment. This starts the renderer process in [**hot-module-replacement**](https://webpack.js.org/guides/hmr-react/) mode and starts a webpack dev server that sends hot updates to the renderer process:
-
 ```bash
 $ yarn dev
 ```
 
 Alternatively, you can run the renderer and main processes separately. This way, you can restart one process without waiting for the other. Run these two commands **simultaneously** in different console tabs:
-
 ```bash
 $ yarn start-renderer-dev
 $ yarn start-main-dev
 ```
 
 If you don't need autofocus when your files was changed, then run `dev` with env `START_MINIMIZED=true`:
-
 ```bash
 $ START_MINIMIZED=true yarn dev
 ```
@@ -100,7 +88,7 @@ For an example app that uses this boilerplate and packages native dependencies, 
 
 ## CSS Modules
 
-This boilerplate is configured to use [css-modules](https://github.com/css-modules/css-modules) out of the box.
+This is configured to use [css-modules](https://github.com/css-modules/css-modules) out of the box.
 
 All `.css` file extensions will use css-modules unless it has `.global.css`.
 
@@ -114,7 +102,6 @@ If you want to import global css libraries (like `bootstrap`), you can just writ
 ```
 
 ## Resources for Learning Electron
-
 -   [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
 -   [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
 -   [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
