@@ -10,7 +10,7 @@ Strategies for meeting the goal require knowing the chemicals used and produced 
 
 Maximizing resource efficiency requires measuring the use of energy, water, materials used and the generation of waste in order to benchmark a product against other products or to guide efficiency improvements.
 
-<img src="assets/3-production/typical-product-life-cycle.png" width="40%">
+<img src="../assets/3-production/typical-product-life-cycle.png" width="40%">
 
 For a comprehensive sustainability assessment, manufacturing must consider economic, social and environmental impacts.  This workbook focuses on Design Principles for Sustainable Green Chemistry and Engineering, an important part of sustainability assessment.
 
@@ -20,9 +20,9 @@ For a comprehensive sustainability assessment, manufacturing must consider econo
 
 Grow Plastics developed a way to produce food packaging such as meat trays made from corn-based polylactic acid (PLA).  These trays do not require any chemical additives, a big concern for some plastics and other packaging materials where the chemical additives can leach into food. Their PLA trays are made with a unique sandwich panel construction that achieves the desired performance properties but uses less material. Grow Plastics has found that their products produce only 1/4 the CO2 from materials manufacture compared to conventional plastics. Their lighter-weight biobased products are designed to reduce consumption of materials to preserve natural capital while providing a product with improved performance.
 
-<img src="assets/3-production/styrofoam-cup.png" width="45%">
-<img src="assets/3-production/blue-plastic-cup.png" width="45%">
-<img src="assets/3-production/blue-plastic-cup.png" width="45%">
+<img src="../assets/3-production/styrofoam-cup.png" width="45%">
+<img src="../assets/3-production/blue-plastic-cup.png" width="45%">
+<img src="../assets/3-production/blue-plastic-cup.png" width="45%">
  
 
 [Learn more about Grow Plastics]("http://growplastics.com/")<br>
