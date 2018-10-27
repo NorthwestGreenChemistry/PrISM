@@ -16,8 +16,8 @@ At a minimum, define the primary feedstock used to generate the chemical, materi
 
 ## Example
 ### Examples of renewable feedstocks
-<img src="../assets/2-Feedstock/round-wood.png" alt="Round wood and energy crops">
-<img src="../assets/2-Feedstock/woody-residues.png" alt="Woody residues">
+<img src="../assets/2-feedstock/round-wood.png" alt="Round wood and energy crops">
+<img src="../assets/2-feedstock/woody-residues.png" alt="Woody residues">
 <img src="../assets/2-Feedstock/dry-herbaceous-residues.png" alt="Dry herbaceous residues and energy crops">
 <img src="../assets/2-Feedstock/wet-herbaceous-residues.png" alt="Wet herbaceous residues and energy crops">
 <img src="../assets/2-Feedstock/municipal-solid-waste.png" alt="Municipal solid wastes">
