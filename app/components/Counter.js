@@ -17,7 +17,7 @@ export default class Counter extends Component<Props> {
     props: Props;
 
     render() {
-        let data = new Data();
+        const data = new Data();
         console.log(data.checkIfFirstTime());
 
         const {
