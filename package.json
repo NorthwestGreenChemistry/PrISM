@@ -236,10 +236,10 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
+    "@material-ui/core": "^3.3.1",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
-    "pouchdb-adapter-leveldb": "^7.0.0",
     "pouchdb-adapter-websql": "^7.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

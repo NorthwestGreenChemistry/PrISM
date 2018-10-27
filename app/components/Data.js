@@ -11,6 +11,10 @@ const configSchema = {
     "description": "describes configuration for electron app",
     "type": "object",
     "properties": {
+        "id": {
+            "type": "string",
+            "primary": true
+        },
         "opened": {
             "type": "boolean",
         },
@@ -59,10 +63,17 @@ class Data {
         this.db = await this.createDB();
     }
 
-    checkIfFirstTime = () => {
-        // const configCollection = this.db['config'];
-        console.log('inside of check if first time', this.db);
-        // configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
+    async checkIfFirstTime() {
+        const configCollection = this.db.config;
+        // console.log('inside of check if first time', this.db);
+        // const resp = await
+        //     configCollection
+        //         .findOne()
+        //         .where('id')
+        //         .eq('nwtech').exec();
+
+        const resp = await configCollection.dump();
+        return resp;
     }
 
     getTitle = (step) => {
@@ -99,7 +110,8 @@ class Data {
 
         console.log('created collection', configCollection);
 
-        // const configDoc = await configCollection.upsert({
+        // const configDoc = await configCollection.insert({
+        //     id: "nwchem",
         //     opened: false,
         // });
 
@@ -110,24 +122,24 @@ class Data {
             schema: stepSchema
         });
 
-        console.log('created collection', stepsCollection);
-
-        // const doc = await stepsCollection.upsert({
+        // console.log('created collection', stepsCollection);
+        //
+        // const doc = await stepsCollection.insert({
         //         step: "introduction",
         //         title: "Introduction And Design Principles",
         //         content: ["test.md", "other.md"],
         //         questions: {},
         //     });
-
+        //
         // console.log('waited for doc', doc);
-
-        // const scope = await stepsCollection.upsert({
+        //
+        // const scope = await stepsCollection.insert({
         //         step: "scope",
         //         title: "Scoping, Problem Formulation & Design Goals",
         //         content: ["test.md", "other.md"],
         //         questions: {},
         // });
-
+        //
         // console.log('waited for doc', scope);
 
         console.log('db', db);
