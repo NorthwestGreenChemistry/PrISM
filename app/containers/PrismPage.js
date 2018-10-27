@@ -1,19 +1,19 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Counter from '../components/Counter';
-import * as CounterActions from '../actions/counter';
+import Prism from '../components/Prism';
+import * as PrismActions from '../actions/prism';
 
 function mapStateToProps(state) {
     return {
-        counter: state.counter
+        currentStep: state.currentStep
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators(CounterActions, dispatch);
+    return bindActionCreators(PrismActions, dispatch);
 }
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter);
+)(Prism);
