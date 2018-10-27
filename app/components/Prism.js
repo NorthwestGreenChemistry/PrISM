@@ -5,11 +5,12 @@ import styles from './Prism.css';
 import routes from '../constants/routes';
 
 type Props = {
-    increment: () => void,
-    incrementIfOdd: () => void,
-    incrementAsync: () => void,
-    decrement: () => void,
-    counter: number
+    openFile: () => void,
+    saveFile: () => void,
+    saveFileAs: () => void,
+    exportAsPDF: () => void,
+    openStep: () => void,
+    currentStep: number
 };
 
 export default class Prism extends Component<Props> {
@@ -17,11 +18,12 @@ export default class Prism extends Component<Props> {
 
     render() {
         const {
-            increment,
-            incrementIfOdd,
-            incrementAsync,
-            decrement,
-            counter
+            openFile,
+            saveFile,
+            saveFileAs,
+            exportAsPDF,
+            openStep,
+            currentStep
         } = this.props;
         return (
             <div>
@@ -30,42 +32,8 @@ export default class Prism extends Component<Props> {
                         <i className="fa fa-arrow-left fa-3x" />
                     </Link>
                 </div>
-                <div className={`counter ${styles.counter}`} data-tid="counter">
-                    {counter}
-                </div>
-                <div className={styles.btnGroup}>
-                    <button
-                        className={styles.btn}
-                        onClick={increment}
-                        data-tclass="btn"
-                        type="button"
-                    >
-                        <i className="fa fa-plus" />
-                    </button>
-                    <button
-                        className={styles.btn}
-                        onClick={decrement}
-                        data-tclass="btn"
-                        type="button"
-                    >
-                        <i className="fa fa-minus" />
-                    </button>
-                    <button
-                        className={styles.btn}
-                        onClick={incrementIfOdd}
-                        data-tclass="btn"
-                        type="button"
-                    >
-                        odd
-                    </button>
-                    <button
-                        className={styles.btn}
-                        onClick={() => incrementAsync()}
-                        data-tclass="btn"
-                        type="button"
-                    >
-                        async
-                    </button>
+                <div className={`currentStep ${styles.counter}`} data-tid="currentStep">
+                    {currentStep}
                 </div>
             </div>
         );

@@ -5,7 +5,7 @@ import * as PrismActions from '../actions/prism';
 
 function mapStateToProps(state) {
     return {
-        counter: state.counter
+        currentStep: state.currentStep
     };
 }
 
