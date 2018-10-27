@@ -31,6 +31,8 @@ Image Source: City of Plymouth Minnesota
 
 Which of these compostable items probably contains fluorinated additives? A chemical inventory must be completed in order to know. 
 
+With regards to single-use food contact materials, the Center for Environmental Health tested plates, bowls, clamshells, and multi-compartment food trays for total fluorine content, which would indicate the use of highly fluorinated addititives, and the resulting [report is available on-line](https://www.ceh.org/wp-content/uploads/CEH-Disposable-Foodware-Report-final-1.31.pdf).
+
 
 
 
