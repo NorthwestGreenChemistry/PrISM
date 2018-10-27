@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import * as RxDB from 'rxdb';
+
+var localStorage = require('localStorage');
+
+let myValue = {stuff: 'stuff'};
+
+localStorage.setItem('myKey', JSON.stringify(myValue));
+myValue = localStorage.getItem('myKey');
 
 type Props = {};
-
-RxDB.plugin(require('pouchdb-adapter-websql'));
 
 const configSchema = {
     "title": "configuration schema",
@@ -64,16 +68,7 @@ class Data {
     }
 
     async checkIfFirstTime() {
-        const configCollection = this.db.config;
-        // console.log('inside of check if first time', this.db);
-        // const resp = await
-        //     configCollection
-        //         .findOne()
-        //         .where('id')
-        //         .eq('nwtech').exec();
-
-        const resp = await configCollection.dump();
-        return resp;
+        return;
     }
 
     getTitle = (step) => {
@@ -95,55 +90,6 @@ class Data {
     }
 
     async createDB() {
-        const db = await RxDB.create(
-            {
-                name: "nwchem",
-                adapter: 'websql',
-                multiInstance: false
-            }
-        );
-
-        const configCollection = await db.collection({
-            name: 'config',
-            schema: configSchema
-        });
-
-        console.log('created collection', configCollection);
-
-        // const configDoc = await configCollection.insert({
-        //     id: "nwchem",
-        //     opened: false,
-        // });
-
-        // console.log('waited for doc', configDoc);
-
-        const stepsCollection = await db.collection({
-            name: 'steps',
-            schema: stepSchema
-        });
-
-        // console.log('created collection', stepsCollection);
-        //
-        // const doc = await stepsCollection.insert({
-        //         step: "introduction",
-        //         title: "Introduction And Design Principles",
-        //         content: ["test.md", "other.md"],
-        //         questions: {},
-        //     });
-        //
-        // console.log('waited for doc', doc);
-        //
-        // const scope = await stepsCollection.insert({
-        //         step: "scope",
-        //         title: "Scoping, Problem Formulation & Design Goals",
-        //         content: ["test.md", "other.md"],
-        //         questions: {},
-        // });
-        //
-        // console.log('waited for doc', scope);
-
-        console.log('db', db);
-        return db
     }
 }
 

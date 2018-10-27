@@ -14,10 +14,6 @@ export default class Root extends Component<Props> {
         this.data = new Data();
     }
 
-    async componentDidMount() {
-        await this.data.initialize();
-    }
-
     render() {
         const { history } = this.props;
         return (
