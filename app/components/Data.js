@@ -57,9 +57,10 @@ class Data {
     }
 
     checkIfFirstTime = () => {
-        console.log('inside of check if first time');
-        // const configCollection = this.db.config;
-        // configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
+        // const configCollection = this.db.then();
+
+        console.log('inside of check if first time', this.db);
+        configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
     }
 
     getTitle = (step) => {
