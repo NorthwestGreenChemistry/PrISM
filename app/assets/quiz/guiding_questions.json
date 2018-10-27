@@ -1,0 +1,70 @@
+{
+    "title": "Background",
+    "type": "object",
+    "properties": {
+        "firstquestion": {
+            "title": "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?",
+            "description": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product.",
+            "type": "string"
+        },
+        "secondquestion": {
+            "title": "Who are the intended users?",
+            "type": "string"
+        },
+        "thirdquestion": {
+            "title": "What is the service provided by the product?",
+            "type": "string"
+        },
+        "fourthquestion": {
+            "title": "What other products are used to provide this service?",
+            "type": "string"
+        },
+        "wallotext": {
+            "title": "What sustainability attributes are you prioritizing to include in the design?",
+            "description": "Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities.",
+            "type": "string"
+        },
+        "feedstock": {
+            "title": "Feedstock priorities",
+            "type": "object",
+            "properties": {
+                "question": {
+                    "title": "What is the preferred feedstock goal or goals? Please select all that apply.",
+                    "type": "string",
+                    "enum": [
+                        "Renewable",
+                        "Waste-based",
+                        "Bio-based",
+                        "Recyclable",
+                        "GHG/Carbon-neutral",
+                        "Other",
+                        "Feedstock not a priority."
+                    ]
+                }
+            }
+        },
+        "production": {
+            "title": "Production & Manufacturing priorities",
+            "type": "object",
+            "properties": {
+                "question": {
+                    "title": "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?",
+                    "description": "Are you planning to avoid the use of certain chemicals such as those on Manufacturing Restricted Substances Lists (MRSLs)? Please select all that apply.",
+                    "type": "string",
+                    "enum": [
+                        "Minimize water consumption.",
+                        "Minimize waste generation.",
+                        "Minimize energy usage.",
+                        "Reduce GHG emissions / carbon neutral / carbon negative.",
+                        "Reduce/eliminate other life cycle impacts (fill in the blank).",
+                        "reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
+                        "reduce/eliminate process carcinogens.",
+                        "reduce other hazard process chemicals (fill in the blank).",
+                        "Other (fill in the blank).",
+                        "Production & Manufacturing not a priority."
+                    ]
+                }
+            }
+        }
+    }
+}
