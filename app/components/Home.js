@@ -12,9 +12,6 @@ export default class Home extends Component<Props> {
     props: Props;
 
     render() {
-        const d = new Data();
-        d.checkIfFirstTime();
-
         return (
             <div className={styles.container} data-tid="container">
                 <ReactMarkdown source="# Northwest Green Chemistry" />

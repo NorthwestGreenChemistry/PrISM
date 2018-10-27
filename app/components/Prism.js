@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Prism.css';
 import routes from '../constants/routes';
+import Data from './Data';
 
 type Props = {
     openFile: () => void,
@@ -16,7 +17,14 @@ type Props = {
 export default class Prism extends Component<Props> {
     props: Props;
 
+    constructor(props) {
+        super(props);
+        this.data = new Data();
+    }
+
     render() {
+        this.data.checkIfFirstTime();
+
         const {
             openFile,
             saveFile,

@@ -10,8 +10,8 @@ import PrismPage from './containers/PrismPage';
 export default () => (
     <App>
         <Switch>
-            <Route path={routes.HOME} component={HomePage} />
             <Route path={routes.PRISM} component={PrismPage} />
+            <Route path={routes.HOME} component={HomePage} />
         </Switch>
     </App>
 );

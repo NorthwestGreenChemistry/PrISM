@@ -52,17 +52,17 @@ class Data {
         console.log('first time calling this');
 
         Data.singleton = this;
+        return Data.singleton;
+    }
 
-        this.createDB().then(db => {
-            this.db = db;
-            return Data.singleton;
-        });
+    async initialize() {
+        this.db = await this.createDB();
     }
 
     checkIfFirstTime = () => {
-        const configCollection = this.db['config'];
+        // const configCollection = this.db['config'];
         console.log('inside of check if first time', this.db);
-        configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
+        // configCollection.find().exec().then(doc => console.log('grabbed doc!', doc));
     }
 
     getTitle = (step) => {
@@ -99,34 +99,36 @@ class Data {
 
         console.log('created collection', configCollection);
 
-        const configDoc = await configCollection.insert({
-            opened: false,
-        });
+        // const configDoc = await configCollection.upsert({
+        //     opened: false,
+        // });
+
+        // console.log('waited for doc', configDoc);
 
         const stepsCollection = await db.collection({
             name: 'steps',
             schema: stepSchema
         });
 
-        console.log('created collection', collection);
+        console.log('created collection', stepsCollection);
 
-        const doc = await stepsCollection.insert({
-                step: "introduction",
-                title: "Introduction And Design Principles",
-                content: ["test.md", "other.md"],
-                questions: {},
-            });
-        console.log('waited for doc', doc);
+        // const doc = await stepsCollection.upsert({
+        //         step: "introduction",
+        //         title: "Introduction And Design Principles",
+        //         content: ["test.md", "other.md"],
+        //         questions: {},
+        //     });
 
+        // console.log('waited for doc', doc);
 
-        const scope = await stepsCollection.insert({
-                step: "scope",
-                title: "Scoping, Problem Formulation & Design Goals",
-                content: ["test.md", "other.md"],
-                questions: {},
-        });
+        // const scope = await stepsCollection.upsert({
+        //         step: "scope",
+        //         title: "Scoping, Problem Formulation & Design Goals",
+        //         content: ["test.md", "other.md"],
+        //         questions: {},
+        // });
 
-        console.log('waited for doc', doc);
+        // console.log('waited for doc', scope);
 
         console.log('db', db);
         return db
