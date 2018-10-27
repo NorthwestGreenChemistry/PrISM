@@ -244,6 +244,7 @@
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
     "react-jsonschema-form": "1.0.5",
+    "react-markdown": "^4.0.3",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",

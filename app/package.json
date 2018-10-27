@@ -1,13 +1,13 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "electron-react-boilerplate",
-  "version": "0.16.0",
-  "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
+  "name": "PrISM",
+  "productName": "Northwest Green Chemistry PrISM",
+  "version": "0.1.0",
+  "description": "Questionnaire app to help clarify sustainable product design objectives.",
   "main": "./main.prod.js",
   "author": {
-    "name": "John Doe",
+    "name": "Seattle GiveCamp",
     "email": "johndoe@gmail.com",
-    "url": "https://github.com/johndoe"
+    "url": "https://github.com/NorthwestGreenChemistry/PrISM"
   },
   "scripts": {
     "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
