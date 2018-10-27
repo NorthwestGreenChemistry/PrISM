@@ -1,5 +1,4 @@
 // @flow
-import type { GetState, Dispatch } from '../reducers/types';
 
 export const CURRENT_STEP = 'CURRENT_STEP';
 
@@ -22,6 +21,7 @@ export function exportAsPDF() {
 
 export function openStep() {
     return {
-        type: CURRENT_STEP
+        type: CURRENT_STEP,
+        step
     };
 }
