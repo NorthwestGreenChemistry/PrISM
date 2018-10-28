@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function Wheel(props : {onWheelClick: () => void}) {
+export default function Wheel({onWheelClick, ...otherProps}) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 376.27 376.26" width="376.27" height="376.26" {...props}>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 376.27 376.26" width="376.27" height="376.26" {...otherProps}>
       <defs>
-        <radialGradient onClick={props.onWheelClick} id="a" cx={245} cy="204.4" r="189.14" gradientUnits="userSpaceOnUse">
+        <radialGradient id="a" cx={245} cy="204.4" r="189.14" gradientUnits="userSpaceOnUse">
           <stop offset="0.46" stopColor="#d43b20" />
           <stop offset={1} stopColor="#ff5c40" />
         </radialGradient>
@@ -35,13 +35,13 @@ export default function Wheel(props : {onWheelClick: () => void}) {
       </defs>
       <title>PrISM_Infographic</title>
       <g>
-        <path d="M319.16,144.64l52.75-7.58,18.82-49A187.23,187.23,0,0,0,251.62,19l26.54,45.2-27.06,46.11A96.44,96.44,0,0,1,319.16,144.64Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#a)'}} />
-        <path d="M396.12,94.92l-18.78,48.94-52.93,7.6A97,97,0,0,1,340,226.11l38.8,36.5,50.12-15.88A189.35,189.35,0,0,0,433.14,207,186,186,0,0,0,396.12,94.92Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#b)'}} />
-        <path d="M289.29,293.2l-4.35,53.09,43.67,29.29a189.91,189.91,0,0,0,98.27-120.33l-50,15.84-38.93-36.63A97.88,97.88,0,0,1,289.29,293.2Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#c)'}} />
-        <path d="M154,92l19.19,49.91a96.37,96.37,0,0,1,69.31-31.8l27-46-26.61-45.3A187.21,187.21,0,0,0,102.13,84.59Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#d)'}} />
-        <path d="M157.47,373.57l-4.31-52.28,44.38-29.81A97.84,97.84,0,0,1,151.1,231l-50.78-16.05L62,251C74.57,303.2,109.9,348.47,157.47,373.57Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#e)'}} />
-        <path d="M96.59,91.38A186,186,0,0,0,56.86,207a189.5,189.5,0,0,0,3.33,35.41l38.18-36,51,16.11A97.8,97.8,0,0,1,148.1,207a95.84,95.84,0,0,1,19.61-58.44L148.59,98.82Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#f)'}} />
-        <path d="M281.47,296.8a97.17,97.17,0,0,1-76.26-1.43L161,325.06l4.33,52.41a188.66,188.66,0,0,0,155.36,1.82L277.1,350.06Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#g)'}} />
+        <path d="M154,92l19.19,49.91a96.37,96.37,0,0,1,69.31-31.8l27-46-26.61-45.3A187.21,187.21,0,0,0,102.13,84.59Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#d)'}} onClick={() => {onWheelClick(1)}} />
+        <path d="M319.16,144.64l52.75-7.58,18.82-49A187.23,187.23,0,0,0,251.62,19l26.54,45.2-27.06,46.11A96.44,96.44,0,0,1,319.16,144.64Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#a)'}}  onClick={() => {onWheelClick(2)}} />
+        <path d="M396.12,94.92l-18.78,48.94-52.93,7.6A97,97,0,0,1,340,226.11l38.8,36.5,50.12-15.88A189.35,189.35,0,0,0,433.14,207,186,186,0,0,0,396.12,94.92Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#b)'}} onClick={() => {onWheelClick(3)}} />
+        <path d="M289.29,293.2l-4.35,53.09,43.67,29.29a189.91,189.91,0,0,0,98.27-120.33l-50,15.84-38.93-36.63A97.88,97.88,0,0,1,289.29,293.2Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#c)'}} onClick={() => {onWheelClick(4)}} />
+        <path d="M281.47,296.8a97.17,97.17,0,0,1-76.26-1.43L161,325.06l4.33,52.41a188.66,188.66,0,0,0,155.36,1.82L277.1,350.06Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#g)'}} onClick={() => {onWheelClick(5)}} />
+        <path d="M157.47,373.57l-4.31-52.28,44.38-29.81A97.84,97.84,0,0,1,151.1,231l-50.78-16.05L62,251C74.57,303.2,109.9,348.47,157.47,373.57Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#e)'}} onClick={() => {onWheelClick(6)}} />
+        <path d="M96.59,91.38A186,186,0,0,0,56.86,207a189.5,189.5,0,0,0,3.33,35.41l38.18-36,51,16.11A97.8,97.8,0,0,1,148.1,207a95.84,95.84,0,0,1,19.61-58.44L148.59,98.82Z" transform="translate(-56.86 -18.87)" style={{fill: 'url(#f)'}} onClick={() => {onWheelClick(7)}} />
       </g>
       <g>
         <path d="M236.34,55.72c0,4.85-1.9,7.88-5.5,7.88s-5.33-3.15-5.35-7.74S227.49,48,231,48,236.34,51.27,236.34,55.72Zm-8,.14c0,3.66,1,5.56,2.57,5.56s2.55-2,2.55-5.66-.83-5.56-2.55-5.56C229.41,50.2,228.34,52.08,228.37,55.86Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
