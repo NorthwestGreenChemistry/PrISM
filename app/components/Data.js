@@ -26,28 +26,72 @@ class Data {
             let introStep = {
                 title: "Introduction and Design Principles",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/Introduction.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json"
             };
-            localStorage.setItem("1", JSON.stringify(introStep));
+
+            localStorage.setItem("intro", JSON.stringify(introStep));
 
             let scopeStep = {
                 title: "Scoping, Problem Formulation & Design Goals",
-                content: ["/content/step1-scoping-and-goals.md"],
-                questions: "app/assets/quiz/guiding_questions1.json",
-                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
+                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step1-scoping-and-goals.md"],
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json"
             };
 
-            localStorage.setItem("2", JSON.stringify(scopeStep));
+            localStorage.setItem("1", JSON.stringify(scopeStep));
 
             let feedstockStep = {
                 title: "Feedstock",
                 content: ["/content/step2-feedstock.md"],
-                questions: "app/assets/quiz/guiding_questions1.json",
-                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
+                questions: "app/assets/quiz/guiding_questions2.json",
+                questionsUI: "app/assets/quiz/guiding_questions2_ui.json"
             };
 
-            localStorage.setItem("3", JSON.stringify(feedstockStep));
+            localStorage.setItem("2", JSON.stringify(feedstockStep));
+
+            let productionStep = {
+                title: "Sustainable Product Design for the Use Phase",
+                content: ["/content/step3-production-manufacturing.md"],
+                questions: "app/assets/quiz/guiding_questions3.json",
+                questionsUI: "app/assets/quiz/guiding_questions3_ui.json"
+            };
+
+            localStorage.setItem("3", JSON.stringify(productionStep));
+
+            let useStep = {
+                title: "Sustainable Product Design for the Use Phase",
+                content: ["/content/step4-use.md"],
+                questions: "app/assets/quiz/guiding_questions4.json",
+                questionsUI: "app/assets/quiz/guiding_questions4_ui.json"
+            };
+
+            localStorage.setItem("4", JSON.stringify(useStep));
+
+            let endOfLifeStep = {
+                title: "Sustainable Product Design for the Use Phase",
+                content: ["/content/step5-end-of-life.md"],
+                questions: "app/assets/quiz/guiding_questions5.json",
+                questionsUI: "app/assets/quiz/guiding_questions5_ui.json"
+            }
+
+            localStorage.setItem("5", JSON.stringify(endOfLifeStep));
+
+            let lifeCycleStep = {
+                title: "Introduction to Life Cycle Thinking and Life Cycle Assessment",
+                content: ["/content/step6-whole-product.md"],
+                questions: "app/assets/quiz/guiding_questions6.json",
+                questionsUI: "app/assets/quiz/guiding_questions6_ui.json"
+            }
+
+            localStorage.setItem("6", JSON.stringify(lifeCycleStep));
+
+            let finalStep = {
+                title: "Decision Analysis",
+                content: ["/content/step7-evaluation-and-optimization.md"],
+                questions: "app/assets/quiz/guiding_questions7.json",
+                questionsUI: "app/assets/quiz/guiding_questions7_ui.json"
+            };
+
+            localStorage.setItem("7", JSON.stringify(finalStep));
         }
 
         return Data.singleton;

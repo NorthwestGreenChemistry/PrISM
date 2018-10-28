@@ -2,6 +2,10 @@
     position: absolute;
 }
 
+.button {
+    font-size: 1.4rem !important;
+}
+
 .selector {
     float: right;
     text-align: right;
@@ -68,6 +72,10 @@
     top: 500px;
     width: 480px;
     margin: 0 auto;
+}
+
+.stepItem span {
+    font-size: 1.6rem !important;
 }
 
 .btn {

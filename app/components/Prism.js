@@ -1,24 +1,30 @@
 // @flow
-import path from 'path';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Prism.css';
-import routes from '../constants/routes';
-import Wheel from './Wheel.js';
-import Data from './Data';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Modal from 'react-modal';
-import ReactMarkdown from 'react-markdown';
-import fs from 'fs';
-import jsPDF from 'jspdf'
-import Form from "react-jsonschema-form";
+import path from 'path'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styles from './Prism.css'
+import routes from '../constants/routes'
+import Wheel from './Wheel'
+import Pdf from './Pdf';
+import Progress from './Progress'
+import Data from './Data'
+import Button from '@material-ui/core/Button'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Modal from 'react-modal'
+import Form from "react-jsonschema-form"
+import ReactMarkdown from 'react-markdown'
+import fs from 'fs'
+import electron from 'electron'
 
-const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
+
+const ipcRenderer = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
+
 type Props = {};
 
 
@@ -40,7 +46,9 @@ export default class Prism extends Component<Props> {
             products: this.data.getAllProducts()
         }
 
-        console.log('INITIAL STATE', this.state);
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
+
+        console.log('INITIAL STATE', this.state)
     }
 
     handleClick = (step) => {
@@ -88,10 +96,8 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        var doc = new jsPDF()
-
-        doc.text('Hello world!', 10, 10)
-        doc.save('a4.pdf')
+        let pdf = new Pdf(this.data);
+        pdf.savePdf();
     }
 
     submitAnswers = (form) => {
@@ -121,7 +127,6 @@ export default class Prism extends Component<Props> {
     wheelClick = (step) => {
         this.handleClick(step);
     }
-
 
     //takes in list of files
     loadMDFiles = (step) => {
@@ -177,7 +182,6 @@ export default class Prism extends Component<Props> {
         }
     }
 
-
     render() {
         console.log('state change!', this.state.activeForm);
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
@@ -188,11 +192,11 @@ export default class Prism extends Component<Props> {
 
         return (
             <div>
-                <div className={styles.backButton} data-tid="backButton">
+                <Button className={styles.backButton} color="default" data-tid="backButton" >
                     <Link to={routes.HOME}>
                         <i className="fa fa-arrow-left fa-3x" />
                     </Link>
-                </div>
+                </Button>
 
                 <div className={styles.selector}>
                     <Select
@@ -212,20 +216,30 @@ export default class Prism extends Component<Props> {
                                 value={this.state.productName}
                                 onChange={this.handleProductNameChange}
                             />
-                            <Button className={styles.createBtn} onClick={this.createProduct}>Create</Button>
+                            <Button className={styles.createBtn} variant="outlined" color="primary" onClick={this.createProduct}>Create</Button>
                         </div> : null}
                 </div>
 
-                <div className={styles.wheel}>
-                    <Wheel onWheelClick={this.wheelClick} />
+                <Grid container className={styles.wheel} spacing={16}>
+                    <Grid item xs={6}>
+                        <Wheel onWheelClick={this.wheelClick} />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <h3>
+                            Your Progress
+                        </h3>
 
-                    <Button onClick={this.makePDF}>
-                        Making the PDF's!
-                    </Button>
-                </div>
+                        <Progress handleClick={this.handleClick} data={this.data} />
+                        <hr />
+
+                        <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
+                            Generate Report PDF
+                        </Button>
+                    </Grid>
+                </Grid>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
-                    <Button onClick={this.closeModal}>close</Button>
+                    <Button variant="outlined" onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
                         {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
@@ -241,7 +255,6 @@ export default class Prism extends Component<Props> {
                               onSubmit={this.submitAnswers}
                             /> : null}
                 </Modal>
-
             </div>
         );
     }
