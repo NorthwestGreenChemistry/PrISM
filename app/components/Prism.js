@@ -92,7 +92,12 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        let pdf = new Pdf(this.data.getPDFContent(this.state.activeProductId));
+        let pdfData = this.data.getPDFContent(this.state.activeProductId);
+        if (!pdfData) {
+            console.log('UH-OH, need no pdf data');
+            return;
+        }
+        let pdf = new Pdf(pdfData);
         pdf.savePdf();
     }
 

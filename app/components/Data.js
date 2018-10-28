@@ -236,8 +236,9 @@ class Data {
         let storageId = "pdf-" + id;
         let stepString = localStorage.getItem(storageId);
         if (!stepString) {
-            return {}
+            return undefined;
         }
+
         return JSON.parse(stepString);
     }
 
