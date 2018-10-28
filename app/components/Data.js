@@ -72,7 +72,7 @@ class Data {
                 questionsUI: "app/assets/quiz/guiding_questions5_ui.json"
             }
 
-            localStorage.setItem("5", JSON.stringify(useStep));
+            localStorage.setItem("5", JSON.stringify(endOfLifeStep));
 
             let lifeCycleStep = {
                 title: "Introduction to Life Cycle Thinking and Life Cycle Assessment",
