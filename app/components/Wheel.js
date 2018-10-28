@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Wheel(props : {onWheelClick: () => void}) : React.Node {
+export default function Wheel(props : {onWheelClick: () => void}) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 376.27 376.26" width="376.27" height="376.26" {...props}>
       <defs>

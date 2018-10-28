@@ -40,7 +40,6 @@ export default class Prism extends Component<Props> {
 
     wheelClick() {
         console.log('WE ARE CLICKED!!!');
-        console.log(step);
     }
 
     render() {
