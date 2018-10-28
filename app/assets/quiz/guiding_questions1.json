@@ -30,16 +30,20 @@
             "properties": {
                 "question": {
                     "title": "What is the preferred feedstock goal or goals? Please select all that apply.",
-                    "type": "string",
-                    "enum": [
-                        "Renewable",
-                        "Waste-based",
-                        "Bio-based",
-                        "Recyclable",
-                        "GHG/Carbon-neutral",
-                        "Other",
-                        "Feedstock not a priority."
-                    ]
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Renewable",
+                            "Waste-based",
+                            "Bio-based",
+                            "Recyclable",
+                            "GHG/Carbon-neutral",
+                            "Other",
+                            "Feedstock not a priority."
+                        ]
+                    },
+                    "uniquItems": "true"
                 }
             }
         },
