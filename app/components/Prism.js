@@ -44,6 +44,11 @@ export default class Prism extends Component<Props> {
     }
 
     handleClick(event) {
+        if (this.state.activeProduct === "") {
+            console.log('CHOOSE A PRODUCT!');
+            return; 
+        }
+
         let step = event.currentTarget.getAttribute('data-step')
         this.setState(state => ({
             displayStep: step,
@@ -133,7 +138,7 @@ export default class Prism extends Component<Props> {
                     <Button
                         variant="contained"
                         color="primary"
-                        data-step="1"
+                        data-step="intro"
                         onClick={this.handleClick}
                     >
                         Open Step 1
@@ -142,7 +147,7 @@ export default class Prism extends Component<Props> {
                     <Button
                         variant="contained"
                         color="primary"
-                        data-step="2"
+                        data-step="scope"
                         onClick={this.handleClick}
                     >
                         Open Step 2
@@ -156,8 +161,7 @@ export default class Prism extends Component<Props> {
                     // style={customStyles}
                     contentLabel="Example Modal"
                 >
-
-                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+                    <h2 className={styles.stepHeader}>{this.state.displayStep !== "" ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <button onClick={this.closeModal}>close</button>
                     <div>I am a modal</div>
                     <form>

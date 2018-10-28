@@ -16,6 +16,10 @@
     margin-top: 10px !important;
 }
 
+.stepHeader {
+    color: black;
+}
+
 .wheel {
     position: absolute;
     top: 10%;
