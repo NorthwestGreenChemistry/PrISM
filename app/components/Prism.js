@@ -1,31 +1,27 @@
 // @flow
-import path from 'path';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Prism.css';
-import routes from '../constants/routes';
-import Wheel from './Wheel.js';
-import Data from './Data';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Icon from '@material-ui/core/Icon';
-import Modal from 'react-modal';
-import Form from "react-jsonschema-form";
-import ReactMarkdown from 'react-markdown';
-import fs from 'fs';
-import jsPDF from 'jspdf'
+import path from 'path'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styles from './Prism.css'
+import routes from '../constants/routes'
+import Wheel from './Wheel'
+import Pdf from './Pdf';
+import Progress from './Progress'
+import Data from './Data'
+import Button from '@material-ui/core/Button'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Modal from 'react-modal'
+import Form from "react-jsonschema-form"
+import ReactMarkdown from 'react-markdown'
+import fs from 'fs'
 import electron from 'electron'
 
 
-const ipcRenderer  = electron.ipcRenderer;
+const ipcRenderer = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
 
@@ -45,6 +41,8 @@ export default class Prism extends Component<Props> {
             dropdownSelection: "",
             activeProductId: "",
             productName: "",
+            activeForm: {},
+            markdownFiles: [],
             products: this.data.getAllProducts()
         }
 
@@ -65,6 +63,9 @@ export default class Prism extends Component<Props> {
             displayStep: step,
             modalIsOpen: true
         })
+
+        this.loadMDFiles(step);
+        this.loadSchemaFiles(step);
     }
 
     handleDropdownChange = (event) => {
@@ -95,20 +96,23 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        var doc = new jsPDF()
-
-        doc.text('Hello world!', 10, 10)
-        doc.save('a4.pdf')
+        let pdf = new Pdf(this.data);
+        pdf.savePdf();
     }
 
     submitAnswers = (form) => {
-        this.data.storeAnswer(this.state.activeProductId,
+        this.data.storeAnswer(
+            this.state.activeProductId,
             this.state.displayStep,
             form.formData);
     }
 
     closeModal = () => {
-        this.setState({modalIsOpen: false})
+        this.setState({
+            modalIsOpen: false,
+            markdownFiles: [],
+            activeForm: {},
+        })
     }
 
     //generates random guuid, all credit goes to
@@ -124,22 +128,62 @@ export default class Prism extends Component<Props> {
         this.handleClick(step);
     }
 
-    render() {
-        let schema = null;
-        let uiSchema = null;
+    //takes in list of files
+    loadMDFiles = (step) => {
+        this.data.getContentList(step).map((mdPath) => {
+            fetch(mdPath)
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) =>{
+                    let mdFiles = this.state.markdownFiles;
+                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
+                    console.log('updated md files', mdFiles);
+                    this.setState({
+                        markdownFiles: mdFiles
+                    })
+                });
+        })
+    }
 
-        if (this.state.displayStep > 0) {
-            let questionFile = this.data.getQuestionFile(this.state.displayStep);
-            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+    //takes in list of files
+    loadSchemaFiles = (step) => {
+        if (step > 0) {
+            let questionFile = this.data.getQuestionFile(step);
+            let questionUIFile = this.data.getQuestionUIFile(step);
 
-            try {
-                schema = JSON.parse(fs.readFileSync(questionFile).toString());
-                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
-            } catch(err) {
-                console.log(err);
-            }
+            fetch(questionFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.schema = json
+                    console.log('form schema obj', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
+                })
+
+            fetch(questionUIFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.uiSchema = json
+                    console.log('grabbing json ui schema', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
+                })
         }
+    }
 
+    render() {
+        console.log('state change!', this.state.activeForm);
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
         let formData = {}
         if (allAnswers && this.state.displayStep) {
@@ -185,50 +229,7 @@ export default class Prism extends Component<Props> {
                             Your Progress
                         </h3>
 
-                        <List component="nav">
-                            <ListItem button onClick={() => {this.handleClick(1)}}>
-                                <ListItemIcon>
-                                    <Icon>check_circle</Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="01 Design Goals" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(2)}}>
-                                <ListItemIcon>
-                                    <Icon>check_circle</Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="02 Feedstock" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(3)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="03 Production" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(4)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="04 Use" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(5)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="05 End of Life" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(6)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="06 Whole Product" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(7)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="07 Evaluation & Optimization" />
-                            </ListItem>
-                        </List>
+                        <Progress handleClick={this.handleClick} data={this.data} />
                         <hr />
 
                         <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
@@ -241,22 +242,16 @@ export default class Prism extends Component<Props> {
                     <Button variant="outlined" onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
-                            let fullPath = `${__dirname}` + mdPath;
-                            var buf;
-                            try {
-                                buf = fs.readFileSync(fullPath);
-                            } catch (err) {
-                                console.log('error reading md file');
-                            }
-                            return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
+                            return val;
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-                    {this.state.activeProductId && this.state.displayStep > 0 ?
-                        <Form formData={formData}
-                              schema={schema}
-                              uiSchema={uiSchema}
+                    {this.state.activeProductId && this.state.displayStep > 0
+                        && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
+                        <Form noValidate={true} formData={formData}
+                              schema={this.state.activeForm.schema}
+                              uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
                             /> : null}
                 </Modal>
