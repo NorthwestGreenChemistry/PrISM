@@ -11,6 +11,7 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Modal from 'react-modal';
+import Form from "react-jsonschema-form";
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
@@ -92,6 +93,19 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
+        const fs = require('fs');
+    
+    
+        let schema = null;
+        let uiSchema = null;
+
+        try {
+            schema = JSON.parse(fs.readFileSync('app/assets/quiz/guiding_questions1.json').toString());
+            uiSchema = JSON.parse(fs.readFileSync('app/assets/quiz/guiding_questions1_ui.json').toString());
+        } catch(err) {
+            console.log(err);
+        }
+
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -133,7 +147,7 @@ export default class Prism extends Component<Props> {
                     // style={customStyles}
                     contentLabel="Example Modal"
                 >
-
+                    
                     <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
                     <button onClick={this.closeModal}>close</button>
                     <div>I am a modal</div>
@@ -144,6 +158,8 @@ export default class Prism extends Component<Props> {
                         <button>inside</button>
                         <button>the modal</button>
                     </form>
+
+                    <Form schema={schema} uiSchema={uiSchema} />
                 </Modal>
 
             </div>

@@ -1,0 +1,34 @@
+{
+    "firstquestion": {
+        "ui:widget": "textarea"
+    },
+    "secondquestion": {
+        "ui:widget": "textarea"
+    },
+    "thirdquestion": {
+        "ui:widget": "textarea"
+    },
+    "fourthquestion": {
+        "ui:widget": "textarea"
+    },
+    "feedstock": {
+        "question": {
+            "items": {}
+        }
+    },
+    "production": {
+        "question": {}
+    },
+    "priorities": {
+        "question": {}
+    },
+    "waste": {
+        "useLength": {},
+        "attributes": {},
+        "recycling": {}
+    },
+    "overall": {
+        "standards": {},
+        "lifeCycle": {}
+    }
+}
