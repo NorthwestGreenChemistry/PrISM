@@ -116,6 +116,8 @@ class Data {
         let pdfResults = localStorage.getItem(storageId);
         let stepKey = step + " " + schema.title;
 
+        let completed = this.isStepCompleted(id, step);
+
         if (!pdfResults) {
             console.log('a set of pdf results does not exist');
             let steps = []
@@ -153,7 +155,7 @@ class Data {
 
             let stepsVar = {
                 "title": stepKey,
-                "completed": true, //TODO: hook up to Sam's code
+                "completed": completed, //TODO: hook up to Sam's code
                 "results": results
             }
             steps.push(stepsVar)
@@ -219,7 +221,7 @@ class Data {
 
             let stepsVar = {
                 "title": stepKey,
-                "completed": true, //TODO: hook up to Sam's code
+                "completed": completed, //TODO: hook up to Sam's code
                 "results": results
             }
 
@@ -322,6 +324,35 @@ class Data {
 
             localStorage.setItem(id, JSON.stringify(stepsObj));
         }
+    }
+
+    // return a list of un answered questions/sections..?
+    getUnansweredQuestions = (id) => {
+        
+    }
+
+    // "completed" = has an answer, returns true if at least one field has an answer
+    isStepCompleted = (id, stepKey) => {
+        const answers = this.getAnswers(id);
+        
+        if (!answers) {
+            return false;
+        }
+
+        const stepAnswers = answers[stepKey];
+
+        for (let key in stepAnswers) {
+            if (stepAnswers.hasOwnProperty(key)) {
+                let value = stepAnswers[key];
+
+                if ((value !== undefined && value !== null)
+                     && Object.keys(value).length !== 0) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
 

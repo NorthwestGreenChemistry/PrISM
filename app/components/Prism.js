@@ -106,34 +106,39 @@ export default class Prism extends Component<Props> {
         /*
          * Temporary test JSON blob
          */
+        let completedSteps = [];
+        for (let i = 1; i <= 7; i++) {
+            completedSteps[i] = this.data.isStepCompleted(this.state.activeProductId, i.toString());
+        }
+
         return [
             {
                 "title": "01 Design Goals",
-                "completed": true
+                "completed": completedSteps[1]
             },
             {
                 "title": "02 Feedstock",
-                "completed": true
+                "completed": completedSteps[2]
             },
             {
                 "title": "03 Production",
-                "completed": true
+                "completed": completedSteps[3]
             },
             {
                 "title": "04 Use",
-                "completed": false
+                "completed": completedSteps[4]
             },
             {
                 "title": "05 End of Life",
-                "completed": false
+                "completed": completedSteps[5]
             },
             {
                 "title": "06 Whole Product",
-                "completed": false
+                "completed": completedSteps[6]
             },
             {
                 "title": "07 Evaluation & Optimization",
-                "completed": false
+                "completed": completedSteps[7]
             }
         ]
     }
