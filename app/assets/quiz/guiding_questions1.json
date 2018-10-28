@@ -50,7 +50,6 @@
                 "question": {
                     "title": "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?",
                     "description": "Are you planning to avoid the use of certain chemicals such as those on Manufacturing Restricted Substances Lists (MRSLs)? Please select all that apply.",
-                    "type": "string",
                     "enum": [
                         "Minimize water consumption.",
                         "Minimize waste generation.",
@@ -65,6 +64,32 @@
                     ]
                 }
             }
+        },
+        "priorities": {
+            "title": "Use Priorities",
+            "type": "object",
+            "properties": {
+                "question": {
+                    "title": "Are you designing the product to contain only ingredients that are recognized as inherently safer such as those on the EPA Safer Chemical Ingredient List (SCIL)? Or are you avoiding chemicals of concern such as those identified on sector-based Restricted Substances Lists (RSLs). ",
+                    "enum": [
+                        "Use only safer chemicals (e.g. US EPA Safer Chemical Ingredient List (SCIL)",
+                        "CleanGredients",
+                        "TCO approved plasticizers",
+                        "Cradle to Cradle (C2C) certified)",
+                        "reduce chemicals on RSLs.",
+                        "reduce carcinogens.",
+                        "reduce other hazardous chemicals (fill in the blank).",
+                        "Reduce VOCs.",
+                        "Other (fill in the blank).",
+                        "Use phase is not a priority."
+                    ]
+                }
+            }
+        },
+        "waste": {
+            "title": "Waste and 'End of Life' (EOL) priorities",
+            "type": "object",
+            "properties": {}
         }
     }
 }
