@@ -1,10 +1,13 @@
 // @flow
+import path from 'path';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Prism.css';
 import routes from '../constants/routes';
+import Wheel from './Wheel.js';
 import Button from '@material-ui/core/Button';
 
+const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
 type Props = {};
 
@@ -22,6 +25,7 @@ export default class Prism extends Component<Props> {
         }
 
         this.handleClick = this.handleClick.bind(this);
+        this.wheelClick = this.wheelClick.bind(this);
     }
 
     handleClick(event) {
@@ -29,6 +33,11 @@ export default class Prism extends Component<Props> {
         this.setState(state => ({
             displayStep: step
         }));
+    }
+
+    wheelClick() {
+        console.log('WE ARE CLICKED!!!');
+        console.log(step);
     }
 
     render() {
@@ -39,9 +48,12 @@ export default class Prism extends Component<Props> {
                         <i className="fa fa-arrow-left fa-3x" />
                     </Link>
                 </div>
+                <div className={styles.wheel}>
+                    <Wheel onWheelClick={this.wheelClick} />
+                </div>
                 <div className={`currentStep ${styles.currentStep}`} data-tid="currentStep">
                     {this.state.displayStep}
-                    <br />
+
                     <Button
                         variant="contained"
                         color="primary"

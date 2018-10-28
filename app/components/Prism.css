@@ -2,6 +2,14 @@
     position: absolute;
 }
 
+.wheel {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
 .currentStep {
     position: absolute;
     top: 30%;
