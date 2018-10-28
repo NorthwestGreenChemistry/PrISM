@@ -36,15 +36,15 @@ There is growing momentum toward a 'Circular Economy'.  It's a simple idea but d
 
 # Design Principles for Sustainable Green Chemistry and Engineering
 
-The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. This workbook is based on The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the  Principles of Green Chemistry and Engineering (5):  
+The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. This workbook is based on The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering (5):  
 
 <img src="../assets/000-introduction/principles-of-sustainable-design.png" width="45%">
 
-Design systems holistically and use life cycle thinking. This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
+**Design systems holistically and use life cycle thinking.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
 
-Maximize resource efficiency. Resource efficiency is not just about being efficient and doing more with less. It also includes the imperative to preserve natural capital.  Resources that are renewable should not be used faster than they can be regenerated.  And resources that are depleting, should not be dissipated and lost to recovery, reuse and recycling. Waste is a sign of inefficiency in a system. 
+**Maximize resource efficiency.** Resource efficiency is not just about being efficient and doing more with less. It also includes the imperative to preserve natural capital.  Resources that are renewable should not be used faster than they can be regenerated.  And resources that are depleting, should not be dissipated and lost to recovery, reuse and recycling. Waste is a sign of inefficiency in a system. 
 
-Eliminate and minimize hazards and pollution. Risk is a function of hazard and exposure. Reducing the inherent hazards of chemicals can help to reduce risk from chemicals, materials and products. Hazards may also be physical. For example, litter is a form of unmanaged waste that can cause physical entrapment and may be mistaken as food by wildlife when it leaks into the environment. 
+**Eliminate and minimize hazards and pollution.** Risk is a function of hazard and exposure. Reducing the inherent hazards of chemicals can help to reduce risk from chemicals, materials and products. Hazards may also be physical. For example, litter is a form of unmanaged waste that can cause physical entrapment and may be mistaken as food by wildlife when it leaks into the environment. 
 
 A number of useful tools already exist to measure various aspects of sustainability. These will help you quantify how products fulfill the vision set forth by these design principles. They include life cycle assessment (LCA), chemical hazard assessment (CHA), exposure assessment (EA), and others. Information about these tools is linked to throughout this workbook.
 
@@ -78,4 +78,14 @@ At any time you can link to the Tools section
 6. Decision Analysis
 
 ##  Acknowledgements 
-NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle Products Innovation Institute, formerly UC Berkeley), Tom McKeag ( UC Berkeley Greener Solutions Course and Berkeley Center for Green Chemistry), Saskia van Bergen and Ken Zarker (Washington Department of Ecology), Mark Goedkoop (PRe Consulting), Margaret Whittaker (ToxServices), Jeremey Faludi (Dartmouth College), Mark Buczek, Ashley Baker and Amelia Nestler (Northwest Green Chemistry), participants in the 3D Printing Roundtable and Mikhail Davies and Connie Hensler (Interface Carpet).
+NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle Products Innovation Institute, formerly UC Berkeley), Tom McKeag ( UC Berkeley Greener Solutions Course and Berkeley Center for Green Chemistry), Saskia van Bergen and Ken Zarker (Washington Department of Ecology), Mark Goedkoop (PRe Consulting), Margaret Whittaker (ToxServices), Jeremey Faludi (Dartmouth College), Mark Buczek, Ashley Baker and Amelia Nestler (Northwest Green Chemistry), participants in the 3D Printing Roundtable, Mikhail Davies and Connie Hensler (Interface Carpet), and [Seattle GiveCamp 2018](http://seattlegivecamp.org/). 
+
+## References
+	
+1. Attina, T. M., Hauser, R., Sathyanarayana, S., Hunt, P. A., Bourguignon, J., Myers, J. P., Trasande, L. (2016). Exposure to endocrine-disrupting chemicals in the USA: A population-based disease burden and cost analysis. The Lancet Diabetes & Endocrinology, 4(12), 996-1003; Jaramillo, P., & Muller, N. Z. (2016). Air pollution emissions and damages from energy production in the US: 2002–2011. Energy Policy, 90, 202-211.
+2. [The Top 10 Countries Turning the Corner on Toxic Pollution 2014](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf)
+3. [Waste Sites and Property Values: A Meta-Analysis](https://link.springer.com/article/10.1007/s10640-011-9467-9)
+4. [Impacts of Mismanaged Trash (EPA)](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)
+5. [American Chemical Society Green Chemisry Institute Sustainable Design Principles](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)						
+6. [World Forum on Natural Capital](https://naturalcapitalforum.com/about/)
+7. [Lithner, Delilah. 2011. Environmental and Health Hazards of Chemicals in Plastic Polymers and Products.  Ph.D. thesis.  Dept. of Plant and Environmental Sciences. University of Gothenburg.]
