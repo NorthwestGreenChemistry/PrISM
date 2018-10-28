@@ -1,6 +1,6 @@
 # PrISM
 
-<img src="/app/assets/prism-wheel.png" width="400" height="460" alt="Prism Wheel">
+<img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
 
 **What is this?**
 The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) created by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It is intended to support material product designers in developing products based on sustainable green chemistry and engineering design principles.
