@@ -3,13 +3,23 @@
     "type": "object",
     "properties": {
         "firstquestion": {
-            "title": "How does this product compare to other products or systems that provide this same service?",
-            "description": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product.",
+            "title": "Does this product meet the sustainable design objectives you set out at the beginning?",
             "type": "string"
         },
         "secondquestion": {
-            "title": "Where are the 'hotspots' or primary impact areas in your products versus other products that provide the same service?",
-            "description": "How might you make improvements?",
+            "title": "What tradeoffs have become apparent to you?",
+            "type": "string"
+        },
+        "thirdquestion": {
+            "title": "Are there data gaps that must be filled in order for you to make more informed decisions for product design?",
+            "type": "string"
+        },
+        "fourthquestion": {
+            "title": "What 'hot spots' or areas of high negative impact,  have become apparent to you?",
+            "type": "string"
+        },
+        "fifthquestion": {
+            "title": "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?",
             "type": "string"
         }
     }
