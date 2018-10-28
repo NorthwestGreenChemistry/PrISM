@@ -14,6 +14,7 @@ export default class Prism extends Component<Props> {
     constructor(props) {
         super(props);
         this.data = new Data();
+
         this.state = {
             steps: {
                 '1': false,
@@ -34,9 +35,7 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
-        this.data.checkIfFirstTime().then(value => {
-            console.log('is this first time opening app?', value);
-        });
+        this.data.storeAnswer("2", "intro", {firstName: "Chu", thirdKey: "another set of values"});
 
         return (
             <div>
