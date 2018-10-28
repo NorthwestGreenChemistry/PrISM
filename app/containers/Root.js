@@ -11,7 +11,7 @@ type Props = {
 export default class Root extends Component<Props> {
     constructor(props) {
         super(props);
-        this.data = new Data(); // this is where we initialize localstorage
+        this.data = Data.getInstance() // this is where we initialize localstorage
     }
 
     render() {

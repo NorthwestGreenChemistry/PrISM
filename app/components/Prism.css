@@ -17,7 +17,8 @@
 }
 
 .stepHeader {
-    color: black;
+    color: darkslategray;
+    text-align: center;
 }
 
 .wheel {
@@ -25,7 +26,23 @@
     top: 10%;
     left: 10%;
     width: 80%;
-    height: auto;
+    height: 80%;
+}
+
+.contentMarkdown {
+    color: black;
+}
+
+.contentMarkdown h1 {
+    font-size: 130%;
+}
+
+.contentMarkdown p {
+    font-size: 100% !important;
+}
+
+.wheelSection:hover {
+    cursor: pointer;
 }
 
 .currentStep {

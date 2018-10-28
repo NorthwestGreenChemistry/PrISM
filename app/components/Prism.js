@@ -24,18 +24,13 @@ export default class Prism extends Component<Props> {
 
     constructor(props) {
         super(props)
-        this.data = new Data()
+        this.data = Data.getInstance()
 
         this.state = {
             modalIsOpen: false,
-            steps: {
-                '1': false,
-                '2': false,
-                '3': false
-            },
-            displayStep: "",
+            displayStep: 0,
             dropdownSelection: "",
-            activeProduct: "",
+            activeProduct: this.data.getDefault(),
             productName: "",
             products: this.data.getAllProducts()
         }
@@ -45,18 +40,17 @@ export default class Prism extends Component<Props> {
         this.closeModal = this.closeModal.bind(this);
     }
 
-    handleClick(event) {
+    handleClick(step) {
         if (this.state.activeProduct === "") {
+            //TODO: display warning to the user that they have to select a product
             console.log('CHOOSE A PRODUCT!');
             return;
         }
 
-        let step = event.currentTarget.getAttribute('data-step')
-        this.setState(state => ({
+        this.setState({
             displayStep: step,
             modalIsOpen: true
-        }))
-        console.log('opening modal')
+        })
     }
 
     handleDropdownChange = (event) => {
@@ -64,13 +58,14 @@ export default class Prism extends Component<Props> {
             dropdownSelection: event.target.value,
             activeProduct: event.target.key
         })
+        // this.data.setDefault(event.target.key) //TODO: fix this, setting default not working
     }
 
     handleProductNameChange = (event) => {
         this.setState({ productName: event.target.value })
     }
 
-    createProduct = (event) => {
+    createProduct = () => {
         let id = this.uuidv4()
         this.data.createProduct(id, this.state.productName)
         this.setState({
@@ -84,10 +79,11 @@ export default class Prism extends Component<Props> {
     }
 
     closeModal() {
-        this.setState({modalIsOpen: false});
+        this.setState({modalIsOpen: false})
     }
 
-    //generates random guuid, taken from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
+    //generates random guuid, all credit goes to
+    //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
     uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
@@ -95,14 +91,11 @@ export default class Prism extends Component<Props> {
         });
     }
 
-    wheelClick(step: number) {
-        console.log('WE ARE CLICKED!!!');
-        console.log(step);
+    wheelClick(step) {
+        this.handleClick(step);
     }
 
     render() {
-        console.log('current directory', process.cwd());
-        // console.log('markdown', file);
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -136,61 +129,25 @@ export default class Prism extends Component<Props> {
                 <div className={styles.wheel}>
                     <Wheel onWheelClick={this.wheelClick} />
                 </div>
-                <div className={`currentStep ${styles.currentStep}`} data-tid="currentStep">
-                    {this.state.displayStep}
 
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        data-step="intro"
-                        onClick={this.handleClick}
-                    >
-                        Open Step 1
-                    </Button>
-                    &nbsp;
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        data-step="scope"
-                        onClick={this.handleClick}
-                    >
-                        Open Step 2
-                    </Button>
-                </div>
-
-                <Modal
-                    isOpen={this.state.modalIsOpen}
-                    // onAfterOpen={this.afterOpenModal}
-                    // onRequestClose={this.closeModal}
-                    // style={customStyles}
-                    contentLabel="Example Modal"
-                >
-                    <h2 className={styles.stepHeader}>{this.state.displayStep !== "" ? this.data.getTitle(this.state.displayStep) : null}</h2>
-                    {this.state.displayStep !== "" ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
-                        let fullPath = `${__dirname}` + mdPath;
-
-                        // const fullPath = path.join(path.dirname(__dirname), mdPath);
-                        console.log('mdpath', fullPath);
-
-                        var buf;
-                        try {
-                            buf = fs.readFileSync(fullPath);
-                        } catch (err) {
-                            console.log('error reading md file');
-                        }
-
-                        return <ReactMarkdown key={mdPath} source={buf.toString()} />
-                        // fs.readFile(fullPath, function(err, data) {
-                        //     console.log('err', err);
-                        //     console.log('data to string', data.toString());
-                        // });
-                    }) : null}
-
-                    <button onClick={this.closeModal}>close</button>
+                <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
+                    <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
+                    <div className={styles.contentMarkdown}>
+                        {this.state.displayStep !== "" ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
+                            let fullPath = `${__dirname}` + mdPath;
+                            var buf;
+                            try {
+                                buf = fs.readFileSync(fullPath);
+                            } catch (err) {
+                                console.log('error reading md file');
+                            }
+                            return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        }) : null}
+                    </div>
+                    <Button onClick={this.closeModal}>close</Button>
                 </Modal>
 
             </div>
         );
     }
 }
-

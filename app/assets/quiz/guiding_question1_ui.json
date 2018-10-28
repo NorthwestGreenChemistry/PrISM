@@ -1,0 +1,51 @@
+{
+    "firstquestion": {
+        "ui:widget": "textarea"
+    },
+    "secondquestion": {
+        "ui:widget": "textarea"
+    },
+    "thirdquestion": {
+        "ui:widget": "textarea"
+    },
+    "fourthquestion": {
+        "ui:widget": "textarea"
+    },
+    "feedstock": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "production": {
+        "question": {
+            "ui:widget": "checkboxes",
+            "ui:options": {
+                "inline": "true"
+            }
+        }
+    },
+    "priorities": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "waste": {
+        "useLength": {
+            "ui:widget": "checkboxes"
+        },
+        "attributes": {
+            "ui:widget": "checkboxes"
+        },
+        "recycling": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "overall": {
+        "standards": {
+            "ui:widget": "checkboxes"
+        },
+        "lifeCycle": {
+            "ui:widget": "checkboxes"
+        }
+    }
+}
