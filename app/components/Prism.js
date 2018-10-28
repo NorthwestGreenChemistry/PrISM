@@ -10,15 +10,25 @@ import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Icon from '@material-ui/core/Icon';
 import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
 import jsPDF from 'jspdf'
 import Form from "react-jsonschema-form";
+import electron from 'electron'
 
-const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
+
+const ipcRenderer  = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
+
 type Props = {};
 
 
@@ -44,7 +54,9 @@ export default class Prism extends Component<Props> {
             products: this.data.getAllProducts()
         }
 
-        console.log('INITIAL STATE', this.state);
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
+
+        console.log('INITIAL STATE', this.state)
     }
 
     handleClick = (step) => {
@@ -141,11 +153,11 @@ export default class Prism extends Component<Props> {
 
         return (
             <div>
-                <div className={styles.backButton} data-tid="backButton">
+                <Button className={styles.backButton} color="default" data-tid="backButton" >
                     <Link to={routes.HOME}>
                         <i className="fa fa-arrow-left fa-3x" />
                     </Link>
-                </div>
+                </Button>
 
                 <div className={styles.selector}>
                     <Select
@@ -167,20 +179,72 @@ export default class Prism extends Component<Props> {
                                 value={this.state.productName}
                                 onChange={this.handleProductNameChange}
                             />
-                            <Button className={styles.createBtn} onClick={this.createProduct}>Create</Button>
+                            <Button className={styles.createBtn} variant="outlined" color="primary" onClick={this.createProduct}>Create</Button>
                         </div> : null}
                 </div>
 
-                <div className={styles.wheel}>
-                    <Wheel onWheelClick={this.wheelClick} />
-                
-                    <Button onClick={this.makePDF}>
-                        Making the PDF's!
-                    </Button>
-                </div>
+                <Grid container className={styles.wheel} spacing={16}>
+                    <Grid item xs={7}>
+                        <Wheel onWheelClick={this.wheelClick} />
+                    </Grid>
+                    <Grid item xs={5}>
+                        <h3>
+                            PrISM Progress
+                        </h3>
+
+                        <List component="nav">
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon>check_circle</Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 1" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon>check_circle</Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 2" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon></Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 3" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon></Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 4" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon></Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 5" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon></Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 6" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <Icon></Icon>
+                                </ListItemIcon>
+                                <ListItemText className={styles.stepItem} inset primary="Step 7" />
+                            </ListItem>
+                        </List>
+
+                        <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
+                            Generate Report PDF
+                        </Button>
+                    </Grid>
+                </Grid>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
-                    <Button onClick={this.closeModal}>close</Button>
+                    <Button variant="outlined" onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
                         {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
@@ -202,7 +266,6 @@ export default class Prism extends Component<Props> {
                               onSubmit={this.submitAnswers}
                             /> : null}
                 </Modal>
-
             </div>
         );
     }
