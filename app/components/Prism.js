@@ -95,13 +95,18 @@ export default class Prism extends Component<Props> {
     }
 
     submitAnswers = (form) => {
-        this.data.storeAnswer(this.state.activeProductId,
+        this.data.storeAnswer(
+            this.state.activeProductId,
             this.state.displayStep,
             form.formData);
     }
 
     closeModal = () => {
-        this.setState({modalIsOpen: false})
+        this.setState({
+            modalIsOpen: false,
+            markdownFiles: [],
+            activeForm: {},
+        })
     }
 
     //generates random guuid, all credit goes to
@@ -127,7 +132,7 @@ export default class Prism extends Component<Props> {
                 })
                 .then((text) =>{
                     let mdFiles = this.state.markdownFiles;
-                    mdFiles.push(<ReactMarkdown key={mdPath} source={text}/>)
+                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
                     console.log('updated md files', mdFiles);
                     this.setState({
                         markdownFiles: mdFiles
@@ -147,10 +152,13 @@ export default class Prism extends Component<Props> {
                     return resp.json();
                 })
                 .then((json) =>{
-                    console.log('grabbing json', json)
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.schema = json
-                    this.setState({formSchemaObj})
+                    console.log('form schema obj', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
                 })
 
             fetch(questionUIFile)
@@ -158,18 +166,13 @@ export default class Prism extends Component<Props> {
                     return resp.json();
                 })
                 .then((json) =>{
-                    // console.log('grabbing json', json);
-                    // this.setState({
-                    //     activeForm: {
-                    //         ...this.state.activeForm,
-                    //         uiSchema: json
-                    //     }
-                    // })
-
-                    console.log('grabbing json ui schema', json)
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.uiSchema = json
-                    this.setState({formSchemaObj})
+                    console.log('grabbing json ui schema', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
                 })
         }
     }
@@ -232,7 +235,7 @@ export default class Prism extends Component<Props> {
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
                     {this.state.activeProductId && this.state.displayStep > 0
                         && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
-                        <Form formData={formData}
+                        <Form noValidate={true} formData={formData}
                               schema={this.state.activeForm.schema}
                               uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
