@@ -81,8 +81,8 @@ class Data {
     }
 
     //returns to you list of all steps along with their answers
-    getAnswers = (id) = {
-
+    getAnswers = (id) => {
+        return id;
     }
 
     storeAnswer = (id, stepKey, formData) => {

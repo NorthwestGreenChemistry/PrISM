@@ -2,6 +2,20 @@
     position: absolute;
 }
 
+.selector {
+    float: right;
+    text-align: right;
+}
+
+.selectorDropdown {
+    margin-bottom: 10px;
+}
+
+.createBtn {
+    margin-left: 5px !important;
+    margin-top: 10px !important;
+}
+
 .currentStep {
     position: absolute;
     top: 30%;
