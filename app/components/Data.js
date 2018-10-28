@@ -9,30 +9,6 @@ localStorage.setItem('myKey', JSON.stringify(myValue));
 type Props = {};
 
 
-const stepSchema = {
-    "title": "step schema",
-    "version": 0,
-    "description": "describes step or resources for PRISM",
-    "type": "object",
-    "properties": {
-        "step": {
-            "type": "string",
-            "primary": true
-        },
-        "title": {
-            "type": "string",
-        },
-        "content": {
-            "type": "array"
-        },
-        "questions": {
-            "type": "object"
-        }
-    }
-};
-
-const answerSchema = {};
-
 class Data {
 
     constructor() {
@@ -58,11 +34,13 @@ class Data {
                 questions: "assets/quiz/guiding_questions.json"
             };
             localStorage.setItem('intro', JSON.stringify(introStep));
+
             let scopeStep = {
                 title: "A Scope Title",
                 content: ["/content/Step1ScopingandGoals.md"],
                 questions: "assets/quiz/guiding_questions.json"
             };
+
             localStorage.setItem('scope', JSON.stringify(scopeStep));
         }
 
@@ -91,7 +69,17 @@ class Data {
         return stepObj.content;
     }
 
-    //easy to implement, I want to see format of formdata first though before
+    //TODO: add pretty name associated with the id
+    //TODO: add something that returns list of all product-id's
+
+    createProduct = (id, prettyName) => {
+
+    }
+
+    getAllProducts = {
+
+    }
+
     storeAnswer = (id, stepKey, formData) => {
         let productExists = localStorage.getItem(id);
         if (!productExists) {
