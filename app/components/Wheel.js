@@ -60,13 +60,13 @@ export default function Wheel({onWheelClick, ...otherProps}) {
         <path d="M131.45,107.65v1.83l-6.37,13.24h-3l6.35-12.66v0h-7.09v-2.37Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
       </g>
       <g style={{opacity: '0.2'}}>
-        <path d="M371.21,137.16l.7-.1,18.82-49A187.23,187.23,0,0,0,251.62,19l26.54,45.2-1.73,3A143.49,143.49,0,0,1,371.21,137.16Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M378.49,262.32l.32.3,50.12-15.88A189.35,189.35,0,0,0,433.14,207a186,186,0,0,0-37-112.08l-18.78,48.94-2.42.35a143.59,143.59,0,0,1,3.58,118.11Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M285,345.16l-.09,1.13,43.67,29.29a189.91,189.91,0,0,0,98.27-120.33l-50,15.84-1.64-1.54A143.64,143.64,0,0,1,285,345.16Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M268.59,65.67l.88-1.5-26.61-45.3A187.21,187.21,0,0,0,102.13,84.59L154,92l1.6,4.17A142.68,142.68,0,0,1,246.2,63.92,144.32,144.32,0,0,1,268.59,65.67Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M103.18,215.83l-2.87-.91L62,251c12.53,52.22,47.86,97.5,95.43,122.59l-4.31-52.28,3.42-2.3A143,143,0,0,1,103.18,215.83Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M149.58,101.4l-1-2.58-52-7.44A186,186,0,0,0,56.86,207a189.5,189.5,0,0,0,3.33,35.41l38.18-36,4.55,1.44c0-.23,0-.45,0-.68A142.9,142.9,0,0,1,149.58,101.4Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
-        <path d="M162.89,323.79l-1.9,1.28,4.33,52.41a188.66,188.66,0,0,0,155.36,1.82L277.1,350.06l.24-3a143.53,143.53,0,0,1-114.45-23.29Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} />
+        <path d="M371.21,137.16l.7-.1,18.82-49A187.23,187.23,0,0,0,251.62,19l26.54,45.2-1.73,3A143.49,143.49,0,0,1,371.21,137.16Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(2)}} />
+        <path d="M378.49,262.32l.32.3,50.12-15.88A189.35,189.35,0,0,0,433.14,207a186,186,0,0,0-37-112.08l-18.78,48.94-2.42.35a143.59,143.59,0,0,1,3.58,118.11Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(3)}} />
+        <path d="M285,345.16l-.09,1.13,43.67,29.29a189.91,189.91,0,0,0,98.27-120.33l-50,15.84-1.64-1.54A143.64,143.64,0,0,1,285,345.16Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(4)}} />
+        <path d="M268.59,65.67l.88-1.5-26.61-45.3A187.21,187.21,0,0,0,102.13,84.59L154,92l1.6,4.17A142.68,142.68,0,0,1,246.2,63.92,144.32,144.32,0,0,1,268.59,65.67Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(1)}} />
+        <path d="M103.18,215.83l-2.87-.91L62,251c12.53,52.22,47.86,97.5,95.43,122.59l-4.31-52.28,3.42-2.3A143,143,0,0,1,103.18,215.83Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(6)}} />
+        <path d="M149.58,101.4l-1-2.58-52-7.44A186,186,0,0,0,56.86,207a189.5,189.5,0,0,0,3.33,35.41l38.18-36,4.55,1.44c0-.23,0-.45,0-.68A142.9,142.9,0,0,1,149.58,101.4Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(7)}} />
+        <path d="M162.89,323.79l-1.9,1.28,4.33,52.41a188.66,188.66,0,0,0,155.36,1.82L277.1,350.06l.24-3a143.53,143.53,0,0,1-114.45-23.29Z" transform="translate(-56.86 -18.87)" style={{fill: '#fff'}} onClick={() => {onWheelClick(5)}} />
       </g>
       <text transform="translate(106.49 194.06)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-Regular, Avenir Next'}}>*Suppo<tspan x="41.64" y={0} style={{letterSpacing: '-0.012044270833333334em'}}>r</tspan>
       <tspan x="45.82" y={0}>ts a Ci</tspan>
@@ -106,25 +106,25 @@ export default function Wheel({onWheelClick, ...otherProps}) {
       <tspan x="82.14" y="21.6" style={{letterSpacing: '-0.00005425347222222222em'}}>tion</tspan>
       <tspan x="-37.92" y="43.2">&amp; Social Mapping</tspan>
     </text>
-    <text transform="translate(111.61 33.94)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>DESIGN <tspan x={0} y="14.4">G</tspan>
+    <text onClick={() => {onWheelClick(1)}} transform="translate(111.61 33.94)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>DESIGN <tspan x={0} y="14.4">G</tspan>
     <tspan x="9.28" y="14.4" style={{letterSpacing: '-0.01806640625em'}}>O</tspan>
     <tspan x="19.25" y="14.4">ALS</tspan>
     </text>
-    <text transform="translate(226.07 48.73)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>FEED<tspan x="30.68" y={0} style={{letterSpacing: '-0.015950520833333332em'}}>S</tspan>
+    <text onClick={() => {onWheelClick(2)}} transform="translate(226.07 48.73)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>FEED<tspan x="30.68" y={0} style={{letterSpacing: '-0.015950520833333332em'}}>S</tspan>
     <tspan x="37.38" y={0} style={{letterSpacing: '-0.030029296875em'}}>T</tspan>
     <tspan x="43.83" y={0} style={{letterSpacing: '0.00008138020833333333em'}}>OC</tspan>
     <tspan x="62.38" y={0} style={{letterSpacing: '-0.011962890625em'}}>K</tspan>
     </text>
-    <text transform="translate(285.82 149.27)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>PRODU<tspan x="42.79" y={0} style={{letterSpacing: '-0.006022135416666667em'}}>C</tspan>
+    <text onClick={() => {onWheelClick(3)}} transform="translate(285.82 149.27)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>PRODU<tspan x="42.79" y={0} style={{letterSpacing: '-0.006022135416666667em'}}>C</tspan>
     <tspan x="51.07" y={0}>TION</tspan>
     </text>
-    <text transform="translate(274.87 263.91)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>USE</text>
-    <text transform="translate(141.27 322.72)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>END OF LIFE</text>
-    <text transform="translate(27.16 238.43)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>WHOLE <tspan x={0} y="14.4">PRODU</tspan>
+    <text onClick={() => {onWheelClick(4)}} transform="translate(274.87 263.91)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>USE</text>
+    <text onClick={() => {onWheelClick(5)}} transform="translate(141.27 322.72)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>END OF LIFE</text>
+    <text onClick={() => {onWheelClick(6)}} transform="translate(27.16 238.43)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>WHOLE <tspan x={0} y="14.4">PRODU</tspan>
     <tspan x="42.79" y="14.4" style={{letterSpacing: '-0.006022135416666667em'}}>C</tspan>
     <tspan x="51.07" y="14.4" style={{letterSpacing: '-0.024007161458333332em'}}>T</tspan>
     </text>
-    <text transform="translate(16 125.27)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>E<tspan x="7.32" y={0} style={{letterSpacing: '-0.029947916666666668em'}}>V</tspan>
+    <text  onClick={() => {onWheelClick(7)}} transform="translate(16 125.27)" style={{fontSize: 12, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>E<tspan x="7.32" y={0} style={{letterSpacing: '-0.029947916666666668em'}}>V</tspan>
     <tspan x="14.8" y={0}>A</tspan>
     <tspan x="23.27" y={0} style={{letterSpacing: '-0.024007161458333332em'}}>L</tspan>
     <tspan x="29.11" y={0}>UTION &amp;</tspan>
@@ -134,7 +134,7 @@ export default function Wheel({onWheelClick, ...otherProps}) {
     <tspan x="49.39" y="14.4" style={{letterSpacing: '-0.059977213541666664em'}}>A</tspan>
     <tspan x="57.14" y="14.4">TION</tspan>
     </text>
-    <text transform="translate(91.61 61.51)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
+    <text onClick={() => {onWheelClick(1)}} transform="translate(91.61 61.51)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
     <tspan style={{letterSpacing: '-0.01201171875em'}}>C</tspan>
     <tspan x="6.84" y={0}>onsider your p</tspan>
     <tspan x="73.62" y={0} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
@@ -144,11 +144,11 @@ export default function Wheel({onWheelClick, ...otherProps}) {
     <tspan x="21.7" y={12}>om a life cycle </tspan>
     <tspan x={0} y={24} xmlSpace="preserve">        perspective</tspan>
     </text>
-    <text transform="translate(218 63.51)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Decouple feedstock<tspan x={0} y={12}>f</tspan>
+    <text onClick={() => {onWheelClick(2)}} transform="translate(218 63.51)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Decouple feedstock<tspan x={0} y={12}>f</tspan>
     <tspan x="3.24" y={12} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
     <tspan x="6.7" y={12}>om multiple impacts</tspan>
     </text>
-    <text transform="translate(288.26 168.9)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Identify chemicals <tspan x={0} y={12} xmlSpace="preserve">  used/p</tspan>
+    <text onClick={() => {onWheelClick(3)}} transform="translate(288.26 168.9)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Identify chemicals <tspan x={0} y={12} xmlSpace="preserve">  used/p</tspan>
     <tspan x="37.56" y={12} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
     <tspan x="41.02" y={12}>oduced </tspan>
     <tspan x={0} y={24} xmlSpace="preserve">    in </tspan>
@@ -157,7 +157,7 @@ export default function Wheel({onWheelClick, ...otherProps}) {
     <tspan x="51.73" y={24} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
     <tspan x="55.19" y={24}>ocess</tspan>
     </text>
-    <text transform="translate(256.54 279.15)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
+    <text onClick={() => {onWheelClick(4)}} transform="translate(256.54 279.15)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
     <tspan style={{letterSpacing: '-0.00595703125em'}}>A</tspan>
     <tspan x={7} y={0}>void the use o</tspan>
     <tspan x="71.83" y={0} style={{letterSpacing: '0.02392578125em'}}>f</tspan>
@@ -169,11 +169,11 @@ export default function Wheel({onWheelClick, ...otherProps}) {
     <tspan x="24.83" y={24} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
     <tspan x="28.29" y={24}>oducts</tspan>
     </text>
-    <text transform="translate(142.73 341.59)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Design for<tspan x={0} y={12}>ci</tspan>
+    <text onClick={() => {onWheelClick(5)}} transform="translate(142.73 341.59)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Design for<tspan x={0} y={12}>ci</tspan>
     <tspan x="7.56" y={12} style={{letterSpacing: '-0.01796875em'}}>r</tspan>
     <tspan x="11.02" y={12}>cularity</tspan>
     </text>
-    <text transform="translate(29.16 265.86)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
+    <text onClick={() => {onWheelClick(6)}} transform="translate(29.16 265.86)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>
     <tspan style={{letterSpacing: '-0.01201171875em'}}>C</tspan>
     <tspan x="6.84" y={0}>onsider safer </tspan>
     <tspan x={0} y={12} xmlSpace="preserve">  substitutes versus </tspan>
@@ -182,7 +182,7 @@ export default function Wheel({onWheelClick, ...otherProps}) {
     <tspan x="40.55" y={36} style={{letterSpacing: '-0.01005859375em'}}>a</tspan>
     <tspan x="45.95" y={36}>tion</tspan>
     </text>
-    <text transform="translate(15.68 154.82)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Design and <tspan x={0} y={12}>innov</tspan>
+    <text onClick={() => {onWheelClick(7)}} transform="translate(15.68 154.82)" style={{fontSize: 10, fill: '#fff', fontFamily: 'AvenirNext-DemiBold, Avenir Next', fontWeight: 700}}>Design and <tspan x={0} y={12}>innov</tspan>
     <tspan x="25.55" y={12} style={{letterSpacing: '-0.01005859375em'}}>a</tspan>
     <tspan x="30.95" y={12}>tion </tspan>
     <tspan x={0} y={24}>a</tspan>
