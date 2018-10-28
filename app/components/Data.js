@@ -92,9 +92,9 @@ class Data {
 
             let finalStep = {
                 title: "Decision Analysis",
-                content: ["/content/step7-evaluation-and-optimization.md"],
-                questions: "app/assets/quiz/guiding_questions7.json",
-                questionsUI: "app/assets/quiz/guiding_questions7_ui.json"
+                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step7-evaluation-and-optimization.md"],
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json"
             };
 
             localStorage.setItem("7", JSON.stringify(finalStep));
