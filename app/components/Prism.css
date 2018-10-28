@@ -1,0 +1,419 @@
+.backButton {
+    position: absolute;
+}
+
+.selector {
+    float: right;
+    text-align: right;
+}
+
+.selectorDropdown {
+    margin-bottom: 10px;
+}
+
+.createBtn {
+    margin-left: 5px !important;
+    margin-top: 10px !important;
+}
+
+.stepHeader {
+    color: darkslategray;
+    text-align: center;
+}
+
+.wheel {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+.contentMarkdown {
+    color: black;
+    margin-bottom: 60px;
+}
+
+.contentMarkdown h1 {
+    font-size: 130%;
+}
+
+.contentMarkdown p {
+    font-size: 100% !important;
+}
+
+.contentMarkdown a {
+    color: dodgerblue;
+}
+
+.contentMarkdown ul li {
+    list-style-type: disc;
+}
+
+.wheelSection:hover {
+    cursor: pointer;
+}
+
+.currentStep {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    font-size: 10rem;
+    font-weight: bold;
+    letter-spacing: -0.025em;
+}
+
+.btnGroup {
+    position: relative;
+    top: 500px;
+    width: 480px;
+    margin: 0 auto;
+}
+
+.btn {
+    font-size: 1.6rem;
+    font-weight: bold;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+    cursor: pointer;
+    font-family: Arial, Helvetica, Helvetica Neue, sans-serif;
+}
+
+.btn:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Areas in CSS for nav wheel image map [assets/prism-wheel.png] */
+.step1 {
+    background: -moz-radial-gradient(
+        85.38% 150.77%,
+        circle farthest-corner,
+        rgba(255, 139, 44, 1) 47.45%,
+        rgba(255, 215, 53, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        85.38% 150.77%,
+        circle farthest-corner,
+        rgba(255, 139, 44, 1) 47.45%,
+        rgba(255, 215, 53, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        85.38% 150.77%,
+        89.74,
+        85.38% 150.77%,
+        189.14,
+        color-stop(0.4745, rgba(255, 139, 44, 1)),
+        color-stop(1, rgba(255, 215, 53, 1))
+    );
+    background: -o-radial-gradient(
+        85.38% 150.77%,
+        circle farthest-corner,
+        rgba(255, 139, 44, 1) 47.45%,
+        rgba(255, 215, 53, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        85.38% 150.77%,
+        circle farthest-corner,
+        rgba(255, 139, 44, 1) 47.45%,
+        rgba(255, 215, 53, 1) 100%
+    );
+    background: radial-gradient(
+        85.38% 150.77%,
+        circle farthest-corner,
+        rgba(255, 139, 44, 1) 47.45%,
+        rgba(255, 215, 53, 1) 100%
+    );
+    position: absolute;
+    left: 102px;
+    top: 18px;
+    width: 167px;
+    height: 123px;
+}
+
+.step2 {
+    background: -moz-radial-gradient(
+        -4.37% 147.56%,
+        circle farthest-corner,
+        rgba(212, 59, 32, 1) 46.43%,
+        rgba(255, 92, 64, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        -4.37% 147.56%,
+        circle farthest-corner,
+        rgba(212, 59, 32, 1) 46.43%,
+        rgba(255, 92, 64, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        -4.37% 147.56%,
+        87.81,
+        -4.37% 147.56%,
+        189.14,
+        color-stop(0.4643, rgba(212, 59, 32, 1)),
+        color-stop(1, rgba(255, 92, 64, 1))
+    );
+    background: -o-radial-gradient(
+        -4.37% 147.56%,
+        circle farthest-corner,
+        rgba(212, 59, 32, 1) 46.43%,
+        rgba(255, 92, 64, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        -4.37% 147.56%,
+        circle farthest-corner,
+        rgba(212, 59, 32, 1) 46.43%,
+        rgba(255, 92, 64, 1) 100%
+    );
+    background: radial-gradient(
+        -4.37% 147.56%,
+        circle farthest-corner,
+        rgba(212, 59, 32, 1) 46.43%,
+        rgba(255, 92, 64, 1) 100%
+    );
+    position: absolute;
+    left: 251px;
+    top: 18px;
+    width: 139px;
+    height: 125px;
+}
+
+.step3 {
+    background: -moz-radial-gradient(
+        -73.02% 65.29%,
+        circle farthest-side,
+        rgba(158, 17, 69, 1) 0%,
+        rgba(255, 59, 131, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        -73.02% 65.29%,
+        circle farthest-side,
+        rgba(158, 17, 69, 1) 0%,
+        rgba(255, 59, 131, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        -73.02% 65.29%,
+        0,
+        -73.02% 65.29%,
+        189.14,
+        color-stop(0, rgba(158, 17, 69, 1)),
+        color-stop(1, rgba(255, 59, 131, 1))
+    );
+    background: -o-radial-gradient(
+        -73.02% 65.29%,
+        circle farthest-side,
+        rgba(158, 17, 69, 1) 0%,
+        rgba(255, 59, 131, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        -73.02% 65.29%,
+        circle farthest-side,
+        rgba(158, 17, 69, 1) 0%,
+        rgba(255, 59, 131, 1) 100%
+    );
+    background: radial-gradient(
+        -73.02% 65.29%,
+        circle farthest-side,
+        rgba(158, 17, 69, 1) 0%,
+        rgba(255, 59, 131, 1) 100%
+    );
+    position: absolute;
+    left: 324px;
+    top: 94px;
+    width: 108px;
+    height: 167px;
+}
+
+.step4 {
+    background: -moz-radial-gradient(
+        -28.13% -21.3%,
+        circle farthest-side,
+        rgba(137, 14, 150, 1) 0%,
+        rgba(234, 48, 255, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        -28.13% -21.3%,
+        circle farthest-side,
+        rgba(137, 14, 150, 1) 0%,
+        rgba(234, 48, 255, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        -28.13% -21.3%,
+        0,
+        -28.13% -21.3%,
+        189.14,
+        color-stop(0, rgba(137, 14, 150, 1)),
+        color-stop(1, rgba(234, 48, 255, 1))
+    );
+    background: -o-radial-gradient(
+        -28.13% -21.3%,
+        circle farthest-side,
+        rgba(137, 14, 150, 1) 0%,
+        rgba(234, 48, 255, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        -28.13% -21.3%,
+        circle farthest-side,
+        rgba(137, 14, 150, 1) 0%,
+        rgba(234, 48, 255, 1) 100%
+    );
+    background: radial-gradient(
+        -28.13% -21.3%,
+        circle farthest-side,
+        rgba(137, 14, 150, 1) 0%,
+        rgba(234, 48, 255, 1) 100%
+    );
+    position: absolute;
+    left: 284px;
+    top: 234px;
+    width: 141px;
+    height: 141px;
+}
+
+.step5 {
+    background: -moz-radial-gradient(
+        52.61% -91.18%,
+        circle farthest-side,
+        rgba(18, 89, 133, 1) 41.84%,
+        rgba(0, 152, 242, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        52.61% -91.18%,
+        circle farthest-side,
+        rgba(18, 89, 133, 1) 41.84%,
+        rgba(0, 152, 242, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        52.61% -91.18%,
+        79.13,
+        52.61% -91.18%,
+        189.14,
+        color-stop(0.4184, rgba(18, 89, 133, 1)),
+        color-stop(1, rgba(0, 152, 242, 1))
+    );
+    background: -o-radial-gradient(
+        52.61% -91.18%,
+        circle farthest-side,
+        rgba(18, 89, 133, 1) 41.84%,
+        rgba(0, 152, 242, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        52.61% -91.18%,
+        circle farthest-side,
+        rgba(18, 89, 133, 1) 41.84%,
+        rgba(0, 152, 242, 1) 100%
+    );
+    background: radial-gradient(
+        52.61% -91.18%,
+        circle farthest-side,
+        rgba(18, 89, 133, 1) 41.84%,
+        rgba(0, 152, 242, 1) 100%
+    );
+    position: absolute;
+    left: 160px;
+    top: 295px;
+    width: 159px;
+    height: 99px;
+}
+
+.step6 {
+    background: -moz-radial-gradient(
+        135.03% -6.63%,
+        circle farthest-corner,
+        rgba(0, 152, 153, 1) 42.86%,
+        rgba(0, 227, 227, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        135.03% -6.63%,
+        circle farthest-corner,
+        rgba(0, 152, 153, 1) 42.86%,
+        rgba(0, 227, 227, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        135.03% -6.63%,
+        81.06,
+        135.03% -6.63%,
+        189.14,
+        color-stop(0.4286, rgba(0, 152, 153, 1)),
+        color-stop(1, rgba(0, 227, 227, 1))
+    );
+    background: -o-radial-gradient(
+        135.03% -6.63%,
+        circle farthest-corner,
+        rgba(0, 152, 153, 1) 42.86%,
+        rgba(0, 227, 227, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        135.03% -6.63%,
+        circle farthest-corner,
+        rgba(0, 152, 153, 1) 42.86%,
+        rgba(0, 227, 227, 1) 100%
+    );
+    background: radial-gradient(
+        135.03% -6.63%,
+        circle farthest-corner,
+        rgba(0, 152, 153, 1) 42.86%,
+        rgba(0, 227, 227, 1) 100%
+    );
+    position: absolute;
+    left: 62px;
+    top: 214px;
+    width: 135px;
+    height: 158px;
+}
+
+.step7 {
+    background: -moz-radial-gradient(
+        172.07% 80.41%,
+        circle farthest-corner,
+        rgba(112, 161, 0, 1) 45.94%,
+        rgba(183, 237, 44, 1) 100%
+    );
+    background: -webkit-radial-gradient(
+        172.07% 80.41%,
+        circle farthest-corner,
+        rgba(112, 161, 0, 1) 45.94%,
+        rgba(183, 237, 44, 1) 100%
+    );
+    background: -webkit-gradient(
+        radial,
+        172.07% 80.41%,
+        88.26,
+        172.07% 80.41%,
+        192.13,
+        color-stop(0.4594, rgba(112, 161, 0, 1)),
+        color-stop(1, rgba(183, 237, 44, 1))
+    );
+    background: -o-radial-gradient(
+        172.07% 80.41%,
+        circle farthest-corner,
+        rgba(112, 161, 0, 1) 45.94%,
+        rgba(183, 237, 44, 1) 100%
+    );
+    background: -ms-radial-gradient(
+        172.07% 80.41%,
+        circle farthest-corner,
+        rgba(112, 161, 0, 1) 45.94%,
+        rgba(183, 237, 44, 1) 100%
+    );
+    background: radial-gradient(
+        172.07% 80.41%,
+        circle farthest-corner,
+        rgba(112, 161, 0, 1) 45.94%,
+        rgba(183, 237, 44, 1) 100%
+    );
+    position: absolute;
+    left: 56px;
+    top: 91px;
+    width: 110px;
+    height: 151px;
+}
