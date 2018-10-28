@@ -35,6 +35,7 @@ export default class Prism extends Component<Props> {
             dropdownSelection: "",
             activeProductId: "",
             productName: "",
+            markdownFiles: [],
             products: this.data.getAllProducts()
         }
 
@@ -53,6 +54,8 @@ export default class Prism extends Component<Props> {
             displayStep: step,
             modalIsOpen: true
         })
+
+        this.loadMDFiles(step);
     }
 
     handleDropdownChange = (event) => {
@@ -112,21 +115,59 @@ export default class Prism extends Component<Props> {
         this.handleClick(step);
     }
 
+
+    //takes in list of files
+    loadMDFiles = (step) => {
+        this.data.getContentList(step).map((mdPath) => {
+            fetch(mdPath)
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) =>{
+                    let mdFiles = this.state.markdownFiles;
+                    mdFiles.push(<ReactMarkdown key={mdPath} source={text}/>)
+                    console.log('updated md files', mdFiles);
+                    this.setState({
+                        markdownFiles: mdFiles
+                    })
+                });
+        })
+    }
+
+    //takes in list of files
+    loadSchemaFiles = (step) => {
+        this.data.getContentList(step).map((mdPath) => {
+            fetch(mdPath)
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) =>{
+                    let mdFiles = this.state.markdownFiles;
+                    mdFiles.push(<ReactMarkdown key={mdPath} source={text}/>)
+                    console.log('updated md files', mdFiles);
+                    this.setState({
+                        markdownFiles: mdFiles
+                    })
+                });
+        })
+    }
+
+
     render() {
         let schema = null;
         let uiSchema = null;
 
-        if (this.state.displayStep > 0) {
-            let questionFile = this.data.getQuestionFile(this.state.displayStep);
-            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
-
-            try {
-                schema = JSON.parse(fs.readFileSync(questionFile).toString());
-                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
-            } catch(err) {
-                console.log(err);
-            }
-        }
+        // if (this.state.displayStep > 0) {
+        //     let questionFile = this.data.getQuestionFile(this.state.displayStep);
+        //     let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+        //
+        //     try {
+        //         schema = JSON.parse(fs.readFileSync(questionFile).toString());
+        //         uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
+        //     } catch(err) {
+        //         console.log(err);
+        //     }
+        // }
 
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
         let formData = {}
@@ -176,24 +217,17 @@ export default class Prism extends Component<Props> {
                     <Button onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
-                            let fullPath = `${__dirname}` + mdPath;
-                            var buf;
-                            try {
-                                buf = fs.readFileSync(fullPath);
-                            } catch (err) {
-                                console.log('error reading md file');
-                            }
-                            return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
+                            return val;
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-                    {this.state.activeProductId && this.state.displayStep > 0 ?
-                        <Form formData={formData}
-                              schema={schema}
-                              uiSchema={uiSchema}
-                              onSubmit={this.submitAnswers}
-                            /> : null}
+                    {/*{this.state.activeProductId && this.state.displayStep > 0 ?*/}
+                        {/*<Form formData={formData}*/}
+                              {/*schema={schema}*/}
+                              {/*uiSchema={uiSchema}*/}
+                              {/*onSubmit={this.submitAnswers}*/}
+                            {/*/> : null}*/}
                 </Modal>
 
             </div>

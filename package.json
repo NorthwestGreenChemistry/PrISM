@@ -249,7 +249,6 @@
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
     "jspdf": "^1.4.1",
-    "pouchdb-adapter-websql": "^7.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",

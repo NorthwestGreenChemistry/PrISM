@@ -25,9 +25,9 @@ class Data {
             //TODO: have to do this seven times and match files up correctly
             let introStep = {
                 title: "Introduction and Design Principles",
-                content: ["/content/Introduction.md"],
-                questions: "app/assets/quiz/guiding_questions1.json",
-                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
+                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/Introduction.md"],
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json"
             };
             localStorage.setItem("1", JSON.stringify(introStep));
 
