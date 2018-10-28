@@ -1,1 +1,46 @@
-{}
+{
+    "title": "Feedstock",
+    "type": "object",
+    "properties": {
+        "firstquestion": {
+            "title": "What is the base feedstock for the chemical, material or product you are making?",
+            "description": "Goal: To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.",
+            "type": "string"
+        },
+        "secondquestion": {
+            "title": "Select the following attributes that describe the base feedstock:",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Biobased",
+                    "Waste/Recycled",
+                    "Petroleum or petroleum products",
+                    "Mineral",
+                    "Unsure/I don't know"
+                ]
+            },
+            "uniqueItems": "true"
+        },
+        "thirdquestion": {
+            "title": "Can the feedstock be depleted (i.e., it is not renewable)?",
+            "enum": ["Yes", "No","Don't know"],
+            "type": "string"
+        },
+        "fourthquestion": {
+            "title": "Are there any known social and environmental issues associated with the raw material feedstock you are using?",
+            "type": "string",
+            "enum": [
+                "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
+                "Habitat destruction (e.g. palm oil is associated with deforestation)",
+                "Other known issues",
+                "Unsure/I don't know"
+            ]
+        },
+        "fifthquestion": {
+            "title": "Do you use catalysts?",
+            "enum": ["Yes", "No","Don't know"],
+            "type": "string"
+        }
+    }
+}

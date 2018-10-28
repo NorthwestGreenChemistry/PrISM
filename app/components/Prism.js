@@ -41,6 +41,8 @@ export default class Prism extends Component<Props> {
             dropdownSelection: "",
             activeProductId: "",
             productName: "",
+            activeForm: {},
+            markdownFiles: [],
             products: this.data.getAllProducts()
         }
 
@@ -61,6 +63,9 @@ export default class Prism extends Component<Props> {
             displayStep: step,
             modalIsOpen: true
         })
+
+        this.loadMDFiles(step);
+        this.loadSchemaFiles(step);
     }
 
     handleDropdownChange = (event) => {
@@ -96,13 +101,18 @@ export default class Prism extends Component<Props> {
     }
 
     submitAnswers = (form) => {
-        this.data.storeAnswer(this.state.activeProductId,
+        this.data.storeAnswer(
+            this.state.activeProductId,
             this.state.displayStep,
             form.formData);
     }
 
     closeModal = () => {
-        this.setState({modalIsOpen: false})
+        this.setState({
+            modalIsOpen: false,
+            markdownFiles: [],
+            activeForm: {},
+        })
     }
 
     //generates random guuid, all credit goes to
@@ -118,26 +128,62 @@ export default class Prism extends Component<Props> {
         this.handleClick(step);
     }
 
-    render() {
-        let schema = null;
-        let uiSchema = null;
+    //takes in list of files
+    loadMDFiles = (step) => {
+        this.data.getContentList(step).map((mdPath) => {
+            fetch(mdPath)
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) =>{
+                    let mdFiles = this.state.markdownFiles;
+                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
+                    console.log('updated md files', mdFiles);
+                    this.setState({
+                        markdownFiles: mdFiles
+                    })
+                });
+        })
+    }
 
-        if (this.state.displayStep > 0) {
-            let questionFile = this.data.getQuestionFile(this.state.displayStep);
-            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+    //takes in list of files
+    loadSchemaFiles = (step) => {
+        if (step > 0) {
+            let questionFile = this.data.getQuestionFile(step);
+            let questionUIFile = this.data.getQuestionUIFile(step);
 
-            console.log("state: " + this.state.displayStep);
+            fetch(questionFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.schema = json
+                    console.log('form schema obj', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
+                })
 
-            try {
-                schema = JSON.parse(fs.readFileSync(questionFile).toString());
-                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
-                console.log(schema);
-                console.log("ui" + uiSchema);
-            } catch(err) {
-                console.log(err);
-            }
+            fetch(questionUIFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.uiSchema = json
+                    console.log('grabbing json ui schema', formSchemaObj)
+                    this.setState(prevState => ({
+                        ...prevState,
+                        activeForm: formSchemaObj
+                    }))
+                })
         }
+    }
 
+    render() {
+        console.log('state change!', this.state.activeForm);
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
         let formData = {}
         if (allAnswers && this.state.displayStep) {
@@ -196,22 +242,16 @@ export default class Prism extends Component<Props> {
                     <Button variant="outlined" onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
-                            let fullPath = `${__dirname}` + mdPath;
-                            var buf;
-                            try {
-                                buf = fs.readFileSync(fullPath);
-                            } catch (err) {
-                                console.log('error reading md file');
-                            }
-                            return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
+                            return val;
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-                    {this.state.activeProductId && this.state.displayStep > 0 ?
-                        <Form formData={formData}
-                              schema={schema}
-                              uiSchema={uiSchema}
+                    {this.state.activeProductId && this.state.displayStep > 0
+                        && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
+                        <Form noValidate={true} formData={formData}
+                              schema={this.state.activeForm.schema}
+                              uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
                             /> : null}
                 </Modal>
