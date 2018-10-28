@@ -28,18 +28,12 @@ export default class Prism extends Component<Props> {
         super(props)
         this.data = Data.getInstance()
 
+        console.log('get all products', this.data.getAllProducts());
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: (() => {
-                let value = this.data.getAllProducts()[this.data.getDefault()]
-                if (typeof value != 'undefined') {
-                    return value
-                } else {
-                    return ''
-                }
-            })(),
-            activeProductId: this.data.getDefault(),
+            dropdownSelection: "",
+            activeProductId: "",
             productName: "",
             products: this.data.getAllProducts()
         }
@@ -49,8 +43,7 @@ export default class Prism extends Component<Props> {
 
     handleClick = (step) => {
         console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
-        if (!this.state.activeProductId
-            || this.state.activeProductId === "") {
+        if (!this.state.activeProductId || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
             console.log('CHOOSE A PRODUCT!')
             return;
@@ -63,11 +56,11 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
+        console.log('inside of handle dropdown change', event.target.value);
         this.setState({
-            dropdownSelection: this.state.products[event.target.value],
+            dropdownSelection: event.target.value,
             activeProductId: event.target.value
         })
-        this.data.setDefault(event.target.value)
     }
 
     handleProductNameChange = (event) => {
@@ -77,11 +70,13 @@ export default class Prism extends Component<Props> {
     createProduct = () => {
         let id = this.uuidv4()
         this.data.createProduct(id, this.state.productName)
+        console.log('creating product', this.state.productName);
+        console.log('all products', this.data.getAllProducts());
         this.setState({
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProductId: id,
+            activeProductId: "",
             dropdownSelection: this.state.productName,
             productName: ""
         })
@@ -149,14 +144,12 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.selector}>
                     <Select
-                        renderValue={() => {return this.state.dropdownSelection}}
-                        displayEmpty={true}
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange} >
-                        {Object.keys(this.state.products).map((key) => {
+                        onChange={this.handleDropdownChange}  >
+                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        })}
+                        }) : null }
                         <MenuItem value="new-product">--New Product--</MenuItem>
                     </Select>
 
@@ -173,7 +166,7 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.wheel}>
                     <Wheel onWheelClick={this.wheelClick} />
-                
+
                     <Button onClick={this.makePDF}>
                         Making the PDF's!
                     </Button>

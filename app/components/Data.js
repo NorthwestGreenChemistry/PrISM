@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 type Props = {};
 
 const ALL_PRODUCTS = 'allProducts';
+const EMPTY_OBJ = {};
 
 class Data {
 
@@ -21,7 +22,7 @@ class Data {
 
         let stepsIsDefined = localStorage.getItem('steps');
         if (!stepsIsDefined) {
-            //have to do this seven times
+            //TODO: have to do this seven times and match files up correctly
             let introStep = {
                 title: "Introduction and Design Principles",
                 content: ["/content/Introduction.md"],
