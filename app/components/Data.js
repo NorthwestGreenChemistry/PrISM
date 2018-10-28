@@ -172,7 +172,6 @@ class Data {
 
     // returns map of all steps along with their answers
     getAnswers = (id) => {
-        console.log('calling get answers with', id);
         return getNonNull(JSON.parse(localStorage.getItem(id)), {});
     }
 
