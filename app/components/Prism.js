@@ -31,17 +31,20 @@ export default class Prism extends Component<Props> {
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: this.data.getAllProducts()[this.data.getDefault()],
+            dropdownSelection: (() => {
+                let value = this.data.getAllProducts()[this.data.getDefault()]
+                if (typeof value != 'undefined') {
+                    return value
+                } else {
+                    return ''
+                }
+            })(),
             activeProductId: this.data.getDefault(),
             productName: "",
             products: this.data.getAllProducts()
         }
 
         console.log('INITIAL STATE', this.state);
-
-        this.handleClick = this.handleClick.bind(this);
-        this.wheelClick = this.wheelClick.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
     handleClick = (step) => {
