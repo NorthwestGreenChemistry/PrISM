@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
+import jsPDF from 'jspdf'
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
@@ -34,16 +35,12 @@ export default class Prism extends Component<Props> {
             productName: "",
             products: this.data.getAllProducts()
         }
-
-        this.handleClick = this.handleClick.bind(this);
-        this.wheelClick = this.wheelClick.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
-    handleClick(step) {
+    handleClick = (step) => {
         if (this.state.activeProduct === "") {
             //TODO: display warning to the user that they have to select a product
-            console.log('CHOOSE A PRODUCT!');
+            console.log('CHOOSE A PRODUCT!')
             return;
         }
 
@@ -78,20 +75,27 @@ export default class Prism extends Component<Props> {
         })
     }
 
-    closeModal() {
+    makePDF = () => {
+        var doc = new jsPDF()
+
+        doc.text('Hello world!', 10, 10)
+        doc.save('a4.pdf')
+    }
+
+    closeModal = () => {
         this.setState({modalIsOpen: false})
     }
 
     //generates random guuid, all credit goes to
     //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
-    uuidv4() {
+    uuidv4 = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
     }
 
-    wheelClick(step) {
+    wheelClick = (step) => {
         this.handleClick(step);
     }
 
@@ -128,6 +132,10 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.wheel}>
                     <Wheel onWheelClick={this.wheelClick} />
+                
+                    <Button onClick={this.makePDF}>
+                        Making the PDF's!
+                    </Button>
                 </div>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">

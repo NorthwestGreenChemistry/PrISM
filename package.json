@@ -59,7 +59,9 @@
   "build": {
     "productName": "ElectronReact",
     "appId": "org.develar.ElectronReact",
-    "extraResources": ["./extraResources/**"],
+    "extraResources": [
+      "./extraResources/**"
+    ],
     "files": [
       "dist/",
       "node_modules/",
@@ -246,6 +248,7 @@
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
+    "jspdf": "^1.4.1",
     "pouchdb-adapter-websql": "^7.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
