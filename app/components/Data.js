@@ -52,9 +52,9 @@ class Data {
 
             let productionStep = {
                 title: "Introduction to Production and Manufacturing",
-                content: ["/content/step3-production-manufacturing.md"],
-                questions: "app/assets/quiz/guiding_questions3.json",
-                questionsUI: "app/assets/quiz/guiding_questions3_ui.json",
+                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step3-production-manufacturing.md"],
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_ui.json",
                 nextStep: "4"
             };
 
@@ -62,9 +62,9 @@ class Data {
 
             let useStep = {
                 title: "Sustainable Product Design for the Use Phase",
-                content: ["/content/step4-use.md"],
-                questions: "app/assets/quiz/guiding_questions4.json",
-                questionsUI: "app/assets/quiz/guiding_questions4_ui.json",
+                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step4-use.md"],
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_ui.json",
                 nextStep: "5"
             };
 
