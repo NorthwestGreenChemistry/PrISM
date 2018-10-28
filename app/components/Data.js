@@ -51,7 +51,7 @@ class Data {
             localStorage.setItem("2", JSON.stringify(feedstockStep));
 
             let productionStep = {
-                title: "Sustainable Product Design for the Use Phase",
+                title: "Introduction to Production and Manufacturing",
                 content: ["/content/step3-production-manufacturing.md"],
                 questions: "app/assets/quiz/guiding_questions3.json",
                 questionsUI: "app/assets/quiz/guiding_questions3_ui.json",
@@ -71,7 +71,7 @@ class Data {
             localStorage.setItem("4", JSON.stringify(useStep));
 
             let endOfLifeStep = {
-                title: "Sustainable Product Design for the Use Phase",
+                title: "End of Life Considerations",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step5-end-of-life.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_ui.json",
@@ -81,7 +81,7 @@ class Data {
             localStorage.setItem("5", JSON.stringify(endOfLifeStep));
 
             let lifeCycleStep = {
-                title: "Introduction to Life Cycle Thinking and Life Cycle Assessment",
+                title: "Whole Product Assessment ",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step6-whole-product.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_ui.json",
