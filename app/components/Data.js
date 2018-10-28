@@ -110,14 +110,13 @@ class Data {
 
     // object id key and value prettyname
     getAllProducts = () => {
-        var emptyObj = {};
-        return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS), emptyObj));
+        return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS)), {});
     }
 
     // returns map of all steps along with their answers
     getAnswers = (id) => {
         console.log('calling get answers with', id);
-        return getNonNull(JSON.parse(localStorage.getItem(id), {}));
+        return getNonNull(JSON.parse(localStorage.getItem(id)), {});
     }
 
     storeAnswer = (id, stepKey, formData) => {
@@ -150,8 +149,10 @@ class Data {
 //val should be a call that MAY evaluate to null
 //val2 should NEVER be null
 function getNonNull(val, val2) {
-    console.log('inside of nonnull', val, 'DEFAULT', val2);
-    return val != null && val != undefined ? val : val2;
+    if (typeof val == 'undefined' || val === null) {
+        return val2
+    }
+    return val
 }
 
 export default Data;

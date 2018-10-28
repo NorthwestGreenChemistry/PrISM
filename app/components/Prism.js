@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
+import jsPDF from 'jspdf'
 import Form from "react-jsonschema-form";
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
@@ -31,25 +32,20 @@ export default class Prism extends Component<Props> {
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: this.data.getAllProducts() != undefined ? this.data.getAllProducts()[this.data.getDefault()] : "",
-            activeProductId: this.data.getDefault(),
+            dropdownSelection: "",
+            activeProductId: "",
             productName: "",
             products: this.data.getAllProducts()
         }
 
         console.log('INITIAL STATE', this.state);
-
-        this.handleClick = this.handleClick.bind(this);
-        this.wheelClick = this.wheelClick.bind(this);
-        this.closeModal = this.closeModal.bind(this);
     }
 
-    handleClick(step) {
+    handleClick = (step) => {
         console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
-        if (!this.state.activeProductId
-            || this.state.activeProductId === "") {
+        if (!this.state.activeProductId || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
-            console.log('CHOOSE A PRODUCT!');
+            console.log('CHOOSE A PRODUCT!')
             return;
         }
 
@@ -60,20 +56,11 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
-        //TODO: this gets reset to id sometimes - something is wrong w/ data binding
-        if (event.target.value === 'new-product') {
-            this.setState({
-                activeProductId: event.target.value
-            })
-        } else {
-            this.setState({
-                dropdownSelection: this.state.products != undefined ? this.state.products[event.target.value] : event.target.value,
-                activeProductId: event.target.value
-            })
-
-            this.data.setDefault(event.target.value)
-        }
-
+        console.log('inside of handle dropdown change', event.target.value);
+        this.setState({
+            dropdownSelection: event.target.value,
+            activeProductId: event.target.value
+        })
     }
 
     handleProductNameChange = (event) => {
@@ -83,14 +70,23 @@ export default class Prism extends Component<Props> {
     createProduct = () => {
         let id = this.uuidv4()
         this.data.createProduct(id, this.state.productName)
+        console.log('creating product', this.state.productName);
+        console.log('all products', this.data.getAllProducts());
         this.setState({
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProductId: id,
+            activeProductId: "",
             dropdownSelection: this.state.productName,
             productName: ""
         })
+    }
+
+    makePDF = () => {
+        var doc = new jsPDF()
+
+        doc.text('Hello world!', 10, 10)
+        doc.save('a4.pdf')
     }
 
     submitAnswers = (form) => {
@@ -99,20 +95,20 @@ export default class Prism extends Component<Props> {
             form.formData);
     }
 
-    closeModal() {
+    closeModal = () => {
         this.setState({modalIsOpen: false})
     }
 
     //generates random guuid, all credit goes to
     //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
-    uuidv4() {
+    uuidv4 = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
     }
 
-    wheelClick(step) {
+    wheelClick = (step) => {
         this.handleClick(step);
     }
 
@@ -148,11 +144,9 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.selector}>
                     <Select
-                        renderValue={() => {return this.state.dropdownSelection}}
-                        displayEmpty={true}
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange} >
+                        onChange={this.handleDropdownChange}  >
                         {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
                         }) : null }
@@ -172,6 +166,10 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.wheel}>
                     <Wheel onWheelClick={this.wheelClick} />
+
+                    <Button onClick={this.makePDF}>
+                        Making the PDF's!
+                    </Button>
                 </div>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
