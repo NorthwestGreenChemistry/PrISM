@@ -59,8 +59,6 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
-        console.log('why the fuck is this event not working kEY', event.target.key);
-        console.log('why the fuck is this event not working', event.target.value);
         this.setState({
             dropdownSelection: this.state.products[event.target.value],
             activeProductId: event.target.value
