@@ -128,9 +128,13 @@ export default class Prism extends Component<Props> {
             let questionFile = this.data.getQuestionFile(this.state.displayStep);
             let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
 
+            console.log("state: " + this.state.displayStep);
+
             try {
                 schema = JSON.parse(fs.readFileSync(questionFile).toString());
                 uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
+                console.log(schema);
+                console.log("ui" + uiSchema);
             } catch(err) {
                 console.log(err);
             }
