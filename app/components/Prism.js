@@ -105,6 +105,22 @@ export default class Prism extends Component<Props> {
             this.state.activeProductId,
             this.state.displayStep,
             form.formData);
+
+        let nextStep = this.data.getNextStep(this.state.displayStep);
+
+        if (!nextStep) { //if there's no next step then we're on the final step
+            this.closeModal();
+            return;
+        }
+
+        this.setState({
+            activeProductId: nextStep,
+            markdownFiles: [],
+            activeForm: {},
+        })
+
+        this.loadMDFiles(nextStep);
+        this.loadSchemaFiles(nextStep);
     }
 
     closeModal = () => {
