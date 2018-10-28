@@ -10,6 +10,7 @@
     "build-main": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config ./configs/webpack.config.main.prod.js --colors",
     "build-renderer": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config ./configs/webpack.config.renderer.prod.js --colors",
     "dev": "cross-env START_HOT=1 node -r babel-register ./internals/scripts/CheckPortInUse.js && cross-env START_HOT=1 yarn start-renderer-dev",
+    "dist": "build",
     "electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir app",
     "flow": "flow",
     "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || true",
@@ -102,7 +103,8 @@
     "directories": {
       "buildResources": "extraResources",
       "output": "release"
-    }
+    },
+    "icon": "./build/app.icns"
   },
   "repository": {
     "type": "git",
@@ -110,14 +112,9 @@
   },
   "contributors": [
     {
-      "name": "Vikram Rangaraj",
-      "email": "vikr01@icloud.com",
-      "url": "https://github.com/vikr01"
-    },
-    {
-      "name": "Amila Welihinda",
-      "email": "amilajack@gmail.com",
-      "url": "https://github.com/amilajack"
+      "name": "Amelia @ NGC",
+      "email": "ANestler@NorthwestGreenChemistry.com",
+      "url": "https://github.com/NorthwestGreenChemistry"
     }
   ],
   "license": "MIT",
@@ -181,7 +178,7 @@
     "css-loader": "^1.0.0",
     "detect-port": "^1.2.3",
     "electron": "^2.0.6",
-    "electron-builder": "^20.26.0",
+    "electron-builder": "^20.29.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-installer-dmg": "^2.0.0",
     "electron-rebuild": "^1.8.2",
