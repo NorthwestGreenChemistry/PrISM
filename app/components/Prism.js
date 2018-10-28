@@ -27,10 +27,11 @@ export default class Prism extends Component<Props> {
         super(props)
         this.data = Data.getInstance()
 
+        console.log('get all products', this.data.getAllProducts());
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: this.data.getAllProducts()[this.data.getDefault()],
+            dropdownSelection: this.data.getAllProducts() != undefined ? this.data.getAllProducts()[this.data.getDefault()] : "",
             activeProductId: this.data.getDefault(),
             productName: "",
             products: this.data.getAllProducts()
@@ -59,13 +60,20 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
-        console.log('why the fuck is this event not working kEY', event.target.key);
-        console.log('why the fuck is this event not working', event.target.value);
-        this.setState({
-            dropdownSelection: this.state.products[event.target.value],
-            activeProductId: event.target.value
-        })
-        this.data.setDefault(event.target.value)
+        //TODO: this gets reset to id sometimes - something is wrong w/ data binding
+        if (event.target.value === 'new-product') {
+            this.setState({
+                activeProductId: event.target.value
+            })
+        } else {
+            this.setState({
+                dropdownSelection: this.state.products != undefined ? this.state.products[event.target.value] : event.target.value,
+                activeProductId: event.target.value
+            })
+
+            this.data.setDefault(event.target.value)
+        }
+
     }
 
     handleProductNameChange = (event) => {
@@ -145,9 +153,9 @@ export default class Prism extends Component<Props> {
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
                         onChange={this.handleDropdownChange} >
-                        {Object.keys(this.state.products).map((key) => {
+                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        })}
+                        }) : null }
                         <MenuItem value="new-product">--New Product--</MenuItem>
                     </Select>
 

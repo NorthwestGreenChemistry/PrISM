@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 type Props = {};
 
 const ALL_PRODUCTS = 'allProducts';
+const EMPTY_OBJ = {};
 
 class Data {
 
@@ -21,7 +22,7 @@ class Data {
 
         let stepsIsDefined = localStorage.getItem('steps');
         if (!stepsIsDefined) {
-            //have to do this seven times
+            //TODO: have to do this seven times and match files up correctly
             let introStep = {
                 title: "Introduction and Design Principles",
                 content: ["/content/Introduction.md"],
@@ -109,7 +110,8 @@ class Data {
 
     // object id key and value prettyname
     getAllProducts = () => {
-        return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS), {}));
+        var emptyObj = {};
+        return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS), emptyObj));
     }
 
     // returns map of all steps along with their answers
@@ -148,7 +150,8 @@ class Data {
 //val should be a call that MAY evaluate to null
 //val2 should NEVER be null
 function getNonNull(val, val2) {
-    return val != null ? val : val2;
+    console.log('inside of nonnull', val, 'DEFAULT', val2);
+    return val != null && val != undefined ? val : val2;
 }
 
 export default Data;
