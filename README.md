@@ -61,7 +61,7 @@ $ yarn package-all
 ## How to add modules to the project
 
 There have been several modules added to this project, including [material-ui](http://www.material-ui.com/) to reuse react UI components.
-Data is managed client-side using [CouchDB](http://couchdb.apache.org/).
+Data is managed client-side with local storage.
 
 ⚠️ Please read the following section before installing any dependencies ⚠️
 

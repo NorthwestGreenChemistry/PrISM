@@ -45,17 +45,17 @@ export default class MenuBuilder {
 
     buildDarwinTemplate() {
         const subMenuAbout = {
-            label: 'Electron',
+            label: 'PrISM',
             submenu: [
                 {
-                    label: 'About ElectronReact',
+                    label: 'About PrISM',
                     selector: 'orderFrontStandardAboutPanel:'
                 },
                 { type: 'separator' },
                 { label: 'Services', submenu: [] },
                 { type: 'separator' },
                 {
-                    label: 'Hide ElectronReact',
+                    label: 'Hide PrISM',
                     accelerator: 'Command+H',
                     selector: 'hide:'
                 },
@@ -75,6 +75,33 @@ export default class MenuBuilder {
                 }
             ]
         };
+        const subMenuFile = {
+            label: 'File',
+            submenu: [
+                {
+                    label: 'New',
+                    accelerator: 'Command+N'
+                },
+                {
+                    label: 'Open',
+                    accelerator: 'Command+O'
+                },
+                { type: 'separator' },
+                {
+                    label: 'Save',
+                    accelerator: 'Command+S'
+                },
+                {
+                    label: 'Save As',
+                    accelerator: 'Command+Shift+S'
+                },
+                { type: 'separator' },
+                {
+                    label: 'Export as PDF',
+                    accelerator: 'Command+Shift+E'
+                }
+            ]
+        }
         const subMenuEdit = {
             label: 'Edit',
             submenu: [
@@ -177,7 +204,7 @@ export default class MenuBuilder {
         const subMenuView =
             process.env.NODE_ENV === 'development' ? subMenuViewDev : subMenuViewProd;
 
-        return [subMenuAbout, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
+        return [subMenuAbout, subMenuFile, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
     }
 
     buildDefaultTemplate() {

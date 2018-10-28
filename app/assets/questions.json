@@ -1,0 +1,65 @@
+{
+    "steps": {
+        "step1": {
+            "title": "Step 1",
+            "questions": [
+                {
+                    "name": "product_type",
+                    "type": "textarea",
+                    "text": "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product.",
+                    "helper": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product."
+                },
+                {
+                    "name": "intended_users",
+                    "type": "textarea",
+                    "text": "Who are the intended users?",
+                    "helper": ""
+                },
+                {
+                    "name": "service_provided",
+                    "type": "textarea",
+                    "text": "What is the service provided by the product?",
+                    "helper": ""
+                },
+                {
+                    "name": "other_products",
+                    "type": "textarea",
+                    "text": "What other products are used to provide this service?",
+                    "helper": ""
+                },
+                {
+                    "name": "sustainability_attrs",
+                    "type": "textarea",
+                    "text": "What sustainability attributes are you prioritizing to include in the design?",
+                    "helper": "Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities"
+                },
+                {
+                    "name": "feedstock_goals",
+                    "type": "multi",
+                    "text": "What is the preferred feedstock goal or goals? Please select all that apply.",
+                    "helper": "",
+                    "enum": [
+                        "Renewable",
+                        "Waste-based",
+                        "Bio-based",
+                        "Recyclable",
+                        "GHG/Carbon-neutral",
+                        "Other",
+                        "Feedstock not a priority."
+                    ]
+                }
+            ]
+        },
+        "step2": {
+            "title": "Step 2",
+            "questions": [
+                {
+                    "name": "question_2",
+                    "type": "textarea",
+                    "text": "What is the meaning of life?",
+                    "helper": "(hint: 42)"
+                }
+            ]
+        }
+    }
+}
