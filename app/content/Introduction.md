@@ -21,10 +21,10 @@ AA helps to ensure that designers make changes with their eyes wide open. The in
 The tools and decision frameworks in AA can also support product design. Product assessment and product design are closely related. In the design process, the designer considers his or her options for chemicals, materials, business models, manufacturing options and more. Each of these options can be evaluated from a holistic perspective to inform decisions along the way. That is why this workbook builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions. Alternatives assessment, like all assessment tools is limited by the availability of good data. Despite that drawback, approaching design from a life cycle perspective and using the tools of alternatives assessment to assess various options can help stimulate ideas for product innovation.
 
 
-[Visit the IC2 website to access the complete IC2 Alternatives Assessment Guide]("http://theic2.org/alternatives_assessment_guide")<br>
-[A Framework to Guide Selection of Chemical Alternatives (National Research Council)]("https://www.nap.edu/catalog/18872/a-framework-to-guide-selection-of-chemical-alternatives")<br>
-[Washington State Alternatives Assessment Guide for Small and Medium Businesses]("https://fortress.wa.gov/ecy/publications/documents/1504002.pdf")<br>
-[California Safer Consumer Products Alternatives Assessment Guide v1.0]("http://www.dtsc.ca.gov/SCP/AlternativesAnalysisGuidance.cfm")
+* [Visit the IC2 website to access the complete IC2 Alternatives Assessment Guide]("http://theic2.org/alternatives_assessment_guide")
+* [A Framework to Guide Selection of Chemical Alternatives (National Research Council)]("https://www.nap.edu/catalog/18872/a-framework-to-guide-selection-of-chemical-alternatives")
+* [Washington State Alternatives Assessment Guide for Small and Medium Businesses]("https://fortress.wa.gov/ecy/publications/documents/1504002.pdf")
+* [California Safer Consumer Products Alternatives Assessment Guide v1.0]("http://www.dtsc.ca.gov/SCP/AlternativesAnalysisGuidance.cfm")
 
 # Circular Design
 

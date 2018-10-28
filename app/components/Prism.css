@@ -31,6 +31,7 @@
 
 .contentMarkdown {
     color: black;
+    margin-bottom: 60px;
 }
 
 .contentMarkdown h1 {
@@ -39,6 +40,14 @@
 
 .contentMarkdown p {
     font-size: 100% !important;
+}
+
+.contentMarkdown a {
+    color: dodgerblue;
+}
+
+.contentMarkdown ul li {
+    list-style-type: disc;
 }
 
 .wheelSection:hover {

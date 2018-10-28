@@ -14,6 +14,7 @@ import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
 import jsPDF from 'jspdf'
+import Form from "react-jsonschema-form";
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
@@ -30,15 +31,23 @@ export default class Prism extends Component<Props> {
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: "",
-            activeProduct: this.data.getDefault(),
+            dropdownSelection: this.data.getAllProducts()[this.data.getDefault()],
+            activeProductId: this.data.getDefault(),
             productName: "",
             products: this.data.getAllProducts()
         }
+
+        console.log('INITIAL STATE', this.state);
+
+        this.handleClick = this.handleClick.bind(this);
+        this.wheelClick = this.wheelClick.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleClick = (step) => {
-        if (this.state.activeProduct === "") {
+        console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
+        if (!this.state.activeProductId
+            || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
             console.log('CHOOSE A PRODUCT!')
             return;
@@ -52,10 +61,10 @@ export default class Prism extends Component<Props> {
 
     handleDropdownChange = (event) => {
         this.setState({
-            dropdownSelection: event.target.value,
-            activeProduct: event.target.key
+            dropdownSelection: this.state.products[event.target.value],
+            activeProductId: event.target.value
         })
-        // this.data.setDefault(event.target.key) //TODO: fix this, setting default not working
+        this.data.setDefault(event.target.value)
     }
 
     handleProductNameChange = (event) => {
@@ -69,7 +78,7 @@ export default class Prism extends Component<Props> {
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProduct: id,
+            activeProductId: id,
             dropdownSelection: this.state.productName,
             productName: ""
         })
@@ -80,6 +89,12 @@ export default class Prism extends Component<Props> {
 
         doc.text('Hello world!', 10, 10)
         doc.save('a4.pdf')
+    }
+
+    submitAnswers = (form) => {
+        this.data.storeAnswer(this.state.activeProductId,
+            this.state.displayStep,
+            form.formData);
     }
 
     closeModal = () => {
@@ -100,6 +115,27 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
+        let schema = null;
+        let uiSchema = null;
+
+        if (this.state.displayStep > 0) {
+            let questionFile = this.data.getQuestionFile(this.state.displayStep);
+            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+
+            try {
+                schema = JSON.parse(fs.readFileSync(questionFile).toString());
+                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
+            } catch(err) {
+                console.log(err);
+            }
+        }
+
+        let allAnswers = this.data.getAnswers(this.state.activeProductId);
+        let formData = {}
+        if (allAnswers && this.state.displayStep) {
+            formData = allAnswers[this.state.displayStep]
+        }
+
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -110,6 +146,8 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.selector}>
                     <Select
+                        renderValue={() => {return this.state.dropdownSelection}}
+                        displayEmpty={true}
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
                         onChange={this.handleDropdownChange} >
@@ -139,9 +177,10 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
+                    <Button onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep !== "" ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
+                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
                             let fullPath = `${__dirname}` + mdPath;
                             var buf;
                             try {
@@ -152,7 +191,13 @@ export default class Prism extends Component<Props> {
                             return <ReactMarkdown key={mdPath} source={buf.toString()} />
                         }) : null}
                     </div>
-                    <Button onClick={this.closeModal}>close</Button>
+                    <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
+                    {this.state.activeProductId && this.state.displayStep > 0 ?
+                        <Form formData={formData}
+                              schema={schema}
+                              uiSchema={uiSchema}
+                              onSubmit={this.submitAnswers}
+                            /> : null}
                 </Modal>
 
             </div>

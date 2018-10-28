@@ -253,7 +253,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
-    "react-jsonschema-form": "1.0.5",
+    "react-jsonschema-form": "^1.0.5",
     "react-markdown": "^4.0.3",
     "react-md-file": "^1.1.0",
     "react-modal": "^3.6.1",
