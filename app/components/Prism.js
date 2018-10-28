@@ -280,7 +280,7 @@ export default class Prism extends Component<Props> {
 
                         <List component="nav">
                             {this.stepsData().map((step, index) => {
-                                return <ProgressItem handleClick={this.handleClick} step={step} stepCounter={index + 1} />
+                                return <ProgressItem handleClick={this.handleClick} step={step} stepCounter={index + 1} key={'step_' + (index + 1)} />
                             })}
                         </List>
                         <hr />
