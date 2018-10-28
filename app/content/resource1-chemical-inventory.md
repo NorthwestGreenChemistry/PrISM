@@ -16,7 +16,6 @@ Keep in mind that even small amounts of toxic chemical ingredient additives can 
 - Leak into the environment after disposal 
 - Affect the quality of recycled materials and how they can be used in future products
 
-
 ### What are the life cycle stages you plan to evaluate? 
 At a minimum, you will want to know the chemicals that are present in the chemicals, materials or products at the life cycle stage that you control and in the product that you are making to sell to customers. This would include the base material along with known additives. It should also include residuals and impurities about a desired threshold.
 
@@ -32,13 +31,12 @@ What chemicals are likely to be present in the product based on what you know ab
 
 Which of the above resources have you used to identify chemicals in your product or chemicals that may formed when the product is used or no longer needed?
 
-
 ## Example
 Chart template for creating a chemical inventory and mapping chemical use to life cycle stage. 
 
 <img src="../assets/tool-chemical-inventory/chemical-inventory-template.png" width="80%">
 
 ## Tools
-Some organizations offer tools for assisting with building the chemical inventory. These are typically focused on the constituents of the product (use phase inventory) and do not necessarily have space for inventorying process and byproduct chemicals. Both of the tools will automate list screening hazard assessments, as well.
+Some organizations offer tools for assisting with building, storing, and using your chemical inventory. These are typically focused on the constituents of the product (use phase inventory) and do not necessarily have space by default for inventorying process and byproduct chemicals. Both of these tools will automate list screening hazard assessments, as well.
 - [Pharos Chemical and Material Library](https://www.pharosproject.net/)
 - [toxnot.com](http://toxnot.com)
