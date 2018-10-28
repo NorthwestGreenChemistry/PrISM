@@ -11,11 +11,12 @@ type Props = {
 export default class Root extends Component<Props> {
     constructor(props) {
         super(props);
-        this.data = new Data();
+        this.data = new Data(); // this is where we initialize localstorage
     }
 
     render() {
         const { history } = this.props;
+
         return (
             <BrowserRouter>
                 <Routes />
