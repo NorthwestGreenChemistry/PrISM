@@ -13,22 +13,34 @@
     },
     "feedstock": {
         "question": {
-            "items": {}
+            "ui:widget": "checkboxes"
         }
     },
     "production": {
-        "question": {}
+        "question": {
+            "ui:widget": "checkboxes"
+        }
     },
     "priorities": {
-        "question": {}
+        "question": {
+            "ui:widget": "checkboxes"
+        }
     },
     "waste": {
         "useLength": {},
-        "attributes": {},
-        "recycling": {}
+        "attributes": {
+            "ui:widget": "checkboxes"
+        },
+        "recycling": {
+            "ui:widget": "checkboxes"
+        }
     },
     "overall": {
-        "standards": {},
-        "lifeCycle": {}
+        "standards": {
+            "ui:widget": "radio"
+        },
+        "lifeCycle": {
+            "ui:widget": "radio"
+        }
     }
 }

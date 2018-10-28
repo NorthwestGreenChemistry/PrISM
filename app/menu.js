@@ -99,7 +99,10 @@ export default class MenuBuilder {
                 { type: 'separator' },
                 {
                     label: 'Export as PDF',
-                    accelerator: 'Command+Shift+E'
+                    accelerator: 'Command+Shift+E',
+                    click: () => {
+                        this.mainWindow.webContents.send('SAVE_PDF')
+                    }
                 }
             ]
         }

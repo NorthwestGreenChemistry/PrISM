@@ -245,6 +245,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@material-ui/core": "^3.3.1",
+    "@material-ui/icons": "^3.0.1",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
