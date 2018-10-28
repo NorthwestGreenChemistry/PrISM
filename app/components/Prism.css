@@ -21,7 +21,11 @@
     top: 10%;
     left: 10%;
     width: 80%;
-    height: auto;
+    height: 80%;
+}
+
+.wheelSection:hover {
+    cursor: pointer;
 }
 
 .currentStep {

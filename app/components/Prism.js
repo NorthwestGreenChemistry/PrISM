@@ -31,7 +31,7 @@ export default class Prism extends Component<Props> {
                 '2': false,
                 '3': false
             },
-            displayStep: "",
+            displayStep: 0,
             dropdownSelection: "",
             activeProduct: "",
             productName: "",
@@ -43,13 +43,12 @@ export default class Prism extends Component<Props> {
         this.closeModal = this.closeModal.bind(this);
     }
 
-    handleClick(event) {
-        let step = event.currentTarget.getAttribute('data-step')
+    handleClick(step: number) {
         this.setState(state => ({
             displayStep: step,
             modalIsOpen: true
         }))
-        console.log('opening modal')
+        console.log('opening modal');
     }
 
     handleDropdownChange = (event) => {
@@ -89,8 +88,7 @@ export default class Prism extends Component<Props> {
     }
 
     wheelClick(step: number) {
-        console.log('WE ARE CLICKED!!!');
-        console.log(step);
+        this.handleClick(step);
     }
 
     render() {
@@ -127,27 +125,6 @@ export default class Prism extends Component<Props> {
                 <div className={styles.wheel}>
                     <Wheel onWheelClick={this.wheelClick} />
                 </div>
-                <div className={`currentStep ${styles.currentStep}`} data-tid="currentStep">
-                    {this.state.displayStep}
-
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        data-step="1"
-                        onClick={this.handleClick}
-                    >
-                        Open Step 1
-                    </Button>
-                    &nbsp;
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        data-step="2"
-                        onClick={this.handleClick}
-                    >
-                        Open Step 2
-                    </Button>
-                </div>
 
                 <Modal
                     isOpen={this.state.modalIsOpen}
@@ -173,4 +150,3 @@ export default class Prism extends Component<Props> {
         );
     }
 }
-
