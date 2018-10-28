@@ -10,9 +10,11 @@ import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Modal from 'react-modal';
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
+Modal.setAppElement('#root');
 type Props = {};
 
 
@@ -23,12 +25,13 @@ export default class Prism extends Component<Props> {
         this.data = new Data()
 
         this.state = {
+            modalIsOpen: false,
             steps: {
                 '1': false,
                 '2': false,
                 '3': false
             },
-            displayStep: 0,
+            displayStep: "",
             dropdownSelection: "",
             activeProduct: "",
             productName: "",
@@ -37,13 +40,16 @@ export default class Prism extends Component<Props> {
 
         this.handleClick = this.handleClick.bind(this);
         this.wheelClick = this.wheelClick.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     handleClick(event) {
         let step = event.currentTarget.getAttribute('data-step')
         this.setState(state => ({
-            displayStep: step
+            displayStep: step,
+            modalIsOpen: true
         }))
+        console.log('opening modal')
     }
 
     handleDropdownChange = (event) => {
@@ -70,6 +76,10 @@ export default class Prism extends Component<Props> {
         })
     }
 
+    closeModal() {
+        this.setState({modalIsOpen: false});
+    }
+
     //generates random guuid, taken from https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
     uuidv4() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -84,9 +94,6 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
-        // let products = this.data.getAllProducts();
-        // let products = {abc: "test product", def:"another test product"};
-
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -141,6 +148,27 @@ export default class Prism extends Component<Props> {
                         Open Step 2
                     </Button>
                 </div>
+
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    // onAfterOpen={this.afterOpenModal}
+                    // onRequestClose={this.closeModal}
+                    // style={customStyles}
+                    contentLabel="Example Modal"
+                >
+
+                    <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
+                    <button onClick={this.closeModal}>close</button>
+                    <div>I am a modal</div>
+                    <form>
+                        <input />
+                        <button>tab navigation</button>
+                        <button>stays</button>
+                        <button>inside</button>
+                        <button>the modal</button>
+                    </form>
+                </Modal>
+
             </div>
         );
     }
