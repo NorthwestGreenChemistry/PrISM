@@ -1,8 +1,10 @@
-
 # Production & Manufacturing
 
-### Goal
+## Goal
+
 To produce and manufacture products in a way that maximizes resource efficiency and eliminates toxic chemicals and pollution in order to protect workers and those who live around the production or manufacturing facility who may be exposed to chemicals and other emissions from production and manufacturing.
+
+## Introduction
 
 Chemicals used in production and manufacturing such as mold release agents or cleaning agents, even in not intentionally added to a product, may still end up in the product as residuals.
 
@@ -15,7 +17,7 @@ For a comprehensive sustainability assessment, manufacturing must consider econo
 
 For a comprehensive sustainability assessment, manufacturing must consider economic, social and environmental impacts. This workbook focuses on Design Principles for Sustainable Green Chemistry and Engineering, an important part of sustainability assessment.
 
-[Image Source: OECD Sustainable Manufacturing Toolkit]("https://www.oecd.org/innovation/green/toolkit/aboutsustainablemanufacturingandthetoolkit.htm")
+[Image Source: OECD Sustainable Manufacturing Toolkit](https://www.oecd.org/innovation/green/toolkit/aboutsustainablemanufacturingandthetoolkit.htm)
 
 ## Examples
 
@@ -26,6 +28,6 @@ Grow Plastics developed a way to produce food packaging such as meat trays made 
 <img src="../assets/3-production/natureworks-laptop.png" width="45%">
  
 
-[Learn more about Grow Plastics]("http://growplastics.com/")<br>
-[Image Source: Grow Plastics]("http://growplastics.com/technology.html")<br>
-[Image Source: NatureWorks]("https://www.natureworksllc.com/What-is-Ingeo/How-Ingeo-is-Made")
+[Learn more about Grow Plastics](http://growplastics.com/)<br>
+[Image Source: Grow Plastics](http://growplastics.com/technology.html)<br>
+[Image Source: NatureWorks](https://www.natureworksllc.com/What-is-Ingeo/How-Ingeo-is-Made)

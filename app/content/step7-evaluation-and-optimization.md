@@ -25,9 +25,9 @@ Filling data gaps can be time- and resource-intensive. All considerations identi
 
 Data gaps in hazard information are also likely. A tiered approach to hazard screening that begins with hazard list screening and moves to intermediate and then more comprehensive approaches to chemical hazard assessment is appropriate. Using life cycle thinking too narrow to focus of the assessment to those elements that discriminate between options helps to limit data needs.
 
-[Go to Resources: Decision Analysis]("#gid=276830480")
+[Go to Resources: Decision Analysis](#gid=276830480)
 
-[Learn more about Chemical Hazard Tools and Methods]("gid=455887437&range=O3")
+[Learn more about Chemical Hazard Tools and Methods](gid=455887437&range=O3)
 
 
 ## Criteria Weighting 
@@ -48,7 +48,7 @@ While tradeoffs may be necessary, baseline limits can be set so that gains in on
 ### Apply Decision Analysis
 In decision analysis, you will use logic models to evaluate information in way that increases clarity around which options are preferred or less preferred. There are a variety of existing frameworks. You can consider options one at a time in a sequential way or, alternatively, you can consider all the the options simultaneously using a mathematical algorithm. Yet another approach is to use some hybrid of these two frameworks.
 
-[Go to Resources: Decision Analysis]("#gid=276830480")
+[Go to Resources: Decision Analysis](#gid=276830480)
 
 
 ## Example
