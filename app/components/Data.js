@@ -31,7 +31,7 @@ class Data {
             //have to do this seven times
             let introStep = {
                 title: "A Long and Descriptive Title",
-                content: ["extraResources/Introduction.md"],
+                content: ["/content/Introduction.md"],
                 questions: "assets/quiz/guiding_questions.json"
             };
             localStorage.setItem('intro', JSON.stringify(introStep));
