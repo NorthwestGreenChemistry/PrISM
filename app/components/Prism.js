@@ -18,10 +18,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
 import Modal from 'react-modal';
+import Form from "react-jsonschema-form";
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
 import jsPDF from 'jspdf'
-import Form from "react-jsonschema-form";
 import electron from 'electron'
 
 
@@ -38,18 +38,12 @@ export default class Prism extends Component<Props> {
         super(props)
         this.data = Data.getInstance()
 
+        console.log('get all products', this.data.getAllProducts());
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: (() => {
-                let value = this.data.getAllProducts()[this.data.getDefault()]
-                if (typeof value != 'undefined') {
-                    return value
-                } else {
-                    return ''
-                }
-            })(),
-            activeProductId: this.data.getDefault(),
+            dropdownSelection: "",
+            activeProductId: "",
             productName: "",
             products: this.data.getAllProducts()
         }
@@ -61,8 +55,7 @@ export default class Prism extends Component<Props> {
 
     handleClick = (step) => {
         console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
-        if (!this.state.activeProductId
-            || this.state.activeProductId === "") {
+        if (!this.state.activeProductId || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
             console.log('CHOOSE A PRODUCT!')
             return;
@@ -75,11 +68,11 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
+        console.log('inside of handle dropdown change', event.target.value);
         this.setState({
-            dropdownSelection: this.state.products[event.target.value],
+            dropdownSelection: event.target.value,
             activeProductId: event.target.value
         })
-        this.data.setDefault(event.target.value)
     }
 
     handleProductNameChange = (event) => {
@@ -89,11 +82,13 @@ export default class Prism extends Component<Props> {
     createProduct = () => {
         let id = this.uuidv4()
         this.data.createProduct(id, this.state.productName)
+        console.log('creating product', this.state.productName);
+        console.log('all products', this.data.getAllProducts());
         this.setState({
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProductId: id,
+            activeProductId: "",
             dropdownSelection: this.state.productName,
             productName: ""
         })
@@ -161,14 +156,12 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.selector}>
                     <Select
-                        renderValue={() => {return this.state.dropdownSelection}}
-                        displayEmpty={true}
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange} >
-                        {Object.keys(this.state.products).map((key) => {
+                        onChange={this.handleDropdownChange}  >
+                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        })}
+                        }) : null }
                         <MenuItem value="new-product">--New Product--</MenuItem>
                     </Select>
 
@@ -184,58 +177,59 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 <Grid container className={styles.wheel} spacing={16}>
-                    <Grid item xs={7}>
+                    <Grid item xs={6}>
                         <Wheel onWheelClick={this.wheelClick} />
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item xs={6}>
                         <h3>
-                            PrISM Progress
+                            Your Progress
                         </h3>
 
                         <List component="nav">
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(1)}}>
                                 <ListItemIcon>
                                     <Icon>check_circle</Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 1" />
+                                <ListItemText className={styles.stepItem} inset primary="01 Design Goals" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(2)}}>
                                 <ListItemIcon>
                                     <Icon>check_circle</Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 2" />
+                                <ListItemText className={styles.stepItem} inset primary="02 Feedstock" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(3)}}>
                                 <ListItemIcon>
                                     <Icon></Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 3" />
+                                <ListItemText className={styles.stepItem} inset primary="03 Production" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(4)}}>
                                 <ListItemIcon>
                                     <Icon></Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 4" />
+                                <ListItemText className={styles.stepItem} inset primary="04 Use" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(5)}}>
                                 <ListItemIcon>
                                     <Icon></Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 5" />
+                                <ListItemText className={styles.stepItem} inset primary="05 End of Life" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(6)}}>
                                 <ListItemIcon>
                                     <Icon></Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 6" />
+                                <ListItemText className={styles.stepItem} inset primary="06 Whole Product" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button onClick={() => {this.handleClick(7)}}>
                                 <ListItemIcon>
                                     <Icon></Icon>
                                 </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="Step 7" />
+                                <ListItemText className={styles.stepItem} inset primary="07 Evaluation & Optimization" />
                             </ListItem>
                         </List>
+                        <hr />
 
                         <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
                             Generate Report PDF

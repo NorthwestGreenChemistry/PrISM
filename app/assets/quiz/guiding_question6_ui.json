@@ -1,0 +1,26 @@
+{
+    "firstquestion": {
+        "ui:widget": "textarea"
+    },
+    "secondquestion": {
+        "ui:widget": "textarea"
+    },
+    "production": {
+        "question": {
+            "ui:widget": "checkboxes",
+            "ui:options": {
+                "inline": "true"
+            }
+        }
+    },
+    "priorities": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "overall": {
+        "standards": {
+            "ui:widget": "checkboxes"
+        }
+    }
+}
