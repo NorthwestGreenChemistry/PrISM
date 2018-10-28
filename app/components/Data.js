@@ -8,6 +8,7 @@ localStorage.setItem('myKey', JSON.stringify(myValue));
 
 type Props = {};
 
+const ALL_PRODUCTS = 'allProducts';
 
 class Data {
 
@@ -73,16 +74,28 @@ class Data {
     //TODO: add something that returns list of all product-id's
 
     createProduct = (id, prettyName) => {
+        if (id === undefined || id === '') {
+            return new Error;
+        }
 
+        let productTable = JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+
+        if (!productTable) {
+            productTable = {};
+        }
+
+        productTable[id] = prettyName;
+        localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
     }
 
-    getAllProducts = {
-
+    // object id key and value prettyname
+    getAllProducts = () => {
+        return !localStorage.getItem(ALL_PRODUCTS) ? {} : JSON.parse(localStorage.getItem(ALL_PRODUCTS));
     }
 
-    //returns to you list of all steps along with their answers
+    // returns to you list of all steps along with their answers
     getAnswers = (id) => {
-        return id;
+        return JSON.parse(localStorage.getItem(id));
     }
 
     storeAnswer = (id, stepKey, formData) => {

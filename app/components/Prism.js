@@ -27,7 +27,7 @@ export default class Prism extends Component<Props> {
             dropdownSelection: "",
             activeProduct: "",
             productName: "",
-            products: {abc: "test product", def:"another test product"}
+            products: this.data.getAllProducts()
         }
 
         this.handleClick = this.handleClick.bind(this)
@@ -53,15 +53,14 @@ export default class Prism extends Component<Props> {
 
     createProduct = (event) => {
         let id = this.uuidv4()
-        console.log('new id is', id); 
         this.data.createProduct(id, this.state.productName)
         this.setState({
             products: {
-                ...this.state.products,
-                ...{id: this.state.productName}
+                ...this.data.getAllProducts(),
             },
             activeProduct: id,
-            dropdownSelection: this.state.productName
+            dropdownSelection: this.state.productName,
+            productName: ""
         })
     }
 
