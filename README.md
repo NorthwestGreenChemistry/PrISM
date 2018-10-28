@@ -1,6 +1,6 @@
 # PrISM
 
-<img src="/app/assets/prism-wheel.png" width="400" height="460" alt="Prism Wheel">
+<img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
 
 **What is this?**
 The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) created by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It is intended to support material product designers in developing products based on sustainable green chemistry and engineering design principles.
@@ -61,7 +61,7 @@ $ yarn package-all
 ## How to add modules to the project
 
 There have been several modules added to this project, including [material-ui](http://www.material-ui.com/) to reuse react UI components.
-Data is managed client-side using [CouchDB](http://couchdb.apache.org/).
+Data is managed client-side with local storage.
 
 ⚠️ Please read the following section before installing any dependencies ⚠️
 

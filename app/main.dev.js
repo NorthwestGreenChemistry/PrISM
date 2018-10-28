@@ -66,6 +66,9 @@ app.on('ready', async () => {
         height: 728
     });
 
+    //this opens up dev tools, remove in production
+    mainWindow.webContents.openDevTools();
+
     mainWindow.loadURL(`file://${__dirname}/app.html`);
 
     // @TODO: Use 'ready-to-show' event
