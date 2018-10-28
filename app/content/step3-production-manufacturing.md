@@ -10,6 +10,7 @@ Strategies for meeting the goal require knowing the chemicals used and produced 
 
 Maximizing resource efficiency requires measuring the use of energy, water, materials used and the generation of waste in order to benchmark a product against other products or to guide efficiency improvements.
 
+For a comprehensive sustainability assessment, manufacturing must consider economic, social and environmental impacts.  This workbook focuses on Design Principles for Sustainable Green Chemistry and Engineering, an important part of sustainability assessment.
 <img src="../assets/3-production/economy-society-environment.png" width="40%">
 
 For a comprehensive sustainability assessment, manufacturing must consider economic, social and environmental impacts. This workbook focuses on Design Principles for Sustainable Green Chemistry and Engineering, an important part of sustainability assessment.

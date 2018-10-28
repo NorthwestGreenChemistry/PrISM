@@ -25,7 +25,6 @@
     "postinstall": "node -r babel-register internals/scripts/CheckNativeDep.js && yarn flow-typed && yarn build-dll && electron-builder install-app-deps package.json",
     "postlint-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{*{js,jsx,json},babelrc,eslintrc,prettierrc,stylelintrc}'",
     "postlint-styles-fix": "prettier --ignore-path .eslintignore --single-quote --write '**/*.{css,scss}'",
-    "precommit": "lint-staged",
     "prestart": "yarn build",
     "start": "cross-env NODE_ENV=production electron ./app/",
     "start-main-dev": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./app/main.dev.js",
@@ -60,6 +59,7 @@
   "build": {
     "productName": "ElectronReact",
     "appId": "org.develar.ElectronReact",
+    "extraResources": ["./extraResources/**"],
     "files": [
       "dist/",
       "node_modules/",
@@ -98,7 +98,7 @@
       "category": "Development"
     },
     "directories": {
-      "buildResources": "resources",
+      "buildResources": "extraResources",
       "output": "release"
     }
   },
@@ -181,6 +181,7 @@
     "electron": "^2.0.6",
     "electron-builder": "^20.26.0",
     "electron-devtools-installer": "^2.2.4",
+    "electron-installer-dmg": "^2.0.0",
     "electron-rebuild": "^1.8.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -203,14 +204,19 @@
     "flow-bin": "^0.77.0",
     "flow-runtime": "^0.17.0",
     "flow-typed": "^2.5.1",
+    "fs": "0.0.1-security",
+    "html-loader": "^0.5.5",
     "husky": "^0.14.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.4.2",
     "lint-staged": "^7.2.0",
+    "markdown-loader": "^4.0.0",
     "mini-css-extract-plugin": "^0.4.1",
     "node-sass": "^4.9.2",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
     "prettier": "^1.14.3",
+    "process": "^0.11.10",
+    "raw-loader": "^0.5.1",
     "react-test-renderer": "^16.4.1",
     "redux-logger": "^3.0.6",
     "rimraf": "^2.6.2",
@@ -246,6 +252,7 @@
     "react-hot-loader": "^4.3.4",
     "react-jsonschema-form": "1.0.5",
     "react-markdown": "^4.0.3",
+    "react-md-file": "^1.1.0",
     "react-modal": "^3.6.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",

@@ -16,12 +16,29 @@
     margin-top: 10px !important;
 }
 
+.stepHeader {
+    color: darkslategray;
+    text-align: center;
+}
+
 .wheel {
     position: absolute;
     top: 10%;
     left: 10%;
     width: 80%;
     height: 80%;
+}
+
+.contentMarkdown {
+    color: black;
+}
+
+.contentMarkdown h1 {
+    font-size: 130%;
+}
+
+.contentMarkdown p {
+    font-size: 100% !important;
 }
 
 .wheelSection:hover {

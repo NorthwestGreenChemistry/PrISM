@@ -12,40 +12,55 @@ const ALL_PRODUCTS = 'allProducts';
 
 class Data {
 
-    constructor() {
+    static getInstance() {
         if (Data.singleton) {
-            console.log('already created');
             return Data.singleton;
         }
 
-        Data.singleton = this;
+        Data.singleton = new Data();
 
         let openedIsDefined = localStorage.getItem('opened');
         if (!openedIsDefined) {
             localStorage.setItem('opened', 'false');
         }
 
-
         let stepsIsDefined = localStorage.getItem('steps');
         if (!stepsIsDefined) {
             //have to do this seven times
             let introStep = {
-                title: "A Long and Descriptive Title",
+                title: "Introduction and Design Principles",
                 content: ["/content/Introduction.md"],
                 questions: "assets/quiz/guiding_questions.json"
             };
-            localStorage.setItem('intro', JSON.stringify(introStep));
+            localStorage.setItem("1", JSON.stringify(introStep));
 
             let scopeStep = {
-                title: "A Scope Title",
-                content: ["/content/Step1ScopingandGoals.md"],
+                title: "Scoping, Problem Formulation & Design Goals",
+                content: ["/content/step1-scoping-and-goals.md"],
                 questions: "assets/quiz/guiding_questions.json"
             };
 
-            localStorage.setItem('scope', JSON.stringify(scopeStep));
+            localStorage.setItem("2", JSON.stringify(scopeStep));
+
+            let feedstockStep = {
+                title: "Feedstock",
+                content: ["/content/step2-feedstock.md"],
+                questions: "assets/quiz/guiding_questions.json"
+            };
+
+            localStorage.setItem("3", JSON.stringify(feedstockStep));
         }
 
         return Data.singleton;
+    }
+
+    setDefault(id) {
+        localStorage.setItem("defaultId", id);
+    }
+
+    getDefault() {
+        //TODO: if there's a built-in function that can grab us non-null out of two values let's do that
+        return !localStorage.getItem("defaultId") ? "" : localStorage.getItem("defaultId");
     }
 
     checkIfFirstTime() { //assumes that Data Constructor has already been called
@@ -66,12 +81,12 @@ class Data {
 
     getContentList = (step) => {
         let stepString = localStorage.getItem(step);
+        if (!stepString) {
+            return [];
+        }
         let stepObj = JSON.parse(stepString);
         return stepObj.content;
     }
-
-    //TODO: add pretty name associated with the id
-    //TODO: add something that returns list of all product-id's
 
     createProduct = (id, prettyName) => {
         if (id === undefined || id === '') {
