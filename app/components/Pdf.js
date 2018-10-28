@@ -9,44 +9,11 @@ export default class Pdf {
     savePdf() {
         var doc = new jsPDF()
 
-        let data = {
-            "productName": "Pumpkin Butter",
-            "steps": [
-                {
-                    "title": "01 Design Goals",
-                    "completed": true,
-                    "results": [
-                        {
-                            "question": "What was the name of your first pony?",
-                            "answer": "Theodore"
-                        },
-                        {
-                            "question": "How many hotdogs can you eat?",
-                            "answer": "seven"
-                        },
-                        {
-                            "question": "Select all the games you play",
-                            "answer": [
-                                "Mario Bros.",
-                                "Pacman",
-                                "BurgerTime"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "title": "02 Feedstock",
-                    "completed": false,     // Should only be false if no answers at all
-                    "results": null
-                }
-            ]
-        }
-
         let html = `
             <h1>PrISM by Northwest Green Chemistry</h1>
         `;
 
-        for (let step of data.steps) {
+        for (let step of this.data.steps) {
             html += this.renderStep(step);
         }
 
@@ -54,7 +21,7 @@ export default class Pdf {
             'width': 170
         });
 
-        doc.save('PrISM ' + data.productName + '.pdf')
+        doc.save('PrISM ' + this.data.productName + '.pdf')
     }
 
     renderStep(step) {
@@ -96,5 +63,5 @@ export default class Pdf {
         `;
         return resultHtml;
     }
-    
+
 }

@@ -14,11 +14,9 @@ import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
 import Modal from 'react-modal'
 import Form from "react-jsonschema-form"
 import ReactMarkdown from 'react-markdown'
-import fs from 'fs'
 import electron from 'electron'
 
 
@@ -35,7 +33,6 @@ export default class Prism extends Component<Props> {
         super(props)
         this.data = Data.getInstance()
 
-        console.log('get all products', this.data.getAllProducts());
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
@@ -48,8 +45,6 @@ export default class Prism extends Component<Props> {
         }
 
         ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
-
-        console.log('INITIAL STATE', this.state)
     }
 
     handleClick = (step) => {
@@ -97,7 +92,7 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        let pdf = new Pdf(this.data);
+        let pdf = new Pdf(this.data.getPDFContent(this.state.activeProductId));
         pdf.savePdf();
     }
 
@@ -138,14 +133,20 @@ export default class Prism extends Component<Props> {
     }
 
     submitAnswers = (form) => {
+        console.log('submit answers! ', form);
         this.data.storeAnswer(
             this.state.activeProductId,
             this.state.displayStep,
             form.formData);
 
-        let nextStep = this.data.getNextStep(this.state.displayStep);
+        this.data.setPDFStepResults(
+            this.state.activeProductId,
+            this.state.displayStep,
+            form.schema,
+            form.formData
+        );
 
-        console.log('curr step!', this.state.displayStep, 'next step!', nextStep);
+        let nextStep = this.data.getNextStep(this.state.displayStep);
 
         if (!nextStep) { //if there's no next step then we're on the final step
             this.closeModal();
@@ -193,7 +194,6 @@ export default class Prism extends Component<Props> {
                 .then((text) =>{
                     let mdFiles = this.state.markdownFiles;
                     mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
-                    console.log('updated md files', mdFiles);
                     this.setState({
                         markdownFiles: mdFiles
                     })
@@ -214,7 +214,6 @@ export default class Prism extends Component<Props> {
                 .then((json) =>{
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.schema = json
-                    console.log('form schema obj', formSchemaObj)
                     this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
 
@@ -225,7 +224,6 @@ export default class Prism extends Component<Props> {
                 .then((json) =>{
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.uiSchema = json
-                    console.log('grabbing json ui schema', formSchemaObj)
                     this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
         }
