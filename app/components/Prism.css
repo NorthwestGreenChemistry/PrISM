@@ -41,6 +41,14 @@
     font-size: 100% !important;
 }
 
+.contentMarkdown a {
+    color: dodgerblue;
+}
+
+.contentMarkdown ul li {
+    list-style-type: disc;
+}
+
 .wheelSection:hover {
     cursor: pointer;
 }
