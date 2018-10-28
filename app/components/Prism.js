@@ -35,6 +35,7 @@ export default class Prism extends Component<Props> {
             dropdownSelection: "",
             activeProductId: "",
             productName: "",
+            activeForm: {},
             markdownFiles: [],
             products: this.data.getAllProducts()
         }
@@ -56,6 +57,7 @@ export default class Prism extends Component<Props> {
         })
 
         this.loadMDFiles(step);
+        this.loadSchemaFiles(step);
     }
 
     handleDropdownChange = (event) => {
@@ -136,39 +138,45 @@ export default class Prism extends Component<Props> {
 
     //takes in list of files
     loadSchemaFiles = (step) => {
-        this.data.getContentList(step).map((mdPath) => {
-            fetch(mdPath)
+        if (step > 0) {
+            let questionFile = this.data.getQuestionFile(step);
+            let questionUIFile = this.data.getQuestionUIFile(step);
+
+            fetch(questionFile)
                 .then((resp) => {
-                    return resp.text();
+                    return resp.json();
                 })
-                .then((text) =>{
-                    let mdFiles = this.state.markdownFiles;
-                    mdFiles.push(<ReactMarkdown key={mdPath} source={text}/>)
-                    console.log('updated md files', mdFiles);
-                    this.setState({
-                        markdownFiles: mdFiles
-                    })
-                });
-        })
+                .then((json) =>{
+                    console.log('grabbing json', json)
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.schema = json
+                    this.setState({formSchemaObj})
+                })
+
+            fetch(questionUIFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    // console.log('grabbing json', json);
+                    // this.setState({
+                    //     activeForm: {
+                    //         ...this.state.activeForm,
+                    //         uiSchema: json
+                    //     }
+                    // })
+
+                    console.log('grabbing json ui schema', json)
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.uiSchema = json
+                    this.setState({formSchemaObj})
+                })
+        }
     }
 
 
     render() {
-        let schema = null;
-        let uiSchema = null;
-
-        // if (this.state.displayStep > 0) {
-        //     let questionFile = this.data.getQuestionFile(this.state.displayStep);
-        //     let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
-        //
-        //     try {
-        //         schema = JSON.parse(fs.readFileSync(questionFile).toString());
-        //         uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
-        //     } catch(err) {
-        //         console.log(err);
-        //     }
-        // }
-
+        console.log('state change!', this.state.activeForm);
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
         let formData = {}
         if (allAnswers && this.state.displayStep) {
@@ -222,12 +230,13 @@ export default class Prism extends Component<Props> {
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-                    {/*{this.state.activeProductId && this.state.displayStep > 0 ?*/}
-                        {/*<Form formData={formData}*/}
-                              {/*schema={schema}*/}
-                              {/*uiSchema={uiSchema}*/}
-                              {/*onSubmit={this.submitAnswers}*/}
-                            {/*/> : null}*/}
+                    {this.state.activeProductId && this.state.displayStep > 0
+                        && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
+                        <Form formData={formData}
+                              schema={this.state.activeForm.schema}
+                              uiSchema={this.state.activeForm.uiSchema}
+                              onSubmit={this.submitAnswers}
+                            /> : null}
                 </Modal>
 
             </div>
