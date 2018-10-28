@@ -1,0 +1,16 @@
+{
+    "title": "Guiding Questions: Evaluation and Optimization",
+    "type": "object",
+    "properties": {
+        "firstquestion": {
+            "title": "How does this product compare to other products or systems that provide this same service?",
+            "description": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product.",
+            "type": "string"
+        },
+        "secondquestion": {
+            "title": "Where are the 'hotspots' or primary impact areas in your products versus other products that provide the same service?",
+            "description": "How might you make improvements?",
+            "type": "string"
+        }
+    }
+}

@@ -43,7 +43,7 @@
                             "Feedstock not a priority."
                         ]
                     },
-                    "uniquItems": "true"
+                    "uniqueItems": "true"
                 }
             }
         },
@@ -54,18 +54,23 @@
                 "question": {
                     "title": "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?",
                     "description": "Are you planning to avoid the use of certain chemicals such as those on Manufacturing Restricted Substances Lists (MRSLs)? Please select all that apply.",
-                    "enum": [
-                        "Minimize water consumption.",
-                        "Minimize waste generation.",
-                        "Minimize energy usage.",
-                        "Reduce GHG emissions / carbon neutral / carbon negative.",
-                        "Reduce/eliminate other life cycle impacts (fill in the blank).",
-                        "reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
-                        "reduce/eliminate process carcinogens.",
-                        "reduce other hazard process chemicals (fill in the blank).",
-                        "Other (fill in the blank).",
-                        "Production & Manufacturing not a priority."
-                    ]
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Minimize water consumption.",
+                            "Minimize waste generation.",
+                            "Minimize energy usage.",
+                            "Reduce GHG emissions / carbon neutral / carbon negative.",
+                            "Reduce/eliminate other life cycle impacts (fill in the blank).",
+                            "reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
+                            "reduce/eliminate process carcinogens.",
+                            "reduce other hazard process chemicals (fill in the blank).",
+                            "Other (fill in the blank).",
+                            "Production & Manufacturing not a priority."
+                        ]
+                    },
+                    "uniqueItems": "true"
                 }
             }
         },
@@ -75,18 +80,23 @@
             "properties": {
                 "question": {
                     "title": "Are you designing the product to contain only ingredients that are recognized as inherently safer such as those on the EPA Safer Chemical Ingredient List (SCIL)? Or are you avoiding chemicals of concern such as those identified on sector-based Restricted Substances Lists (RSLs). ",
-                    "enum": [
-                        "Use only safer chemicals (e.g. US EPA Safer Chemical Ingredient List (SCIL)",
-                        "CleanGredients",
-                        "TCO approved plasticizers",
-                        "Cradle to Cradle (C2C) certified)",
-                        "reduce chemicals on RSLs.",
-                        "reduce carcinogens.",
-                        "reduce other hazardous chemicals (fill in the blank).",
-                        "Reduce VOCs.",
-                        "Other (fill in the blank).",
-                        "Use phase is not a priority."
-                    ]
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Use only safer chemicals (e.g. US EPA Safer Chemical Ingredient List (SCIL)",
+                            "CleanGredients",
+                            "TCO approved plasticizers",
+                            "Cradle to Cradle (C2C) certified)",
+                            "reduce chemicals on RSLs.",
+                            "reduce carcinogens.",
+                            "reduce other hazardous chemicals (fill in the blank).",
+                            "Reduce VOCs.",
+                            "Other (fill in the blank).",
+                            "Use phase is not a priority."
+                        ]
+                    },
+                    "uniqueItems": "true"
                 }
             }
         },
@@ -106,24 +116,34 @@
                 },
                 "attributes": {
                     "title": "What attributes are you seeking to meet your longevity goal?",
-                    "enum": [
-                        "Durable",
-                        "Repairable",
-                        "Biodegradable",
-                        "Compostable",
-                        "Other (fill in the blank)"
-                    ]
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Durable",
+                            "Repairable",
+                            "Biodegradable",
+                            "Compostable",
+                            "Other (fill in the blank)"
+                        ]
+                    },
+                    "uniqueItems": "true"
                 },
                 "recycling": {
                     "title": "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?",
-                    "enum": [
-                        "Recyclable.",
-                        "Biodegradable (Marine/Litter).",
-                        "Compostable (Home vs Industrial).",
-                        "Biodegradable (WWTP).",
-                        "Take-apart-able (need better word.)",
-                        "Other (fill in the blank)"
-                    ]
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Recyclable.",
+                            "Biodegradable (Marine/Litter).",
+                            "Compostable (Home vs Industrial).",
+                            "Biodegradable (WWTP).",
+                            "Take-apart-able (need better word.)",
+                            "Other (fill in the blank)"
+                        ]
+                    },
+                    "uniqueItems": "true"
                 }
             }
         },
@@ -133,11 +153,13 @@
             "properties": {
                 "standards": {
                     "title": "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?",
+                    "type": "string",
                     "description": "Two examples of certifications that help identify chemicals, materials or products with sustainable green chemistry and engineering attributes.  USDA Certified Biobased certification confirms claims about the use of biobased feedstock.  FMD is a program by ToxServices that ensures full materials disclosure and assurance that no chemicals in a product are substances of very high concern or on the Zero Discharge of Hazardous Chemicals Manufacturing and Product Restricted Substances Lists.",
                     "enum": ["Yes", "No/Don't know"]
                 },
                 "lifeCycle": {
                     "title": "Are you striving for specific life cycle improvements compared to other products that provide the same service?",
+                    "type": "string",
                     "enum": ["Yes", "No/Don't know"]
                 }
             }
