@@ -15,7 +15,7 @@ export default class Home extends Component<Props> {
         return (
             <div className={styles.container} data-tid="container">
                 <ReactMarkdown source="# Northwest Green Chemistry" />
-                <Link to={routes.PRISM}> next </Link>
+                <Link to={routes.PRISM}> <i className="fa fa-arrow-left fa-3x" /> </Link>
             </div>
         );
     }
