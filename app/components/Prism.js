@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Prism.css';
 import routes from '../constants/routes';
+import Data from './Data';
 import Button from '@material-ui/core/Button';
 
 
@@ -12,6 +13,8 @@ type Props = {};
 export default class Prism extends Component<Props> {
     constructor(props) {
         super(props);
+        this.data = new Data();
+
         this.state = {
             steps: {
                 '1': false,
@@ -32,6 +35,8 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
+        this.data.storeAnswer("2", "intro", {firstName: "Chu", thirdKey: "another set of values"});
+
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">

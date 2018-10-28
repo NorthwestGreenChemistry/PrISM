@@ -240,6 +240,7 @@
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
+    "pouchdb-adapter-websql": "^7.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
@@ -250,6 +251,7 @@
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "rxdb": "^8.0.2",
     "source-map-support": "^0.5.6"
   },
   "devEngines": {

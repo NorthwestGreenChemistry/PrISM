@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import routes from '../constants/routes';
 import styles from './Home.css';
+import Data from './Data';
 
 type Props = {};
 
