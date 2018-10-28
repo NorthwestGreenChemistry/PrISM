@@ -1,10 +1,5 @@
 import React, { Component } from 'react';
 
-// var localStorage = require('localStorage');
-
-let myValue = {stuff: 'stuff'};
-
-localStorage.setItem('myKey', JSON.stringify(myValue));
 
 type Props = {};
 
@@ -61,9 +56,9 @@ class Data {
         localStorage.setItem("defaultId", id);
     }
 
+    //string representing previously active product id
     getDefault() {
-        //TODO: if there's a built-in function that can grab us non-null out of two values let's do that
-        return !localStorage.getItem("defaultId") ? "" : localStorage.getItem("defaultId");
+        return getNonNull(localStorage.getItem("defaultId"), "");
     }
 
     checkIfFirstTime() { //assumes that Data Constructor has already been called
@@ -114,12 +109,13 @@ class Data {
 
     // object id key and value prettyname
     getAllProducts = () => {
-        return !localStorage.getItem(ALL_PRODUCTS) ? {} : JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+        return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS), {}));
     }
 
-    // returns to you list of all steps along with their answers
+    // returns map of all steps along with their answers
     getAnswers = (id) => {
-        return JSON.parse(localStorage.getItem(id));
+        console.log('calling get answers with', id);
+        return getNonNull(JSON.parse(localStorage.getItem(id), {}));
     }
 
     storeAnswer = (id, stepKey, formData) => {
@@ -143,7 +139,16 @@ class Data {
             localStorage.setItem(id, JSON.stringify(stepsObj));
         }
     }
+}
 
+
+//helper function for picking non-null values
+//out of two values. See getAnswers() and getProducts() for examples
+
+//val should be a call that MAY evaluate to null
+//val2 should NEVER be null
+function getNonNull(val, val2) {
+    return val != null ? val : val2;
 }
 
 export default Data;

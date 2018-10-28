@@ -30,11 +30,13 @@ export default class Prism extends Component<Props> {
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
-            dropdownSelection: "",
-            activeProduct: this.data.getDefault(),
+            dropdownSelection: this.data.getAllProducts()[this.data.getDefault()],
+            activeProductId: this.data.getDefault(),
             productName: "",
             products: this.data.getAllProducts()
         }
+
+        console.log('INITIAL STATE', this.state);
 
         this.handleClick = this.handleClick.bind(this);
         this.wheelClick = this.wheelClick.bind(this);
@@ -42,7 +44,9 @@ export default class Prism extends Component<Props> {
     }
 
     handleClick(step) {
-        if (this.state.activeProduct === "") {
+        console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
+        if (!this.state.activeProductId
+            || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
             console.log('CHOOSE A PRODUCT!');
             return;
@@ -55,11 +59,13 @@ export default class Prism extends Component<Props> {
     }
 
     handleDropdownChange = (event) => {
+        console.log('why the fuck is this event not working kEY', event.target.key);
+        console.log('why the fuck is this event not working', event.target.value);
         this.setState({
-            dropdownSelection: event.target.value,
-            activeProduct: event.target.key
+            dropdownSelection: this.state.products[event.target.value],
+            activeProductId: event.target.value
         })
-        // this.data.setDefault(event.target.key) //TODO: fix this, setting default not working
+        this.data.setDefault(event.target.value)
     }
 
     handleProductNameChange = (event) => {
@@ -73,10 +79,16 @@ export default class Prism extends Component<Props> {
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProduct: id,
+            activeProductId: id,
             dropdownSelection: this.state.productName,
             productName: ""
         })
+    }
+
+    submitAnswers = (form) => {
+        this.data.storeAnswer(this.state.activeProductId,
+            this.state.displayStep,
+            form.formData);
     }
 
     closeModal() {
@@ -112,6 +124,12 @@ export default class Prism extends Component<Props> {
             }
         }
 
+        let allAnswers = this.data.getAnswers(this.state.activeProductId);
+        let formData = {}
+        if (allAnswers && this.state.displayStep) {
+            formData = allAnswers[this.state.displayStep]
+        }
+
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -122,6 +140,8 @@ export default class Prism extends Component<Props> {
 
                 <div className={styles.selector}>
                     <Select
+                        renderValue={() => {return this.state.dropdownSelection}}
+                        displayEmpty={true}
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
                         onChange={this.handleDropdownChange} >
@@ -162,8 +182,12 @@ export default class Prism extends Component<Props> {
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-
-                    {this.state.displayStep > 0 ? <Form schema={schema} uiSchema={uiSchema} /> : null}
+                    {this.state.activeProductId && this.state.displayStep > 0 ?
+                        <Form formData={formData}
+                              schema={schema}
+                              uiSchema={uiSchema}
+                              onSubmit={this.submitAnswers}
+                            /> : null}
                 </Modal>
 
             </div>
