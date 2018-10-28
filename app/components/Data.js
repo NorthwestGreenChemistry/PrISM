@@ -31,7 +31,7 @@ class Data {
             //have to do this seven times
             let introStep = {
                 title: "A Long and Descriptive Title",
-                content: ["/content/Introduction.md"],
+                content: ["extraResources/Introduction.md"],
                 questions: "assets/quiz/guiding_questions.json"
             };
             localStorage.setItem('intro', JSON.stringify(introStep));
@@ -66,6 +66,9 @@ class Data {
 
     getContentList = (step) => {
         let stepString = localStorage.getItem(step);
+        if (!stepString) {
+            return [];
+        }
         let stepObj = JSON.parse(stepString);
         return stepObj.content;
     }

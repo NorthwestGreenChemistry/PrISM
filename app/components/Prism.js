@@ -11,6 +11,8 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Modal from 'react-modal';
+import ReactMarkdown from 'react-markdown';
+import fs from 'fs';
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
@@ -46,7 +48,7 @@ export default class Prism extends Component<Props> {
     handleClick(event) {
         if (this.state.activeProduct === "") {
             console.log('CHOOSE A PRODUCT!');
-            return; 
+            return;
         }
 
         let step = event.currentTarget.getAttribute('data-step')
@@ -99,6 +101,8 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
+        console.log('current directory', process.cwd());
+        // console.log('markdown', file);
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -162,15 +166,27 @@ export default class Prism extends Component<Props> {
                     contentLabel="Example Modal"
                 >
                     <h2 className={styles.stepHeader}>{this.state.displayStep !== "" ? this.data.getTitle(this.state.displayStep) : null}</h2>
+                    {this.state.displayStep !== "" ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
+                        let fullPath = `${__dirname}` + mdPath;
+
+                        // const fullPath = path.join(path.dirname(__dirname), mdPath);
+                        console.log('mdpath', fullPath);
+
+                        var buf;
+                        try {
+                            buf = fs.readFileSync(fullPath);
+                        } catch (err) {
+                            console.log('error reading md file');
+                        }
+
+                        return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        // fs.readFile(fullPath, function(err, data) {
+                        //     console.log('err', err);
+                        //     console.log('data to string', data.toString());
+                        // });
+                    }) : null}
+
                     <button onClick={this.closeModal}>close</button>
-                    <div>I am a modal</div>
-                    <form>
-                        <input />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <button>the modal</button>
-                    </form>
                 </Modal>
 
             </div>
