@@ -1,31 +1,27 @@
 // @flow
-import path from 'path';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Prism.css';
-import routes from '../constants/routes';
-import Wheel from './Wheel.js';
-import Data from './Data';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Icon from '@material-ui/core/Icon';
-import Modal from 'react-modal';
-import Form from "react-jsonschema-form";
-import ReactMarkdown from 'react-markdown';
-import fs from 'fs';
+import path from 'path'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styles from './Prism.css'
+import routes from '../constants/routes'
+import Wheel from './Wheel'
+import Progress from './Progress'
+import Data from './Data'
+import Button from '@material-ui/core/Button'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Modal from 'react-modal'
+import Form from "react-jsonschema-form"
+import ReactMarkdown from 'react-markdown'
+import fs from 'fs'
 import jsPDF from 'jspdf'
 import electron from 'electron'
 
 
-const ipcRenderer  = electron.ipcRenderer;
+const ipcRenderer = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
 
@@ -185,50 +181,7 @@ export default class Prism extends Component<Props> {
                             Your Progress
                         </h3>
 
-                        <List component="nav">
-                            <ListItem button onClick={() => {this.handleClick(1)}}>
-                                <ListItemIcon>
-                                    <Icon>check_circle</Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="01 Design Goals" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(2)}}>
-                                <ListItemIcon>
-                                    <Icon>check_circle</Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="02 Feedstock" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(3)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="03 Production" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(4)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="04 Use" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(5)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="05 End of Life" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(6)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="06 Whole Product" />
-                            </ListItem>
-                            <ListItem button onClick={() => {this.handleClick(7)}}>
-                                <ListItemIcon>
-                                    <Icon></Icon>
-                                </ListItemIcon>
-                                <ListItemText className={styles.stepItem} inset primary="07 Evaluation & Optimization" />
-                            </ListItem>
-                        </List>
+                        <Progress handleClick={this.handleClick} data={this.data} />
                         <hr />
 
                         <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
