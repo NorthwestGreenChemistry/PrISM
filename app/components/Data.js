@@ -30,14 +30,16 @@ class Data {
             let introStep = {
                 title: "Introduction and Design Principles",
                 content: ["/content/Introduction.md"],
-                questions: "assets/quiz/guiding_questions.json"
+                questions: "app/assets/quiz/guiding_questions1.json",
+                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
             };
             localStorage.setItem("1", JSON.stringify(introStep));
 
             let scopeStep = {
                 title: "Scoping, Problem Formulation & Design Goals",
                 content: ["/content/step1-scoping-and-goals.md"],
-                questions: "assets/quiz/guiding_questions.json"
+                questions: "app/assets/quiz/guiding_questions1.json",
+                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
             };
 
             localStorage.setItem("2", JSON.stringify(scopeStep));
@@ -45,7 +47,8 @@ class Data {
             let feedstockStep = {
                 title: "Feedstock",
                 content: ["/content/step2-feedstock.md"],
-                questions: "assets/quiz/guiding_questions.json"
+                questions: "app/assets/quiz/guiding_questions1.json",
+                questionsUI: "app/assets/quiz/guiding_questions1_ui.json"
             };
 
             localStorage.setItem("3", JSON.stringify(feedstockStep));
@@ -77,6 +80,12 @@ class Data {
         let stepString = localStorage.getItem(step);
         let stepObj = JSON.parse(stepString);
         return stepObj.questions;
+    }
+
+    getQuestionUIFile = (step) => {
+        let stepString = localStorage.getItem(step);
+        let stepObj = JSON.parse(stepString);
+        return stepObj.questionsUI;
     }
 
     getContentList = (step) => {

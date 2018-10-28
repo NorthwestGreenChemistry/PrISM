@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Modal from 'react-modal';
 import ReactMarkdown from 'react-markdown';
 import fs from 'fs';
+import Form from "react-jsonschema-form";
 
 const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
 
@@ -96,6 +97,21 @@ export default class Prism extends Component<Props> {
     }
 
     render() {
+        let schema = null;
+        let uiSchema = null;
+
+        if (this.state.displayStep > 0) {
+            let questionFile = this.data.getQuestionFile(this.state.displayStep);
+            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+
+            try {
+                schema = JSON.parse(fs.readFileSync(questionFile).toString());
+                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
+            } catch(err) {
+                console.log(err);
+            }
+        }
+
         return (
             <div>
                 <div className={styles.backButton} data-tid="backButton">
@@ -131,9 +147,10 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
+                    <Button onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep !== "" ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
+                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
                             let fullPath = `${__dirname}` + mdPath;
                             var buf;
                             try {
@@ -144,7 +161,9 @@ export default class Prism extends Component<Props> {
                             return <ReactMarkdown key={mdPath} source={buf.toString()} />
                         }) : null}
                     </div>
-                    <Button onClick={this.closeModal}>close</Button>
+                    <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
+
+                    {this.state.displayStep > 0 ? <Form schema={schema} uiSchema={uiSchema} /> : null}
                 </Modal>
 
             </div>
