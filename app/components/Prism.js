@@ -105,6 +105,24 @@ export default class Prism extends Component<Props> {
             this.state.activeProductId,
             this.state.displayStep,
             form.formData);
+
+        let nextStep = this.data.getNextStep(this.state.displayStep);
+
+        console.log('curr step!', this.state.displayStep, 'next step!', nextStep);
+
+        if (!nextStep) { //if there's no next step then we're on the final step
+            this.closeModal();
+            return;
+        }
+
+        this.setState({
+            displayStep: nextStep,
+            markdownFiles: [],
+            activeForm: {},
+        })
+
+        this.loadMDFiles(nextStep);
+        this.loadSchemaFiles(nextStep);
     }
 
     closeModal = () => {
@@ -160,10 +178,7 @@ export default class Prism extends Component<Props> {
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.schema = json
                     console.log('form schema obj', formSchemaObj)
-                    this.setState(prevState => ({
-                        ...prevState,
-                        activeForm: formSchemaObj
-                    }))
+                    this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
 
             fetch(questionUIFile)
@@ -174,16 +189,12 @@ export default class Prism extends Component<Props> {
                     var formSchemaObj = {...this.state.activeForm}
                     formSchemaObj.uiSchema = json
                     console.log('grabbing json ui schema', formSchemaObj)
-                    this.setState(prevState => ({
-                        ...prevState,
-                        activeForm: formSchemaObj
-                    }))
+                    this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
         }
     }
 
     render() {
-        console.log('state change!', this.state.activeForm);
         let allAnswers = this.data.getAnswers(this.state.activeProductId);
         let formData = {}
         if (allAnswers && this.state.displayStep) {
