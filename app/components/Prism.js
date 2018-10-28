@@ -6,8 +6,9 @@ import styles from './Prism.css'
 import routes from '../constants/routes'
 import Wheel from './Wheel'
 import Pdf from './Pdf';
-import Progress from './Progress'
+import ProgressItem from './ProgressItem'
 import Data from './Data'
+import List from '@material-ui/core/List'
 import Button from '@material-ui/core/Button'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -98,6 +99,42 @@ export default class Prism extends Component<Props> {
     makePDF = () => {
         let pdf = new Pdf(this.data);
         pdf.savePdf();
+    }
+
+    stepsData = () => {
+        /*
+         * Temporary test JSON blob
+         */
+        return [
+            {
+                "title": "01 Design Goals",
+                "completed": true
+            },
+            {
+                "title": "02 Feedstock",
+                "completed": true
+            },
+            {
+                "title": "03 Production",
+                "completed": true
+            },
+            {
+                "title": "04 Use",
+                "completed": false
+            },
+            {
+                "title": "05 End of Life",
+                "completed": false
+            },
+            {
+                "title": "06 Whole Product",
+                "completed": false
+            },
+            {
+                "title": "07 Evaluation & Optimization",
+                "completed": false
+            }
+        ]
     }
 
     submitAnswers = (form) => {
@@ -202,7 +239,8 @@ export default class Prism extends Component<Props> {
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange}  >
+                        onChange={this.handleDropdownChange}
+                    >
                         {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
                         }) : null }
@@ -229,7 +267,11 @@ export default class Prism extends Component<Props> {
                             Your Progress
                         </h3>
 
-                        <Progress handleClick={this.handleClick} data={this.data} />
+                        <List component="nav">
+                            {this.stepsData().map((step, index) => {
+                                return <ProgressItem handleClick={this.handleClick} step={step} stepCounter={index + 1} />
+                            })}
+                        </List>
                         <hr />
 
                         <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
