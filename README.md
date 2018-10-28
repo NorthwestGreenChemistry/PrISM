@@ -3,14 +3,28 @@
 <img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
 
 **What is this?**
+
 The _PRoduct Innovation and Social Mapping (PrISM™) Tool_ is a project for [Northwest Green Chemistry](https://www.northwestgreenchemistry.org/) created by [Seattle GiveCamp 2018](http://seattlegivecamp.org/) volunteers. It is intended to support material product designers in developing products based on sustainable green chemistry and engineering design principles.
 
 **Where is my data stored?**
-Your data is maintained locally in a file called `prism.json`. It will export at each save and you can load your saved data and re-evaluate at any time.
-Northwest Green Chemistry does not transmit client data to a server or maintain your company data. Please keep track of your local data if you wish to revisit your evaluation.
+
+Your data is maintained in local storage. When you select an existing project that you have worked on previously, you should see your previously-entered answers in the evaluation form. You can load a project you have already created and re-evaluate at any time.
+
+Northwest Green Chemistry does not transmit client data to a server or maintain your company data. Please keep your local project data if you wish to revisit your evaluation.
 
 **How do I download it?**
+
 *TBD after packaging.* 🙃
+
+**How do I use it?**
+
+The first time you open *PrISM*, you'll see an introductory page. Click the right arrow to proceed to navigation.
+
+Choose a product name in the upper right menu if you are returning to a design evaluation, or select `--New Product--` and give the product being evaluated a name.
+
+Select a section of the navigation wheel to begin or proceed with your design evaluation.
+
+You may download a PDF report at any point in the process that should help you identify areas of focus for your design lifecycle.
 
 # For Developers
 
