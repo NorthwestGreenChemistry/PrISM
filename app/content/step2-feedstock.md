@@ -16,15 +16,15 @@ At a minimum, define the primary feedstock used to generate the chemical, materi
 
 ## Example
 ### Examples of renewable feedstocks
-<img src="../assets/2-feedstock/round-wood.png" alt="Round wood and energy crops">
-<img src="../assets/2-feedstock/woody-residues.png" alt="Woody residues">
-<img src="../assets/2-feedstock/dry-herbaceous-residue.png" alt="Dry herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/wet-herbaceous-residue.png" alt="Wet herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/municipal-solid-wastes.png" alt="Municipal solid wastes">
+![Round wood and energy crops](../assets/2-feedstock/round-wood.png)
+![Woody residues](../assets/2-feedstock/woody-residues.png)
+![Dry herbaceous residues and energy crops](../assets/2-feedstock/dry-herbaceous-residue.png)
+![Wet herbaceous residues and energy crops](../assets/2-feedstock/wet-herbaceous-residue.png)
+![Municipal solid wastes](../assets/2-feedstock/municipal-solid-wastes.png)
 
 [Image source: Department of Energy](https://www.energy.gov/eere/bioenergy/biomass-feedstocks/)
 
 ### TidalVision USA uses waste from sustainable fisheries
 [TidalVision USA](https://tidalvisionusa.com/) is an early stage company based in Bellingham, WA that uses fishery wastes to make high value products. They refer to this as ‘upcycling’ because a low value waste material is used to make a high value product.  Their goal is to add value to the sustainable fishing and crabbing industries by generating value from the waste.  The company treats salmon skins to make salmon leather using benign chemical process and makes wallets, purses, and other high value products.  They also process crab waste to make a variety of useful products based on chitosan that is derived from the chitin in the shell wastes.  The founder of the company is an Alaskan fisherman who was disturbed by the scale of fisheries byproduct wastes and became a social and environmental entrepreneur.  He uses wastes from sustainable fisheries to add value to an industry that strives to operate sustainably.
-<img src="../assets/2-feedstock/tidal-vision-pop.png" alt="2 billion pounds of fisheries byproducts are wasted annually in Alaska alone. The waste is dumped back into the ocean or landfills, or sold into very low value markets such as pet/livestock feed. It's also harder for sustainable fisheries to compete with unsustainable competitors on the market. The only way for the industry to grow right now is to catch more fish.">
-<img src="../assets/2-feedstock/tidal-vision.png" alt="wallets made from salmon skin">
+![2 billion pounds of fisheries byproducts are wasted annually in Alaska alone. The waste is dumped back into the ocean or landfills, or sold into very low value markets such as pet/livestock feed. It's also harder for sustainable fisheries to compete with unsustainable competitors on the market. The only way for the industry to grow right now is to catch more fish.](../assets/2-feedstock/tidal-vision-pop.png)
+![wallets made from salmon skin](../assets/2-feedstock/tidal-vision.png)

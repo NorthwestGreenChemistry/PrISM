@@ -34,7 +34,7 @@ Which of the above resources have you used to identify chemicals in your product
 ## Example
 Chart template for creating a chemical inventory and mapping chemical use to life cycle stage. 
 
-<img src="../assets/tool-chemical-inventory/chemical-inventory-template.png" width="80%">
+![image]../assets/tool-chemical-inventory/chemical-inventory-template.png)
 
 ## Tools
 Some organizations offer tools for assisting with building, storing, and using your chemical inventory. These are typically focused on the constituents of the product (use phase inventory) and do not necessarily have space by default for inventorying process and byproduct chemicals. Both of these tools will automate list screening hazard assessments, as well.

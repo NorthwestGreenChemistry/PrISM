@@ -13,7 +13,7 @@ Foundational work on hazard assessment by McDonough Braungart Design Chemistry a
 The approaches that follow differ by the number of hazard endpoints evaluated and the depth to which each endpoint is assessed. With increased depth of chemical assessment comes increased understanding of the human health and the environment hazards associated with a chemical and deeper knowledge of data gaps. However, increased depth of assessment requires greater expertise and cost. 
 
 ### Hazard, exposure, and risk
-<img src="../assets/tool-chemical-hazard-assessment/hazard-v-risk.png" alt="Hazard is something that can potentially cause harm. A shark is an example of something hazardous. Risk is a function of hazard and exposure. Swimming in shark-infested waters is combining hazard - sharks - and exposure to make a very risky activity.">
+![Hazard is something that can potentially cause harm. A shark is an example of something hazardous. Risk is a function of hazard and exposure. Swimming in shark-infested waters is combining hazard - sharks - and exposure to make a very risky activity.](../assets/tool-chemical-hazard-assessment/hazard-v-risk.png)
 
 Image source: [Genetic Literacy Project](https://geneticliteracyproject.org/2018/03/07/iarcs-glyphosate-fiasco-highlights-public-and-regulatory-confusion-over-risk-and-hazard/) 
 
@@ -23,7 +23,7 @@ Green Chemistry is based on the premise that risk is a function of hazard and ex
 ### Classify Hazards for Individual Chemicals
 Each chemical is evaluated against criteria for individual hazard endpoints. For example, GHS uses numbered categories to designate hazard with Category 1 hazards being the most severe.  Most of the other chemical hazard assessment methods use GHS as their base but but then provide more intuitive or descriptive ways of packaging the results.  For example, a chemical that is a Category 1 Carcinogen would be 'red' in a stoplight communication system such as Cradle to Cradle.  It would be High in the US EPA Design for the Environment Criteria for Alternatives Assessment and the GreenScreen that uses a system of High/Medium/Low, etc. to designate hazard levels.  Hazard classifications can also be linked to the presence of chemicals on hazard lists and to GHS hazard phrases.  For example, a chemical that is listed as a Known Carcinogen according to the US National Institutes of Health would also be High or Red for Carcinogenicity in GS or C2C.  The GHS system links Category levels to hazard (H) phrases. For example, a chemical that is a Category 2 Carcinogen is suspected of causing cancer would be labeled H351. And a chemical that is a H400 is very toxic to aquatic life and is Category 1 for Aquatic Toxicity. The hazard phrases associated with a chemical provide a convenient communication method. These hazard phrases can also be integrated into automated list searching schemes and accompanying software.
 
-<img src="../assets/tool-chemical-hazard-assessment/mutagenicity-genotoxicity-table.png" alt="Sample criteria for mutagenicity/genotoxicity from the US EPA DfE program">
+![Sample criteria for mutagenicity/genotoxicity from the US EPA DfE program](../assets/tool-chemical-hazard-assessment/mutagenicity-genotoxicity-table.png)
 (Above) Example Criteria for Mutagenicity/Genotoxicity from the USEPA Design for the Environment Alternatives Assessment Criteria for Hazard Evaluation
 
 [See the full DfE AA Criteria.](https://www.epa.gov/sites/production/files/2014-01/documents/aa_criteria_v2.pdf)
@@ -35,7 +35,7 @@ Other hazards are treated in a more precautionary way because it is very difficu
 
 GHS provide a decision logic classifying the hazards of mixtures sometimes referred to as 'mixture rules'.  Classification may come from measuring the hazards of the mixture such as measuring the pH of a solution.  Or they may be based on the hazard of individual chemicals as described for Carcinogenicity above and illustrated in the image below. 
 
-<img src="../assets/tool-chemical-hazard-assessment/decision-logic-for-mixtures.png" alt="GHS mixture classification guidance for carcinogenicity. It considers the quantity of the chemical in the final mixture and rating of the carcinogenic rating of the chemical, as well as whether the mixture has been tested.">
+![GHS mixture classification guidance for carcinogenicity. It considers the quantity of the chemical in the final mixture and rating of the carcinogenic rating of the chemical, as well as whether the mixture has been tested.](../assets/tool-chemical-hazard-assessment/decision-logic-for-mixtures.png)
 (Above) GHS Mixture Classification Guidance for Carcinogenicity
 
 Image source: [Revision 7 of the Globally Harmonised System of Classification and Labelling (GHS)](https://www.unece.org/fileadmin/DAM/trans/danger/publi/ghs/ghs_rev07/English/ST_SG_AC10_30_Rev7e.pdf)
@@ -66,7 +66,8 @@ The US Environmental Protection Agency Safer Choice Program has created a list o
 ## Hazard Assessment Option 2: Intermediate
 Intermediate CHA methods limit the number of hazard endpoints considered and prescribe a limited set of data sources. The [Quick Chemical Assessment Tool (QCAT)](https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals) developed by the Washington State Department of Ecology builds on the DfE and GreenScreen methods and is designed for use by small and medium enterprises with limited toxicological expertise.
 
-<img src="../assets/tool-chemical-hazard-assessment/qcat.png" alt="QCAT logo" href="https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals">
+![QCAT logo](../assets/tool-chemical-hazard-assessment/qcat.png)
+[QCAT WA Department of Ecology](https://ecology.wa.gov/Regulations-Permits/Guidance-technical-assistance/Preventing-hazardous-waste-pollution/Safer-alternatives/Quick-tool-for-assessing-chemicals)
 
 **Tools and Methods for Completing an Intermediate Hazard Assessment:**
 - [Quick Chemical Assessment Tool (QCAT)](https://fortress.wa.gov/ecy/publications/documents/1404033.pdf)
@@ -77,7 +78,8 @@ Full chemical hazard assessments require expert review and interpretation of the
 
 Computer modeling based on mechanisms of action and structure activity relationships have improved in recent years with the implementation of the REACH program in the European Union which de-emphasizes animal testing. Emerging hazard screening protocols include high throughput screening such as the Tox 21 program at US EPA. In some cases, such as with high throughput screening, the science not yet used for regulatory applications.
 Here is a list of hazard endpoints typically assessed in a comprehensive CHA:
-<img src="../assets/tool-chemical-hazard-assessment/list-of-recommended-hazard-endpoints.png" alt="Endpoints include carcinogenicity, genotoxicity/mutagenicity, reproductive toxicity, developmental toxicity, endocrine activity/disruption, acute mammalian toxicity, specific target organ toxicity - single and repeat dose, neurotoxicity, skin sensitization, respiratory sensitization, eye irritation/corrosion, dermal irritation/corrosion, acute aquatic toxicity, chronic aquatic toxicity, persistence, bioaccumulation, flammability, and explosivity/reactivity. When available, avian, apiary, and terrestrial (earthworm) toxicity are also included.">
+
+![Endpoints include carcinogenicity, genotoxicity/mutagenicity, reproductive toxicity, developmental toxicity, endocrine activity/disruption, acute mammalian toxicity, specific target organ toxicity - single and repeat dose, neurotoxicity, skin sensitization, respiratory sensitization, eye irritation/corrosion, dermal irritation/corrosion, acute aquatic toxicity, chronic aquatic toxicity, persistence, bioaccumulation, flammability, and explosivity/reactivity. When available, avian, apiary, and terrestrial (earthworm) toxicity are also included.](../assets/tool-chemical-hazard-assessment/list-of-recommended-hazard-endpoints.png)
 See [California Office of Environmental Health and Human Assessment (OEHHA)](https://oehha.ca.gov/media/downloads/risk-assessment//gcregtext011912.pdf) for an extensive list of Hazard Traits.
 
 **Tools and Methods for Completing a Comprehensive Chemical Hazard Assessment:**
@@ -121,7 +123,7 @@ Several certification programs exist that evaluate materials for hazard and eith
 
 **The DfE Safer Choice Program:** The US EPA provides guidance to evaluate chemicals and their degradation products for potential impacts on human health and the environment as part of EPA's Safer Choice Program. A product that contains ingredients that pass all requirements qualifies for the Safer Choice label. The program was rebranded from Design for the Environment (DfE) to Safer Choice; some resources may still refer to it as DfE.
 [Learn more about the EPA Design for the Environment Program.](https://www.epa.gov/sites/production/files/2014-01/documents/aa_criteria_v2.pdf)
-<img src="../assets/tool-chemical-hazard-assessment/safer-choice.png" alt="Design for the Environment logo alongside the Safer Choice logo.">
+![Design for the Environment logo alongside the Safer Choice logo.](../assets/tool-chemical-hazard-assessment/safer-choice.png)
 
 **GreenScreen for Safer Chemicals** v1.4 was recently updated with a mixture assessment procedure. The new procedure assesses the hazard of all ingredients and provides a process to generate an overall mixture Benchmark score. Benchmark scores for mixtures are distinguished from Benchmark scores for individual chemicals. Much of this procedure is based on GHS mixture rules.
 [Learn more about the updated GreenScreen for Safer Chemicals assessment procedure.](https://www.greenscreenchemicals.org/static/ee_images/uploads/resources/GreenScreenv1-2_Guidance_Assessment_Procedure_FINAL_2013_9_18.pdf)
@@ -133,4 +135,4 @@ Several certification programs exist that evaluate materials for hazard and eith
 Senior engineering students at Gonzaga University evaluated four clamshell food takeout containers using alternatives assessment: polypropylene with talc, polystyrene, poly lactic acid (PLA) and waste fiber. The students researched the identities of likely additives and residuals based on literature reviews and discussion with polymer chemists. They obtained information from the manufacturers of the PLA and waste fiber products on the presence (or absence) of additives. The students decided to evaluate the polymeric material at the use stage including residual monomers and any performance additives. They also considered potential combustion products produced at the end of life stage based on the likelihood that in Spokane, the containers would be incinerated.
 
 The table below, taken from the full report, shows how a chemical inventory revealed a number of additives in the four take-out containers. The students used QCAT, GSLT, and publicly available GreenScreen reports to evaluate each ingredient for potential hazards.
-<img src="../assets/tool-chemical-hazard-assessment/qcat-gslt-greenscreen-table.png" alt="Components of each different container received the worst possible score. These were typically additives, some present in small quantities in the final product but still concerning due to their high hazard.">
+![Components of each different container received the worst possible score. These were typically additives, some present in small quantities in the final product but still concerning due to their high hazard.](../assets/tool-chemical-hazard-assessment/qcat-gslt-greenscreen-table.png)
