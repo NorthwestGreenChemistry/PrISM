@@ -36,7 +36,11 @@
         }
     },
     "overall": {
-        "standards": {},
-        "lifeCycle": {}
+        "standards": {
+            "ui:widget": "radio"
+        },
+        "lifeCycle": {
+            "ui:widget": "radio"
+        }
     }
 }

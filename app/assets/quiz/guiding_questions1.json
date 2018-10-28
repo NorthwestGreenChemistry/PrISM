@@ -153,11 +153,13 @@
             "properties": {
                 "standards": {
                     "title": "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?",
+                    "type": "string",
                     "description": "Two examples of certifications that help identify chemicals, materials or products with sustainable green chemistry and engineering attributes.  USDA Certified Biobased certification confirms claims about the use of biobased feedstock.  FMD is a program by ToxServices that ensures full materials disclosure and assurance that no chemicals in a product are substances of very high concern or on the Zero Discharge of Hazardous Chemicals Manufacturing and Product Restricted Substances Lists.",
                     "enum": ["Yes", "No/Don't know"]
                 },
                 "lifeCycle": {
                     "title": "Are you striving for specific life cycle improvements compared to other products that provide the same service?",
+                    "type": "string",
                     "enum": ["Yes", "No/Don't know"]
                 }
             }
