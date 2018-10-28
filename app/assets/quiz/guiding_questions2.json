@@ -24,7 +24,7 @@
         },
         "thirdquestion": {
             "title": "Can the feedstock be depleted (i.e., it is not renewable)?",
-            "enum": ["Yes", "No/Don't know"],
+            "enum": ["Yes", "No","Don't know"],
             "type": "string"
         },
         "fourthquestion": {
@@ -39,7 +39,7 @@
         },
         "fifthquestion": {
             "title": "Do you use catalysts?",
-            "enum": ["Yes", "No"],
+            "enum": ["Yes", "No","Don't know"],
             "type": "string"
         }
     }
