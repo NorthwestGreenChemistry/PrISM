@@ -21,7 +21,7 @@ The benefits of the Sequential approach is that it is cost effective.  Data gath
 
 One negative aspect of the Sequential Methodology has limited its use by some organizations.  At the end of the process, the alternatives identified may not include the optimal alternative(s) when one considers all the data simultaneously.  As with most decisions, there are often tradeoffs between criteria.  In the Sequential approach, an alternative may be eliminated early on based on one category, but it may be a preferred alternative based on the full set of criteria.
 
-<img src="../assets/tool-decision-analysis/sequential-decision-analysis.png" width="80%">
+<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-decision-analysis/sequential-decision-analysis.png" width="80%">
 
 Using the parameters of Hazard, Performance, Cost & Availability and Exposure, the above flow chart illustrates how the Sequential approach to decision support would help to identify preferred alternatives.
 
@@ -32,7 +32,7 @@ The benefit of the Simultaneous approach is that it retains more options through
 
 The negative side of the Simultaneous approach is that it is expensive and labor intensive because data are collected on all possible alternatives. In addition, the product developer must create ranking criteria against which all the alternatives are compared. Data gaps may become more of an issue because more data are needed. For these reasons, some organizations opt not to use the Simultaneous approach.
 
-<img src="../assets/tool-decision-analysis/simultaneous-decision-analysis.png" width="80%">
+<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-decision-analysis/simultaneous-decision-analysis.png" width="80%">
 
 Using the parameters of Hazard, Performance, Cost & Availability and Exposure, the above flow chart illustrates how the Simultaneous approach to decision support would help to identify preferred alternatives.
 
@@ -43,12 +43,12 @@ The Hybrid approach has the benefit of addressing to a degree the pros and cons 
 
 Because of its flexibility and its optimized use of resources, the Hybrid approach may be the preferred approach for evaluating alternatives.
 
-<img src="../assets/tool-decision-analysis/hybrid-decision-analysis.png" width="80%">
+<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-decision-analysis/hybrid-decision-analysis.png" width="80%">
 
 The Hybrid Framework combines elements of the Sequential approach and the Simultaneous approach.  First the Sequential approach is used to rule out those options that fail the initial screening criteria.  Them the Simultaneous approach is used to compare all of the remaining options for all of the remaining criteria at the same time.
 
 ## Example
-<img src="../assets/tool-decision-analysis/alternatives-flow-chart.png" width="80%">
+<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-decision-analysis/alternatives-flow-chart.png" width="80%">
 
 Using the parameters of Hazard, Performance, Cost & Availability and Exposure, the above flow chart illustrates how the Hybrid approach to decision support would help to identify preferred alternatives.
 
