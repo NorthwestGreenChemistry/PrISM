@@ -89,7 +89,54 @@
         "waste": {
             "title": "Waste and 'End of Life' (EOL) priorities",
             "type": "object",
-            "properties": {}
+            "properties": {
+                "useLength": {
+                    "title": "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
+                    "description": "Select from a use phase:",
+                    "enum": [
+                        "Very short use phase (<1 day)",
+                        "short use phase (1 day - 2 years)",
+                        "medium use phase (2-12 years)",
+                        "long use phase (>12 years)"
+                    ]
+                },
+                "attributes": {
+                    "title": "What attributes are you seeking to meet your longevity goal?",
+                    "enum": [
+                        "Durable",
+                        "Repairable",
+                        "Biodegradable",
+                        "Compostable",
+                        "Other (fill in the blank)"
+                    ]
+                },
+                "recycling": {
+                    "title": "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?",
+                    "enum": [
+                        "Recyclable.",
+                        "Biodegradable (Marine/Litter).",
+                        "Compostable (Home vs Industrial).",
+                        "Biodegradable (WWTP).",
+                        "Take-apart-able (need better word.)",
+                        "Other (fill in the blank)"
+                    ]
+                }
+            }
+        },
+        "overall": {
+            "title": "Overall Product Considerations",
+            "type": "object",
+            "properties": {
+                "standards": {
+                    "title": "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?",
+                    "description": "Two examples of certifications that help identify chemicals, materials or products with sustainable green chemistry and engineering attributes.  USDA Certified Biobased certification confirms claims about the use of biobased feedstock.  FMD is a program by ToxServices that ensures full materials disclosure and assurance that no chemicals in a product are substances of very high concern or on the Zero Discharge of Hazardous Chemicals Manufacturing and Product Restricted Substances Lists.",
+                    "enum": ["Yes", "No/Don't know"]
+                },
+                "lifeCycle": {
+                    "title": "Are you striving for specific life cycle improvements compared to other products that provide the same service?",
+                    "enum": ["Yes", "No/Don't know"]
+                }
+            }
         }
     }
 }

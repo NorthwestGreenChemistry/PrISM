@@ -23,5 +23,29 @@
                 "inline": "true"
             }
         }
+    },
+    "priorities": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "waste": {
+        "useLength": {
+            "ui:widget": "checkboxes"
+        },
+        "attributes": {
+            "ui:widget": "checkboxes"
+        },
+        "recycling": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "overall": {
+        "standards": {
+            "ui:widget": "checkboxes"
+        },
+        "lifeCycle": {
+            "ui:widget": "checkboxes"
+        }
     }
 }
