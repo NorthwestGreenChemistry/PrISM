@@ -10,7 +10,7 @@ End of life hazards include chemical hazards but also physical hazards from litt
 
 The chemicals and materials in a product can enhance or diminish the value of recycled materials.  They can also cause problems different waste management pathways.  For example, if a toxic and persistent chemical is included in a commercially compostable plastic, the plastic may biodegrade, but the additive will not.  It will stick around and contaminate the compost and make it less valuable.
 
-[Learn more about Cradle to Cradle design.]("https://us.macmillan.com/cradletocradle/williammcdonough/9780865475878/")
+[Learn more about Cradle to Cradle design.](https://us.macmillan.com/cradletocradle/williammcdonough/9780865475878/)
 
 Consider how your product will have the least impact on human health and the environment after use by striving to be near the top of the waste hierarchy. While there are exceptions to the waste hierarchy, the idea of first preventing waste, then recovering the most material value with the least negative life cycle impacts still holds.
 
