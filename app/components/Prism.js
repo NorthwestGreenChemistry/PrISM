@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import styles from './Prism.css'
 import routes from '../constants/routes'
 import Wheel from './Wheel'
+import Pdf from './Pdf';
 import Progress from './Progress'
 import Data from './Data'
 import Button from '@material-ui/core/Button'
@@ -17,7 +18,6 @@ import Modal from 'react-modal'
 import Form from "react-jsonschema-form"
 import ReactMarkdown from 'react-markdown'
 import fs from 'fs'
-import jsPDF from 'jspdf'
 import electron from 'electron'
 
 
@@ -91,10 +91,8 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        var doc = new jsPDF()
-
-        doc.text('Hello world!', 10, 10)
-        doc.save('a4.pdf')
+        let pdf = new Pdf(this.data);
+        pdf.savePdf();
     }
 
     submitAnswers = (form) => {

@@ -98,7 +98,7 @@ export default class MenuBuilder {
                 },
                 { type: 'separator' },
                 {
-                    label: 'Export as PDF',
+                    label: 'Genereate PDF Report',
                     accelerator: 'Command+Shift+E',
                     click: () => {
                         this.mainWindow.webContents.send('SAVE_PDF')
