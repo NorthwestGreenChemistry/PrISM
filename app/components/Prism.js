@@ -242,6 +242,8 @@ export default class Prism extends Component<Props> {
             formData = allAnswers[this.state.displayStep]
         }
 
+        //TODO: make guiding questions header hide if there is no forms
+
         return (
             <div>
                 <Button className={styles.backButton} color="default" data-tid="backButton" >
