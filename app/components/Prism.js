@@ -9,6 +9,7 @@ import Pdf from './Pdf';
 import ProgressItem from './ProgressItem'
 import Data from './Data'
 import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 import Button from '@material-ui/core/Button'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -256,6 +257,7 @@ export default class Prism extends Component<Props> {
                 </Button>
 
                 <div className={styles.selector}>
+                    <ListItem> Choose a Product </ListItem>
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
