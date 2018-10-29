@@ -29,7 +29,6 @@ export default class MenuBuilder {
     }
 
     setupDevelopmentEnvironment() {
-        this.mainWindow.openDevTools();
         this.mainWindow.webContents.on('context-menu', (e, props) => {
             const { x, y } = props;
 
@@ -98,7 +97,7 @@ export default class MenuBuilder {
                 },
                 { type: 'separator' },
                 {
-                    label: 'Genereate PDF Report',
+                    label: 'Generate PDF Report',
                     accelerator: 'Command+Shift+E',
                     click: () => {
                         this.mainWindow.webContents.send('SAVE_PDF')
