@@ -243,7 +243,11 @@ class Data {
     }
 
     checkIfFirstTime() { //assumes that Data Constructor has already been called
-        return localStorage.getItem('opened') === 'true';
+        return localStorage.getItem('opened') === 'false';
+    }
+
+    openedApp() {
+        localStorage.setItem('opened', 'true');
     }
 
     getTitle = (step) => {

@@ -44,13 +44,13 @@ export default class Home extends Component<Props> {
     render() {
         return <div className={styles.container} data-tid="container">
                     <div className={styles.contentMarkdown}>
-                        <Link to={routes.PRISM}>
+                        <Link to={routes.PRISM} onClick={() => {this.data.openedApp()}}>
                             {' '}
                             <i className="fa fa-arrow-right fa-3x" />{' '}
                         </Link>
-                        {this.state.markdownFiles.map(val => {
+                        {this.data.checkIfFirstTime() ? this.state.markdownFiles.map(val => {
                             return val;
-                        })}
+                        }) : null}
                     </div>
                 </div>;
     };
