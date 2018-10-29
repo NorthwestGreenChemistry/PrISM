@@ -3,13 +3,17 @@
         "ui:widget": "textarea"
     },
     "secondquestion": {
-        "ui:widget": "checkboxes"
+        "question": {
+            "ui:widget": "checkboxes"
+        }
     },
     "thirdquestion": {
         "ui:widget": "radio"
     },
     "fourthquestion": {
-        "ui:widget": "checkboxes"
+        "question": {
+            "ui:widget": "checkboxes"
+        }
     },
     "fifthquestion": {
         "ui:widget": "radio"
