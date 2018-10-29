@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import routes from '../constants/routes';
 import styles from './Home.css';
 import Data from './Data';
+import Button from '@material-ui/core/Button';
 
 type Props = {};
 
@@ -13,13 +14,8 @@ export default class Home extends Component<Props> {
         super(props)
         this.data = Data.getInstance();
         this.state = {
-            modalIsOpen: false,
-            displayStep: 0,
-            dropdownSelection: "",
-            activeProductId: "",
-            productName: "",
-            activeForm: {},
-            markdownFiles: []
+            markdownFiles: [],
+            showIntro: false
         };
         this.fetchIntroMarkdown();
     }
@@ -41,14 +37,21 @@ export default class Home extends Component<Props> {
         })
     }
 
+    toggleIntro = () => {
+        this.setState({
+            showIntro: !this.state.showIntro
+        });
+    }
+
     render() {
         return <div className={styles.container} data-tid="container">
                     <div className={styles.contentMarkdown}>
+                        {!this.data.checkIfFirstTime() ? <Button variant="outlined" onClick={this.toggleIntro}>Show Intro</Button> : null}
                         <Link to={routes.PRISM} onClick={() => {this.data.openedApp()}}>
                             {' '}
                             <i className="fa fa-arrow-right fa-3x" />{' '}
                         </Link>
-                        {this.data.checkIfFirstTime() ? this.state.markdownFiles.map(val => {
+                        {this.data.checkIfFirstTime() || this.state.showIntro ? this.state.markdownFiles.map(val => {
                             return val;
                         }) : null}
                     </div>
