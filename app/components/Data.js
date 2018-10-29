@@ -110,13 +110,136 @@ class Data {
         return stepObj.nextStep;
     }
 
-    setDefault(id) {
-        localStorage.setItem("defaultId", id);
+    setPDFStepResults(id, step, schema, formData) {
+        let storageId = "pdf-" + id;
+
+        let pdfResults = localStorage.getItem(storageId);
+        let stepKey = step + " " + schema.title;
+
+        if (!pdfResults) {
+            console.log('a set of pdf results does not exist');
+            let steps = []
+            let results = []
+            Object.keys(schema.properties).forEach((e) => {
+                // let nestedTitle = schema.properties[e].title
+                var question = undefined;
+                var answer = undefined;
+                //temporarily ignoring all types that's NOT string + object
+                if (schema.properties[e].type === 'string') {
+                    question = schema.properties[e].title
+                    console.log('type is string', question);
+                    answer = formData[e];
+                } else if (schema.properties[e].type === 'object') {
+                    console.log('answer type is object', formData[e]);
+
+                    Object.keys(schema.properties[e].properties).forEach((prop) => {
+                        question = schema.properties[e].properties[prop].title;
+                    })
+
+                    //answer obj will always have one prop
+                    Object.keys(formData[e]).forEach((prop) => {
+                        answer = formData[e][prop]
+                    })
+                }
+
+                if (question && answer) {
+                    var qAndA = {
+                        "question": question,
+                        "answer": answer
+                    }
+                    results.push(qAndA);
+                }
+            })
+
+            let stepsVar = {
+                "title": stepKey,
+                "completed": true, //TODO: hook up to Sam's code
+                "results": results
+            }
+            steps.push(stepsVar)
+            var fullObj = {
+                "productName": this.getAllProducts()[id],
+                "steps": steps
+            }
+
+            console.log('creating results for the first time', fullObj);
+            localStorage.setItem(storageId, JSON.stringify(fullObj))
+        } else {
+            let pdfStepsString = localStorage.getItem(storageId);
+            let pdfStepsObj = JSON.parse(pdfStepsString);
+
+            var stepExists = -1;
+            let stepsList = pdfStepsObj.steps;
+
+            stepsList.some(function(el, index) {
+                if (el.title === stepKey) {
+                    stepExists = index;
+                    console.log('updating a step thats in localStorage');
+                    return true;
+                }
+            });
+
+
+            if (stepExists > -1) {
+                stepsList.splice(stepExists, 1);
+            }
+
+            let results = []
+
+
+            Object.keys(schema.properties).forEach((e) => {
+                var question = undefined;
+                var answer = undefined;
+                //temporarily ignoring all types that's NOT string + object
+                if (schema.properties[e].type === 'string') {
+                    question = schema.properties[e].title
+                    console.log('type is string', question);
+                    answer = formData[e];
+                } else if (schema.properties[e].type === 'object') {
+                    console.log('answer type is object', formData[e]);
+
+                    Object.keys(schema.properties[e].properties).forEach((prop) => {
+                        question = schema.properties[e].properties[prop].title;
+                    })
+
+                    //answer obj will always have one prop
+                    Object.keys(formData[e]).forEach((prop) => {
+                        answer = formData[e][prop]
+                    })
+                }
+
+                if (question && answer) {
+                    var qAndA = {
+                        "question": question,
+                        "answer": answer
+                    }
+                    results.push(qAndA);
+                }
+            })
+
+            let stepsVar = {
+                "title": stepKey,
+                "completed": true, //TODO: hook up to Sam's code
+                "results": results
+            }
+
+            stepsList.push(stepsVar)
+            pdfStepsObj.steps = stepsList;
+
+            console.log('the step + id already existed, new val is', pdfStepsObj)
+            localStorage.setItem(storageId, JSON.stringify(pdfStepsObj));
+        }
     }
 
-    //string representing previously active product id
-    getDefault() {
-        return getNonNull(localStorage.getItem("defaultId"), "");
+    getPDFContent(id) {
+        //todo: backfill the other empty sections
+        let storageId = "pdf-" + id;
+        let stepString = localStorage.getItem(storageId);
+        if (!stepString) {
+            return undefined;
+        }
+
+        return JSON.parse(stepString);
     }
 
     checkIfFirstTime() { //assumes that Data Constructor has already been called

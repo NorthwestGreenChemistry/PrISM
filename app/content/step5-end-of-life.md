@@ -16,7 +16,7 @@ The chemicals and materials in a product can enhance or diminish the value of re
 
 Consider how your product will have the least impact on human health and the environment after use by striving to be near the top of the waste hierarchy. While there are exceptions to the waste hierarchy, the idea of first preventing waste, then recovering the most material value with the least negative life cycle impacts still holds.
 
-<img src="../assets/5-end-of-life/lansinks-ladder.png" width="65%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/5-end-of-life/lansinks-ladder.png)
 
 ## Possible End of Life Pathways for Products After Use
 Waste mismanagement and littering are forms of what is called 'leakage' to the environment. It is an all too frequent and very undesirable waste pathway. Estimate how likely it is that leakage to the environment will occur. Using global statistics based on types of waste found in the environment is recommended. Estimates based on regional differences are relevant. For example, some of the more frequently found litter includes cigarette butts and plastic bags.
@@ -35,18 +35,18 @@ Waste mismanagement and littering are forms of what is called 'leakage' to the e
 ### Example 1: Design for Multiple EOL Pathways
 Floral Soil Solutions designed the Floral Soil product for multiple end of life pathways. First of all, the product is designed for reuse multiple times for holding cut flowers. It can also be used to grow plant plants starting with cuttings and even seeds. After multiple uses, if the product is truly spent, it can be added to enhance soil in houseplants, in a garden or in compost.
 
-<img src="../assets/examples-tools-for-eol/floral-soil-lc.png" width="65%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/examples-tools-for-eol/floral-soil-lc.png)
 
 ### Example 2: Design for Value Recovery
 A good model for integrating product design with material recovery is the RecyClass Tool developed by Plastics Recyclers Europe. RecyClass guides the choice of plastic used in packaging and promotes recycling. It addresses the presence of incompatibilities that affect the efficiency of recycling. Plastics that are easy to identify and to separate from the rest of the product, and for which there is an established Plastics Recyclers Europe (PRE) recycling stream score better. RecyClass is limited to a small variety of plastics such as PET-bottles, PE-LD and HD, polyolefin tubs and trays, PVC from the building sector and some technical plastics. While limited in scope, the tool is a good model for how product design considerations can be linked to material selection and to material recycling options.
 
-<img src="../assets/examples-tools-for-eol/recyclass.png" width="85%">
-<img src="../assets/examples-tools-for-eol/recyclass2.png" width="65%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/examples-tools-for-eol/recyclass.png)
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/examples-tools-for-eol/recyclass2.png)
 
 ### Example 3: GreenBlue's How2Recycle
 Green Blue Institute has developed the How2Recycle Program to provide structured guidance for how to communicate information to customers on how to manage a product's packaging once it is ready to become waste.
 
-<img src="../assets/examples-tools-for-eol/triple-p-recycling.png" width="85%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/examples-tools-for-eol/triple-p-recycling.png)
 
 [Image Source: GreenBlue](http://greenblue.org/work/how2recycle/)<br>
 [Learn more about the Green Blue Institute's How2Recycle Program](http://greenblue.org/work/how2recycle/)
