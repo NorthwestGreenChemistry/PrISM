@@ -94,6 +94,7 @@ export default class Prism extends Component<Props> {
     makePDF = () => {
         let pdfData = this.data.getPDFContent(this.state.activeProductId);
         if (!pdfData) {
+            //TODO: notify user when there's no active id
             console.log('UH-OH, need no pdf data');
             return;
         }
