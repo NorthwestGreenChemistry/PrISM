@@ -26,6 +26,11 @@ Modal.setAppElement('#root');
 
 type Props = {};
 
+const STEP_TITLES = [
+    "01 Design Goals", "02 Feedstock", "03 Production", "04 Use",
+    "05 End of Life", "06 Whole Product", "07 Evaluation & Optimization"
+];
+
 
 export default class Prism extends Component<Props> {
 
@@ -103,44 +108,16 @@ export default class Prism extends Component<Props> {
     }
 
     stepsData = () => {
-        /*
-         * Temporary test JSON blob
-         */
-        let completedSteps = [];
-        for (let i = 1; i <= 7; i++) {
-            completedSteps[i] = this.data.isStepCompleted(this.state.activeProductId, i.toString());
-        }
+        let result = [];
+        const id = this.state.activeProductId;
 
-        return [
-            {
-                "title": "01 Design Goals",
-                "completed": completedSteps[1]
-            },
-            {
-                "title": "02 Feedstock",
-                "completed": completedSteps[2]
-            },
-            {
-                "title": "03 Production",
-                "completed": completedSteps[3]
-            },
-            {
-                "title": "04 Use",
-                "completed": completedSteps[4]
-            },
-            {
-                "title": "05 End of Life",
-                "completed": completedSteps[5]
-            },
-            {
-                "title": "06 Whole Product",
-                "completed": completedSteps[6]
-            },
-            {
-                "title": "07 Evaluation & Optimization",
-                "completed": completedSteps[7]
+        for (let i = 0; i <= STEP_TITLES.length; i++) {
+            result[i] = {
+                "title": STEP_TITLES[i],
+                "completed": this.data.isStepCompleted(id, (i + 1).toString())
             }
-        ]
+        }
+        return result;
     }
 
     submitAnswers = (form) => {
