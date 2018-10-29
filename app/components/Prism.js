@@ -103,9 +103,7 @@ export default class Prism extends Component<Props> {
     }
 
     stepsData = () => {
-        /*
-         * Temporary test JSON blob
-         */
+        //TODO: pull title names from data? Perhaps "displayName" field?
         let completedSteps = [];
         for (let i = 1; i <= 7; i++) {
             completedSteps[i] = this.data.isStepCompleted(this.state.activeProductId, i.toString());
