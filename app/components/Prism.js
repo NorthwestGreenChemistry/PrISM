@@ -314,6 +314,18 @@ export default class Prism extends Component<Props> {
                 </Grid>
 
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
+                    <div className={styles.navArrows}>
+                    { this.state.displayStep > 1 &&
+                        <Link to={routes.PRISM} onClick={() => {this.navPrev()}}>
+                            <i className = "fa fa-arrow-left fa-3x" />
+                        </Link>
+                    }
+                    { this.state.displayStep < 7 &&
+                        <Link to={routes.PRISM} onClick={() => {this.navNext()}}>
+                            <i className = "fa fa-arrow-right fa-3x" />
+                        </Link>
+                    }
+                    </div>
                     <Button variant="outlined" onClick={this.closeModal}>close</Button>
                     <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
                     <div className={styles.contentMarkdown}>
