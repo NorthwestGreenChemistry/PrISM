@@ -63,9 +63,9 @@
                             "Minimize energy usage.",
                             "Reduce GHG emissions / carbon neutral / carbon negative.",
                             "Reduce/eliminate other life cycle impacts (fill in the blank).",
-                            "reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
-                            "reduce/eliminate process carcinogens.",
-                            "reduce other hazard process chemicals (fill in the blank).",
+                            "Reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
+                            "Reduce/eliminate process carcinogens.",
+                            "Reduce other hazard process chemicals (fill in the blank).",
                             "Other (fill in the blank).",
                             "Production & Manufacturing not a priority."
                         ]
@@ -88,9 +88,9 @@
                             "CleanGredients",
                             "TCO approved plasticizers",
                             "Cradle to Cradle (C2C) certified)",
-                            "reduce chemicals on RSLs.",
-                            "reduce carcinogens.",
-                            "reduce other hazardous chemicals (fill in the blank).",
+                            "Reduce chemicals on RSLs.",
+                            "Reduce carcinogens.",
+                            "Reduce other hazardous chemicals (fill in the blank).",
                             "Reduce VOCs.",
                             "Other (fill in the blank).",
                             "Use phase is not a priority."
@@ -109,9 +109,9 @@
                     "description": "Select from a use phase:",
                     "enum": [
                         "Very short use phase (<1 day)",
-                        "short use phase (1 day - 2 years)",
-                        "medium use phase (2-12 years)",
-                        "long use phase (>12 years)"
+                        "Short use phase (1 day - 2 years)",
+                        "Medium use phase (2-12 years)",
+                        "Long use phase (>12 years)"
                     ]
                 },
                 "attributes": {
@@ -155,12 +155,12 @@
                     "title": "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?",
                     "type": "string",
                     "description": "Two examples of certifications that help identify chemicals, materials or products with sustainable green chemistry and engineering attributes.  USDA Certified Biobased certification confirms claims about the use of biobased feedstock.  FMD is a program by ToxServices that ensures full materials disclosure and assurance that no chemicals in a product are substances of very high concern or on the Zero Discharge of Hazardous Chemicals Manufacturing and Product Restricted Substances Lists.",
-                    "enum": ["Yes", "No/Don't know"]
+                    "enum": ["Yes", "No", "Don't know"]
                 },
                 "lifeCycle": {
                     "title": "Are you striving for specific life cycle improvements compared to other products that provide the same service?",
                     "type": "string",
-                    "enum": ["Yes", "No/Don't know"]
+                    "enum": ["Yes", "No", "Don't know"]
                 }
             }
         }

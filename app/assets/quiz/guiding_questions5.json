@@ -1,44 +1,27 @@
 {
-    "title": "Guiding Questions: Product Stewardship and Consumer Education",
+    "title": "Product Stewardship and Consumer Education",
     "type": "object",
     "properties": {
-        "example5": {
-            "type": "object",
-            "properties": {
-                "firstquestion": {
-                    "title": "How long is this product designed to be used for?",
-                    "description": "For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Very short use phase (<1 day)",
-                            "Short use phase (1 day - 2 years)",
-                            "Medium use phase (2-12 years)",
-                            "Long use phase (>12 years)"
-                        ]
-                    }
-                }
-            }
+        "firstquestion": {
+            "title": "How long is this product designed to be used for?",
+            "type": "string",
+            "enum": [
+                "Very short use phase (<1 day)",
+                "Short use phase (1 day - 2 years)",
+                "Medium use phase (2-12 years)",
+                "Long use phase (>12 years)"
+            ]
         },
         "secondquestion": {
-            "title": "What tradeoffs have become apparent to you?",
-            "type": "string"
+            "title": "Does product durability match the use phase?",
+            "type": "string",
+            "description": "For example, components of the built environment should match the intended longevity of the building.",
+            "enum": ["Yes", "No","I don't know"]
         },
-        "firstquestion": {
-            "type": "object",
-            "properties": {
-                "question": {
-                    "title": "How long is this product designed to be used for?",
-                    "description": "For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
-                    "enum": [
-                        "Very short use phase (<1 day)",
-                        "Short use phase (1 day - 2 years)",
-                        "Medium use phase (2-12 years)",
-                        "Long use phase (>12 years)"
-                    ]
-                }
-            }
+        "wasteManagement": {
+            "title": "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?",
+            "type": "string",
+            "enum": ["Yes", "No","I don't know"]
         }
     }
 }
