@@ -268,6 +268,7 @@ export default class Prism extends Component<Props> {
                     </Link>
                 </Button>
 
+                {/* PRODUCT MENU */}
                 <div className={styles.selector}>
                     <Select
                         className={styles.selectorDropdown}
@@ -287,10 +288,17 @@ export default class Prism extends Component<Props> {
                                 value={this.state.productName}
                                 onChange={this.handleProductNameChange}
                             />
-                            <Button className={styles.createBtn} variant="outlined" color="primary" onClick={this.createProduct}>Create</Button>
-                        </div> : null}
+                            <Button className={styles.createBtn}
+                                    variant="outlined" color="primary"
+                                    onClick={this.createProduct}
+                            >
+                                Create
+                            </Button>
+                        </div> : null
+                    }
                 </div>
 
+                {/* PRISM WHEEL & STEPS */}
                 <Grid container className={styles.wheel} spacing={16}>
                     <Grid item xs={6}>
                         <Wheel onWheelClick={this.wheelClick} />
@@ -302,32 +310,49 @@ export default class Prism extends Component<Props> {
 
                         <List component="nav">
                             {this.stepsData().map((step, index) => {
-                                return <ProgressItem handleClick={this.handleClick} step={step} stepCounter={index + 1} key={'step_' + (index + 1)} />
+                                return <ProgressItem
+                                            handleClick={this.handleClick}
+                                            step={step} stepCounter={index + 1}
+                                            key={'step_' + (index + 1)}
+                                        />
                             })}
                         </List>
                         <hr />
 
-                        <Button onClick={this.makePDF} className={styles.button} variant="contained" color="default">
+                        <Button onClick={this.makePDF} className={styles.button}
+                                variant="contained" color="default">
                             Generate Report PDF
                         </Button>
                     </Grid>
                 </Grid>
 
+                {/* FORM MODAL */}
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
                     <div className={styles.navArrows}>
-                    { this.state.displayStep > 1 &&
-                        <Link to={routes.PRISM} onClick={() => {this.navPrev()}}>
-                            <i className = "fa fa-arrow-left fa-3x" />
-                        </Link>
-                    }
-                    { this.state.displayStep < 7 &&
-                        <Link to={routes.PRISM} onClick={() => {this.navNext()}}>
-                            <i className = "fa fa-arrow-right fa-3x" />
-                        </Link>
-                    }
+                        { this.state.displayStep > 1 &&
+                            <Button onClick={this.navPrev}
+                                    className={styles.leftButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-left fa-3x" />
+                            </Button>
+                        }
+                        <h2 className={styles.stepHeader}>
+                            {this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}
+                        </h2>
+                        { this.state.displayStep < 7 &&
+                            <Button onClick={this.navNext}
+                                    className={styles.rightButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-right fa-3x" />
+                            </Button>
+                        }
                     </div>
-                    <Button variant="outlined" onClick={this.closeModal}>close</Button>
-                    <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
+                    <Button className={styles.button} variant="outlined" onClick={this.closeModal}>
+                        Close and Return to PrISM
+                    </Button>
+                    
                     <div className={styles.contentMarkdown}>
                         {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
                             return val;
@@ -340,18 +365,25 @@ export default class Prism extends Component<Props> {
                               schema={this.state.activeForm.schema}
                               uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
-                            /> : null}
+                        /> : null
+                    }
                     <div className={styles.navArrows}>
-                    { this.state.displayStep > 1 &&
-                        <Link to={routes.PRISM} onClick={() => {this.navPrev()}}>
-                            <i className = "fa fa-arrow-left fa-3x" />
-                        </Link>
-                    }
-                    { this.state.displayStep < 7 &&
-                        <Link to={routes.PRISM} onClick={() => {this.navNext()}}>
-                            <i className = "fa fa-arrow-right fa-3x" />
-                        </Link>
-                    }
+                        { this.state.displayStep > 1 &&
+                            <Button onClick={this.navPrev}
+                                    className={styles.leftButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-left fa-3x" />
+                            </Button>
+                        }
+                        { this.state.displayStep < 7 &&
+                            <Button onClick={this.navNext}
+                                    className={styles.rightButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-right fa-3x" />
+                            </Button>
+                        }
                     </div>
                 </Modal>
             </div>

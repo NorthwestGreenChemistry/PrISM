@@ -1,11 +1,3 @@
-.backButton {
-    position: absolute;
-}
-
-.button {
-    font-size: 1.4rem !important;
-}
-
 .selector {
     float: right;
     text-align: right;
@@ -23,6 +15,8 @@
 .stepHeader {
     color: darkslategray;
     text-align: center;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .wheel {
@@ -78,6 +72,16 @@
     font-size: 1.6rem !important;
 }
 
+/* Buttons and Button Nav */
+
+.backButton {
+    position: absolute;
+}
+
+.button {
+    font-size: 1.4rem !important;
+}
+
 .btn {
     font-size: 1.6rem;
     font-weight: bold;
@@ -99,6 +103,24 @@
 .navArrows {
     text-align: center;
     color: dodgerblue;
+    margin-bottom: 20px;
+}
+
+.navArrows:before, .navArrows:after {
+    content: " ";
+    display: table;
+}
+
+.navArrows:after {
+    clear: both;
+}
+
+.leftButton {
+    float: left;
+}
+
+.rightButton {
+    float: right;
 }
 
 /* Areas in CSS for nav wheel image map [assets/prism-wheel.png] */
