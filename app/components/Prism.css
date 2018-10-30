@@ -96,6 +96,11 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.navArrows {
+    text-align: center;
+    color: dodgerblue;
+}
+
 /* Areas in CSS for nav wheel image map [assets/prism-wheel.png] */
 .step1 {
     background: -moz-radial-gradient(

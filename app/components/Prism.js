@@ -121,6 +121,39 @@ export default class Prism extends Component<Props> {
         return result;
     }
 
+    navPrev = () => {
+        let prevStep = this.data.getPrevStep(this.state.displayStep);
+        if (!prevStep) {
+            return;
+        }
+
+        this.setState({
+            displayStep: prevStep,
+            markdownFiles: [],
+            activeForm: {},
+        })
+
+        this.loadMDFiles(prevStep);
+        this.loadSchemaFiles(prevStep);
+    }
+
+    navNext = () => {
+        let nextStep = this.data.getNextStep(this.state.displayStep);
+        if (!nextStep) {
+                return;
+            }
+
+            this.setState({
+                displayStep: nextStep,
+                markdownFiles: [],
+                activeForm: {},
+            })
+
+            this.loadMDFiles(nextStep);
+            this.loadSchemaFiles(nextStep);
+
+    }
+
     submitAnswers = (form) => {
         console.log('submit answers! ', form);
         this.data.storeAnswer(
@@ -296,6 +329,18 @@ export default class Prism extends Component<Props> {
                               uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
                             /> : null}
+                    <div className={styles.navArrows}>
+                    { this.state.displayStep > 1 &&
+                        <Link to={routes.PRISM} onClick={() => {this.navPrev()}}>
+                            <i className = "fa fa-arrow-left fa-3x" />
+                        </Link>
+                    }
+                    { this.state.displayStep < 7 &&
+                        <Link to={routes.PRISM} onClick={() => {this.navNext()}}>
+                            <i className = "fa fa-arrow-right fa-3x" />
+                        </Link>
+                    }
+                    </div>
                 </Modal>
             </div>
         );
