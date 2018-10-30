@@ -37,9 +37,12 @@ export default class Home extends Component<Props> {
 
     render() {
         return <div className={styles.container} data-tid="container">
-                <Link to={routes.PRISM} onClick={() => {this.data.openedApp()}}>
-                    <i className="fa fa-arrow-right fa-3x" />
-                </Link>
+            <Link to={routes.PRISM} onClick={() => {this.data.openedApp()}}>
+                <i className="fa fa-arrow-right fa-3x" />
+            </Link>
+            <div />
+            <div className={styles.intro} data-tid="intro">
+                <img src={require('../assets/ngc-logo.png')} />
                 <div>
                     {this.state.markdownFiles.map(val => {
                         return val;
@@ -47,5 +50,6 @@ export default class Home extends Component<Props> {
                     }
                 </div>
             </div>
+        </div>
     };
 }
