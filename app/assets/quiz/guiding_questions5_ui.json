@@ -1,35 +1,11 @@
 {
     "firstquestion": {
-        "ui:widget": "textarea"
+        "ui:widget": "radio"
     },
     "secondquestion": {
-        "ui:widget": "textarea"
+        "ui:widget": "radio"
     },
-    "thirdquestion": {
-        "ui:widget": "textarea"
-    },
-    "fourthquestion": {
-        "ui:widget": "textarea"
-    },
-    "fifthquestion": {
-        "ui:widget": "textarea"
-    },
-    "production": {
-        "question": {
-            "ui:widget": "checkboxes",
-            "ui:options": {
-                "inline": "true"
-            }
-        }
-    },
-    "priorities": {
-        "question": {
-            "ui:widget": "checkboxes"
-        }
-    },
-    "overall": {
-        "standards": {
-            "ui:widget": "checkboxes"
-        }
+    "wasteManagement": {
+        "ui:widget": "radio"
     }
 }
