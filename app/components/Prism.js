@@ -37,6 +37,7 @@ export default class Prism extends Component<Props> {
     constructor(props) {
         super(props)
         this.data = Data.getInstance()
+        this.modalForm = null
 
         this.state = {
             modalIsOpen: false,
@@ -49,7 +50,7 @@ export default class Prism extends Component<Props> {
             products: this.data.getAllProducts()
         }
 
-        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
     }
 
     handleClick = (step) => {
@@ -65,8 +66,8 @@ export default class Prism extends Component<Props> {
             modalIsOpen: true
         })
 
-        this.loadMDFiles(step);
-        this.loadSchemaFiles(step);
+        this.loadMDFiles(step)
+        this.loadSchemaFiles(step)
     }
 
     handleDropdownChange = (event) => {
@@ -97,11 +98,11 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        let pdfData = this.data.getPDFContent(this.state.activeProductId);
+        let pdfData = this.data.getPDFContent(this.state.activeProductId)
         if (!pdfData) {
             //TODO: notify user when there's no active id
-            console.log('UH-OH, need no pdf data');
-            return;
+            console.log('UH-OH, need no pdf data')
+            return null
         }
         let pdf = new Pdf(pdfData);
         pdf.savePdf();
@@ -137,21 +138,8 @@ export default class Prism extends Component<Props> {
         this.loadSchemaFiles(prevStep);
     }
 
-    navNext = () => {
-        let nextStep = this.data.getNextStep(this.state.displayStep);
-        if (!nextStep) {
-                return;
-            }
-
-            this.setState({
-                displayStep: nextStep,
-                markdownFiles: [],
-                activeForm: {},
-            })
-
-            this.loadMDFiles(nextStep);
-            this.loadSchemaFiles(nextStep);
-
+    navNext = (event) => {
+        this.modalForm.onSubmit(event)
     }
 
     submitAnswers = (form) => {
@@ -335,6 +323,7 @@ export default class Prism extends Component<Props> {
                                     variant="contained" color="default"
                             >
                                 <i className = "fa fa-arrow-left fa-3x" />
+                                &nbsp; Back
                             </Button>
                         }
                         <h2 className={styles.stepHeader}>
@@ -345,6 +334,7 @@ export default class Prism extends Component<Props> {
                                     className={styles.rightButton}
                                     variant="contained" color="default"
                             >
+                                Next &nbsp;
                                 <i className = "fa fa-arrow-right fa-3x" />
                             </Button>
                         }
@@ -365,7 +355,10 @@ export default class Prism extends Component<Props> {
                               schema={this.state.activeForm.schema}
                               uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
-                        /> : null
+                              ref={(form) => {this.modalForm = form;}}
+                        >
+                            <button type="submit" className={styles.hidden}>Submit</button>
+                        </Form> : null
                     }
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
@@ -374,13 +367,15 @@ export default class Prism extends Component<Props> {
                                     variant="contained" color="default"
                             >
                                 <i className = "fa fa-arrow-left fa-3x" />
+                                &nbsp; Back
                             </Button>
                         }
                         { this.state.displayStep < 7 &&
                             <Button onClick={this.navNext}
                                     className={styles.rightButton}
-                                    variant="contained" color="default"
+                                    variant="contained" color="primary"
                             >
+                                Save and Continue &nbsp;
                                 <i className = "fa fa-arrow-right fa-3x" />
                             </Button>
                         }

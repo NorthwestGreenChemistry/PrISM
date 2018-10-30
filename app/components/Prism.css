@@ -74,6 +74,10 @@
 
 /* Buttons and Button Nav */
 
+.hidden {
+    display: none;
+}
+
 .backButton {
     position: absolute;
 }
@@ -115,11 +119,13 @@
     clear: both;
 }
 
-.leftButton {
+.leftButton, .leftButton i {
+    font-size: 1.4rem !important;
     float: left;
 }
 
-.rightButton {
+.rightButton, .rightButton i {
+    font-size: 1.4rem !important;
     float: right;
 }
 
