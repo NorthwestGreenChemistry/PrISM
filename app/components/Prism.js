@@ -249,7 +249,7 @@ export default class Prism extends Component<Props> {
         //TODO: make guiding questions header hide if there is no forms
 
         return (
-            <div>
+            <div className={styles.root}>
                 <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
                     <i className="fa fa-arrow-left fa-3x" />
                 </Button>
@@ -285,17 +285,18 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 {/* PRISM WHEEL & STEPS */}
-                <Grid container className={styles.wheel} spacing={16}>
-                    <Grid item xs={6}>
+                <Grid container spacing={12}>
+                    <Grid className={styles.wheel} item xs={7}>
                         <Wheel onWheelClick={this.wheelClick} />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid className={styles.steps} item xs={5}>
                         <h3>
                             Your Progress
                         </h3>
 
                         <List component="nav">
                             {this.stepsData().map((step, index) => {
+                                if (index > 6) { return null }
                                 return <ProgressItem
                                             handleClick={this.handleClick}
                                             step={step} stepCounter={index + 1}
