@@ -1,1 +1,152 @@
-{}
+{
+    "title": "Guiding Questions",
+    "type": "object",
+    "properties": {
+        "legoQuestion": {
+            "title": "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
+            "type": "string",
+            "enum": [
+                "Very short use phase (<1 day)",
+                "Short use phase (1 day - 2 years)",
+                "Medium use phase (2-12 years)",
+                "Long use phase (>12 years)"
+            ]
+        },
+        "chemInventory": {
+            "title": "See Resource: Chemical Inventory",
+            "type": "object",
+            "properties": {
+                "intentionalChem": {
+                    "title": "What chemicals are intentionally included in the product?",
+                    "type": "string"
+                },
+                "intentionalHazard": {
+                    "title": "Are the intentionally included chemicals hazardous?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "impurities": {
+                    "title": "What chemical impurities or residuals from production and manufacturing remain in the product?",
+                    "type": "string"
+                },
+                "hazardousImpurities": {
+                    "title": "Are the impurities or residuals that remain in the product hazardous?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "ingestible": {
+                    "title": "Are the chemicals in a form that can be inhaled, ingested or absorbed through the skin?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "emissions": {
+                    "title": "Does use of the product produce emissions and waste?",
+                    "description": "For example, 3D printing is an example of technology where the 'manufacturing' is moved outside of a manufacturing facility and into homes, schools, shops, etc.. Some forms of 3D printing can generate toxic particles that can be inhaled. (See Example) Similarly, many paints and coatings contain solvents that evaporate when in use and may continue to volatize from the coating for a significant period of time.",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                }
+            }
+        },
+        "exposureAssessment": {
+            "title": "See Resource: Exposure Assessment:",
+            "type": "object",
+            "properties": {
+                "routes": {
+                    "title":"What are the likely routes of exposure to chemicals in the product as used by customers?",
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Oral",
+                            "Dermal",
+                            "Inhalation",
+                            "Other"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "conceptualExposure": {
+                    "title": "Have you created a conceptual exposure model?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "exposureAmount": {
+                    "title": "How much exposure to the chemicals is likely to occur?  Consider amount, frequency and time.",
+                    "type": "string"
+                }
+            }
+        },
+        "hazardAssessment": {
+            "title": "See Resource: Hazard Assessment:",
+            "type": "object",
+            "properties": {
+                "screening": {
+                    "title": "Have you conducted a screening chemical hazard assessment on the chemicals in the product as used?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "highHazards": {
+                    "title": "Are there any chemicals with very high hazards to humans and the environment? If so, what are those hazards?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "comprehensiveAssessment": {
+                    "title": "Have you conducted a comprehensive chemical hazard assessment on the chemicals in the product as used?  Have you focused particularly on those chemicals for which there is likely to be exposure?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "hazardProfiles": {
+                    "title": "What are the hazard profiles of the chemicals added to or remaining in the product?",
+                    "type": "string"
+                }
+            }
+        },
+        "stakeholderConsiderations": {
+            "title": "See Resource:  Stakeholder Considerations",
+            "type": "object",
+            "properties": {
+                "stakeholders": {
+                    "title": "Do the hazards of the chemicals in the product pose a particular concern to vulnerable populations such as children, pregnant women, the elderly, or patients?  Are there some population segments who  would be placed at greater risk than other populations?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                }
+            }
+        },
+        "wasteConsiderations": {
+            "title": "See Resource:  Life Cycle and Waste Considerations",
+            "type": "object",
+            "properties": {
+                "productLife": {
+                    "title": "How long is the product intended to last?",
+                    "type": "string",
+                    "enum": [
+                        "Very short use phase (<1 day)",
+                        "Short use phase (1 day - 2 years)",
+                        "Medium use phase (2-12 years)",
+                        "Long use phase (>12 years)"
+                    ]
+                }, 
+                "waste": {
+                    "title": "Does use of the product generate waste?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "energyUse": {
+                    "title": "Does use of the product require the use of energy or water?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "stability": {
+                    "title": "Are the chemicals in the product stable, or will they result in unwanted or hazardous chemical emissions, especially if subjected to heat or other environmental conditions?",
+                    "type": "string",
+                    "enum": [
+                        "Yes - under intended use conditions",
+                        "Yes - but only under unintended use conditions",
+                        "No",
+                        "I don't know"
+                    ]
+                }
+            }
+        }
+    }
+}
