@@ -12,7 +12,8 @@ Based on the initial problem formulation step, the designer may have established
 
 This green design and assessment workbook can help give you insight into all aspects of your product's life cycle. Critically, it can also help you identify what you DON'T know about your product. Honing in on missing pieces of the puzzle will highlight areas that need additional or deeper evaluation, opportunities for innovation and improvement or where your product really shines.
 
-<img src="../assets/7-evaluation-and-optimization/path-to-optimization.png" width="80%">
+![alt text](image.jpg)
+<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/path-to-optimization.png" width="80%">
 
 Optimization is a process of continual improvement. Sometimes the first step is to simply eliminate chemicals or materials of high concern. That can have immediate benefits and it can get the product on the path to Sustainable Green Chemistry and Engineering design.
 
@@ -25,9 +26,9 @@ Filling data gaps can be time- and resource-intensive. All considerations identi
 
 Data gaps in hazard information are also likely. A tiered approach to hazard screening that begins with hazard list screening and moves to intermediate and then more comprehensive approaches to chemical hazard assessment is appropriate. Using life cycle thinking too narrow to focus of the assessment to those elements that discriminate between options helps to limit data needs.
 
-[Go to Resources: Decision Analysis]("#gid=276830480")
+[Go to Resources: Decision Analysis](#gid=276830480)
 
-[Learn more about Chemical Hazard Tools and Methods]("gid=455887437&range=O3")
+[Learn more about Chemical Hazard Tools and Methods](gid=455887437&range=O3)
 
 
 ## Criteria Weighting 
@@ -37,7 +38,7 @@ Fortunately, CHA methods are becoming increasingly standardized to allow for tra
 
 Tradeoffs also occur between different impact categories. For example, one option may use more water while another may generate more waste during use. These tradeoffs must be judged against product design goals and using all three Design Principles for Sustainable Green Chemistry and Engineering (below). What is important is that the designer avoids potential perverse outcomes by focusing on only one principle. And that the decisions are made in an informed and transparent way so as to avoid unintended consequences.
 
-<img src="../assets/7-evaluation-and-optimization/principles-of-sustainable-design.png" width="80%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/principles-of-sustainable-design.png)
 
 
 ## Trade Offs
@@ -48,12 +49,12 @@ While tradeoffs may be necessary, baseline limits can be set so that gains in on
 ### Apply Decision Analysis
 In decision analysis, you will use logic models to evaluate information in way that increases clarity around which options are preferred or less preferred. There are a variety of existing frameworks. You can consider options one at a time in a sequential way or, alternatively, you can consider all the the options simultaneously using a mathematical algorithm. Yet another approach is to use some hybrid of these two frameworks.
 
-[Go to Resources: Decision Analysis]("#gid=276830480")
+[Go to Resources: Decision Analysis](#gid=276830480)
 
 
 ## Example
 Sometimes it makes sense to phase out a problematic product and to start over. Other times it makes sense to improve its next incarnation informed by Design Principles for Sustainable Green Chemistry and Engineering.
 
-<img src="../assets/7-evaluation-and-optimization/decision-logic.png" width="80%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/decision-logic.png)
 
 [Learn more about Decision Analysis on page 48 of the IC2 Guide]("http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf")

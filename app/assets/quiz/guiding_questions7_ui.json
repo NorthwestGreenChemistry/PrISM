@@ -11,14 +11,15 @@
     "fourthquestion": {
         "ui:widget": "textarea"
     },
-    "feedstock": {
-        "question": {
-            "ui:widget": "checkboxes"
-        }
+    "fifthquestion": {
+        "ui:widget": "textarea"
     },
     "production": {
         "question": {
-            "ui:widget": "checkboxes"
+            "ui:widget": "checkboxes",
+            "ui:options": {
+                "inline": "true"
+            }
         }
     },
     "priorities": {
@@ -26,23 +27,9 @@
             "ui:widget": "checkboxes"
         }
     },
-    "waste": {
-        "useLength": {
-            "ui:widget": "radio"
-        },
-        "attributes": {
-            "ui:widget": "checkboxes"
-        },
-        "recycling": {
-            "ui:widget": "checkboxes"
-        }
-    },
     "overall": {
         "standards": {
-            "ui:widget": "radio"
-        },
-        "lifeCycle": {
-            "ui:widget": "radio"
+            "ui:widget": "checkboxes"
         }
     }
 }

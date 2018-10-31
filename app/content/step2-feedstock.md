@@ -4,7 +4,7 @@
 To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.
 
 ## Introduction to Feedstock Concerns
-According to the World Forum on Natural Capital, natural capital is defined as the world’s stocks of natural assets that include geology, soil, air, water and all living things. Humans depend on natural capital for a wide range of ecosystem services. Poorly managed natural capital can destroy productivity and resilience, making it more difficult for humans and other species to sustain themselves (6). To meet the design principle of Maximizing Resource Efficiency, it is necessary to preserve natural capital. The choice of feedstock can have significant impacts on natural capital.
+According to the [World Forum on Natural Capital](https://naturalcapitalforum.com/about/), natural capital is defined as the world’s stocks of natural assets that include geology, soil, air, water and all living things. Humans depend on natural capital for a wide range of ecosystem services. Poorly managed natural capital can destroy productivity and resilience, making it more difficult for humans and other species to sustain themselves ([6](https://naturalcapitalforum.com/about/)). To meet the design principle of Maximizing Resource Efficiency, it is necessary to preserve natural capital. The choice of feedstock can have significant impacts on natural capital.
 
 Best practices strive to decouple feedstock selection from negative impacts on natural capital such as natural resource depletion and negative impacts on communities from raw material extraction. Some feedstock is not renewable but it may be abundant. 
 
@@ -16,15 +16,15 @@ At a minimum, define the primary feedstock used to generate the chemical, materi
 
 ## Example
 ### Examples of renewable feedstocks
-<img src="../assets/2-feedstock/round-wood.png" alt="Round wood and energy crops">
-<img src="../assets/2-feedstock/woody-residues.png" alt="Woody residues">
-<img src="../assets/2-feedstock/dry-herbaceous-residue.png" alt="Dry herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/wet-herbaceous-residue.png" alt="Wet herbaceous residues and energy crops">
-<img src="../assets/2-feedstock/municipal-solid-wastes.png" alt="Municipal solid wastes">
+![Round wood and energy crops](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/round-wood.png)
+![Woody residues](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/woody-residues.png)
+![Dry herbaceous residues and energy crops](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/dry-herbaceous-residue.png)
+![Wet herbaceous residues and energy crops](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/wet-herbaceous-residue.png)
+![Municipal solid wastes](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/municipal-solid-wastes.png)
 
 [Image source: Department of Energy](https://www.energy.gov/eere/bioenergy/biomass-feedstocks/)
 
 ### TidalVision USA uses waste from sustainable fisheries
 [TidalVision USA](https://tidalvisionusa.com/) is an early stage company based in Bellingham, WA that uses fishery wastes to make high value products. They refer to this as ‘upcycling’ because a low value waste material is used to make a high value product.  Their goal is to add value to the sustainable fishing and crabbing industries by generating value from the waste.  The company treats salmon skins to make salmon leather using benign chemical process and makes wallets, purses, and other high value products.  They also process crab waste to make a variety of useful products based on chitosan that is derived from the chitin in the shell wastes.  The founder of the company is an Alaskan fisherman who was disturbed by the scale of fisheries byproduct wastes and became a social and environmental entrepreneur.  He uses wastes from sustainable fisheries to add value to an industry that strives to operate sustainably.
-<img src="../assets/2-feedstock/tidal-vision-pop.png" alt="2 billion pounds of fisheries byproducts are wasted annually in Alaska alone. The waste is dumped back into the ocean or landfills, or sold into very low value markets such as pet/livestock feed. It's also harder for sustainable fisheries to compete with unsustainable competitors on the market. The only way for the industry to grow right now is to catch more fish.">
-<img src="../assets/2-feedstock/tidal-vision.png" alt="wallets made from salmon skin">
+![2 billion pounds of fisheries byproducts are wasted annually in Alaska alone. The waste is dumped back into the ocean or landfills, or sold into very low value markets such as pet/livestock feed. It's also harder for sustainable fisheries to compete with unsustainable competitors on the market. The only way for the industry to grow right now is to catch more fish.](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/tidal-vision-pop.png)
+![wallets made from salmon skin](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/2-feedstock/tidal-vision.png)

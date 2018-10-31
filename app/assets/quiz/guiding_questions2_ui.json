@@ -1,0 +1,21 @@
+{
+    "firstquestion": {
+        "ui:widget": "textarea"
+    },
+    "secondquestion": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "thirdquestion": {
+        "ui:widget": "radio"
+    },
+    "fourthquestion": {
+        "question": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "fifthquestion": {
+        "ui:widget": "radio"
+    }
+}

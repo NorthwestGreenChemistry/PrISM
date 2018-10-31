@@ -1,0 +1,27 @@
+{
+    "title": "Product Stewardship and Consumer Education",
+    "type": "object",
+    "properties": {
+        "firstquestion": {
+            "title": "How long is this product designed to be used for?",
+            "type": "string",
+            "enum": [
+                "Very short use phase (<1 day)",
+                "Short use phase (1 day - 2 years)",
+                "Medium use phase (2-12 years)",
+                "Long use phase (>12 years)"
+            ]
+        },
+        "secondquestion": {
+            "title": "Does product durability match the use phase?",
+            "type": "string",
+            "description": "For example, components of the built environment should match the intended longevity of the building.",
+            "enum": ["Yes", "No","I don't know"]
+        },
+        "wasteManagement": {
+            "title": "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?",
+            "type": "string",
+            "enum": ["Yes", "No","I don't know"]
+        }
+    }
+}

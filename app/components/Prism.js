@@ -1,24 +1,35 @@
 // @flow
-import path from 'path';
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styles from './Prism.css';
-import routes from '../constants/routes';
-import Wheel from './Wheel.js';
-import Data from './Data';
-import Button from '@material-ui/core/Button';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import Modal from 'react-modal';
-import ReactMarkdown from 'react-markdown';
-import fs from 'fs';
-import Form from "react-jsonschema-form";
+import path from 'path'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import styles from './Prism.css'
+import routes from '../constants/routes'
+import Wheel from './Wheel'
+import Pdf from './Pdf';
+import ProgressItem from './ProgressItem'
+import Data from './Data'
+import List from '@material-ui/core/List'
+import Button from '@material-ui/core/Button'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid'
+import Modal from 'react-modal'
+import Form from "react-jsonschema-form"
+import ReactMarkdown from 'react-markdown'
+import electron from 'electron'
 
-const wheelUrl = path.join(__dirname, 'assets/prism-wheel.png');
+
+const ipcRenderer = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
+
 type Props = {};
+
+const STEP_TITLES = [
+    "01 Design Goals", "02 Feedstock", "03 Production", "04 Use",
+    "05 End of Life", "06 Whole Product", "07 Evaluation & Optimization"
+];
 
 
 export default class Prism extends Component<Props> {
@@ -26,25 +37,27 @@ export default class Prism extends Component<Props> {
     constructor(props) {
         super(props)
         this.data = Data.getInstance()
+        this.modalForm = null
 
         this.state = {
             modalIsOpen: false,
             displayStep: 0,
             dropdownSelection: "",
-            activeProduct: this.data.getDefault(),
+            activeProductId: "",
             productName: "",
+            activeForm: {},
+            markdownFiles: [],
             products: this.data.getAllProducts()
         }
 
-        this.handleClick = this.handleClick.bind(this);
-        this.wheelClick = this.wheelClick.bind(this);
-        this.closeModal = this.closeModal.bind(this);
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
     }
 
-    handleClick(step) {
-        if (this.state.activeProduct === "") {
+    handleClick = (step) => {
+        console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
+        if (!this.state.activeProductId || this.state.activeProductId === "") {
             //TODO: display warning to the user that they have to select a product
-            console.log('CHOOSE A PRODUCT!');
+            console.log('CHOOSE A PRODUCT!')
             return;
         }
 
@@ -52,14 +65,17 @@ export default class Prism extends Component<Props> {
             displayStep: step,
             modalIsOpen: true
         })
+
+        this.loadMDFiles(step)
+        this.loadSchemaFiles(step)
     }
 
     handleDropdownChange = (event) => {
+        console.log('inside of handle dropdown change', event.target.value);
         this.setState({
             dropdownSelection: event.target.value,
-            activeProduct: event.target.key
+            activeProductId: event.target.value
         })
-        // this.data.setDefault(event.target.key) //TODO: fix this, setting default not working
     }
 
     handleProductNameChange = (event) => {
@@ -69,65 +85,187 @@ export default class Prism extends Component<Props> {
     createProduct = () => {
         let id = this.uuidv4()
         this.data.createProduct(id, this.state.productName)
+        console.log('creating product', this.state.productName);
+        console.log('all products', this.data.getAllProducts());
         this.setState({
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProduct: id,
+            activeProductId: "",
             dropdownSelection: this.state.productName,
             productName: ""
         })
     }
 
-    closeModal() {
-        this.setState({modalIsOpen: false})
+    makePDF = () => {
+        let pdfData = this.data.getPDFContent(this.state.activeProductId)
+        if (!pdfData) {
+            //TODO: notify user when there's no active id
+            console.log('UH-OH, need no pdf data')
+            return null
+        }
+        let pdf = new Pdf(pdfData);
+        pdf.savePdf();
+    }
+
+    stepsData = () => {
+        //TODO: pull title names from data? Perhaps "displayName" field?
+        let result = [];
+        const id = this.state.activeProductId;
+
+        for (let i = 0; i <= STEP_TITLES.length; i++) {
+            result[i] = {
+                "title": STEP_TITLES[i],
+                "completed": this.data.isStepCompleted(id, (i + 1).toString())
+            }
+        }
+        return result;
+    }
+
+    navPrev = () => {
+        let prevStep = this.data.getPrevStep(this.state.displayStep);
+        if (!prevStep) {
+            return;
+        }
+
+        this.setState({
+            displayStep: prevStep,
+            markdownFiles: [],
+            activeForm: {},
+        })
+
+        this.loadMDFiles(prevStep);
+        this.loadSchemaFiles(prevStep);
+    }
+
+    navNext = (event) => {
+        this.modalForm.onSubmit(event)
+    }
+
+    submitAnswers = (form) => {
+        console.log('submit answers! ', form);
+        this.data.storeAnswer(
+            this.state.activeProductId,
+            this.state.displayStep,
+            form.formData);
+
+        this.data.setPDFStepResults(
+            this.state.activeProductId,
+            this.state.displayStep,
+            form.schema,
+            form.formData
+        );
+
+        let nextStep = this.data.getNextStep(this.state.displayStep);
+
+        if (!nextStep) { //if there's no next step then we're on the final step
+            this.closeModal();
+            return;
+        }
+
+        this.setState({
+            displayStep: nextStep,
+            markdownFiles: [],
+            activeForm: {},
+        })
+
+        this.loadMDFiles(nextStep);
+        this.loadSchemaFiles(nextStep);
+    }
+
+    closeModal = () => {
+        this.setState({
+            modalIsOpen: false,
+            markdownFiles: [],
+            activeForm: {},
+        })
     }
 
     //generates random guuid, all credit goes to
     //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
-    uuidv4() {
+    uuidv4 = () => {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
     }
 
-    wheelClick(step) {
+    wheelClick = (step) => {
         this.handleClick(step);
     }
 
-    render() {
-        let schema = null;
-        let uiSchema = null;
+    //takes in list of files
+    loadMDFiles = (step) => {
+        this.data.getContentList(step).map((mdPath) => {
+            fetch(mdPath)
+                .then((resp) => {
+                    return resp.text();
+                })
+                .then((text) =>{
+                    let mdFiles = this.state.markdownFiles;
+                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
+                    this.setState({
+                        markdownFiles: mdFiles
+                    })
+                });
+        })
+    }
 
-        if (this.state.displayStep > 0) {
-            let questionFile = this.data.getQuestionFile(this.state.displayStep);
-            let questionUIFile = this.data.getQuestionUIFile(this.state.displayStep);
+    //takes in list of files
+    loadSchemaFiles = (step) => {
+        if (step > 0) {
+            let questionFile = this.data.getQuestionFile(step);
+            let questionUIFile = this.data.getQuestionUIFile(step);
 
-            try {
-                schema = JSON.parse(fs.readFileSync(questionFile).toString());
-                uiSchema = JSON.parse(fs.readFileSync(questionUIFile).toString());
-            } catch(err) {
-                console.log(err);
-            }
+            fetch(questionFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.schema = json
+                    this.setState(prevState => ({activeForm: formSchemaObj}))
+                })
+
+            fetch(questionUIFile)
+                .then((resp) => {
+                    return resp.json();
+                })
+                .then((json) =>{
+                    var formSchemaObj = {...this.state.activeForm}
+                    formSchemaObj.uiSchema = json
+                    this.setState(prevState => ({activeForm: formSchemaObj}))
+                })
         }
+    }
+
+    render() {
+        let allAnswers = this.data.getAnswers(this.state.activeProductId);
+        let formData = {}
+        if (allAnswers && this.state.displayStep) {
+            formData = allAnswers[this.state.displayStep]
+        }
+
+        //TODO: make guiding questions header hide if there is no forms
 
         return (
             <div>
-                <div className={styles.backButton} data-tid="backButton">
+                <Button className={styles.backButton} color="default" data-tid="backButton" >
                     <Link to={routes.HOME}>
                         <i className="fa fa-arrow-left fa-3x" />
                     </Link>
-                </div>
+                </Button>
 
+                {/* PRODUCT MENU */}
                 <div className={styles.selector}>
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange} >
-                        {Object.keys(this.state.products).map((key) => {
+                        onChange={this.handleDropdownChange}
+                    >
+                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
                             return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        })}
+                        }) : null }
                         <MenuItem value="new-product">--New Product--</MenuItem>
                     </Select>
 
@@ -138,34 +276,111 @@ export default class Prism extends Component<Props> {
                                 value={this.state.productName}
                                 onChange={this.handleProductNameChange}
                             />
-                            <Button className={styles.createBtn} onClick={this.createProduct}>Create</Button>
-                        </div> : null}
+                            <Button className={styles.createBtn}
+                                    variant="outlined" color="primary"
+                                    onClick={this.createProduct}
+                            >
+                                Create
+                            </Button>
+                        </div> : null
+                    }
                 </div>
 
-                <div className={styles.wheel}>
-                    <Wheel onWheelClick={this.wheelClick} />
-                </div>
+                {/* PRISM WHEEL & STEPS */}
+                <Grid container className={styles.wheel} spacing={16}>
+                    <Grid item xs={6}>
+                        <Wheel onWheelClick={this.wheelClick} />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <h3>
+                            Your Progress
+                        </h3>
 
+                        <List component="nav">
+                            {this.stepsData().map((step, index) => {
+                                return <ProgressItem
+                                            handleClick={this.handleClick}
+                                            step={step} stepCounter={index + 1}
+                                            key={'step_' + (index + 1)}
+                                        />
+                            })}
+                        </List>
+                        <hr />
+
+                        <Button onClick={this.makePDF} className={styles.button}
+                                variant="contained" color="default">
+                            Generate Report PDF
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                {/* FORM MODAL */}
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
-                    <Button onClick={this.closeModal}>close</Button>
-                    <h2 className={styles.stepHeader}>{this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}</h2>
+                    <div className={styles.navArrows}>
+                        { this.state.displayStep > 1 &&
+                            <Button onClick={this.navPrev}
+                                    className={styles.leftButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-left fa-3x" />
+                                &nbsp; Back
+                            </Button>
+                        }
+                        <h2 className={styles.stepHeader}>
+                            {this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}
+                        </h2>
+                        { this.state.displayStep < 7 &&
+                            <Button onClick={this.navNext}
+                                    className={styles.rightButton}
+                                    variant="contained" color="default"
+                            >
+                                Next &nbsp;
+                                <i className = "fa fa-arrow-right fa-3x" />
+                            </Button>
+                        }
+                    </div>
+                    <Button className={styles.button} variant="outlined" onClick={this.closeModal}>
+                        Close and Return to PrISM
+                    </Button>
+                    
                     <div className={styles.contentMarkdown}>
-                        {this.state.displayStep > 0 ? this.data.getContentList(this.state.displayStep).map((mdPath) => {
-                            let fullPath = `${__dirname}` + mdPath;
-                            var buf;
-                            try {
-                                buf = fs.readFileSync(fullPath);
-                            } catch (err) {
-                                console.log('error reading md file');
-                            }
-                            return <ReactMarkdown key={mdPath} source={buf.toString()} />
+                        {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
+                            return val;
                         }) : null}
                     </div>
                     <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-
-                    {this.state.displayStep > 0 ? <Form schema={schema} uiSchema={uiSchema} /> : null}
+                    {this.state.activeProductId && this.state.displayStep > 0
+                        && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
+                        <Form noValidate={true} formData={formData}
+                              schema={this.state.activeForm.schema}
+                              uiSchema={this.state.activeForm.uiSchema}
+                              onSubmit={this.submitAnswers}
+                              ref={(form) => {this.modalForm = form;}}
+                        >
+                            <button type="submit" className={styles.hidden}>Submit</button>
+                        </Form> : null
+                    }
+                    <div className={styles.navArrows}>
+                        { this.state.displayStep > 1 &&
+                            <Button onClick={this.navPrev}
+                                    className={styles.leftButton}
+                                    variant="contained" color="default"
+                            >
+                                <i className = "fa fa-arrow-left fa-3x" />
+                                &nbsp; Back
+                            </Button>
+                        }
+                        { this.state.displayStep < 7 &&
+                            <Button onClick={this.navNext}
+                                    className={styles.rightButton}
+                                    variant="contained" color="primary"
+                            >
+                                Save and Continue &nbsp;
+                                <i className = "fa fa-arrow-right fa-3x" />
+                            </Button>
+                        }
+                    </div>
                 </Modal>
-
             </div>
         );
     }

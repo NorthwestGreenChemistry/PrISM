@@ -66,10 +66,17 @@ app.on('ready', async () => {
         height: 728
     });
 
-    //this opens up dev tools, remove in production
-    mainWindow.webContents.openDevTools();
-
     mainWindow.loadURL(`file://${__dirname}/app.html`);
+
+    // open external links in separate browser window
+    const handleRedirect = (e, url) => {
+        if (url !== mainWindow.webContents.getURL()) {
+            e.preventDefault()
+            require('electron').shell.openExternal(url)
+        }
+    }
+    mainWindow.webContents.on('will-navigate', handleRedirect)
+    mainWindow.webContents.on('new-window', handleRedirect)
 
     // @TODO: Use 'ready-to-show' event
     //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
