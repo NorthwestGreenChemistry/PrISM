@@ -285,7 +285,7 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 {/* PRISM WHEEL & STEPS */}
-                <Grid container>
+                <Grid container spacing={0}>
                     <Grid className={styles.wheel} item xs={7}>
                         <Wheel onWheelClick={this.wheelClick} />
                     </Grid>
