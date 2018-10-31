@@ -131,36 +131,39 @@ class Data {
             console.log('a set of pdf results does not exist');
             let steps = []
             let results = []
-            Object.keys(schema.properties).forEach((e) => {
-                // let nestedTitle = schema.properties[e].title
-                var question = undefined;
-                var answer = undefined;
-                //temporarily ignoring all types that's NOT string + object
-                if (schema.properties[e].type === 'string') {
-                    question = schema.properties[e].title
-                    console.log('type is string', question);
-                    answer = formData[e];
-                } else if (schema.properties[e].type === 'object') {
-                    console.log('answer type is object', formData[e]);
 
-                    Object.keys(schema.properties[e].properties).forEach((prop) => {
-                        question = schema.properties[e].properties[prop].title;
-                    })
+            if (schema && schema.properties) {
+                Object.keys(schema.properties).forEach((e) => {
+                    // let nestedTitle = schema.properties[e].title
+                    var question = undefined;
+                    var answer = undefined;
+                    //temporarily ignoring all types that's NOT string + object
+                    if (schema.properties[e].type === 'string') {
+                        question = schema.properties[e].title
+                        console.log('type is string', question);
+                        answer = formData[e];
+                    } else if (schema.properties[e].type === 'object') {
+                        console.log('answer type is object', formData[e]);
 
-                    //answer obj will always have one prop
-                    Object.keys(formData[e]).forEach((prop) => {
-                        answer = formData[e][prop]
-                    })
-                }
+                        Object.keys(schema.properties[e].properties).forEach((prop) => {
+                            question = schema.properties[e].properties[prop].title;
+                        })
 
-                if (question && answer) {
-                    var qAndA = {
-                        "question": question,
-                        "answer": answer
+                        //answer obj will always have one prop
+                        Object.keys(formData[e]).forEach((prop) => {
+                            answer = formData[e][prop]
+                        })
                     }
-                    results.push(qAndA);
-                }
-            })
+
+                    if (question && answer) {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
+                        }
+                        results.push(qAndA);
+                    }
+                })
+            }
 
             let stepsVar = {
                 "title": stepKey,
@@ -198,35 +201,37 @@ class Data {
             let results = []
 
 
-            Object.keys(schema.properties).forEach((e) => {
-                var question = undefined;
-                var answer = undefined;
-                //temporarily ignoring all types that's NOT string + object
-                if (schema.properties[e].type === 'string') {
-                    question = schema.properties[e].title
-                    console.log('type is string', question);
-                    answer = formData[e];
-                } else if (schema.properties[e].type === 'object') {
-                    console.log('answer type is object', formData[e]);
+            if (schema && schema.properties) {
+                Object.keys(schema.properties).forEach((e) => {
+                    var question = undefined;
+                    var answer = undefined;
+                    //temporarily ignoring all types that's NOT string + object
+                    if (schema.properties[e].type === 'string') {
+                        question = schema.properties[e].title
+                        console.log('type is string', question);
+                        answer = formData[e];
+                    } else if (schema.properties[e].type === 'object') {
+                        console.log('answer type is object', formData[e]);
 
-                    Object.keys(schema.properties[e].properties).forEach((prop) => {
-                        question = schema.properties[e].properties[prop].title;
-                    })
+                        Object.keys(schema.properties[e].properties).forEach((prop) => {
+                            question = schema.properties[e].properties[prop].title;
+                        })
 
-                    //answer obj will always have one prop
-                    Object.keys(formData[e]).forEach((prop) => {
-                        answer = formData[e][prop]
-                    })
-                }
-
-                if (question && answer) {
-                    var qAndA = {
-                        "question": question,
-                        "answer": answer
+                        //answer obj will always have one prop
+                        Object.keys(formData[e]).forEach((prop) => {
+                            answer = formData[e][prop]
+                        })
                     }
-                    results.push(qAndA);
-                }
-            })
+
+                    if (question && answer) {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
+                        }
+                        results.push(qAndA);
+                    }
+                })
+            }
 
             let stepsVar = {
                 "title": stepKey,
