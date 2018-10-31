@@ -250,10 +250,8 @@ export default class Prism extends Component<Props> {
 
         return (
             <div>
-                <Button className={styles.backButton} color="default" data-tid="backButton" >
-                    <Link to={routes.HOME}>
-                        <i className="fa fa-arrow-left fa-3x" />
-                    </Link>
+                <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
+                    <i className="fa fa-arrow-left fa-3x" />
                 </Button>
 
                 {/* PRODUCT MENU */}

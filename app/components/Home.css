@@ -22,10 +22,15 @@
 }
 
 
-.button {
+.button, .primaryButton {
     font-size: 1.4rem !important;
 }
 
-.button I {
+.button i, .primaryButton i {
     font-size: 1.4rem !important;
 }
+
+.primaryButton:hover {
+    color: #FFF;
+}
+

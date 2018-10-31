@@ -60,13 +60,14 @@ export default class Home extends Component<Props> {
                             })
                         }
                     </div>
+                    <hr />
                     <Button
                         component={Link} to={routes.PRISM} 
-                        className={styles.button}
+                        className={styles.primaryButton}
                         onClick={() => {this.data.openedApp()}}
                         variant="contained" color="primary"
                     >
-                        Get Started &nbsp;
+                        Get Started with PrISM &nbsp;
                         <i className="fa fa-arrow-right" />
                     </Button>
                 </div>
