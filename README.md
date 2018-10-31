@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/NorthwestGreenChemistry/PrISM.svg?branch=develop)](https://travis-ci.com/NorthwestGreenChemistry/PrISM)
 # PrISM
 
 <img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
