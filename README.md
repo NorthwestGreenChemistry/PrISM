@@ -1,4 +1,9 @@
 [![Build Status](https://travis-ci.com/NorthwestGreenChemistry/PrISM.svg?branch=develop)](https://travis-ci.com/NorthwestGreenChemistry/PrISM)
+[![Github Tag][github-tag-image]][github-tag-url]
+<img src="https://forthebadge.com/images/badges/built-with-science.svg" />
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+
 # PrISM
 
 <img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
