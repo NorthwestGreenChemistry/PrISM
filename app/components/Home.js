@@ -2,11 +2,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 import routes from '../constants/routes';
 import styles from './Home.css';
 import Data from './Data';
 
 type Props = {};
+
 
 export default class Home extends Component<Props> {
     constructor(props) {
@@ -36,16 +39,39 @@ export default class Home extends Component<Props> {
     }
 
     render() {
-        return <div className={styles.container} data-tid="container">
-                <Link to={routes.PRISM} onClick={() => {this.data.openedApp()}}>
-                    <i className="fa fa-arrow-right fa-3x" />
-                </Link>
-                <div>
-                    {this.state.markdownFiles.map(val => {
-                        return val;
-                        })
-                    }
+        return (
+            <Paper className={styles.container} data-tid="container" elevation={1}>
+                
+                <div className={styles.intro} data-tid="intro">
+                    <img src={require('../assets/ngc-logo.png')} />
+                    <br />
+                    <Button
+                        component={Link} to={routes.PRISM} 
+                        className={styles.button}
+                        onClick={() => {this.data.openedApp()}}
+                        variant="contained" color="default"
+                    >
+                        Skip & Get Started &nbsp;
+                        <i className="fa fa-arrow-right" />
+                    </Button>
+                    <div>
+                        {this.state.markdownFiles.map(val => {
+                            return val;
+                            })
+                        }
+                    </div>
+                    <hr />
+                    <Button
+                        component={Link} to={routes.PRISM} 
+                        className={styles.primaryButton}
+                        onClick={() => {this.data.openedApp()}}
+                        variant="contained" color="primary"
+                    >
+                        Get Started with PrISM &nbsp;
+                        <i className="fa fa-arrow-right" />
+                    </Button>
                 </div>
-            </div>
+            </Paper>
+        );
     };
 }

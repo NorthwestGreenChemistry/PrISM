@@ -27,7 +27,9 @@
         }
     },
     "waste": {
-        "useLength": {},
+        "useLength": {
+            "ui:widget": "radio"
+        },
         "attributes": {
             "ui:widget": "checkboxes"
         },

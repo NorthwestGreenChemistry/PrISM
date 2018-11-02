@@ -45,6 +45,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_ui.json",
+                prevStep: "1",
                 nextStep: "3"
             };
 
@@ -55,6 +56,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step3-production-manufacturing.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_ui.json",
+                prevStep: "2",
                 nextStep: "4"
             };
 
@@ -65,6 +67,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step4-use.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_ui.json",
+                prevStep: "3",
                 nextStep: "5"
             };
 
@@ -75,6 +78,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step5-end-of-life.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_ui.json",
+                prevStep: "4",
                 nextStep: "6"
             }
 
@@ -85,6 +89,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step6-whole-product.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_ui.json",
+                prevStep: "5",
                 nextStep: "7"
             }
 
@@ -94,7 +99,8 @@ class Data {
                 title: "Decision Analysis",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step7-evaluation-and-optimization.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json"
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json",
+                prevStep: "6"
             };
 
             localStorage.setItem("7", JSON.stringify(finalStep));
@@ -102,7 +108,12 @@ class Data {
 
         return Data.singleton;
     }
-
+    //returns key for previous step
+    getPrevStep(step) {
+        let stepString = localStorage.getItem(step);
+        let stepObj = JSON.parse(stepString);
+        return stepObj.prevStep;
+    }
     //returns key for next step
     getNextStep(step) {
         let stepString = localStorage.getItem(step);
@@ -120,36 +131,39 @@ class Data {
             console.log('a set of pdf results does not exist');
             let steps = []
             let results = []
-            Object.keys(schema.properties).forEach((e) => {
-                // let nestedTitle = schema.properties[e].title
-                var question = undefined;
-                var answer = undefined;
-                //temporarily ignoring all types that's NOT string + object
-                if (schema.properties[e].type === 'string') {
-                    question = schema.properties[e].title
-                    console.log('type is string', question);
-                    answer = formData[e];
-                } else if (schema.properties[e].type === 'object') {
-                    console.log('answer type is object', formData[e]);
 
-                    Object.keys(schema.properties[e].properties).forEach((prop) => {
-                        question = schema.properties[e].properties[prop].title;
-                    })
+            if (schema && schema.properties) {
+                Object.keys(schema.properties).forEach((e) => {
+                    // let nestedTitle = schema.properties[e].title
+                    var question = undefined;
+                    var answer = undefined;
+                    //temporarily ignoring all types that's NOT string + object
+                    if (schema.properties[e].type === 'string') {
+                        question = schema.properties[e].title
+                        console.log('type is string', question);
+                        answer = formData[e];
+                    } else if (schema.properties[e].type === 'object') {
+                        console.log('answer type is object', formData[e]);
 
-                    //answer obj will always have one prop
-                    Object.keys(formData[e]).forEach((prop) => {
-                        answer = formData[e][prop]
-                    })
-                }
+                        Object.keys(schema.properties[e].properties).forEach((prop) => {
+                            question = schema.properties[e].properties[prop].title;
+                        })
 
-                if (question && answer) {
-                    var qAndA = {
-                        "question": question,
-                        "answer": answer
+                        //answer obj will always have one prop
+                        Object.keys(formData[e]).forEach((prop) => {
+                            answer = formData[e][prop]
+                        })
                     }
-                    results.push(qAndA);
-                }
-            })
+
+                    if (question && answer) {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
+                        }
+                        results.push(qAndA);
+                    }
+                })
+            }
 
             let stepsVar = {
                 "title": stepKey,
@@ -187,35 +201,37 @@ class Data {
             let results = []
 
 
-            Object.keys(schema.properties).forEach((e) => {
-                var question = undefined;
-                var answer = undefined;
-                //temporarily ignoring all types that's NOT string + object
-                if (schema.properties[e].type === 'string') {
-                    question = schema.properties[e].title
-                    console.log('type is string', question);
-                    answer = formData[e];
-                } else if (schema.properties[e].type === 'object') {
-                    console.log('answer type is object', formData[e]);
+            if (schema && schema.properties) {
+                Object.keys(schema.properties).forEach((e) => {
+                    var question = undefined;
+                    var answer = undefined;
+                    //temporarily ignoring all types that's NOT string + object
+                    if (schema.properties[e].type === 'string') {
+                        question = schema.properties[e].title
+                        console.log('type is string', question);
+                        answer = formData[e];
+                    } else if (schema.properties[e].type === 'object') {
+                        console.log('answer type is object', formData[e]);
 
-                    Object.keys(schema.properties[e].properties).forEach((prop) => {
-                        question = schema.properties[e].properties[prop].title;
-                    })
+                        Object.keys(schema.properties[e].properties).forEach((prop) => {
+                            question = schema.properties[e].properties[prop].title;
+                        })
 
-                    //answer obj will always have one prop
-                    Object.keys(formData[e]).forEach((prop) => {
-                        answer = formData[e][prop]
-                    })
-                }
-
-                if (question && answer) {
-                    var qAndA = {
-                        "question": question,
-                        "answer": answer
+                        //answer obj will always have one prop
+                        Object.keys(formData[e]).forEach((prop) => {
+                            answer = formData[e][prop]
+                        })
                     }
-                    results.push(qAndA);
-                }
-            })
+
+                    if (question && answer) {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
+                        }
+                        results.push(qAndA);
+                    }
+                })
+            }
 
             let stepsVar = {
                 "title": stepKey,

@@ -1,1 +1,11 @@
-{}
+{
+    "firstquestion": {
+        "ui:widget": "radio"
+    },
+    "secondquestion": {
+        "ui:widget": "radio"
+    },
+    "wasteManagement": {
+        "ui:widget": "radio"
+    }
+}
