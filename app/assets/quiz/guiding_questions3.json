@@ -73,76 +73,76 @@
                     },
                     "uniqueItems": "true"
                 }
-            },
-            "hazardAssessment": {
-                "title": "See Resource: Hazard Assessment:",
-                "type": "object",
-                "properties": {
-                    "screeningAssessment": {
-                        "title": "Have you conducted a screening chemical hazard assessment on the chemicals used and produced?",
-                        "type": "string",
-                        "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
-                    },
-                    "comprehensiveAssessment": {
-                        "title": "Have you conducted a comprehensive chemical hazard assessment, particularly on chemicals for which there is worker and/or community exposure?",
-                        "type": "string",
-                        "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
-                    },
-                    "mappedExposure": {
-                        "title": "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?",
-                        "description": "LINK TO CONTROL BANDING",
-                        "type": "string",
-                        "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
-                    }
+            }
+        },
+        "hazardAssessment": {
+            "title": "See Resource: Hazard Assessment:",
+            "type": "object",
+            "properties": {
+                "screeningAssessment": {
+                    "title": "Have you conducted a screening chemical hazard assessment on the chemicals used and produced?",
+                    "type": "string",
+                    "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
+                },
+                "comprehensiveAssessment": {
+                    "title": "Have you conducted a comprehensive chemical hazard assessment, particularly on chemicals for which there is worker and/or community exposure?",
+                    "type": "string",
+                    "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
+                },
+                "mappedExposure": {
+                    "title": "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?",
+                    "description": "LINK TO CONTROL BANDING",
+                    "type": "string",
+                    "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
                 }
-            },
-            "stakeholder": {
-                "title": "See Resource:  Stakeholder Considerations:",
-                "type": "object",
-                "properties": {
-                    "neighbors": {
-                        "title": "Are there potential impacts be to workers and those who live around the production or manufacturing facility who may be exposed to chemicals used in production and manufacturing?  Chemicals don't need to be hazardous to be a nuisance to neighbors (e.g. odors).",
-                        "type": "string",
-                        "enum": ["Yes", "No", "I don't know"]
-                    }
+            }
+        },
+        "stakeholder": {
+            "title": "See Resource:  Stakeholder Considerations:",
+            "type": "object",
+            "properties": {
+                "neighbors": {
+                    "title": "Are there potential impacts be to workers and those who live around the production or manufacturing facility who may be exposed to chemicals used in production and manufacturing?  Chemicals don't need to be hazardous to be a nuisance to neighbors (e.g. odors).",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
                 }
-            },
-            "lifecycle": {
-                "title": "See Resource:  Life Cycle Considerations:",
-                "type": "object",
-                "properties": {
-                    "productionWaste": {
-                        "title": "What wastes are created during production and manufacturing?",
-                        "type": "string"
-                    },
-                    "hazardousWaste": {
-                        "title": "Are these wastes hazardous?",
+            }
+        },
+        "lifecycle": {
+            "title": "See Resource:  Life Cycle Considerations:",
+            "type": "object",
+            "properties": {
+                "productionWaste": {
+                    "title": "What wastes are created during production and manufacturing?",
+                    "type": "string"
+                },
+                "hazardousWaste": {
+                    "title": "Are these wastes hazardous?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "wasteDisposal": {
+                    "title": "How are these wastes disposed of?",
+                    "type": "array",
+                    "items": {
                         "type": "string",
-                        "enum": ["Yes", "No", "I don't know"]
+                        "enum": [
+                            "Landfill",
+                            "Waste-to-energy",
+                            "Recycling",
+                            "Industrial composting",
+                            "Wastewater treatment plant (down the drain)",
+                            "Direct discharge to environement",
+                            "Other (fill in box)",
+                            "I don't know"
+                        ]
                     },
-                    "wasteDisposal": {
-                        "title": "How are these wastes disposed of?",
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "enum": [
-                                "Landfill",
-                                "Waste-to-energy",
-                                "Recycling",
-                                "Industrial composting",
-                                "Wastewater treatment plant (down the drain)",
-                                "Direct discharge to environement",
-                                "Other (fill in box)",
-                                "I don't know"
-                            ]
-                        },
-                        "uniqueItems": "true"
-                    },
-                    "measurement": {
-                        "title": "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?",
-                        "type": "string",
-                        "enum": ["Yes", "No", "I don't know"]
-                    }
+                    "uniqueItems": "true"
+                },
+                "measurement": {
+                    "title": "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?",
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
                 }
             }
         }
