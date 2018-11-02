@@ -21,7 +21,9 @@ Northwest Green Chemistry does not transmit client data to a server or maintain 
 
 **How do I download it?**
 
-*TBD after packaging.* 🙃
+[PrISM Releases ✨](https://github.com/NorthwestGreenChemistry/PrISM/releases)
+
+Select the latest release. Find your installer (mac, win, or linux) under **Assets** and click to download. That's it!
 
 **How do I use it?**
 
