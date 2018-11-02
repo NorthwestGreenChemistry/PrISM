@@ -33,23 +33,22 @@ const STEP_TITLES = [
 
 
 export default class Prism extends Component<Props> {
+    
+    data = Data.getInstance()
+    state = {
+        modalIsOpen: false,
+        displayStep: 0,
+        dropdownSelection: "",
+        activeProductId: "",
+        productName: "",
+        activeForm: {},
+        modalForm: {},
+        markdownFiles: [],
+        products: this.data.getAllProducts()
+    }
 
     constructor(props) {
         super(props)
-        this.data = Data.getInstance()
-        this.modalForm = null
-
-        this.state = {
-            modalIsOpen: false,
-            displayStep: 0,
-            dropdownSelection: "",
-            activeProductId: "",
-            productName: "",
-            activeForm: {},
-            markdownFiles: [],
-            products: this.data.getAllProducts()
-        }
-
         ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
     }
 
@@ -139,7 +138,7 @@ export default class Prism extends Component<Props> {
     }
 
     navNext = (event) => {
-        this.modalForm.onSubmit(event)
+        this.state.modalForm.onSubmit(event)
     }
 
     submitAnswers = (form) => {
@@ -354,7 +353,7 @@ export default class Prism extends Component<Props> {
                               schema={this.state.activeForm.schema}
                               uiSchema={this.state.activeForm.uiSchema}
                               onSubmit={this.submitAnswers}
-                              ref={(form) => {this.modalForm = form;}}
+                              ref={(form) => {this.state.modalForm = form;}}
                         >
                             <button type="submit" className={styles.hidden}>Submit</button>
                         </Form> : null
