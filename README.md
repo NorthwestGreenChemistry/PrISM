@@ -1,4 +1,6 @@
+&nbsp;&nbsp;&nbsp;&nbsp;
 [![Build Status](https://travis-ci.com/NorthwestGreenChemistry/PrISM.svg?branch=develop)](https://travis-ci.com/NorthwestGreenChemistry/PrISM)
+&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://forthebadge.com/images/badges/built-with-science.svg" />
 <img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
 <img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
