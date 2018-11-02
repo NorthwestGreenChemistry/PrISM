@@ -1,41 +1,89 @@
 sudo: true
 matrix:
   include:
-  - os: osx
-    osx_image: xcode9.4
-    language: node_js
-    node_js:
-    - node
-    - '9'
-    env:
-    - ELECTRON_CACHE=$HOME/.cache/electron
-    - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+    - os: osx
+      osx_image: xcode9.4
+      language: node_js
+      node_js:
+        - node
+        - '9'
+      env:
+        - ELECTRON_CACHE=$HOME/.cache/electron
+        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+
+    - os: linux
+      services: docker
+      language: node_js
+      node_js:
+        - node
+        - '9'
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-multilib
+            - g++-8
+            - g++-multilib
+            - icnsutils
+            - graphicsmagick
+            - xz-utils
+            - xorriso
+            - rpm
+
 before_cache:
-- rm -rf $HOME/.cache/electron-builder/wine
+  - rm -rf $HOME/.cache/electron-builder/wine
+
 cache:
   yarn: true
   directories:
-  - node_modules
-  - app/node_modules
-  - "$(npm config get prefix)/lib/node_modules"
-  - flow-typed
-  - "$HOME/.cache/electron"
-  - "$HOME/.cache/electron-builder"
-  - "$HOME/docker"
+    - node_modules
+    - app/node_modules
+    - "$(npm config get prefix)/lib/node_modules"
+    - flow-typed
+    - "$HOME/.cache/electron"
+    - "$HOME/.cache/electron-builder"
+    - "$HOME/docker"
+
 before_install:
-- npm install -g serverless
-- curl -o- -L https://yarnpkg.com/install.sh | bash
-- export PATH="$HOME/.yarn/bin:$PATH"
+  - npm install -g serverless
+  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX="g++-8"; fi
+  - export PATH="$HOME/.yarn/bin:$PATH"
+
 install:
-- yarn
+  - yarn
+  # On Linux, initialize "virtual display". See before_script
+  - |
+    if [ "$TRAVIS_OS_NAME" == "linux" ]; then
+      /sbin/start-stop-daemon \
+      --start \
+      --quiet \
+      --pidfile /tmp/custom_xvfb_99.pid \
+      --make-pidfile \
+      --background \
+      --exec /usr/bin/Xvfb \
+      -- :99 -ac -screen 0 1280x1024x16
+    else
+      :
+    fi
+
+before_script:
+  # On Linux, create a "virtual display". This allows browsers to work properly
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sleep 3; fi
+  
 script:
-- yarn build
-- yarn dist
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn build && yarn dist; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn build && yarn dist -- --mac --win; fi
+
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
     secure: GVY49Y9P9WiXWGBE0hOPjVahBkoFAcZ2wjDtvNfcBvaMlruFmZqtTvbJDMxoYHC/nD7pdos11MV9oPMGU2r9LEnyhMpQ86yd60N7TMwh5fYfY3pH+ukV4mdXrHHgOdZTPiSdpBAxol/slRsewLFhrqpRH05AgjrsY2hbiM1HOfcyXUbC8XLLawafK3QUwrh0txC0ZFAvP9cMA7z6dDJikd+5pBmHfkaQIAlXFchM1qnrSGyvL69fCQwJ1Ggck0gQUz0Mj0zJ1fqsL0LJQ+XabuT+g0K5SfinnC2Edl1PkdWwo+Z0PvkI7VddT3PPqihgUssfNm9MjSPR6EN/C/3Q2amtVe3ehk4HqoCrmjAONitS0P+xSQytsU2yPO+IGC12tPmDfAqP2tbqI79ofyTy9DNd/u0ljK10bik2gKhEAYrsdkLo/nDNt5LIuFSHgMK/6AzQIG0tyjDh96OMXUH2vQWZ+j1fS5s9PdguLsQ8vjv7AMjJGULXJMp1w0b2wFaDfl3TsdmfO4+XtPSbfBYLJE9Xk9Wjs9nWeL17O9D6o3oydVsPi4ylOSwrTfUs6FM8RMb1gDY7VbZVdd1RultpnDcnHBS67yW2DdmQvXpULYzmvrf805YJpQzunHXvyO4xKbiYdvmPeoVaSpPs2vHujqk9yc3z/1jMV6GJ1mh84x4=
+  file_glob: true
   file: release/*
   on:
     tags: true
