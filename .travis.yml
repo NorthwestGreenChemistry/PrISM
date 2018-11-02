@@ -12,9 +12,11 @@ matrix:
         - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
     - os: linux
+      services: docker
       language: node_js
       node_js:
         - node
+        - '9'
       addons:
         apt:
           sources:
@@ -28,14 +30,6 @@ matrix:
             - xz-utils
             - xorriso
             - rpm
-
-    - os: windows
-      language: node_js
-      node_js:
-        - node
-      env:
-        - ELECTRON_CACHE=$HOME/.cache/electron
-        - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 
 before_cache:
   - rm -rf $HOME/.cache/electron-builder/wine
@@ -54,8 +48,8 @@ cache:
 before_install:
   - npm install -g serverless
   - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - export PATH="$HOME/.yarn/bin:$PATH"
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX="g++-8"; fi
+  - export PATH="$HOME/.yarn/bin:$PATH"
 
 install:
   - yarn
@@ -81,8 +75,8 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sleep 3; fi
   
 script:
-  - yarn build
-  - yarn dist
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then yarn build && yarn dist; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then yarn build && yarn dist -- --mac --win; fi
 
 deploy:
   provider: releases
