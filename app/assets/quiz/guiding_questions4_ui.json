@@ -1,1 +1,63 @@
-{}
+{
+    "legoQuestion": {
+        "ui:widget": "radio"
+    },
+    "chemInventory": {
+        "intentionalHazard": {
+            "ui:widget": "radio"
+        },
+        "hazardousImpurities": {
+            "ui:widget": "radio"
+        },
+        "ingestible": {
+            "ui:widget": "radio"
+        },
+        "emissions": {
+            "ui:widget": "radio"
+        }
+    },
+    "exposureAssessment": {
+        "routes": {
+            "ui:widget": "checkboxes"
+        },
+        "conceptualExposure": {
+            "ui:widget": "radio"
+        },
+        "exposureAmount": {
+            "ui:widget": "textarea"
+        }
+    },
+    "hazardAssessment": {
+        "screening": {
+            "ui:widget": "radio"
+        },
+        "highHazards": {
+            "ui:widget": "radio"
+        },
+        "comprehensiveAssessment": {
+            "ui:widget": "radio"
+        },
+        "hazardProfiles": {
+            "ui:widget": "textarea"
+        }
+    },
+    "stakeholderConsiderations": {
+        "stakeholders": {
+            "ui:widget": "radio"
+        }
+    }, 
+    "wasteConsiderations": {
+        "productLife": {
+            "ui:widget": "radio"
+        }, 
+        "waste": {
+            "ui:widget": "radio"
+        },
+        "energyUse": {
+            "ui:widget": "radio"
+        }, 
+        "stability": {
+            "ui:widget": "radio"
+        }
+    }
+}
