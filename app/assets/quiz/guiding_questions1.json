@@ -2,8 +2,7 @@
     "title": "Background",
     "type": "object",
     "properties": {
-        "firstquestion": {
-            "title": "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?",
+        "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?": {
             "description": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product.",
             "type": "string"
         },
