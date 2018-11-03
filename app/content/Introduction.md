@@ -69,12 +69,12 @@ This workbook is designed to be used in an iterative way. Start by laying out yo
 
 At any time you can link to the Tools section
 
-1. Chemical Inventory 
-2. Chemical Hazard Assessment 
-3. Exposure Assessment
-4. Stakeholder Considerations 
-5. Life Cycle Considerations 
-6. Decision Analysis
+1. [Chemical Inventory](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md#resource-1-chemical-inventory-identifying-chemicals-in-products-and-processes)
+2. [Chemical Hazard Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md#resource-chemical-hazard-assessment)
+3. [Exposure Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource3-exposure-assessment.md#resource-3-exposure-assessment)
+4. [Stakeholder Considerations](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource4-stakeholder-considerations-and-social-impacts.md#resource-4-stakeholder-considerations--social-impacts) 
+5. [Life Cycle Considerations](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md#resource--life-cycle-considerations)
+6. [Decision Analysis](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md#resource-7-decision-analysis)
 
 ## Acknowledgements 
 NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle Products Innovation Institute, formerly UC Berkeley), Tom McKeag ( UC Berkeley Greener Solutions Course and Berkeley Center for Green Chemistry), Saskia van Bergen and Ken Zarker (Washington Department of Ecology), Mark Goedkoop (PRe Consulting), Margaret Whittaker (ToxServices), Jeremey Faludi (Dartmouth College), Mark Buczek, Ashley Baker and Amelia Nestler (Northwest Green Chemistry), participants in the 3D Printing Roundtable, Mikhail Davies and Connie Hensler (Interface Carpet), and [Seattle GiveCamp 2018](http://seattlegivecamp.org/). 
