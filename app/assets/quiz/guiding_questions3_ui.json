@@ -1,5 +1,14 @@
 {
     "chemicalInventory": {
+        "ui:order": [
+            "chemsUsed",
+            "usedHazardous",
+            "chemManufacturing",
+            "manufacturingHazard",
+            "workerHazards",
+            "*",
+            "chemInhaled"
+        ],
         "chemsUsed": {
             "ui:widget": "textarea"
         },
@@ -14,7 +23,7 @@
         },
         "workerHazards": {
             "ui:widget": "radio"
-        }, 
+        },
         "chemInhaled": {
             "ui:widget": "radio"
         }
