@@ -66,16 +66,19 @@
                             "Minimize waste generation.",
                             "Minimize energy usage.",
                             "Reduce GHG emissions / carbon neutral / carbon negative.",
-                            "Reduce/eliminate other life cycle impacts (fill in the blank).",
+                            "Reduce/eliminate other life cycle impacts (fill in the the blank below).",
                             "Reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
                             "Reduce/eliminate process carcinogens.",
-                            "Reduce other hazard process chemicals (fill in the blank).",
-                            "Other (fill in the blank).",
+                            "Reduce other hazard process chemicals (fill in the the blank below).",
+                            "Other (fill in the the blank below).",
                             "Production & Manufacturing not a priority."
                         ]
                     },
                     "uniqueItems": "true"
-                }
+                },
+                " ": {
+                    "type": "string"
+                },
             }
         },
         "priorities": {

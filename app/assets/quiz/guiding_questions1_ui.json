@@ -22,6 +22,9 @@
     "production": {
         "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?": {
             "ui:widget": "checkboxes"
+        },
+        " ": {
+            "ui:widget": "textarea"
         }
     },
     "priorities": {
