@@ -14,6 +14,9 @@ export default class Pdf {
         `;
 
         for (let step of this.data.steps) {
+            if (step == null) {
+                continue;
+            }
             html += this.renderStep(step);
         }
 
