@@ -9,7 +9,10 @@ import Pdf from './Pdf';
 import ProgressItem from './ProgressItem'
 import Data from './Data'
 import List from '@material-ui/core/List'
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 import Button from '@material-ui/core/Button'
+import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
@@ -254,34 +257,46 @@ export default class Prism extends Component<Props> {
                 </Button>
 
                 {/* PRODUCT MENU */}
-                <div className={styles.selector}>
+                <FormControl variant="outlined" className={styles.selector}>
+                    <InputLabel htmlFor="product_name" className={styles.defaultLabel} shrink={true}>
+                        Select Product Name
+                    </InputLabel>
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
+                        defaultValue=""
                         onChange={this.handleDropdownChange}
+                        input={
+                            <OutlinedInput
+                                labelWidth={180}
+                                value="Product Name"
+                                name="product_name"
+                                id="product_name"
+                            />
+                        }
                     >
                         {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
-                            return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
+                            return <option key={key} value={key}>{this.state.products[key]}</option>
                         }) : null }
-                        <MenuItem value="new-product">--New Product--</MenuItem>
+                        <option value="new-product">--New Product--</option>
                     </Select>
+                </FormControl>
 
-                    {this.state.dropdownSelection === 'new-product' ?
-                        <div>
-                            <TextField
-                                label="Product Name"
-                                value={this.state.productName}
-                                onChange={this.handleProductNameChange}
-                            />
-                            <Button className={styles.createBtn}
-                                    variant="outlined" color="primary"
-                                    onClick={this.createProduct}
-                            >
-                                Create
-                            </Button>
-                        </div> : null
-                    }
-                </div>
+                {this.state.dropdownSelection === 'new-product' ?
+                    <FormControl variant="outlined" className={styles.selector}>
+                        <TextField
+                            label="Product Name"
+                            value={this.state.productName}
+                            onChange={this.handleProductNameChange}
+                        />
+                        <Button className={styles.createButton}
+                                variant="contained" color="primary"
+                                onClick={this.createProduct}
+                        >
+                            Create
+                        </Button>
+                    </FormControl> : null
+                }
 
                 {/* PRISM WHEEL & STEPS */}
                 <Grid container spacing={0}>

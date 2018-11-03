@@ -6,16 +6,31 @@
 
 .selector {
     float: right;
-    text-align: right;
+    display: block;
+}
+
+.selector:before, .selector:after {
+    content: " ";
+    display: table;
+}
+
+.selector:after {
+    clear: both;
+}
+
+.defaultLabel {
+    font-size: 1.4rem !important;
+    transform: translate(30px, 8px) scale(1) !important;
 }
 
 .selectorDropdown {
-    margin-bottom: 10px;
+    font-size: 1.4rem !important;
+    min-width: 220px;
+    margin: 15px 15px 0px;
 }
 
-.createBtn {
-    margin-left: 5px !important;
-    margin-top: 10px !important;
+.createButton {
+    margin: 15px 15px 0px;
 }
 
 .stepHeader {
