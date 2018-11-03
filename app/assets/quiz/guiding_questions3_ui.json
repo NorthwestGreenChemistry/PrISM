@@ -1,1 +1,60 @@
-{}
+{
+    "chemicalInventory": {
+        "chemsUsed": {
+            "ui:widget": "textarea"
+        },
+        "usedHazardous": {
+            "ui:widget": "radio"
+        },
+        "chemManufacturing": {
+            "ui:widget": "textarea"
+        },
+        "manufacturingHazard": {
+            "ui:widget": "radio"
+        },
+        "workerHazards": {
+            "ui:widget": "radio"
+        }, 
+        "chemInhaled": {
+            "ui:widget": "radio"
+        }
+    },
+    "exposureAssessment": {
+        "exposedWho": {
+            "ui:widget": "checkboxes"
+        },
+        "exposedHow": {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "hazardAssessment": {
+        "screeningAssessment": {
+            "ui:widget": "radio"
+        },
+        "comprehensiveAssessment": {
+            "ui:widget": "radio"
+        },
+        "mappedExposure": {
+            "ui:widget": "radio"
+        }
+    },
+    "stakeholder": {
+        "neighbors": {
+            "ui:widget": "radio"
+        }
+    },
+    "lifecycle": {
+        "productionWaste": {
+            "ui:widget": "textarea"
+        },
+        "hazardousWaste": {
+            "ui:widget": "radio"
+        },
+        "wasteDisposal": {
+            "ui:widget": "checkboxes"
+        },
+        "measurement": {
+            "ui:widget": "radio"
+        }
+    }
+}
