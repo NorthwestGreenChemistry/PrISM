@@ -1,20 +1,17 @@
 {
   "name": "PrISM",
   "productName": "Northwest Green Chemistry PrISM",
-  "version": "0.1.0",
+  "version": "0.1.2rc",
   "description": "Questionnaire app to help clarify sustainable product design objectives.",
   "main": "./main.prod.js",
   "author": {
     "name": "Seattle GiveCamp",
-    "email": "johndoe@gmail.com",
+    "email": "ANestler@NorthwestGreenChemistry.org",
     "url": "https://github.com/NorthwestGreenChemistry/PrISM"
   },
   "scripts": {
     "electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
     "postinstall": "yarn electron-rebuild"
   },
-  "license": "MIT",
-  "dependencies": {
-    "websql": "^1.0.0"
-  }
+  "license": "MIT"
 }
