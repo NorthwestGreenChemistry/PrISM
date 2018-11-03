@@ -27,6 +27,8 @@ Grow Plastics developed a way to produce food packaging such as meat trays made 
 ![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/3-production/blue-plastic-cup.png)
 ![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/3-production/natureworks-laptop.png)
 
-[Learn more about Grow Plastics](http://growplastics.com/)<br>
-[Image Source: Grow Plastics](http://growplastics.com/technology.html)<br>
+[Learn more about Grow Plastics](http://growplastics.com/)
+
+[Image Source: Grow Plastics](http://growplastics.com/technology.html)
+
 [Image Source: NatureWorks](https://www.natureworksllc.com/What-is-Ingeo/How-Ingeo-is-Made)

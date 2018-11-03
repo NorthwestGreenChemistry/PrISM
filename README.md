@@ -1,4 +1,10 @@
+&nbsp;&nbsp;&nbsp;&nbsp;
 [![Build Status](https://travis-ci.com/NorthwestGreenChemistry/PrISM.svg?branch=develop)](https://travis-ci.com/NorthwestGreenChemistry/PrISM)
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://forthebadge.com/images/badges/built-with-science.svg" />
+<img src="https://forthebadge.com/images/badges/made-with-javascript.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+
 # PrISM
 
 <img src="/app/assets/0-prism-cycle/prism-infographic.png" width="400" height="460" alt="Prism Wheel">
@@ -15,7 +21,9 @@ Northwest Green Chemistry does not transmit client data to a server or maintain 
 
 **How do I download it?**
 
-*TBD after packaging.* 🙃
+[PrISM Releases ✨](https://github.com/NorthwestGreenChemistry/PrISM/releases)
+
+Select the latest release. Find your installer (mac, win, or linux) under **Assets** and click to download. That's it!
 
 **How do I use it?**
 
