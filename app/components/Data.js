@@ -212,6 +212,7 @@ class Data {
 
 
             if (schema && schema.properties) {
+                console.log('SCHEMA', schema, 'SCHEMA PROPS', schema.properties);
                 Object.keys(schema.properties).forEach((e) => {
                     var question = undefined;
                     var answer = undefined;

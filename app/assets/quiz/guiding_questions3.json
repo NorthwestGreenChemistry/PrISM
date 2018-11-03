@@ -51,24 +51,6 @@
                                     "type": "string"
                                 }
                             }
-                        },
-                        {
-                            "properties" : {
-                                "workerHazards": {
-                                    "enum": [
-                                        "No"
-                                    ]
-                                }
-                            }
-                        },
-                        {
-                            "properties": {
-                                "workerHazards": {
-                                    "enum": [
-                                        "I don't know"
-                                    ]
-                                }
-                            }
                         }
                     ]
                 }
