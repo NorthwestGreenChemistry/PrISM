@@ -45,12 +45,18 @@
     },
     "waste2": {
         "ui:title": " ",
+        "What attributes are you seeking to meet your longevity goal?": {
+            "ui:widget": "radio"
+        },
         " ": {
             "ui:widget": "textarea"
         }
     },
     "waste3": {
         "ui:title": " ",
+        "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
+            "ui:widget": "radio"
+        },
         " ": {
             "ui:widget": "textarea"
         }
