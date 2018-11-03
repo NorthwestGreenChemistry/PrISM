@@ -1,12 +1,5 @@
 {
     "chemicalInventory": {
-        "ui:order": [
-            "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.",
-            "Are the chemicals used during production and manufacturing hazardous?",
-            "What chemicals and materials are produced during production and manufacturing?",
-            "Are the chemicals produced during production and manufacturing hazardous?",
-            "Are the chemicals in a form that can be inhaled, ingested or absorbed through the skin?"
-        ],
         "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.": {
             "ui:widget": "textarea"
         },
@@ -27,7 +20,7 @@
         }
     },
     "conditionalChemical": {
-        "ui:title": ""  
+        "ui:title": ""
     },
     "exposureAssessment": {
         "Who is likely to be exposed to production chemicals during production and manufacturing? Workers? Nearby communities?": {
