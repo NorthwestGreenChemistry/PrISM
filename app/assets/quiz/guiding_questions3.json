@@ -36,6 +36,43 @@
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 }
+            },
+            "dependencies": {
+                "workerHazards": {
+                    "oneOf": [
+                        {
+                            "properties" : {
+                                "workerHazards": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "What is the hazard?": {
+                                    "type": "string"
+                                }
+                            }
+                        },
+                        {
+                            "properties" : {
+                                "workerHazards": {
+                                    "enum": [
+                                        "No"
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "workerHazards": {
+                                    "enum": [
+                                        "I don't know"
+                                    ]
+                                }
+                            }
+                        }
+                    ]
+                }
+
             }
         },
         "exposureAssessment": {
