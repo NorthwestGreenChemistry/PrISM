@@ -12,8 +12,7 @@ Based on the initial problem formulation step, the designer may have established
 
 This green design and assessment workbook can help give you insight into all aspects of your product's life cycle. Critically, it can also help you identify what you DON'T know about your product. Honing in on missing pieces of the puzzle will highlight areas that need additional or deeper evaluation, opportunities for innovation and improvement or where your product really shines.
 
-![alt text](image.jpg)
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/path-to-optimization.png" width="80%">
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/path-to-optimization.png)
 
 Optimization is a process of continual improvement. Sometimes the first step is to simply eliminate chemicals or materials of high concern. That can have immediate benefits and it can get the product on the path to Sustainable Green Chemistry and Engineering design.
 
