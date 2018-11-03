@@ -7,5 +7,84 @@
     },
     "wasteManagement": {
         "ui:widget": "radio"
+    },
+    "prolongment": {
+        "ui:widget": "radio"
+    },
+    "afterUse": {
+        "ui:widget": "radio"
+    },
+    "endOfLife": {
+        "regionalWaste": {
+            "ui:widget": "checkboxes"
+        }, 
+        "wasteServices": {
+            "ui:widget": "radio"
+        },
+        "litterLikelihood": {
+            "ui:widget": "range"
+        }
+    },
+    "productCompatibility": {
+        "eolCompatibility": {
+            "ui:widget": "radio"
+        },
+        "compatibilityTesting": {
+            "ui:widget": "radio"
+        },
+        "verified": {
+            "ui:widget": "checkboxes"
+        },
+        "chemicalEolImpacts": {
+            "ui:widget": "radio"
+        }
+    },
+    "recoveredMaterialsQuality": {
+        "recyclable": {
+            "ui:widget": "radio"
+        },
+        "toxicMaterials": {
+            "ui:widget": "radio"
+        },
+        "productConversion": {
+            "ui:widget": "radio"
+        }
+    },
+    "wasteTreatmentAndMSI": {
+        "wasteManagementImpacts": {
+            "ui:widget": "radio"
+        },
+        "wasteMonitoring": {
+            "ui:widget": "radio"
+        },
+        "toxicWaste": {
+            "ui:widget": "radio"
+        },
+        "wasteFormedChemicals": {
+            "ui:widget": "textarea"
+        },
+        "hazardousFormedChemicals": {
+            "ui:widget": "radio"
+        },
+        "leastNegativeImpacts": {
+            "ui:widget": "textarea"
+        },
+        "feedstockRecyclable": {
+            "ui:widget": "radio"
+        }
+    },
+    "standards": {
+        "commercialComposting": {
+            "ui:widget": "radio"
+        },
+        "homeComposting": {
+            "ui:widget": "radio"
+        },
+        "marineEnvironment": {
+            "ui:widget": "radio"
+        },
+        "degradationTesting": {
+            "ui:widget": "radio"
+        }
     }
 }

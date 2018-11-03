@@ -122,6 +122,7 @@ class Data {
     }
 
     setPDFStepResults(id, step, schema, formData) {
+        console.log('formdata', formData);
         let storageId = "pdf-" + id;
 
         let pdfResults = localStorage.getItem(storageId);
@@ -197,6 +198,7 @@ class Data {
 
 
             if (stepExists > -1) {
+                console.log('a value exists, splicing');
                 stepsList.splice(stepExists, 1);
             }
 
@@ -232,6 +234,9 @@ class Data {
                     }
                 })
 
+
+                console.log('trying to create a thing', results);
+
                 if (results.length > 0) {
 
                     let stepsVar = {
@@ -241,6 +246,7 @@ class Data {
                     };
 
                     stepsList[step] = stepsVar;
+                    console.log('there are results, storing', stepsVar);
                 }
             }
 
@@ -267,6 +273,7 @@ class Data {
         for (let i = 1; i < 8; i++) {
             let step = pdfContent.steps[i];
             if (step == null) {
+                console.log('step', i, 'is null, gonna backfill');
                 const stepData = JSON.parse(localStorage.getItem(i.toString()));
                 const stepKey = i + ' ' + stepData.title;
 
@@ -279,6 +286,7 @@ class Data {
             }
         }
 
+        console.log(pdfContent);
         return pdfContent;
     }
 

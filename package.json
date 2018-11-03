@@ -1,7 +1,7 @@
 {
   "name": "PrISM",
   "productName": "Northwest Green Chemistry PrISM",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Questionnaire app to help clarify sustainable product design objectives.",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -108,7 +108,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/electron-react-boilerplate/electron-react-boilerplate.git"
+    "url": "git+https://github.com/NorthwestGreenChemistry/PrISM.git"
   },
   "contributors": [
     {
@@ -119,11 +119,13 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues"
+    "url": "https://github.com/NorthwestGreenChemistry/PrISM/issues"
   },
   "keywords": [
     "electron",
-    "boilerplate",
+    "chemistry",
+    "product-design",
+    "sustainable",
     "react",
     "redux",
     "flow",
@@ -132,7 +134,7 @@
     "hot",
     "reload"
   ],
-  "homepage": "https://github.com/electron-react-boilerplate/electron-react-boilerplate#readme",
+  "homepage": "https://github.com/NorthwestGreenChemistry/PrISM#readme",
   "jest": {
     "testURL": "http://localhost/",
     "moduleNameMapper": {

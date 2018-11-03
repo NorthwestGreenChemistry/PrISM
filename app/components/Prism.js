@@ -34,22 +34,21 @@ const STEP_TITLES = [
 
 export default class Prism extends Component<Props> {
 
+    data = Data.getInstance()
+    state = {
+        modalIsOpen: false,
+        displayStep: 0,
+        dropdownSelection: "",
+        activeProductId: "",
+        productName: "",
+        activeForm: {},
+        modalForm: {},
+        markdownFiles: [],
+        products: this.data.getAllProducts()
+    }
+
     constructor(props) {
         super(props)
-        this.data = Data.getInstance()
-        this.modalForm = null
-
-        this.state = {
-            modalIsOpen: false,
-            displayStep: 0,
-            dropdownSelection: "",
-            activeProductId: "",
-            productName: "",
-            activeForm: {},
-            markdownFiles: [],
-            products: this.data.getAllProducts()
-        }
-
         ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
     }
 
@@ -247,11 +246,9 @@ export default class Prism extends Component<Props> {
         }
 
         return (
-            <div>
-                <Button className={styles.backButton} color="default" data-tid="backButton" >
-                    <Link to={routes.HOME}>
-                        <i className="fa fa-arrow-left fa-3x" />
-                    </Link>
+            <div className={styles.root}>
+                <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
+                    <i className="fa fa-arrow-left fa-3x" />
                 </Button>
 
                 {/* PRODUCT MENU */}
@@ -285,17 +282,18 @@ export default class Prism extends Component<Props> {
                 </div>
 
                 {/* PRISM WHEEL & STEPS */}
-                <Grid container className={styles.wheel} spacing={16}>
-                    <Grid item xs={6}>
+                <Grid container spacing={0}>
+                    <Grid className={styles.wheel} item xs={7}>
                         <Wheel onWheelClick={this.wheelClick} />
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid className={styles.steps} item xs={5}>
                         <h3>
                             Your Progress
                         </h3>
 
                         <List component="nav">
                             {this.stepsData().map((step, index) => {
+                                if (index > 6) { return null }
                                 return <ProgressItem
                                             handleClick={this.handleClick}
                                             step={step} stepCounter={index + 1}

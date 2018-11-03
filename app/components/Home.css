@@ -1,13 +1,16 @@
 .container {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 15px;
+    margin: 15px;
+    padding: 20px 30px;
     text-align: center;
+}
+
+.container p {
+    text-align: left;
 }
 
 .container h2 {
     font-size: 5rem;
+
 }
 
 .container a {
@@ -17,3 +20,17 @@
 .intro img {
     width: 70vw;
 }
+
+
+.button, .primaryButton {
+    font-size: 1.4rem !important;
+}
+
+.button i, .primaryButton i {
+    font-size: 1.4rem !important;
+}
+
+.primaryButton:hover {
+    color: #FFF;
+}
+
