@@ -2,17 +2,14 @@
     "title": "Feedstock",
     "type": "object",
     "properties": {
-        "firstquestion": {
-            "title": "What is the base feedstock for the chemical, material or product you are making?",
+        "What is the base feedstock for the chemical, material or product you are making?": {
             "description": "Goal: To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.",
             "type": "string"
         },
-        "secondquestion": {
-            "title": "Feedstock Attributes",
+        "Feedstock Attributes": {
             "type": "object",
             "properties": {
-                "question": {
-                    "title": "Select the following attributes that describe the base feedstock:",
+                "Select the following attributes that describe the base feedstock:": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -28,17 +25,14 @@
                 }
             }
         },
-        "thirdquestion": {
-            "title": "Can the feedstock be depleted (i.e., it is not renewable)?",
+        "Can the feedstock be depleted (i.e., it is not renewable)?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
         },
-        "fourthquestion": {
-            "title": "Feedstock social/env issues",
+        "Feedstock Social/Env Issues": {
             "type": "object",
             "properties": {
-                "question": {
-                    "title": "Are there any known social and environmental issues associated with the raw material feedstock you are using?",
+                "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -53,8 +47,7 @@
                 }
             }
         },
-        "fifthquestion": {
-            "title": "Do you use catalysts?",
+        "Do you use catalysts?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
         }

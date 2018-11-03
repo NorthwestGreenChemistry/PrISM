@@ -1,26 +1,8 @@
 {
-    "firstquestion": {
+    "How does this product compare to other products or systems that provide this same service?": {
         "ui:widget": "textarea"
     },
-    "secondquestion": {
+    "Where are the 'hotspots' or primary impact areas in your products versus other products that provide the same service?": {
         "ui:widget": "textarea"
-    },
-    "production": {
-        "question": {
-            "ui:widget": "checkboxes",
-            "ui:options": {
-                "inline": "true"
-            }
-        }
-    },
-    "priorities": {
-        "question": {
-            "ui:widget": "checkboxes"
-        }
-    },
-    "overall": {
-        "standards": {
-            "ui:widget": "checkboxes"
-        }
     }
 }

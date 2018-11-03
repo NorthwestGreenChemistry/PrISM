@@ -2,8 +2,7 @@
     "title": "Product Stewardship and Consumer Education",
     "type": "object",
     "properties": {
-        "firstquestion": {
-            "title": "How long is this product designed to be used for?",
+        "How long is this product designed to be used for?": {
             "type": "string",
             "enum": [
                 "Very short use phase (<1 day)",
@@ -12,24 +11,20 @@
                 "Long use phase (>12 years)"
             ]
         },
-        "secondquestion": {
-            "title": "Does product durability match the use phase?",
+        "Does product durability match the use phase?": {
             "type": "string",
             "description": "For example, components of the built environment should match the intended longevity of the building.",
             "enum": ["Yes", "No","I don't know"]
         },
-        "wasteManagement": {
-            "title": "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?",
+        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
         },
-        "prolongment": {
-            "title": "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?",
+        "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
         },
-        "afterUse": {
-            "title": "Do you have a plan to communicate instructions for proper management of products after use?",
+        "Do you have a plan to communicate instructions for proper management of products after use?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
         },
@@ -37,8 +32,7 @@
             "title": "Likely End of Life Pathways",
             "type": "object",
             "properties": {
-                "regionalWaste": {
-                    "title": "This section will help identify the likely end of life pathways that your product will undergo once it is used.  Consider that waste infrastructure that is available and how it varies by region. Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc.?",
+                "This section will help identify the likely end of life pathways that your product will undergo once it is used.  Consider that waste infrastructure that is available and how it varies by region. Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc.?": {
                     "description": "For example, look at your local government's waste management resources such as this information from the City of Portland.",
                     "type": "array",
                     "items": {
@@ -55,8 +49,7 @@
                     },
                     "uniqueItems": "true"
                 },
-                "wasteServices": {
-                    "title": "What kinds of services are there for collecting materials for waste management in your region?",
+                "What kinds of services are there for collecting materials for waste management in your region?": {
                     "type": "string",
                     "enum": [
                         "Regular on-site pick-up",
@@ -67,8 +60,7 @@
                         "Don't know"
                     ]
                 },
-                "litterLikelihood": {
-                    "title": "What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?",
+                "What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?": {
                     "description": "National statistics from waste inventories could give you a good indication.  Consider the use phase of your product.",
                     "type": "integer",
                     "minimum": "0",
@@ -81,18 +73,15 @@
             "title": "Product Compatibility",
             "type": "object",
             "properties": {
-                "eolCompatibility": {
-                    "title": "Is your product compatible with the end of life management options that are available?  For example, if your product is a surfactant, will it biodegrade in a wastewater treatment facility?  If you intend it to be commercially composted, is compostable?",
+                "Is your product compatible with the end of life management options that are available?  For example, if your product is a surfactant, will it biodegrade in a wastewater treatment facility?  If you intend it to be commercially composted, is compostable?": {
                     "type": "string",
                     "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
                 },
-                "compatibilityTesting": {
-                    "title": "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards",
+                "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know", "FIX THIS"]
                 },
-                "verified": {
-                    "title": "How is compatibility verified/certified?",
+                "How is compatibility verified/certified?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -106,8 +95,7 @@
                     },
                     "uniqueItems": "true"
                 },
-                "chemicalEolImpacts": {
-                    "title": "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.",
+                "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 }
@@ -117,18 +105,15 @@
             "title": "Quality of Material Recovered",
             "type": "object",
             "properties": {
-                "recyclable": {
-                    "title": "Is the product recyclable?",
+                "Is the product recyclable?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "toxicMaterials": {
-                    "title": "Does your product contain toxic ingredients/chemicals/additives that could contaminate the resulting recycled material and reduce its purity and value in its next iteration? For example, many flame retardants used in plastics can contaminate the recycling stream and prevent its use in higher value products.",
+                "Does your product contain toxic ingredients/chemicals/additives that could contaminate the resulting recycled material and reduce its purity and value in its next iteration? For example, many flame retardants used in plastics can contaminate the recycling stream and prevent its use in higher value products.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "productConversion": {
-                    "title": "Have you identified opportunities for your product to be converted into a high value product when it becomes no longer needed?",
+                "Have you identified opportunities for your product to be converted into a high value product when it becomes no longer needed?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 }
@@ -138,36 +123,29 @@
             "title": "Waste Treatment and Material Specific Impacts",
             "type": "object",
             "properties": {
-                "wasteManagementImpacts": {
-                    "title": "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?",
+                "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "wasteMonitoring": {
-                    "title": "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?",
+                "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "toxicWaste": {
-                    "title": "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?",
+                "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "wasteFormedChemicals": {
-                    "title": "What chemicals are formed when the product undergoes a certain waste treatment pathway?  For example, when halogenated organic materials are incinerated, they can make troublesome inorganic acids like HF or HCl and toxic dioxins and furans (under non-ideal burning conditions).",
+                "What chemicals are formed when the product undergoes a certain waste treatment pathway?  For example, when halogenated organic materials are incinerated, they can make troublesome inorganic acids like HF or HCl and toxic dioxins and furans (under non-ideal burning conditions).": {
                     "type": "string"
                 },
-                "hazardousFormedChemicals": {
-                    "title": "Are the chemicals formed hazardous?",
+                "Are the chemicals formed hazardous?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "leastNegativeImpacts": {
-                    "title": "How could you design the product so that it would have the least possible negative impacts if it were to be mismanaged and leaked into the environment?",
+                "How could you design the product so that it would have the least possible negative impacts if it were to be mismanaged and leaked into the environment?": {
                     "type": "string"
                 },
-                "feedstockRecyclable": {
-                    "title": "Can the feedstock be used to make materials that are readily recyclable? Some plastics derived from non-renewable feedstock may support sustainable materials management as long as product design facilitates material recovery, there is readily available recycling and there is ongoing demand for recycled materials. Proof of efficient and broadly accessible recycling infrastructure should be evident before selecting feedstock that is derived from depleting resources.",
+                "Can the feedstock be used to make materials that are readily recyclable? Some plastics derived from non-renewable feedstock may support sustainable materials management as long as product design facilitates material recovery, there is readily available recycling and there is ongoing demand for recycled materials. Proof of efficient and broadly accessible recycling infrastructure should be evident before selecting feedstock that is derived from depleting resources.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 }
@@ -177,23 +155,19 @@
             "title": "Standards",
             "type": "object",
             "properties": {
-                "commercialComposting": {
-                    "title": "If the product is intended for commercial composting, has it been tested using standard test methods?  For an example in packaging products, see the harmonized European standard EN 13432 and EN 14995.",
+                "If the product is intended for commercial composting, has it been tested using standard test methods?  For an example in packaging products, see the harmonized European standard EN 13432 and EN 14995.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "homeComposting": {
-                    "title": "If the product after use is appropriate for home compostability, has it been tested using standards such as the DIN CERTCO (Germany) and Vinçotte (Belgium)?",
+                "If the product after use is appropriate for home compostability, has it been tested using standards such as the DIN CERTCO (Germany) and Vinçotte (Belgium)?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "marineEnvironment": {
-                    "title": "Does the product degrade in the marine environment? Has it been tested using standards such as ASTM D7991?",
+                "Does the product degrade in the marine environment? Has it been tested using standards such as ASTM D7991?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "degradationTesting": {
-                    "title": "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions? Standard test methods developed by the US EPA or OECD are typically included in chemical hazard assessment methods.",
+                "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions? Standard test methods developed by the US EPA or OECD are typically included in chemical hazard assessment methods.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 }

@@ -2,24 +2,19 @@
     "title": "Guiding Questions: Evaluation and Optimization",
     "type": "object",
     "properties": {
-        "firstquestion": {
-            "title": "Does this product meet the sustainable design objectives you set out at the beginning?",
+        "Does this product meet the sustainable design objectives you set out at the beginning?": {
             "type": "string"
         },
-        "secondquestion": {
-            "title": "What tradeoffs have become apparent to you?",
+        "What tradeoffs have become apparent to you?": {
             "type": "string"
         },
-        "thirdquestion": {
-            "title": "Are there data gaps that must be filled in order for you to make more informed decisions for product design?",
+        "Are there data gaps that must be filled in order for you to make more informed decisions for product design?": {
             "type": "string"
         },
-        "fourthquestion": {
-            "title": "What 'hot spots' or areas of high negative impact,  have become apparent to you?",
+        "What 'hot spots' or areas of high negative impact,  have become apparent to you?": {
             "type": "string"
         },
-        "fifthquestion": {
-            "title": "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?",
+        "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?" : {
             "type": "string"
         }
     }
