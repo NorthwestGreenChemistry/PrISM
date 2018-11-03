@@ -1,6 +1,6 @@
 // @flow
 import path from 'path'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styles from './Prism.css'
 import routes from '../constants/routes'
@@ -40,7 +40,7 @@ const STEP_TITLES = [
 
 
 export default class Prism extends Component<Props> {
-    
+
     data = Data.getInstance()
     state = {
         alertOpen: false,
@@ -63,8 +63,6 @@ export default class Prism extends Component<Props> {
     handleClick = (step) => {
         console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
         if (!this.state.activeProductId || this.state.activeProductId === "") {
-            //TODO: display warning to the user that they have to select a product
-            console.log('CHOOSE A PRODUCT!')
             this.setState({ alertOpen: true })
             return;
         }
@@ -116,10 +114,8 @@ export default class Prism extends Component<Props> {
     }
 
     makePDF = () => {
-        let pdfData = this.data.getPDFContent(this.state.activeProductId)
+        let pdfData = this.data.getPDFContent(this.state.activeProductId);
         if (!pdfData) {
-            //TODO: notify user when there's no active id
-            console.log('UH-OH, need no pdf data')
             this.setState({ alertOpen: true })
             return null
         }
@@ -158,15 +154,15 @@ export default class Prism extends Component<Props> {
     }
 
     navNext = (event) => {
-        this.state.modalForm.onSubmit(event)
+        this.state.modalForm.onSubmit(event);
     }
 
     submitAnswers = (form) => {
-        console.log('submit answers! ', form);
         this.data.storeAnswer(
             this.state.activeProductId,
             this.state.displayStep,
             form.formData);
+
 
         this.data.setPDFStepResults(
             this.state.activeProductId,
@@ -264,8 +260,6 @@ export default class Prism extends Component<Props> {
         if (allAnswers && this.state.displayStep) {
             formData = allAnswers[this.state.displayStep]
         }
-
-        //TODO: make guiding questions header hide if there is no forms
 
         return (
             <div className={styles.root}>
@@ -373,24 +367,34 @@ export default class Prism extends Component<Props> {
                     <Button className={styles.button} variant="outlined" onClick={this.closeModal}>
                         Close and Return to PrISM
                     </Button>
-                    
+
+                    {/*markdown section*/}
+
                     <div className={styles.contentMarkdown}>
                         {this.state.displayStep > 0 ? this.state.markdownFiles.map((val) => {
                             return val;
                         }) : null}
                     </div>
-                    <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
+
+                    {/*form section*/}
+
                     {this.state.activeProductId && this.state.displayStep > 0
                         && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
-                        <Form noValidate={true} formData={formData}
-                              schema={this.state.activeForm.schema}
-                              uiSchema={this.state.activeForm.uiSchema}
-                              onSubmit={this.submitAnswers}
-                              ref={(form) => {this.state.modalForm = form;}}
-                        >
-                            <button type="submit" className={styles.hidden}>Submit</button>
-                        </Form> : null
+                        <Fragment>
+                            <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
+
+                            <Form noValidate={true} formData={formData}
+                                  schema={this.state.activeForm.schema}
+                                  uiSchema={this.state.activeForm.uiSchema}
+                                  onSubmit={this.submitAnswers}
+                                  onError={(errors) => console.log("errors in form", errors)}
+                                  ref={(form) => {this.state.modalForm = form;}}
+                            >
+                                <button type="submit" className={styles.hidden}>Submit</button>
+                            </Form>
+                        </Fragment>: null
                     }
+
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
                             <Button onClick={this.navPrev}
@@ -401,15 +405,14 @@ export default class Prism extends Component<Props> {
                                 &nbsp; Back
                             </Button>
                         }
-                        { this.state.displayStep < 7 &&
-                            <Button onClick={this.navNext}
-                                    className={styles.rightButton}
-                                    variant="contained" color="primary"
-                            >
-                                Save and Continue &nbsp;
-                                <i className = "fa fa-arrow-right fa-3x" />
-                            </Button>
-                        }
+
+                        <Button onClick={this.navNext}
+                                className={styles.rightButton}
+                                variant="contained" color="primary">
+                            Save and {this.state.displayStep < 7 ? 'Continue' : 'Close'} &nbsp;
+                            <i className = "fa fa-arrow-right fa-3x" />
+                        </Button>
+
                     </div>
                 </Modal>
 
