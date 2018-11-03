@@ -41,6 +41,14 @@
                 },
                 "If you've selected 'Other' for the previous question: ": {
                     "type": "string"
+                },
+                "If you've selected 'Bio-based' for the previous question: ": {
+                    "enum": [
+                        "Rapidly renewable bio-based",
+                        "Sustainably harvested bio-based",
+                        "Non-land-based bio-based",
+                        "Does not compete with social/ecological/food production value"
+                    ]
                 }
             }
         },
