@@ -27,8 +27,7 @@
             "title": "Feedstock priorities",
             "type": "object",
             "properties": {
-                "question": {
-                    "title": "What is the preferred feedstock goal or goals? Please select all that apply.",
+                "What is the preferred feedstock goal or goals? Please select all that apply.": {
                     "type": "array",
                     "items": {
                         "type": "string",
