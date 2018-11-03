@@ -20,7 +20,10 @@
         }
     },
     "conditionalChemical": {
-        "ui:title": ""
+        "ui:title": " ",
+        "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?" : {
+            "ui:widget": "radio"
+        }
     },
     "exposureAssessment": {
         "Who is likely to be exposed to production chemicals during production and manufacturing? Workers? Nearby communities?": {
