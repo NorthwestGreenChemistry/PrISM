@@ -5,12 +5,19 @@ import { Link } from 'react-router-dom'
 import styles from './Prism.css'
 import routes from '../constants/routes'
 import Wheel from './Wheel'
-import Pdf from './Pdf';
+import Pdf from './Pdf'
 import ProgressItem from './ProgressItem'
 import Data from './Data'
 import List from '@material-ui/core/List'
+import InputLabel from '@material-ui/core/InputLabel'
+import OutlinedInput from '@material-ui/core/OutlinedInput'
 import Button from '@material-ui/core/Button'
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon'
+import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
+
+import Snackbar from '@material-ui/core/Snackbar'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
@@ -36,6 +43,7 @@ export default class Prism extends Component<Props> {
 
     data = Data.getInstance()
     state = {
+        alertOpen: false,
         modalIsOpen: false,
         displayStep: 0,
         dropdownSelection: "",
@@ -55,8 +63,7 @@ export default class Prism extends Component<Props> {
     handleClick = (step) => {
         console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
         if (!this.state.activeProductId || this.state.activeProductId === "") {
-            //TODO: display warning to the user that they have to select a product
-            console.log('CHOOSE A PRODUCT!')
+            this.setState({ alertOpen: true })
             return;
         }
 
@@ -67,6 +74,16 @@ export default class Prism extends Component<Props> {
 
         this.loadMDFiles(step)
         this.loadSchemaFiles(step)
+    }
+
+    handleClose = (reason) => {
+        if (reason == 'new_product') {
+            this.setState({
+                dropdownSelection: 'new-product',
+                activeProductId: 'new-product'
+            })
+        }
+        this.setState({ alertOpen: false })
     }
 
     handleDropdownChange = (event) => {
@@ -90,8 +107,8 @@ export default class Prism extends Component<Props> {
             products: {
                 ...this.data.getAllProducts(),
             },
-            activeProductId: "",
-            dropdownSelection: this.state.productName,
+            activeProductId: id,
+            dropdownSelection: id,
             productName: ""
         })
     }
@@ -99,8 +116,7 @@ export default class Prism extends Component<Props> {
     makePDF = () => {
         let pdfData = this.data.getPDFContent(this.state.activeProductId);
         if (!pdfData) {
-            //TODO: notify user when there's no active id
-            console.log('UH-OH, need no pdf data');
+            this.setState({ alertOpen: true })
             return null
         }
         let pdf = new Pdf(pdfData);
@@ -252,34 +268,47 @@ export default class Prism extends Component<Props> {
                 </Button>
 
                 {/* PRODUCT MENU */}
-                <div className={styles.selector}>
+                <FormControl variant="outlined" className={styles.selector}>
+                    <InputLabel htmlFor="product_name" className={styles.defaultLabel} shrink={true}>
+                        Product Name
+                    </InputLabel>
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
+                        defaultValue=""
                         onChange={this.handleDropdownChange}
+                        input={
+                            <OutlinedInput
+                                labelWidth={120}
+                                value="Product Name"
+                                name="product_name"
+                                id="product_name"
+                            />
+                        }
                     >
                         {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
-                            return <MenuItem key={key} value={key}>{this.state.products[key]}</MenuItem>
+                            return <MenuItem className={styles.selectorOption} key={key} value={key}>{this.state.products[key]}</MenuItem>
                         }) : null }
-                        <MenuItem value="new-product">--New Product--</MenuItem>
+                        <MenuItem className={styles.selectorOption} value="new-product">--New Product--</MenuItem>
                     </Select>
+                </FormControl>
 
-                    {this.state.dropdownSelection === 'new-product' ?
-                        <div>
-                            <TextField
-                                label="Product Name"
-                                value={this.state.productName}
-                                onChange={this.handleProductNameChange}
-                            />
-                            <Button className={styles.createBtn}
-                                    variant="outlined" color="primary"
-                                    onClick={this.createProduct}
-                            >
-                                Create
-                            </Button>
-                        </div> : null
-                    }
-                </div>
+                {this.state.dropdownSelection === 'new-product' ?
+                    <FormControl variant="outlined" className={styles.selector}>
+                        <TextField
+                            label="Product Name"
+                            className={styles.createInput}
+                            value={this.state.productName}
+                            onChange={this.handleProductNameChange}
+                        />
+                        <Button className={styles.createButton}
+                                variant="contained" color="primary"
+                                onClick={this.createProduct}
+                        >
+                            Create
+                        </Button>
+                    </FormControl> : null
+                }
 
                 {/* PRISM WHEEL & STEPS */}
                 <Grid container spacing={0}>
@@ -386,6 +415,38 @@ export default class Prism extends Component<Props> {
 
                     </div>
                 </Modal>
+
+                {/* Alert No Product Name */}
+                <Snackbar
+                    anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
+                    }}
+                    open={this.state.alertOpen}
+                    autoHideDuration={6000}
+                    ContentProps={{
+                        'aria-describedby': 'message-id',
+                    }}
+                    className={styles.alertPopup}
+                    message={
+                        <span id="message-id">
+                            You must select or create a product
+                        </span>
+                    }
+                    action={[
+                        <Button key="undo" color="secondary" size="small" onClick={(e) => {this.handleClose('new_product')}}>
+                            New Product
+                        </Button>,
+                        <IconButton
+                          key="close"
+                          aria-label="Close"
+                          color="inherit"
+                          onClick={this.handleClose}
+                        >
+                            <Icon>close</Icon>
+                        </IconButton>,
+                    ]}
+                />
             </div>
         );
     }

@@ -5,17 +5,55 @@
 }
 
 .selector {
+    width: 280px;
     float: right;
-    text-align: right;
+    display: block;
+    clear: both;
+    flex-direction: row !important;
+}
+
+.defaultLabel {
+    font-size: 1.4rem !important;
+    padding: 0 6px 4px !important;
+    margin-left: -6px;
+    transform: translate(30px, 8px) scale(1) !important;
+    background-color: #BAD96F;
 }
 
 .selectorDropdown {
-    margin-bottom: 10px;
+    font-size: 1.4rem !important;
+    min-width: 250px;
+    margin: 15px 15px 0px;
 }
 
-.createBtn {
-    margin-left: 5px !important;
-    margin-top: 10px !important;
+.selectorDropdown label, .selectorDropdown input {
+    font-size: 1.4rem !important;
+}
+
+.selectorOption {
+    font-size: 1.4rem !important;
+}
+
+.createInput {
+    font-size: 1.4rem !important;
+    margin: 15px 0 0px 15px !important;
+}
+
+.createInput input, .createInput label {
+    font-size: 1.4rem !important;
+}
+
+.createButton {
+    font-size: 1.4rem !important;
+    margin: 15px 15px 0px !important;
+}
+
+.alertPopup {
+    margin-top: 15px;
+}
+
+.alertPopup, .alertPopup span, .alertPopup button {
+    font-size: 1.4rem !important;
 }
 
 .stepHeader {
