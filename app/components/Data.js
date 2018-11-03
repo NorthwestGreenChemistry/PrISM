@@ -142,24 +142,30 @@ class Data {
                     if (schema.properties[e].type === 'string') {
                         question = schema.properties[e].title
                         answer = formData[e];
+
+                        if (question && answer) {
+                            var qAndA = {
+                                "question": question,
+                                "answer": answer
+                            }
+                            results.push(qAndA);
+                        }
+
                     } else if (schema.properties[e].type === 'object') {
 
                         Object.keys(schema.properties[e].properties).forEach((prop) => {
                             question = schema.properties[e].properties[prop].title;
+                            answer = formData[e][prop];
+
+                            if (question && answer) {
+                                var qAndA = {
+                                    "question": question,
+                                    "answer": answer
+                                }
+                                results.push(qAndA);
+                            }
                         })
 
-                        //answer obj will always have one prop
-                        Object.keys(formData[e]).forEach((prop) => {
-                            answer = formData[e][prop]
-                        })
-                    }
-
-                    if (question && answer) {
-                        var qAndA = {
-                            "question": question,
-                            "answer": answer
-                        }
-                        results.push(qAndA);
                     }
                 })
 
@@ -213,24 +219,29 @@ class Data {
                     if (schema.properties[e].type === 'string') {
                         question = schema.properties[e].title
                         answer = formData[e];
-                    } else if (schema.properties[e].type === 'object') {
 
+                        if (question && answer) {
+                            var qAndA = {
+                                "question": question,
+                                "answer": answer
+                            }
+                            results.push(qAndA);
+                        }
+
+                    } else if (schema.properties[e].type === 'object') {
                         Object.keys(schema.properties[e].properties).forEach((prop) => {
                             question = schema.properties[e].properties[prop].title;
+                            answer = formData[e][prop];
+
+                            if (question && answer) {
+                                var qAndA = {
+                                    "question": question,
+                                    "answer": answer
+                                }
+                                results.push(qAndA);
+                            }
                         })
 
-                        //answer obj will always have one prop
-                        Object.keys(formData[e]).forEach((prop) => {
-                            answer = formData[e][prop]
-                        })
-                    }
-
-                    if (question && answer) {
-                        var qAndA = {
-                            "question": question,
-                            "answer": answer
-                        }
-                        results.push(qAndA);
                     }
                 })
 
