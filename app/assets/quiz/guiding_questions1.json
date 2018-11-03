@@ -96,13 +96,16 @@
                             "Cradle to Cradle (C2C) certified)",
                             "Reduce chemicals on RSLs.",
                             "Reduce carcinogens.",
-                            "Reduce other hazardous chemicals (fill in the blank).",
+                            "Reduce other hazardous chemicals (fill in the blank below).",
                             "Reduce VOCs.",
-                            "Other (fill in the blank).",
+                            "Other (fill in the blank below).",
                             "Use phase is not a priority."
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
                 }
             }
         },
@@ -118,7 +121,12 @@
                         "Medium use phase (2-12 years)",
                         "Long use phase (>12 years)"
                     ]
-                },
+                }
+            }
+        },
+        "waste2": {
+            "type": "object",
+            "properties": {
                 "What attributes are you seeking to meet your longevity goal?": {
                     "type": "array",
                     "items": {
@@ -128,11 +136,19 @@
                             "Repairable",
                             "Biodegradable",
                             "Compostable",
-                            "Other (fill in the blank)"
+                            "Other (fill in the blank below)"
                         ]
                     },
                     "uniqueItems": "true"
                 },
+                " ": {
+                    "type": "string"
+                }
+            }
+        },
+        "waste3": {
+            "type": "object",
+            "properties": {
                 "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
                     "type": "array",
                     "items": {
@@ -143,10 +159,13 @@
                             "Compostable (Home vs Industrial).",
                             "Biodegradable (WWTP).",
                             "Take-apart-able (need better word.)",
-                            "Other (fill in the blank)"
+                            "Other (fill in the blank below)"
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
                 }
             }
         },
