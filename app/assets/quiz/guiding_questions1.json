@@ -42,7 +42,7 @@
             },
             "dependencies": {
                 "What is the preferred feedstock goal or goals? Please select all that apply.": {
-                    "oneOf": [
+                    "anyOf": [
                         {
                             "properties" : {
                                 "What is the preferred feedstock goal or goals? Please select all that apply.": {
