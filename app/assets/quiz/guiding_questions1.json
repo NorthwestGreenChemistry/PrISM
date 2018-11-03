@@ -44,6 +44,26 @@
                     },
                     "uniqueItems": "true"
                 }
+            },
+            "dependencies": {
+                "question": {
+                    "oneOf": [
+                        {
+                            "properties" : {
+                                "question": {
+                                    "items": {
+                                        "enum": [
+                                            "Other"
+                                        ]
+                                    }
+                                },
+                                "Other": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
             }
         },
         "production": {
