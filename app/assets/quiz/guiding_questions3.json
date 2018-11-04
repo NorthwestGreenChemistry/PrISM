@@ -6,43 +6,42 @@
             "title": "See Resource: Chemical Inventory:",
             "type": "object",
             "properties": {
-                "chemsUsed": {
-                    "title": "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.",
+                "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.": {
                     "description" : "(See Chemical Inventory)",
                     "type": "string"
                 },
-                "usedHazardous": {
-                    "title": "Are the chemicals used during production and manufacturing hazardous?",
+                "Are the chemicals used during production and manufacturing hazardous?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
-                "chemManufacturing": {
-                    "title": "What chemicals and materials are produced during production and manufacturing?",
+                "What chemicals and materials are produced during production and manufacturing?": {
                     "description": "(See Chemical Inventory)",
                     "type" : "string"
                 },
-                "manufacturingHazard": {
-                    "title": "Are the chemicals produced during production and manufacturing hazardous?",
+                "Are the chemicals produced during production and manufacturing hazardous?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
-                "workerHazards": {
-                    "title": "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?",
+                "Are the chemicals in a form that can be inhaled, ingested or absorbed through the skin?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
-                },
-                "chemInhaled": {
-                    "title": "Are the chemicals in a form that can be inhaled, ingested or absorbed through the skin?",
+                }
+            }
+        },
+        "conditionalChemical": {
+            "type": "object",
+            "properties": {
+                "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 }
             },
             "dependencies": {
-                "workerHazards": {
+                "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?": {
                     "oneOf": [
                         {
                             "properties" : {
-                                "workerHazards": {
+                                "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?": {
                                     "enum": [
                                         "Yes"
                                     ]
@@ -60,8 +59,7 @@
             "title": "See Resource: Exposure Assessment:",
             "type": "object",
             "properties": {
-                "exposedWho": {
-                    "title": "Who is likely to be exposed to production chemicals during production and manufacturing? Workers? Nearby communities?",
+                "Who is likely to be exposed to production chemicals during production and manufacturing? Workers? Nearby communities?": {
                     "description": "Check all that apply.",
                     "type": "array",
                     "items": {
@@ -76,8 +74,7 @@
                     },
                     "uniqueItems": "true"
                 },
-                "exposedHow": {
-                    "title": "For chemicals used and produced during production and manufacturing, what are the likely routes of exposure?",
+                "For chemicals used and produced during production and manufacturing, what are the likely routes of exposure?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -97,18 +94,15 @@
             "title": "See Resource: Hazard Assessment:",
             "type": "object",
             "properties": {
-                "screeningAssessment": {
-                    "title": "Have you conducted a screening chemical hazard assessment on the chemicals used and produced?",
+                "Have you conducted a screening chemical hazard assessment on the chemicals used and produced?": {
                     "type": "string",
                     "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
                 },
-                "comprehensiveAssessment": {
-                    "title": "Have you conducted a comprehensive chemical hazard assessment, particularly on chemicals for which there is worker and/or community exposure?",
+                "Have you conducted a comprehensive chemical hazard assessment, particularly on chemicals for which there is worker and/or community exposure?": {
                     "type": "string",
                     "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
                 },
-                "mappedExposure": {
-                    "title": "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?",
+                "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?": {
                     "description": "LINK TO CONTROL BANDING",
                     "type": "string",
                     "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
@@ -119,8 +113,7 @@
             "title": "See Resource:  Stakeholder Considerations:",
             "type": "object",
             "properties": {
-                "neighbors": {
-                    "title": "Are there potential impacts be to workers and those who live around the production or manufacturing facility who may be exposed to chemicals used in production and manufacturing?  Chemicals don't need to be hazardous to be a nuisance to neighbors (e.g. odors).",
+                "Are there potential impacts be to workers and those who live around the production or manufacturing facility who may be exposed to chemicals used in production and manufacturing?  Chemicals don't need to be hazardous to be a nuisance to neighbors (e.g. odors).": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 }
@@ -130,17 +123,14 @@
             "title": "See Resource:  Life Cycle Considerations:",
             "type": "object",
             "properties": {
-                "productionWaste": {
-                    "title": "What wastes are created during production and manufacturing?",
+                "What wastes are created during production and manufacturing?": {
                     "type": "string"
                 },
-                "hazardousWaste": {
-                    "title": "Are these wastes hazardous?",
+                "Are these wastes hazardous?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
-                "wasteDisposal": {
-                    "title": "How are these wastes disposed of?",
+                "How are these wastes disposed of?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -157,8 +147,7 @@
                     },
                     "uniqueItems": "true"
                 },
-                "measurement": {
-                    "title": "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?",
+                "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 }

@@ -6,20 +6,16 @@
             "description": "For a complicated product with many components, it may be valuable to complete PrISM for each component as opposed to only for the whole product.",
             "type": "string"
         },
-        "secondquestion": {
-            "title": "Who are the intended users?",
+        "Who are the intended users?": {
             "type": "string"
         },
-        "thirdquestion": {
-            "title": "What is the service provided by the product?",
+        "What is the service provided by the product?": {
             "type": "string"
         },
-        "fourthquestion": {
-            "title": "What other products are used to provide this service?",
+        "What other products are used to provide this service?": {
             "type": "string"
         },
-        "wallotext": {
-            "title": "What sustainability attributes are you prioritizing to include in the design?",
+        "What sustainability attributes are you prioritizing to include in the design?": {
             "description": "Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities.",
             "type": "string"
         },
@@ -42,25 +38,16 @@
                         ]
                     },
                     "uniqueItems": "true"
-                }
-            },
-            "dependencies": {
-                "question": {
-                    "oneOf": [
-                        {
-                            "properties" : {
-                                "question": {
-                                    "items": {
-                                        "enum": [
-                                            "Other"
-                                        ]
-                                    }
-                                },
-                                "Other": {
-                                    "type": "string"
-                                }
-                            }
-                        }
+                },
+                "If you've selected 'Other' for the previous question: ": {
+                    "type": "string"
+                },
+                "If you've selected 'Bio-based' for the previous question: ": {
+                    "enum": [
+                        "Rapidly renewable bio-based",
+                        "Sustainably harvested bio-based",
+                        "Non-land-based bio-based",
+                        "Does not compete with social/ecological/food production value"
                     ]
                 }
             }
@@ -69,8 +56,7 @@
             "title": "Production & Manufacturing priorities",
             "type": "object",
             "properties": {
-                "question": {
-                    "title": "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?",
+                "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?": {
                     "description": "Are you planning to avoid the use of certain chemicals such as those on Manufacturing Restricted Substances Lists (MRSLs)? Please select all that apply.",
                     "type": "array",
                     "items": {
@@ -80,15 +66,18 @@
                             "Minimize waste generation.",
                             "Minimize energy usage.",
                             "Reduce GHG emissions / carbon neutral / carbon negative.",
-                            "Reduce/eliminate other life cycle impacts (fill in the blank).",
+                            "Reduce/eliminate other life cycle impacts (fill in the the blank below).",
                             "Reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
                             "Reduce/eliminate process carcinogens.",
-                            "Reduce other hazard process chemicals (fill in the blank).",
-                            "Other (fill in the blank).",
+                            "Reduce other hazard process chemicals (fill in the the blank below).",
+                            "Other (fill in the the blank below).",
                             "Production & Manufacturing not a priority."
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
                 }
             }
         },
@@ -96,8 +85,7 @@
             "title": "Use Priorities",
             "type": "object",
             "properties": {
-                "question": {
-                    "title": "Are you designing the product to contain only ingredients that are recognized as inherently safer such as those on the EPA Safer Chemical Ingredient List (SCIL)? Or are you avoiding chemicals of concern such as those identified on sector-based Restricted Substances Lists (RSLs). ",
+                "Are you designing the product to contain only ingredients that are recognized as inherently safer such as those on the EPA Safer Chemical Ingredient List (SCIL)? Or are you avoiding chemicals of concern such as those identified on sector-based Restricted Substances Lists (RSLs). ": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -108,13 +96,16 @@
                             "Cradle to Cradle (C2C) certified)",
                             "Reduce chemicals on RSLs.",
                             "Reduce carcinogens.",
-                            "Reduce other hazardous chemicals (fill in the blank).",
+                            "Reduce other hazardous chemicals (fill in the blank below).",
                             "Reduce VOCs.",
-                            "Other (fill in the blank).",
+                            "Other (fill in the blank below).",
                             "Use phase is not a priority."
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
                 }
             }
         },
@@ -122,8 +113,7 @@
             "title": "Waste and 'End of Life' (EOL) priorities",
             "type": "object",
             "properties": {
-                "useLength": {
-                    "title": "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
+                "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.": {
                     "description": "Select from a use phase:",
                     "enum": [
                         "Very short use phase (<1 day)",
@@ -131,9 +121,13 @@
                         "Medium use phase (2-12 years)",
                         "Long use phase (>12 years)"
                     ]
-                },
-                "attributes": {
-                    "title": "What attributes are you seeking to meet your longevity goal?",
+                }
+            }
+        },
+        "waste2": {
+            "type": "object",
+            "properties": {
+                "What attributes are you seeking to meet your longevity goal?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -142,13 +136,20 @@
                             "Repairable",
                             "Biodegradable",
                             "Compostable",
-                            "Other (fill in the blank)"
+                            "Other (fill in the blank below)"
                         ]
                     },
                     "uniqueItems": "true"
                 },
-                "recycling": {
-                    "title": "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?",
+                " ": {
+                    "type": "string"
+                }
+            }
+        },
+        "waste3": {
+            "type": "object",
+            "properties": {
+                "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
                     "type": "array",
                     "items": {
                         "type": "string",
@@ -158,10 +159,13 @@
                             "Compostable (Home vs Industrial).",
                             "Biodegradable (WWTP).",
                             "Take-apart-able (need better word.)",
-                            "Other (fill in the blank)"
+                            "Other (fill in the blank below)"
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
                 }
             }
         },
@@ -169,16 +173,22 @@
             "title": "Overall Product Considerations",
             "type": "object",
             "properties": {
-                "standards": {
-                    "title": "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?",
+                "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?": {
                     "type": "string",
                     "description": "Two examples of certifications that help identify chemicals, materials or products with sustainable green chemistry and engineering attributes.  USDA Certified Biobased certification confirms claims about the use of biobased feedstock.  FMD is a program by ToxServices that ensures full materials disclosure and assurance that no chemicals in a product are substances of very high concern or on the Zero Discharge of Hazardous Chemicals Manufacturing and Product Restricted Substances Lists.",
-                    "enum": ["Yes", "No", "Don't know"]
+                    "enum": [
+                        "Yes",
+                        "No",
+                        "Don't know"
+                    ]
                 },
-                "lifeCycle": {
-                    "title": "Are you striving for specific life cycle improvements compared to other products that provide the same service?",
+                "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
                     "type": "string",
-                    "enum": ["Yes", "No", "Don't know"]
+                    "enum": [
+                        "Yes",
+                        "No",
+                        "Don't know"
+                    ]
                 }
             }
         }

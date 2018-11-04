@@ -1,62 +1,62 @@
 {
-    "legoQuestion": {
+    "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.": {
         "ui:widget": "radio"
     },
     "chemInventory": {
-        "intentionalHazard": {
+        "Are the intentionally included chemicals hazardous?": {
             "ui:widget": "radio"
         },
-        "hazardousImpurities": {
+        "Are the impurities or residuals that remain in the product hazardous?": {
             "ui:widget": "radio"
         },
-        "ingestible": {
+        "Are the chemicals in a form that can be inhaled, ingested or absorbed through the skin?": {
             "ui:widget": "radio"
         },
-        "emissions": {
+        "Does use of the product produce emissions and waste?": {
             "ui:widget": "radio"
         }
     },
     "exposureAssessment": {
-        "routes": {
+        "What are the likely routes of exposure to chemicals in the product as used by customers?": {
             "ui:widget": "checkboxes"
         },
-        "conceptualExposure": {
+        "Have you created a conceptual exposure model?": {
             "ui:widget": "radio"
         },
-        "exposureAmount": {
+        "How much exposure to the chemicals is likely to occur?  Consider amount, frequency and time.": {
             "ui:widget": "textarea"
         }
     },
     "hazardAssessment": {
-        "screening": {
+        "Have you conducted a screening chemical hazard assessment on the chemicals in the product as used?": {
             "ui:widget": "radio"
         },
-        "highHazards": {
+        "Are there any chemicals with very high hazards to humans and the environment? If so, what are those hazards?": {
             "ui:widget": "radio"
         },
-        "comprehensiveAssessment": {
+        "Have you conducted a comprehensive chemical hazard assessment on the chemicals in the product as used?  Have you focused particularly on those chemicals for which there is likely to be exposure?": {
             "ui:widget": "radio"
         },
-        "hazardProfiles": {
+        "What are the hazard profiles of the chemicals added to or remaining in the product?": {
             "ui:widget": "textarea"
         }
     },
     "stakeholderConsiderations": {
-        "stakeholders": {
+        "Do the hazards of the chemicals in the product pose a particular concern to vulnerable populations such as children, pregnant women, the elderly, or patients?  Are there some population segments who  would be placed at greater risk than other populations?": {
             "ui:widget": "radio"
         }
     }, 
     "wasteConsiderations": {
-        "productLife": {
+        "How long is the product intended to last?": {
             "ui:widget": "radio"
         }, 
-        "waste": {
+        "Does use of the product generate waste?": {
             "ui:widget": "radio"
         },
-        "energyUse": {
+        "Does use of the product require the use of energy or water?": {
             "ui:widget": "radio"
         }, 
-        "stability": {
+        "Are the chemicals in the product stable, or will they result in unwanted or hazardous chemical emissions, especially if subjected to heat or other environmental conditions?": {
             "ui:widget": "radio"
         }
     }

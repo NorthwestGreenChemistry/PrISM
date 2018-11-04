@@ -167,7 +167,6 @@ export default class Prism extends Component<Props> {
         this.data.setPDFStepResults(
             this.state.activeProductId,
             this.state.displayStep,
-            form.schema,
             form.formData
         );
 

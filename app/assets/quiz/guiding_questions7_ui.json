@@ -1,35 +1,17 @@
 {
-    "firstquestion": {
+    "Does this product meet the sustainable design objectives you set out at the beginning?": {
         "ui:widget": "textarea"
     },
-    "secondquestion": {
+    "What tradeoffs have become apparent to you?": {
         "ui:widget": "textarea"
     },
-    "thirdquestion": {
+    "Are there data gaps that must be filled in order for you to make more informed decisions for product design?": {
         "ui:widget": "textarea"
     },
-    "fourthquestion": {
+    "What 'hot spots' or areas of high negative impact,  have become apparent to you?": {
         "ui:widget": "textarea"
     },
-    "fifthquestion": {
+    "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?": {
         "ui:widget": "textarea"
-    },
-    "production": {
-        "question": {
-            "ui:widget": "checkboxes",
-            "ui:options": {
-                "inline": "true"
-            }
-        }
-    },
-    "priorities": {
-        "question": {
-            "ui:widget": "checkboxes"
-        }
-    },
-    "overall": {
-        "standards": {
-            "ui:widget": "checkboxes"
-        }
     }
 }

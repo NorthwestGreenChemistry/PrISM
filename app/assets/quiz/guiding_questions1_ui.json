@@ -1,47 +1,68 @@
 {
-    "firstquestion": {
+    "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?": {
         "ui:widget": "textarea"
     },
-    "secondquestion": {
+    "Who are the intended users?": {
         "ui:widget": "textarea"
     },
-    "thirdquestion": {
+    "What is the service provided by the product?": {
         "ui:widget": "textarea"
     },
-    "fourthquestion": {
+    "What other products are used to provide this service?": {
         "ui:widget": "textarea"
     },
     "feedstock": {
-        "question": {
+        "What is the preferred feedstock goal or goals? Please select all that apply.": {
             "ui:widget": "checkboxes"
+        },
+        "If you've selected 'Bio-based' for the previous question: ": {
+            "ui:widget": "radio"
         }
     },
     "production": {
-        "question": {
+        "Do you have goals to reduce life cycle impacts such as water consumption, waste generation or energy usage in production or manufacturing?": {
             "ui:widget": "checkboxes"
+        },
+        " ": {
+            "ui:widget": "textarea"
         }
     },
     "priorities": {
-        "question": {
+        "Are you designing the product to contain only ingredients that are recognized as inherently safer such as those on the EPA Safer Chemical Ingredient List (SCIL)? Or are you avoiding chemicals of concern such as those identified on sector-based Restricted Substances Lists (RSLs). ": {
             "ui:widget": "checkboxes"
+        },
+        " ": {
+            "ui:widget": "textarea"
         }
     },
     "waste": {
-        "useLength": {
+        "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.": {
             "ui:widget": "radio"
-        },
-        "attributes": {
+        }
+    },
+    "waste2": {
+        "ui:title": " ",
+        "What attributes are you seeking to meet your longevity goal?": {
             "ui:widget": "checkboxes"
         },
-        "recycling": {
+        " ": {
+            "ui:widget": "textarea"
+        }
+    },
+    "waste3": {
+        "ui:title": " ",
+        "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
             "ui:widget": "checkboxes"
+        },
+        " ": {
+            "ui:widget": "textarea"
         }
     },
     "overall": {
-        "standards": {
+        "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?": {
             "ui:widget": "radio"
         },
-        "lifeCycle": {
+        "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
             "ui:widget": "radio"
         }
     }

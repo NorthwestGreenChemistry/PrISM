@@ -121,7 +121,7 @@ class Data {
         return stepObj.nextStep;
     }
 
-    setPDFStepResults(id, step, schema, formData) {
+    setPDFStepResults(id, step, formData) {
         console.log('formdata', formData);
         let storageId = "pdf-" + id;
 
@@ -133,52 +133,41 @@ class Data {
             let steps = [];
             let results = [];
 
-            if (schema && schema.properties) {
-                Object.keys(schema.properties).forEach((e) => {
-                    // let nestedTitle = schema.properties[e].title
-                    var question = undefined;
-                    var answer = undefined;
-                    //temporarily ignoring all types that's NOT string + object
-                    if (schema.properties[e].type === 'string') {
-                        question = schema.properties[e].title
-                        answer = formData[e];
+            Object.keys(formData).forEach((formProp) => {
+                let question = formProp;
+                let answer = formData[formProp];
 
-                        if (question && answer) {
-                            var qAndA = {
-                                "question": question,
-                                "answer": answer
-                            }
-                            results.push(qAndA);
+                if (answer) {
+                    if (answer instanceof String || typeof answer === "string") {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
                         }
+                        results.push(qAndA);
+                    } else {
+                        Object.keys(answer).forEach((nestedQ) => {
+                            let nestedAnswer = answer[nestedQ];
 
-                    } else if (schema.properties[e].type === 'object') {
-
-                        Object.keys(schema.properties[e].properties).forEach((prop) => {
-                            question = schema.properties[e].properties[prop].title;
-                            answer = formData[e][prop];
-
-                            if (question && answer) {
+                            if (nestedAnswer) {
                                 var qAndA = {
-                                    "question": question,
-                                    "answer": answer
+                                    "question": nestedQ,
+                                    "answer": nestedAnswer
                                 }
                                 results.push(qAndA);
                             }
-                        })
-
+                        });
                     }
-                })
-
-
-                if (results.length > 0) {
-                    let stepsVar = {
-                        "title": stepKey,
-                        "completed": true,
-                        "results": results
-                    }
-
-                    steps[step] = stepsVar;
                 }
+            });
+
+            if (results.length > 0) {
+                let stepsVar = {
+                    "title": stepKey,
+                    "completed": true,
+                    "results": results
+                };
+
+                steps[step] = stepsVar;
             }
 
 
@@ -204,66 +193,50 @@ class Data {
 
 
             if (stepExists > -1) {
-                console.log('a value exists, splicing');
                 stepsList.splice(stepExists, 1);
             }
 
             let results = [];
 
 
-            if (schema && schema.properties) {
-                console.log('SCHEMA', schema, 'SCHEMA PROPS', schema.properties);
-                Object.keys(schema.properties).forEach((e) => {
-                    var question = undefined;
-                    var answer = undefined;
-                    //temporarily ignoring all types that's NOT string + object
-                    if (schema.properties[e].type === 'string') {
-                        question = schema.properties[e].title
-                        answer = formData[e];
+            Object.keys(formData).forEach((formProp) => {
+                let question = formProp;
+                let answer = formData[formProp];
 
-                        if (question && answer) {
-                            var qAndA = {
-                                "question": question,
-                                "answer": answer
-                            }
-                            results.push(qAndA);
+                if (answer) {
+                    if (answer instanceof String || typeof answer === "string") {
+                        var qAndA = {
+                            "question": question,
+                            "answer": answer
                         }
+                        results.push(qAndA);
+                    } else {
+                        Object.keys(answer).forEach((nestedQ) => {
+                            let nestedAnswer = answer[nestedQ];
 
-                    } else if (schema.properties[e].type === 'object') {
-                        Object.keys(schema.properties[e].properties).forEach((prop) => {
-                            question = schema.properties[e].properties[prop].title;
-                            answer = formData[e][prop];
-
-                            if (question && answer) {
+                            if (nestedAnswer) {
                                 var qAndA = {
-                                    "question": question,
-                                    "answer": answer
+                                    "question": nestedQ,
+                                    "answer": nestedAnswer
                                 }
                                 results.push(qAndA);
                             }
-                        })
-
+                        });
                     }
-                })
-
-
-                console.log('trying to create a thing', results);
-
-                if (results.length > 0) {
-
-                    let stepsVar = {
-                        "title": stepKey,
-                        "completed": true,
-                        "results": results
-                    };
-
-                    stepsList[step] = stepsVar;
-                    console.log('there are results, storing', stepsVar);
                 }
+            });
+
+            if (results.length > 0) {
+                let stepsVar = {
+                    "title": stepKey,
+                    "completed": true,
+                    "results": results
+                };
+
+                stepsList[step] = stepsVar;
             }
 
             pdfStepsObj.steps = stepsList;
-
             localStorage.setItem(storageId, JSON.stringify(pdfStepsObj));
         }
     }
