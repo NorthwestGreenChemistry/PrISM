@@ -173,5 +173,24 @@
                 }
             }
         }
+    },
+    "dependencies": {
+        "Does product durability match the use phase?": {
+            "oneOf": [
+                {
+                    "properties" : {
+                        "Does product durability match the use phase?": {
+                            "enum": [
+                                "No"
+                            ]
+                        },
+                        "Does the product have other EOL options that require this mis-match?": {
+                            "type": "string",
+                            "enum": ["Yes", "No","I don't know"]
+                        }
+                    }
+                }
+            ]
+        }
     }
 }

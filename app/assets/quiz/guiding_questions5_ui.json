@@ -1,8 +1,24 @@
 {
+    "ui:order": [
+        "How long is this product designed to be used for?",
+        "Does product durability match the use phase?",
+        "*",
+        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?",
+        "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?",
+        "Do you have a plan to communicate instructions for proper management of products after use?",
+        "endOfLife",
+        "productCompatibility",
+        "recoveredMaterialsQuality",
+        "wasteTreatmentAndMSI",
+        "standards"
+    ],
     "How long is this product designed to be used for?": {
         "ui:widget": "radio"
     },
     "Does product durability match the use phase?": {
+        "ui:widget": "radio"
+    },
+    "Does the product have other EOL options that require this mis-match?": {
         "ui:widget": "radio"
     },
     "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
