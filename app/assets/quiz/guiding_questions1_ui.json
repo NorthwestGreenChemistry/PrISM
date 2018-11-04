@@ -38,15 +38,12 @@
     "waste": {
         "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.": {
             "ui:widget": "radio"
-        },
-        "What attributes are you seeking to meet your longevity goal?": {
-            "ui:widget": "checkboxes"
         }
     },
     "waste2": {
         "ui:title": " ",
         "What attributes are you seeking to meet your longevity goal?": {
-            "ui:widget": "radio"
+            "ui:widget": "checkboxes"
         },
         " ": {
             "ui:widget": "textarea"
@@ -55,7 +52,7 @@
     "waste3": {
         "ui:title": " ",
         "Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
-            "ui:widget": "radio"
+            "ui:widget": "checkboxes"
         },
         " ": {
             "ui:widget": "textarea"
