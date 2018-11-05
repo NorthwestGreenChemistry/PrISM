@@ -133,6 +133,24 @@
                     "minimum": "0",
                     "maximum": "100",
                     "multipleOf": "5"
+                },
+                "Once in the environment, how quickly will the product biodegrade?": {
+                    "type": "string",
+                    "enum": [
+                        "< 10 days",
+                        "< 16 days",
+                        "< 2 months",
+                        "< 6 months",
+                        "< 2 years",
+                        ">= 2 years"]
+                },
+                "Once in the environment, does the product leach hazardous chemicals?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
+                },
+                "Once in the environment, does the product degrade into hazardous byproducts?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
                 }
             }
         },
@@ -216,13 +234,61 @@
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
-                    "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
+                "monitoredChem": {
+                    "title": " ",
+                    "type": "object",
+                    "properties": {
+                        "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
+                            "type": "string",
+                            "enum": ["Yes", "No","I don't know"]
+                        }
+                    },
+                    "dependencies": {
+                        "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
+                                            "enum": [
+                                                "Yes"
+                                            ]
+                                        },
+                                        "Please describe:": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
-                "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
-                    "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
+                "toxicChem": {
+                    "title": " ",
+                    "type": "object",
+                    "properties": {
+                        "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
+                            "type": "string",
+                            "enum": ["Yes", "No","I don't know"]
+                        }
+                    },
+                    "dependencies": {
+                        "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
+                            "oneOf": [
+                                {
+                                    "properties": {
+                                        "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
+                                            "enum": [
+                                                "Yes"
+                                            ]
+                                        },
+                                        "Please describe:": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "What chemicals are formed when the product undergoes a certain waste treatment pathway?  For example, when halogenated organic materials are incinerated, they can make troublesome inorganic acids like HF or HCl and toxic dioxins and furans (under non-ideal burning conditions).": {
                     "type": "string"
@@ -237,6 +303,39 @@
                 "Can the feedstock be used to make materials that are readily recyclable? Some plastics derived from non-renewable feedstock may support sustainable materials management as long as product design facilitates material recovery, there is readily available recycling and there is ongoing demand for recycled materials. Proof of efficient and broadly accessible recycling infrastructure should be evident before selecting feedstock that is derived from depleting resources.": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
+                }
+            },
+            "dependencies": {
+                "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "Select all that apply:": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Land use",
+                                            "GHG emissions",
+                                            "Other emissions",
+                                            "Noxious odor",
+                                            "Requires hazardous processing chemicals",
+                                            "Other"
+                                        ]
+                                    },
+                                    "uniqueItems": "true"
+                                },
+                                "If you selected 'Other', please elaborate:": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },

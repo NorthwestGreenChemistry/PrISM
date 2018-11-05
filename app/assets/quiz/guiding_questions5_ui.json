@@ -52,6 +52,15 @@
         },
         "What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?": {
             "ui:widget": "range"
+        },
+        "Once in the environment, how quickly will the product biodegrade?": {
+            "ui:widget": "radio"
+        },
+        "Once in the environment, does the product leach hazardous chemicals?": {
+            "ui:widget": "radio"
+        },
+        "Once in the environment, does the product degrade into hazardous byproducts?": {
+            "ui:widget": "radio"
         }
     },
     "productCompatibility": {
@@ -86,14 +95,37 @@
         }
     },
     "wasteTreatmentAndMSI": {
+        "ui:order": [
+            "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?",
+            "*",
+            "monitoredChem",
+            "toxicChem",
+            "What chemicals are formed when the product undergoes a certain waste treatment pathway?  For example, when halogenated organic materials are incinerated, they can make troublesome inorganic acids like HF or HCl and toxic dioxins and furans (under non-ideal burning conditions).",
+            "Are the chemicals formed hazardous?",
+            "How could you design the product so that it would have the least possible negative impacts if it were to be mismanaged and leaked into the environment?",
+            "Can the feedstock be used to make materials that are readily recyclable? Some plastics derived from non-renewable feedstock may support sustainable materials management as long as product design facilitates material recovery, there is readily available recycling and there is ongoing demand for recycled materials. Proof of efficient and broadly accessible recycling infrastructure should be evident before selecting feedstock that is derived from depleting resources."
+        ],
         "Does the waste management infrastructure required by your product impact have life cycle impacts? For example, land use, produce a lot of CO2 or other emissions, require harsh processing chemicals, or have other life cycle impacts?": {
             "ui:widget": "radio"
         },
-        "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
-            "ui:widget": "radio"
+        "Select all that apply:": {
+            "ui:widget": "checkboxes"
         },
-        "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
-            "ui:widget": "radio"
+        "monitoredChem": {
+            "Does your product contain an ingredient/chemical/additive that must be monitored when undergoing certain waste management pathways, such as a metal or halogen that must be tracked by incineration facilities?": {
+                "ui:widget": "radio"
+            },
+            "Please describe:": {
+                "ui:widget": "textarea"
+            }
+        },
+        "toxicChem": {
+            "Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?": {
+                "ui:widget": "radio"
+            },
+            "Please describe:": {
+                "ui:widget": "textarea"
+            }
         },
         "What chemicals are formed when the product undergoes a certain waste treatment pathway?  For example, when halogenated organic materials are incinerated, they can make troublesome inorganic acids like HF or HCl and toxic dioxins and furans (under non-ideal burning conditions).": {
             "ui:widget": "textarea"
