@@ -3,9 +3,9 @@
         "How long is this product designed to be used for?",
         "Does product durability match the use phase?",
         "*",
-        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?",
+        "wasteManagementStrategy",
         "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?",
-        "Do you have a plan to communicate instructions for proper management of products after use?",
+        "managementPlan",
         "endOfLife",
         "productCompatibility",
         "recoveredMaterialsQuality",
@@ -21,14 +21,27 @@
     "Does the product have other EOL options that require this mis-match?": {
         "ui:widget": "radio"
     },
-    "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-        "ui:widget": "radio"
+    "wasteManagementStrategy": {
+        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+            "ui:widget": "radio"
+        },
+        "Describe the waste management strategy.": {
+            "ui:widget": "textarea"
+        },
+        "End of Life Options": {
+            "ui:widget": "checkboxes"
+        }
     },
     "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?": {
         "ui:widget": "radio"
     },
-    "Do you have a plan to communicate instructions for proper management of products after use?": {
-        "ui:widget": "radio"
+    "managementPlan": {
+        "Do you have a plan to communicate instructions for proper management of products after use?": {
+            "ui:widget": "radio"
+        },
+        "Describe the strategy.": {
+            "ui:widget": "textarea"
+        }
     },
     "endOfLife": {
         "This section will help identify the likely end of life pathways that your product will undergo once it is used.  Consider that waste infrastructure that is available and how it varies by region. Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc.?": {

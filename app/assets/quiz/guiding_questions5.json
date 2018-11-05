@@ -16,17 +16,84 @@
             "description": "For example, components of the built environment should match the intended longevity of the building.",
             "enum": ["Yes", "No","I don't know"]
         },
-        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-            "type": "string",
-            "enum": ["Yes", "No","I don't know"]
+        "wasteManagementStrategy": {
+            "title": " ",
+            "type": "object",
+            "properties": {
+                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
+                }
+            },
+            "dependencies": {
+                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "Describe the waste management strategy.": {
+                                    "type": "string"
+                                },
+                                "End of Life Options": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Landfill",
+                                            "Wastewater treatment plant (down the drain)",
+                                            "Waste-to-energy",
+                                            "Recycling",
+                                            "Industrial composting",
+                                            "Home composting",
+                                            "Land biodegradable litter",
+                                            "Marine biodegradable litter",
+                                            "Non-biodegradable littler",
+                                            "Other (fill in box)"
+                                        ]
+                                    },
+                                    "uniqueItems": "true"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
         },
         "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
         },
-        "Do you have a plan to communicate instructions for proper management of products after use?": {
-            "type": "string",
-            "enum": ["Yes", "No","I don't know"]
+        "managementPlan": {
+            "title": " ",
+            "type": "object",
+            "properties": {
+                "Do you have a plan to communicate instructions for proper management of products after use?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
+                }
+            },
+            "dependencies": {
+                "Do you have a plan to communicate instructions for proper management of products after use?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Do you have a plan to communicate instructions for proper management of products after use?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "Describe the strategy.": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
         },
         "endOfLife": {
             "title": "Likely End of Life Pathways",
