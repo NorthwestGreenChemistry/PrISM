@@ -175,14 +175,36 @@
                 "Is the product recyclable?": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
-                },
-                "Does your product contain toxic ingredients/chemicals/additives that could contaminate the resulting recycled material and reduce its purity and value in its next iteration? For example, many flame retardants used in plastics can contaminate the recycling stream and prevent its use in higher value products.": {
-                    "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
-                },
-                "Have you identified opportunities for your product to be converted into a high value product when it becomes no longer needed?": {
-                    "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
+                }
+            },
+            "dependencies": {
+                "Is the product recyclable?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Is the product recyclable?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "What kind of recycling does your product undergo?": {
+                                    "type": "string"
+                                },
+                                "Does recycling it result in a higher, lower or equivalent quality material?": {
+                                    "type": "string",
+                                    "enum": ["Higher", "Lower", "Equivalent"]
+                                },
+                                "Does your product contain toxic ingredients/chemicals/additives that could contaminate the resulting recycled material and reduce its purity and value in its next iteration? For example, many flame retardants used in plastics can contaminate the recycling stream and prevent its use in higher value products.": {
+                                    "type": "string",
+                                    "enum": ["Yes", "No","I don't know"]
+                                },
+                                "Have you identified opportunities for your product to be converted into a high value product when it becomes no longer needed?": {
+                                    "type": "string",
+                                    "enum": ["Yes", "No","I don't know"]
+                                }
+                            }
+                        }
+                    ]
                 }
             }
         },
