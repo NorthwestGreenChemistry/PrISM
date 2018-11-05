@@ -62,8 +62,17 @@
         "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?": {
             "ui:widget": "radio"
         },
+        "Which label?" : {
+            "ui:widget": "checkboxes"
+        }
+    },
+    "overall2": {
+        "ui:title": " ",
         "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
             "ui:widget": "radio"
+        },
+        "Describe the product or products you are comparing to: ": {
+            "ui:widget": "textarea"
         }
     }
 }
