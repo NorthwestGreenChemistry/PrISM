@@ -158,7 +158,7 @@
                             "Biodegradable (Marine/Litter).",
                             "Compostable (Home vs Industrial).",
                             "Biodegradable (WWTP).",
-                            "Take-apart-able (need better word.)",
+                            "Can be taken apart and its components reused",
                             "Other (fill in the blank below)"
                         ]
                     },
@@ -181,13 +181,65 @@
                         "No",
                         "Don't know"
                     ]
-                },
+                }
+            },
+            "dependencies": {
+                "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Are you planning to meet requirements for an eco-label, standard or environmentally preferable product purchasing specifications?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "Which label?" : {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "USDA Certified Biobased",
+                                            "FMD",
+                                            "C2C",
+                                            "Safer Choice",
+                                            "Energy Start"
+                                        ]
+                                    },
+                                    "uniqueItems": "true"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "overall2": {
+            "type": "object",
+            "properties": {
                 "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
                     "type": "string",
                     "enum": [
                         "Yes",
                         "No",
                         "Don't know"
+                    ]
+                }
+            },
+            "dependencies": {
+                "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "Are you striving for specific life cycle improvements compared to other products that provide the same service?": {
+                                    "enum": [
+                                        "Yes"
+                                    ]
+                                },
+                                "Describe the product or products you are comparing to: ": {
+                                    "type": "string"
+                                }
+                            }
+                        }
                     ]
                 }
             }
