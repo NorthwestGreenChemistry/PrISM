@@ -268,7 +268,7 @@ export default class Prism extends Component<Props> {
 
                 {/* PRODUCT MENU */}
                 <FormControl variant="outlined" className={styles.selector}>
-                    <InputLabel htmlFor="product_name" className={styles.defaultLabel} shrink={true}>
+                    <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
                         Product Name
                     </InputLabel>
                     <Select

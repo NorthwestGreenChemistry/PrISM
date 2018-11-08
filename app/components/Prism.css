@@ -10,6 +10,7 @@
     display: block;
     clear: both;
     flex-direction: row !important;
+    z-index: 0 !important;
 }
 
 .defaultLabel {
