@@ -54,6 +54,7 @@ export default class Prism extends Component<Props> {
         markdownFiles: [],
         products: this.data.getAllProducts()
     }
+    submitAnswersCallback = null
 
     constructor(props) {
         super(props)
@@ -153,25 +154,8 @@ export default class Prism extends Component<Props> {
         this.loadSchemaFiles(prevStep);
     }
 
-    navNext = (event) => {
-        this.state.modalForm.onSubmit(event);
-    }
-
-    submitAnswers = (form) => {
-        this.data.storeAnswer(
-            this.state.activeProductId,
-            this.state.displayStep,
-            form.formData);
-
-
-        this.data.setPDFStepResults(
-            this.state.activeProductId,
-            this.state.displayStep,
-            form.formData
-        );
-
+    navNext = () => {
         let nextStep = this.data.getNextStep(this.state.displayStep);
-
         if (!nextStep) { //if there's no next step then we're on the final step
             this.closeModal();
             return;
@@ -185,6 +169,43 @@ export default class Prism extends Component<Props> {
 
         this.loadMDFiles(nextStep);
         this.loadSchemaFiles(nextStep);
+    }
+
+    clickNavPrev = (event) => {
+        this.state.modalForm.onSubmit(event);
+        this.submitAnswersCallback = this.navPrev;
+    }
+
+    clickNavNext = (event) => {
+        this.state.modalForm.onSubmit(event);
+        this.submitAnswersCallback = this.navNext;
+    }
+
+    clickNavClose = (event) => {
+        this.state.modalForm.onSubmit(event);
+        this.submitAnswersCallback = this.closeModal;
+    }
+
+    submitAnswers = (form, callback) => {
+        let productId = this.state.activeProductId,
+            step = this.state.displayStep;
+
+        this.data.storeAnswer(
+            productId,
+            step,
+            form.formData
+        );
+
+        this.data.setPDFStepResults(
+            productId,
+            step,
+            form.formData
+        );
+
+        if (typeof this.submitAnswersCallback == 'function') {
+            this.submitAnswersCallback();
+            this.submitAnswersCallback = null;
+        }
     }
 
     closeModal = () => {
@@ -342,7 +363,7 @@ export default class Prism extends Component<Props> {
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
-                            <Button onClick={this.navPrev}
+                            <Button onClick={this.clickNavPrev}
                                     className={styles.leftButton}
                                     variant="contained" color="default"
                             >
@@ -354,7 +375,7 @@ export default class Prism extends Component<Props> {
                             {this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}
                         </h2>
                         { this.state.displayStep < 7 &&
-                            <Button onClick={this.navNext}
+                            <Button onClick={this.clickNavNext}
                                     className={styles.rightButton}
                                     variant="contained" color="default"
                             >
@@ -363,7 +384,7 @@ export default class Prism extends Component<Props> {
                             </Button>
                         }
                     </div>
-                    <Button className={styles.button} variant="outlined" onClick={this.closeModal}>
+                    <Button className={styles.button} variant="outlined" onClick={this.clickNavClose}>
                         Close and Return to PrISM
                     </Button>
 
@@ -385,7 +406,7 @@ export default class Prism extends Component<Props> {
                             <Form noValidate={true} formData={formData}
                                   schema={this.state.activeForm.schema}
                                   uiSchema={this.state.activeForm.uiSchema}
-                                  onSubmit={this.submitAnswers}
+                                  onSubmit={(event, callback) => {this.submitAnswers(event, callback)}}
                                   onError={(errors) => console.log("errors in form", errors)}
                                   ref={(form) => {this.state.modalForm = form;}}
                             >
@@ -396,7 +417,7 @@ export default class Prism extends Component<Props> {
 
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
-                            <Button onClick={this.navPrev}
+                            <Button onClick={this.clickNavPrev}
                                     className={styles.leftButton}
                                     variant="contained" color="default"
                             >
@@ -405,7 +426,7 @@ export default class Prism extends Component<Props> {
                             </Button>
                         }
 
-                        <Button onClick={this.navNext}
+                        <Button onClick={this.clickNavNext}
                                 className={styles.rightButton}
                                 variant="contained" color="primary">
                             Save and {this.state.displayStep < 7 ? 'Continue' : 'Close'} &nbsp;
