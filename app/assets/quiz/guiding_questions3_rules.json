@@ -1,0 +1,42 @@
+[
+    {
+        "conditions": {
+            "lifecycle.How are these wastes disposed of?": {
+                "or": [
+                    "empty",
+                    {"not":
+                        {"includes": "Wastewater treatment plant (down the drain)"}
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "lifecycle.Are the wastes removed by the wastewater treatment plant?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "lifecycle.How are these wastes disposed of?": {
+                "or": [
+                    "empty",
+                    {"not":
+                        {"includes": "Direct discharge to environement"}
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "lifecycle.Are hazardous components removed prior to discharge?"
+                ]
+            }
+        }
+    }
+]

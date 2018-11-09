@@ -56,6 +56,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step3-production-manufacturing.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions3.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions3_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions3_rules.json",
                 prevStep: "2",
                 nextStep: "4"
             };
