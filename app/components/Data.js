@@ -42,8 +42,8 @@ class Data {
             let feedstockStep = {
                 title: "Feedstock",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_ui.json",
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2_ui.json",
                 prevStep: "1",
                 nextStep: "3"
             };

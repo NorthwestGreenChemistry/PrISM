@@ -266,6 +266,35 @@ export default class Prism extends Component<Props> {
 
 
         let rules = [];
+        if (this.state.displayStep == 2 && this.state.activeForm.schema !== undefined) {
+            rules = [
+                {
+                    "conditions": {
+                        "Select the following attributes that describe the base feedstock:": {
+                            or: [
+                                "empty",
+                                {not:
+                                    {includes: "Biobased"}
+                                }
+                            ]
+                        }
+                    },
+                    "event": {
+                        "type": "remove",
+                        "params": {
+                            field: [
+                                "Is the biobased feedstock rapidly renewable?",
+                                "Is it certified sustainably harvested?",
+                                "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
+                                "Is it certified sustainably harvested?",
+                                "If so, fill in the certification.",
+                                "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
         let FormWithConditionals = applyRules(this.state.activeForm.schema,
             this.state.activeForm.uiSchema, rules, Engine)(Form);
 
