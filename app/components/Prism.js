@@ -286,8 +286,35 @@ export default class Prism extends Component<Props> {
                                 "Is the biobased feedstock rapidly renewable?",
                                 "Is it certified sustainably harvested?",
                                 "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
+                                "If so, fill in the certification",
                                 "Is it certified sustainably harvested?",
                                 "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "conditions": {
+                        "Select the following attributes that describe the base feedstock:": {
+                            or: [
+                                "empty",
+                                {not:
+                                    {includes: "Waste/Recycled"}
+                                }
+                            ]
+                        }
+                    },
+                    "event": {
+                        "type": "remove",
+                        "params": {
+                            // field: [
+                            //     "Do you use catalysts?"
+                            // ]
+                            field: [
+                                "Is the recycled material post consumer?",
+                                "Is the recycled material post industrial?",
+                                "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?",
+                                "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products"
                             ]
                         }
                     }

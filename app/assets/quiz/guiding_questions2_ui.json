@@ -14,7 +14,7 @@
     "Is it certified sustainably harvested?": {
         "ui:widget": "radio"
     },
-    "If so, fill in the certification.": {
+    "If so, fill in the certification": {
 
     },
     "Is the biobased feedstock waste-based (e.g. agricultural waste)?": {
@@ -32,7 +32,7 @@
     "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?": {
         "ui:widget": "radio"
     },
-    "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products.": {
+    "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products": {
         "ui:widget": "radio"
     },
     "Can the feedstock be depleted (i.e., it is not renewable)?": {

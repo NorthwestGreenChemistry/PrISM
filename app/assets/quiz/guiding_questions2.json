@@ -32,7 +32,7 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "If so, fill in the certification.": {
+        "If so, fill in the certification": {
             "type": "string"
         },
         "Is the biobased feedstock waste-based (e.g. agricultural waste)?": {
@@ -55,7 +55,7 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products.": {
+        "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products": {
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
