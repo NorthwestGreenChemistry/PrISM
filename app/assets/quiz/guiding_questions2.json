@@ -43,6 +43,22 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
+        "Is the recycled material post consumer?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Is the recycled material post industrial?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products.": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
         "Can the feedstock be depleted (i.e., it is not renewable)?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
