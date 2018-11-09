@@ -6,46 +6,36 @@
             "description": "Goal: To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.",
             "type": "string"
         },
-        "Feedstock Attributes": {
-            "type": "object",
-            "properties": {
-                "Select the following attributes that describe the base feedstock:": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Biobased",
-                            "Waste/Recycled",
-                            "Petroleum or petroleum products",
-                            "Mineral",
-                            "Unsure/I don't know"
-                        ]
-                    },
+        "Select the following attributes that describe the base feedstock:": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Biobased",
+                    "Waste/Recycled",
+                    "Petroleum or petroleum products",
+                    "Mineral",
+                    "Unsure/I don't know"
+                ]
+            },
             "uniqueItems": "true"
-                }
-            }
         },
         "Can the feedstock be depleted (i.e., it is not renewable)?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
         },
-        "Feedstock Social/Env Issues": {
-            "type": "object",
-            "properties": {
-                "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "enum": [
-                            "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
-                            "Habitat destruction (e.g. palm oil is associated with deforestation)",
-                            "Other known issues",
-                            "Unsure/I don't know"
-                        ]
-                    },
-                    "uniqueItems": "true"
-                }
-            }
+        "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
+                    "Habitat destruction (e.g. palm oil is associated with deforestation)",
+                    "Other known issues",
+                    "Unsure/I don't know"
+                ]
+            },
+            "uniqueItems": "true"
         },
         "Do you use catalysts?": {
             "enum": ["Yes", "No","Don't know"],

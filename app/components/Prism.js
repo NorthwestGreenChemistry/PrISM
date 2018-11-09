@@ -22,7 +22,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import Modal from 'react-modal'
-import Form from "react-jsonschema-form"
+import Form from 'react-jsonschema-form'
+import applyRules from 'react-jsonschema-form-conditionals'
+import Engine from 'json-rules-engine-simplified'
 import ReactMarkdown from 'react-markdown'
 import electron from 'electron'
 
@@ -154,20 +156,22 @@ export default class Prism extends Component<Props> {
     }
 
     navNext = (event) => {
-        this.state.modalForm.onSubmit(event);
+        console.log(this.state.modalForm);
+        console.log(event);
+        this.state.modalForm.props.onSubmit(event);
     }
 
     submitAnswers = (form) => {
         this.data.storeAnswer(
             this.state.activeProductId,
             this.state.displayStep,
-            form.formData);
+            this.state.modalForm.formData);
 
 
         this.data.setPDFStepResults(
             this.state.activeProductId,
             this.state.displayStep,
-            form.formData
+            this.state.modalForm.formData
         );
 
         let nextStep = this.data.getNextStep(this.state.displayStep);
@@ -259,6 +263,11 @@ export default class Prism extends Component<Props> {
         if (allAnswers && this.state.displayStep) {
             formData = allAnswers[this.state.displayStep]
         }
+
+
+        let rules = [];
+        let FormWithConditionals = applyRules(this.state.activeForm.schema,
+            this.state.activeForm.uiSchema, rules, Engine)(Form);
 
         return (
             <div className={styles.root}>
@@ -382,15 +391,13 @@ export default class Prism extends Component<Props> {
                         <Fragment>
                             <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
 
-                            <Form noValidate={true} formData={formData}
-                                  schema={this.state.activeForm.schema}
-                                  uiSchema={this.state.activeForm.uiSchema}
-                                  onSubmit={this.submitAnswers}
-                                  onError={(errors) => console.log("errors in form", errors)}
-                                  ref={(form) => {this.state.modalForm = form;}}
+                            <FormWithConditionals noValidate={true} formData={formData}
+                                onSubmit={this.submitAnswers}
+                                onError={(errors) => console.log("errors in form", errors)}
+                                ref={(form) => {this.state.modalForm = form;}}
                             >
                                 <button type="submit" className={styles.hidden}>Submit</button>
-                            </Form>
+                            </FormWithConditionals>
                         </Fragment>: null
                     }
 
