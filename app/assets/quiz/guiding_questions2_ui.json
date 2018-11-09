@@ -5,6 +5,21 @@
     "Select the following attributes that describe the base feedstock:": {
         "ui:widget": "checkboxes"
     },
+    "Is the biobased feedstock rapidly renewable?": {
+        "ui:widget": "radio"
+    },
+    "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?": {
+        "ui:widget": "radio"
+    },
+    "Is it certified sustainably harvested?": {
+        "ui:widget": "radio"
+    },
+    "Is the biobased feedstock waste-based (e.g. agricultural waste)?": {
+        "ui:widget": "radio"
+    },
+    "Does the biobased feedstock compete for land use with social, ecological, or food production value?": {
+        "ui:widget": "radio"
+    },
     "Can the feedstock be depleted (i.e., it is not renewable)?": {
         "ui:widget": "radio"
     },

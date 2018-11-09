@@ -24,7 +24,7 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC) (give link to program - https://us.fsc.org/en-us/certification)?" : {
+        "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?" : {
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
