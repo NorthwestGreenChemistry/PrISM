@@ -88,14 +88,21 @@
             "type": "string"
         },
         "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint! Are the catalysts made from:": {
-            "type": "string",
-            "enum": [
-                "Rare materials, e.g. endangered elements",
-                "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
-                "Feedstocks that cause habitat destruction",
-                "Other feedstocks (fill in the blank)",
-                "I don't know"
-            ]
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Rare materials, e.g. endangered elements",
+                    "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
+                    "Feedstocks that cause habitat destruction",
+                    "Other feedstocks (fill in the blank)",
+                    "I don't know"
+                ]
+            },
+            "uniqueItems": "true"
+        },
+        " ": {
+            "type": "string"
         }
     }
 }

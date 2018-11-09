@@ -45,6 +45,6 @@
         "ui:widget": "radio"
     },
     "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint! Are the catalysts made from:": {
-        "ui:widget": "radio"
+        "ui:widget": "checkboxes"
     }
 }

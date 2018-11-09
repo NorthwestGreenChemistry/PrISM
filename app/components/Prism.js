@@ -287,7 +287,7 @@ export default class Prism extends Component<Props> {
                                 "Is it certified sustainably harvested?",
                                 "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
                                 "If so, fill in the certification",
-                                "Is it certified sustainably harvested?",
+                                "Is the biobased feedstock waste-based (exempli gratia, agricultural waste)?",
                                 "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
                             ]
                         }
@@ -307,14 +307,46 @@ export default class Prism extends Component<Props> {
                     "event": {
                         "type": "remove",
                         "params": {
-                            // field: [
-                            //     "Do you use catalysts?"
-                            // ]
                             field: [
                                 "Is the recycled material post consumer?",
                                 "Is the recycled material post industrial?",
                                 "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?",
                                 "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "conditions": {
+                        "Can the feedstock be depleted (id est, it is not renewable)?": {
+                            not:
+                                {equal: "Yes"}
+                            
+                        }
+                    },
+                    "event": {
+                        "type": "remove",
+                        "params": {
+                            field: [
+                                "Is that feedstock currently considered abundant or rare?",
+                                "Based on what source of information?"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "conditions": {
+                        "Do you use catalysts?": {
+                            not:
+                                {equal: "Yes"}
+                        }
+                    },
+                    "event": {
+                        "type": "remove",
+                        "params": {
+                            field: [
+                                "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint! Are the catalysts made from:",
+                                " "
                             ]
                         }
                     }
