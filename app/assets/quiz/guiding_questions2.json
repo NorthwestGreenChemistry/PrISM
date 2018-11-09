@@ -63,6 +63,13 @@
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
         },
+        "Is that feedstock currently considered abundant or rare?": {
+            "enum": ["Abundant", "Rare","I don't know"],
+            "type": "string"
+        },
+        "Based on what source of information?": {
+            "type": "string"
+        },
         "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
             "type": "array",
             "items": {
@@ -79,6 +86,16 @@
         "Do you use catalysts?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
+        },
+        "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint. Are the catalysts made from:": {
+            "type": "string",
+            "enum": [
+                "Rare materials, e.g. endangered elements",
+                "Conflict minerals (resources extracted in a conflict zone, the sale of which helps to perpetuate the conflict)",
+                "Feedstocks that cause habitat destruction",
+                "Other feedstocks (fill in the blank)",
+                "I don't know"
+            ]
         }
     }
 }
