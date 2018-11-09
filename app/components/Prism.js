@@ -287,7 +287,6 @@ export default class Prism extends Component<Props> {
                                 "Is it certified sustainably harvested?",
                                 "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
                                 "Is it certified sustainably harvested?",
-                                "If so, fill in the certification.",
                                 "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
                             ]
                         }
