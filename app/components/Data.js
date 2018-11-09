@@ -139,7 +139,8 @@ class Data {
                 let answer = formData[formProp];
 
                 if (answer) {
-                    if (answer instanceof String || typeof answer === "string") {
+                    if ((answer instanceof String || typeof answer === "string")
+                        || answer instanceof Array) {
                         var qAndA = {
                             "question": question,
                             "answer": answer
@@ -205,7 +206,8 @@ class Data {
                 let answer = formData[formProp];
 
                 if (answer) {
-                    if (answer instanceof String || typeof answer === "string") {
+                    if ((answer instanceof String || typeof answer === "string")
+                        || answer instanceof Array) {
                         var qAndA = {
                             "question": question,
                             "answer": answer
