@@ -234,6 +234,7 @@ export default class Prism extends Component<Props> {
         if (step > 0) {
             let questionFile = this.data.getQuestionFile(step);
             let questionUIFile = this.data.getQuestionUIFile(step);
+            let questionRulesFile = this.data.getQuestionRulesFile(step);
 
             fetch(questionFile)
                 .then((resp) => {
@@ -254,6 +255,19 @@ export default class Prism extends Component<Props> {
                     formSchemaObj.uiSchema = json
                     this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
+
+            if (questionRulesFile) {
+                fetch(questionRulesFile)
+                    .then((resp) => {
+                        return resp.json();
+                    })
+                    .then((json) => {
+                        let formSchemaObj = {...this.state.activeForm}
+                        formSchemaObj.rules = json
+                        console.log(json);
+                        this.setState(prevState => ({activeForm: formSchemaObj}))
+                    });
+            }
         }
     }
 
@@ -266,95 +280,12 @@ export default class Prism extends Component<Props> {
 
 
         let rules = [];
-        if (this.state.displayStep == 2 && this.state.activeForm.schema !== undefined) {
-            rules = [
-                {
-                    "conditions": {
-                        "Select the following attributes that describe the base feedstock:": {
-                            or: [
-                                "empty",
-                                {not:
-                                    {includes: "Biobased"}
-                                }
-                            ]
-                        }
-                    },
-                    "event": {
-                        "type": "remove",
-                        "params": {
-                            field: [
-                                "Is the biobased feedstock rapidly renewable?",
-                                "Is it certified sustainably harvested?",
-                                "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
-                                "If so, fill in the certification",
-                                "Is the biobased feedstock waste-based (exempli gratia, agricultural waste)?",
-                                "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "conditions": {
-                        "Select the following attributes that describe the base feedstock:": {
-                            or: [
-                                "empty",
-                                {not:
-                                    {includes: "Waste/Recycled"}
-                                }
-                            ]
-                        }
-                    },
-                    "event": {
-                        "type": "remove",
-                        "params": {
-                            field: [
-                                "Is the recycled material post consumer?",
-                                "Is the recycled material post industrial?",
-                                "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?",
-                                "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "conditions": {
-                        "Can the feedstock be depleted (id est, it is not renewable)?": {
-                            not:
-                                {equal: "Yes"}
-                            
-                        }
-                    },
-                    "event": {
-                        "type": "remove",
-                        "params": {
-                            field: [
-                                "Is that feedstock currently considered abundant or rare?",
-                                "Based on what source of information?"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "conditions": {
-                        "Do you use catalysts?": {
-                            not:
-                                {equal: "Yes"}
-                        }
-                    },
-                    "event": {
-                        "type": "remove",
-                        "params": {
-                            field: [
-                                "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint! Are the catalysts made from:",
-                                " "
-                            ]
-                        }
-                    }
-                }
-            ]
+        if (this.state.activeForm.rules) {
+            rules = this.state.activeForm.rules;
         }
+
         let FormWithConditionals = applyRules(this.state.activeForm.schema,
-            this.state.activeForm.uiSchema, rules, Engine)(Form);
+                this.state.activeForm.uiSchema, rules, Engine)(Form);
 
         return (
             <div className={styles.root}>

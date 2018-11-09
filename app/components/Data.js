@@ -44,6 +44,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2_rules.json",
                 prevStep: "1",
                 nextStep: "3"
             };
@@ -299,6 +300,12 @@ class Data {
         let stepString = localStorage.getItem(step);
         let stepObj = JSON.parse(stepString);
         return stepObj.questionsUI;
+    }
+
+    getQuestionRulesFile = (step) => {
+        let stepString = localStorage.getItem(step);
+        let stepObj = JSON.parse(stepString);
+        return stepObj.questionRules;
     }
 
     getContentList = (step) => {
