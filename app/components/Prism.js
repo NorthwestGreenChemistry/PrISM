@@ -284,8 +284,12 @@ export default class Prism extends Component<Props> {
             rules = this.state.activeForm.rules;
         }
 
-        let FormWithConditionals = applyRules(this.state.activeForm.schema,
+        let FormWithConditionals;
+        if (this.state.activeProductId && this.state.displayStep > 0
+                && this.state.activeForm.schema && this.state.activeForm.uiSchema) {
+            FormWithConditionals = applyRules(this.state.activeForm.schema,
                 this.state.activeForm.uiSchema, rules, Engine)(Form);
+        } 
 
         return (
             <div className={styles.root}>
