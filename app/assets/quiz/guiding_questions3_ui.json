@@ -59,6 +59,12 @@
         "How are these wastes disposed of?": {
             "ui:widget": "checkboxes"
         },
+        "Are the wastes removed by the wastewater treatment plant?": {
+            "ui:widget": "radio"
+        },
+        "Are hazardous components removed prior to discharge?": {
+            "ui:widget": "radio"
+        },
         "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?": {
             "ui:widget": "radio"
         }

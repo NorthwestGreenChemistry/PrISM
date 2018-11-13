@@ -258,6 +258,7 @@ export default class Prism extends Component<Props> {
         if (step > 0) {
             let questionFile = this.data.getQuestionFile(step);
             let questionUIFile = this.data.getQuestionUIFile(step);
+            let questionRulesFile = this.data.getQuestionRulesFile(step);
 
             fetch(questionFile)
                 .then((resp) => {
@@ -278,6 +279,19 @@ export default class Prism extends Component<Props> {
                     formSchemaObj.uiSchema = json
                     this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
+
+            if (questionRulesFile) {
+                fetch(questionRulesFile)
+                    .then((resp) => {
+                        return resp.json();
+                    })
+                    .then((json) => {
+                        let formSchemaObj = {...this.state.activeForm}
+                        formSchemaObj.rules = json
+                        console.log(json);
+                        this.setState(prevState => ({activeForm: formSchemaObj}))
+                    });
+            }
         }
     }
 
@@ -290,36 +304,16 @@ export default class Prism extends Component<Props> {
 
 
         let rules = [];
-        if (this.state.displayStep == 2 && this.state.activeForm.schema !== undefined) {
-            rules = [
-                {
-                    "conditions": {
-                        "Select the following attributes that describe the base feedstock:": {
-                            or: [
-                                "empty",
-                                {not:
-                                    {includes: "Biobased"}
-                                }
-                            ]
-                        }
-                    },
-                    "event": {
-                        "type": "remove",
-                        "params": {
-                            field: [
-                                "Is the biobased feedstock rapidly renewable?",
-                                "Is it certified sustainably harvested?",
-                                "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
-                                "Is it certified sustainably harvested?",
-                                "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
-                            ]
-                        }
-                    }
-                }
-            ]
+        if (this.state.activeForm.rules) {
+            rules = this.state.activeForm.rules;
         }
-        let FormWithConditionals = applyRules(this.state.activeForm.schema,
-            this.state.activeForm.uiSchema, rules, Engine)(Form);
+
+        let FormWithConditionals;
+        if (this.state.activeProductId && this.state.displayStep > 0
+                && this.state.activeForm.schema && this.state.activeForm.uiSchema) {
+            FormWithConditionals = applyRules(this.state.activeForm.schema,
+                this.state.activeForm.uiSchema, rules, Engine)(Form);
+        } 
 
         return (
             <div className={styles.root}>

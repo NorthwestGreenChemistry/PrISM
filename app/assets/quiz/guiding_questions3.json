@@ -147,6 +147,14 @@
                     },
                     "uniqueItems": "true"
                 },
+                "Are the wastes removed by the wastewater treatment plant?": {
+                    "type": "string",
+                    "enum": ["Yes", "Some", "No", "I don't know"]
+                },
+                "Are hazardous components removed prior to discharge?": {
+                    "type": "string",
+                    "enum": ["Yes", "Some", "No", "I don't know."]
+                },
                 "Do you measure the use of energy, water and materials and the generation of waste in order to benchmark a product against other products to maximize resource efficiency?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
