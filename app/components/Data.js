@@ -78,8 +78,9 @@ class Data {
             let endOfLifeStep = {
                 title: "End of Life Considerations",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step5-end-of-life.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_ui.json",
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions5.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions5_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions5_rules.json",
                 prevStep: "4",
                 nextStep: "6"
             }

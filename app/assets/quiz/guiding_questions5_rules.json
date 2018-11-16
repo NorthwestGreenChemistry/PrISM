@@ -1,0 +1,137 @@
+[
+    {
+        "conditions": {
+            "endOfLife.What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?": {
+                "not": {
+                    "greater": "0"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "endOfLife.Once in the environment, how quickly will the product biodegrade?",
+                    "endOfLife.Once in the environment, does the product leach hazardous chemicals?",
+                    "endOfLife.Once in the environment, does the product degrade into hazardous byproducts?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Describe the waste management strategy:",
+                    "End of Life Options"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "End of Life Options": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Land biodegradable litter"},
+                                    {"includes": "Marine biodegradable litter"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "standards.Does the product degrade in the marine environment? Has it been tested using standards such as ASTM D7991?",
+                    "standards.Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "End of Life Options": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Industrial composting"
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "standards.If the product is intended for commercial composting, has it been tested using standard test methods?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "End of Life Options": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Home composting"
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "standards.If the product after use is appropriate for home compostability, has it been tested using standards such as the DIN CERTCO (Germany) and Vinçotte (Belgium)?"
+                ]
+            }
+        }
+    }
+]
