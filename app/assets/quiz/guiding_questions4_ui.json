@@ -31,7 +31,7 @@
         "Have you conducted a screening chemical hazard assessment on the chemicals in the product as used?": {
             "ui:widget": "radio"
         },
-        "Are there any chemicals with very high hazards to humans and the environment? If so, what are those hazards?": {
+        "Are there any chemicals with very high hazards to humans and the environment?": {
             "ui:widget": "radio"
         },
         "What are the hazards?": {
@@ -68,7 +68,7 @@
         "Are the chemicals in the product stable, or will they result in unwanted or hazardous chemical emissions, especially if subjected to heat or other environmental conditions?": {
             "ui:widget": "radio"
         },
-        "What are the conditions in which unwatned or hazardous chemical emissions occur?": {
+        "What are the conditions in which unwanted or hazardous chemical emissions occur?": {
             "ui:widget": "textarea"
         },
         "How will you ensure customers avoid these conditions?": {

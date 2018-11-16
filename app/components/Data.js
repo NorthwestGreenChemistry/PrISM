@@ -68,7 +68,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step4-use.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions4.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions4_ui.json",
-                // queestionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions4_rules.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions4_rules.json",
                 prevStep: "3",
                 nextStep: "5"
             };

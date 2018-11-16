@@ -74,7 +74,7 @@
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
-                "Are there any chemicals with very high hazards to humans and the environment? If so, what are those hazards?": {
+                "Are there any chemicals with very high hazards to humans and the environment?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
@@ -154,7 +154,7 @@
                         "I don't know"
                     ]
                 },
-                "What are the conditions in which unwatned or hazardous chemical emissions occur?": {
+                "What are the conditions in which unwanted or hazardous chemical emissions occur?": {
                     "type": "string"
                 },
                 "How will you ensure customers avoid these conditions?": {
