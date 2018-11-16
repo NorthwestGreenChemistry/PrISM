@@ -52,7 +52,6 @@
             "Can the feedstock be depleted (id est, it is not renewable)?": {
                 "not":
                     {"equal": "Yes"}
-                
             }
         },
         "event": {

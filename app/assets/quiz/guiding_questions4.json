@@ -78,6 +78,25 @@
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
+                "What are the hazards?":   { 
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "Carcinogen/Mutagen",
+                            "Reproductive/Developmental toxicant", 
+                            "Endocrine disruptor", 
+                            "Neurotoxicant", 
+                            "Skin sensitizer",
+                            "Respiratory sensitizer",
+                            "Other (fill in the box below)"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                " ": {
+                    "type": "string"
+                },
                 "Have you conducted a comprehensive chemical hazard assessment on the chemicals in the product as used?  Have you focused particularly on those chemicals for which there is likely to be exposure?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
@@ -114,7 +133,15 @@
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
+                "Is the product designed to minimize waste generation during the use phase?": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
                 "Does use of the product require the use of energy or water?": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "Is the product designed to minimize water or energy use?": {
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
@@ -126,6 +153,12 @@
                         "No",
                         "I don't know"
                     ]
+                },
+                "What are the conditions in which unwatned or hazardous chemical emissions occur?": {
+                    "type": "string"
+                },
+                "How will you ensure customers avoid these conditions?": {
+                    "type": "string"
                 }
             }
         }
