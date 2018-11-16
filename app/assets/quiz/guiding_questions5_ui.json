@@ -3,7 +3,6 @@
         "How long is this product designed to be used for?",
         "Does product durability match the use phase?",
         "*",
-        "wasteManagementStrategy",
         "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?",
         "managementPlan",
         "endOfLife",
@@ -23,16 +22,14 @@
     "Does the product have other EOL options that require this mis-match?": {
         "ui:widget": "radio"
     },
-    "wasteManagementStrategy": {
-        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-            "ui:widget": "radio"
-        },
-        "Describe the waste management strategy.": {
-            "ui:widget": "textarea"
-        },
-        "End of Life Options": {
-            "ui:widget": "checkboxes"
-        }
+    "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+        "ui:widget": "radio"
+    },
+    "Describe the waste management strategy:": {
+        "ui:widget": "textarea"
+    },
+    "End of Life Options": {
+        "ui:widget": "checkboxes"
     },
     "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?": {
         "ui:widget": "radio"
@@ -74,6 +71,12 @@
         },
         "How is compatibility verified/certified?": {
             "ui:widget": "checkboxes"
+        },
+        "Will testing/certification be completed for the final product, or only for the components?": {
+            "ui:widget": "radio"
+        },
+        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+            "ui:widget": "radio"
         },
         "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
             "ui:widget": "radio"
@@ -143,7 +146,7 @@
         }
     },
     "standards": {
-        "If the product is intended for commercial composting, has it been tested using standard test methods?  For an example in packaging products, see the harmonized European standard EN 13432 and EN 14995.": {
+        "If the product is intended for commercial composting, has it been tested using standard test methods?": {
             "ui:widget": "radio"
         },
         "If the product after use is appropriate for home compostability, has it been tested using standards such as the DIN CERTCO (Germany) and Vinçotte (Belgium)?": {
@@ -152,7 +155,7 @@
         "Does the product degrade in the marine environment? Has it been tested using standards such as ASTM D7991?": {
             "ui:widget": "radio"
         },
-        "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions? Standard test methods developed by the US EPA or OECD are typically included in chemical hazard assessment methods.": {
+        "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions?": {
             "ui:widget": "radio"
         }
     }

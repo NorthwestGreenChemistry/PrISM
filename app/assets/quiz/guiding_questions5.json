@@ -16,52 +16,32 @@
             "description": "For example, components of the built environment should match the intended longevity of the building.",
             "enum": ["Yes", "No","I don't know"]
         },
-        "wasteManagementStrategy": {
-            "title": " ",
-            "type": "object",
-            "properties": {
-                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-                    "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
-                }
+        
+        "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+            "type": "string",
+            "enum": ["Yes", "No","I don't know"]
+        },
+        "Describe the waste management strategy:": {
+            "type": "string"
+        },
+        "End of Life Options": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "Landfill",
+                    "Wastewater treatment plant (down the drain)",
+                    "Waste-to-energy",
+                    "Recycling",
+                    "Industrial composting",
+                    "Home composting",
+                    "Land biodegradable litter",
+                    "Marine biodegradable litter",
+                    "Non-biodegradable littler",
+                    "Other (fill in box)"
+                ]
             },
-            "dependencies": {
-                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-                    "oneOf": [
-                        {
-                            "properties": {
-                                "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
-                                    "enum": [
-                                        "Yes"
-                                    ]
-                                },
-                                "Describe the waste management strategy.": {
-                                    "type": "string"
-                                },
-                                "End of Life Options": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "Landfill",
-                                            "Wastewater treatment plant (down the drain)",
-                                            "Waste-to-energy",
-                                            "Recycling",
-                                            "Industrial composting",
-                                            "Home composting",
-                                            "Land biodegradable litter",
-                                            "Marine biodegradable litter",
-                                            "Non-biodegradable littler",
-                                            "Other (fill in box)"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                }
-                            }
-                        }
-                    ]
-                }
-            }
+            "uniqueItems": "true"
         },
         "Have you considered strategies for product prolongment (such as repair, remanufacturing, refurbishing, leasing strategies)?": {
             "type": "string",
@@ -164,7 +144,7 @@
                 },
                 "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
                     "type": "string",
-                    "enum": ["Yes", "No","I don't know", "FIX THIS"]
+                    "enum": ["Yes", "No","I don't know"]
                 },
                 "How is compatibility verified/certified?": {
                     "type": "array",
@@ -179,6 +159,14 @@
                         ]
                     },
                     "uniqueItems": "true"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Yes", "No","I don't know"]
                 },
                 "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
                     "type": "string",
@@ -343,7 +331,8 @@
             "title": "Standards",
             "type": "object",
             "properties": {
-                "If the product is intended for commercial composting, has it been tested using standard test methods?  For an example in packaging products, see the harmonized European standard EN 13432 and EN 14995.": {
+                "If the product is intended for commercial composting, has it been tested using standard test methods?": {
+                    "description": "For an example in packaging products, see the harmonized European standard EN 13432 and EN 14995.",
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
@@ -355,7 +344,8 @@
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions? Standard test methods developed by the US EPA or OECD are typically included in chemical hazard assessment methods.": {
+                "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions?": {
+                    "description": "Standard test methods developed by the US EPA or OECD are typically included in chemical hazard assessment methods.",
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 }
