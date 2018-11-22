@@ -98,7 +98,7 @@
         },
         "certificationVerification": {
             "Landfill:": {
-                "How is compatibility verified/certified?": {
+                "How is landfill compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -109,7 +109,7 @@
                 }
             },
             "Waste-to-energy:": {
-                "How is compatibility verified/certified?": {
+                "How is waste-to-energy compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -120,7 +120,7 @@
                 }
             },
             "Recycling:": {
-                "How is compatibility verified/certified?": {
+                "How is recycling compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -131,7 +131,7 @@
                 }
             },
             "Industrial composting:": {
-                "How is compatibility verified/certified?": {
+                "How is industrial composting compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -142,7 +142,7 @@
                 }
             },
             "Home composting:": {
-                "How is compatibility verified/certified?": {
+                "How is home composting compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -153,7 +153,7 @@
                 }
             },
             "Wastewater treatment plant (down the drain):": {
-                "How is compatibility verified/certified?": {
+                "How is wastewater treatment compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {
@@ -164,7 +164,7 @@
                 }
             },
             "Direct discharge to environement:": {
-                "How is compatibility verified/certified?": {
+                "How is direct discharge compatibility verified/certified?": {
                     "ui:widget": "checkboxes"
                 },
                 "Will testing/certification be completed for the final product, or only for the components?": {

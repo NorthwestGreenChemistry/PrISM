@@ -259,7 +259,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Landfill:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Landfill:.How is landfill compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -287,7 +287,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Recycling:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Recycling:.How is recycling compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -315,7 +315,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Home composting:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Home composting:.How is home composting compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -343,7 +343,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Industrial composting:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Industrial composting:.How is industrial composting compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -371,7 +371,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Waste-to-energy:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Waste-to-energy:.How is waste-to-energy compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -399,7 +399,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):.How is wastewater treatment compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -427,7 +427,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.Direct discharge to environement:.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.Direct discharge to environement:.How is direct discharge compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {

@@ -183,13 +183,14 @@
                     "enum": ["Yes", "No","I don't know"]
                 },
                 "certificationVerification": {
-                    "title": "Compatability Verficiation/Certification",
+                    "title": "Compatibility Verficiation/Certification",
                     "type": "object",
                     "properties": {
                         "Landfill:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is landfill compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -214,9 +215,10 @@
                             }
                         },
                         "Waste-to-energy:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is waste-to-energy compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -241,9 +243,10 @@
                             }
                         },
                         "Recycling:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is recycling compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -268,9 +271,10 @@
                             }
                         },
                         "Industrial composting:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is industrial composting compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -295,9 +299,10 @@
                             }
                         },
                         "Home composting:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is home composting compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -322,9 +327,10 @@
                             }
                         },
                         "Wastewater treatment plant (down the drain):": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is wastewater treatment compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
@@ -349,9 +355,10 @@
                             }
                         },
                         "Direct discharge to environement:": {
+                            "title": " ",
                             "type": "object",
                             "properties": {
-                                "How is compatibility verified/certified?": {
+                                "How is direct discharge compatibility verified/certified?": {
                                     "type": "array",
                                     "items": {
                                         "type": "string",
