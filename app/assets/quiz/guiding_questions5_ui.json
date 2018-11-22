@@ -93,40 +93,87 @@
         "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
             "ui:widget": "radio"
         },
-        "certificationVerification": {
-            "How is compatibility verified/certified?": {
-                "ui:widget": "radio"
-            },
-            "Landfill:": {
-                "ui:widget": "checkboxes"
-            },
-            "Waste-to-energy:": {
-                "ui:widget": "checkboxes"
-            },
-            "Recycling:": {
-                "ui:widget": "checkboxes"
-            },
-            "Industrial composting:": {
-                "ui:widget": "checkboxes"
-            },
-            "Home composting:": {
-                "ui:widget": "checkboxes"
-            },
-            "Wastewater treatment plant (down the drain):": {
-                "ui:widget": "checkboxes"
-            },
-            "Direct discharge to environement:": {
-                "ui:widget": "checkboxes"
-            },
-            "Will testing/certification be completed for the final product, or only for the components?": {
-                "ui:widget": "radio"
-            },
-            "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                "ui:widget": "radio"
-            }
-        },
         "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
             "ui:widget": "radio"
+        },
+        "certificationVerification": {
+            "Landfill:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Waste-to-energy:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Recycling:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Industrial composting:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Home composting:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Wastewater treatment plant (down the drain):": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            },
+            "Direct discharge to environement:": {
+                "How is compatibility verified/certified?": {
+                    "ui:widget": "checkboxes"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "ui:widget": "radio"
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "ui:widget": "radio"
+                }
+            }
         }
     },
     "recoveredMaterialsQuality": {

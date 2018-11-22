@@ -20,34 +20,6 @@
     },
     {
         "conditions": {
-            "productCompatibility.certificationVerification.How is compatibility verified/certified?": {
-                "or": [
-                    "empty",
-                    {
-                        "not": {
-                            "or":
-                                [
-                                    {"includes": "Certification"},
-                                    {"includes": "3rd-party testing"},
-                                    {"includes": "In-house testing"}
-                                ]
-                        }
-                    }
-                ] 
-            }
-        },
-        "event": {
-            "type": "remove",
-            "params": {
-                "field": [
-                    "productCompatibility.certificationVerification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.certificationVerification.Will testing/certfiication be completed for each variation of the product, or only one representative?"
-                ]
-            }
-        }
-    },
-    {
-        "conditions": {
             "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
                 "not":
                     {"equal": "Yes"}
