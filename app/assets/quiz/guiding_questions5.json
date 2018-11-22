@@ -16,7 +16,6 @@
             "description": "For example, components of the built environment should match the intended longevity of the building.",
             "enum": ["Yes", "No","I don't know"]
         },
-        
         "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
@@ -79,7 +78,7 @@
             "title": "Likely End of Life Pathways",
             "type": "object",
             "properties": {
-                "This section will help identify the likely end of life pathways that your product will undergo once it is used.  Consider that waste infrastructure that is available and how it varies by region. Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc.?": {
+                "This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
                     "description": "For example, look at your local government's waste management resources such as this information from the City of Portland.",
                     "type": "array",
                     "items": {
@@ -89,6 +88,7 @@
                             "Waste-to-energy",
                             "Recycling",
                             "Industrial composting",
+                            "Home composting",
                             "Wastewater treatment plant (down the drain)",
                             "Direct discharge to environement",
                             "Other (fill in box)"
@@ -139,6 +139,38 @@
             "type": "object",
             "properties": {
                 "Is your product compatible with the end of life management options that are available?  For example, if your product is a surfactant, will it biodegrade in a wastewater treatment facility?  If you intend it to be commercially composted, is compostable?": {
+                    "type": "string",
+                    "enum": []
+                },
+                "Landfill:": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Waste-to-energy:": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Recycling:": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Industrial composting:": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Home composting:" : {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Wastewater treatment plant (down the drain):": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Direct discharge to environement:": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
+                },
+                "Other:": {
                     "type": "string",
                     "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
                 },

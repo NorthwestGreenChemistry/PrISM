@@ -43,7 +43,7 @@
         }
     },
     "endOfLife": {
-        "This section will help identify the likely end of life pathways that your product will undergo once it is used.  Consider that waste infrastructure that is available and how it varies by region. Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc.?": {
+        "This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
             "ui:widget": "checkboxes"
         }, 
         "What kinds of services are there for collecting materials for waste management in your region?": {
@@ -64,6 +64,30 @@
     },
     "productCompatibility": {
         "Is your product compatible with the end of life management options that are available?  For example, if your product is a surfactant, will it biodegrade in a wastewater treatment facility?  If you intend it to be commercially composted, is compostable?": {
+            "ui:widget": "radio"
+        },
+        "Landfill:": {
+            "ui:widget": "radio"
+        },
+        "Waste-to-energy:": {
+            "ui:widget": "radio"
+        },
+        "Recycling:": {
+            "ui:widget": "radio"
+        },
+        "Industrial composting:": {
+            "ui:widget": "radio"
+        },
+        "Home composting:" : {
+            "ui:widget": "radio"
+        },
+        "Wastewater treatment plant (down the drain):": {
+            "ui:widget": "radio"
+        },
+        "Direct discharge to environement:": {
+            "ui:widget": "radio"
+        },
+        "Other:": {
             "ui:widget": "radio"
         },
         "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {

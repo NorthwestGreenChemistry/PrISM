@@ -70,33 +70,6 @@
                     "empty",
                     {
                         "not": {
-                            "or":
-                                [
-                                    {"includes": "Land biodegradable litter"},
-                                    {"includes": "Marine biodegradable litter"}
-                                ]
-                        }
-                    }
-                ] 
-            }
-        },
-        "event": {
-            "type": "remove",
-            "params": {
-                "field": [
-                    "standards.Does the product degrade in the marine environment? Has it been tested using standards such as ASTM D7991?",
-                    "standards.Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions?"
-                ]
-            }
-        }
-    },
-    {
-        "conditions": {
-            "End of Life Options": {
-                "or": [
-                    "empty",
-                    {
-                        "not": {
                             "includes": "Industrial composting"
                         }
                     }
