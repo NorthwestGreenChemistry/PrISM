@@ -111,8 +111,40 @@
         "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
             "ui:widget": "radio"
         },
-        "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
+        "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable": {
             "ui:widget": "radio"
+        },
+        "interferingChem": {
+            "For each EOL pathway below, fill in what is interfering": {
+                "ui:widget": "radio"
+            },
+            "Landfill": {
+                "ui:widget": "textarea"
+            },
+            "Wastewater treatment plant (down the drain)": {
+                "ui:widget": "textarea"
+            },
+            "Waste-to-energy": {
+                "ui:widget": "textarea"
+            },
+            "Recycling": {
+                "ui:widget": "textarea"
+            },
+            "Industrial composting": {
+                "ui:widget": "textarea"
+            },
+            "Home composting": {
+                "ui:widget": "textarea"
+            },
+            "Land biodegradable litter": {
+                "ui:widget": "textarea"
+            },
+            "Marine biodegradable litter": {
+                "ui:widget": "textarea"
+            },
+            "Non-biodegradable litter": {
+                "ui:widget": "textarea"
+            }
         },
         "Landfill Compatibility Verification/Certification": {
             "How is landfill compatibility verified/certified?": {

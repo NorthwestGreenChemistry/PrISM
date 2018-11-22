@@ -239,9 +239,47 @@
                     "type": "string",
                     "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
                 },
-                "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable.": {
+                "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
+                },
+                "interferingChem": {
+                    "title": " ",
+                    "type": "object",
+                    "properties": {
+                        "For each EOL pathway below, fill in what is interfering": {
+                            "description": "Leave blank if not relevent",
+                            "type": "string",
+                            "enum": []
+                        },
+                        "Landfill": {
+                            "type": "string"
+                        },
+                        "Wastewater treatment plant (down the drain)": {
+                            "type": "string"
+                        },
+                        "Waste-to-energy": {
+                            "type": "string"
+                        },
+                        "Recycling": {
+                            "type": "string"
+                        },
+                        "Industrial composting": {
+                            "type": "string"
+                        },
+                        "Home composting": {
+                            "type": "string"
+                        },
+                        "Land biodegradable litter": {
+                            "type": "string"
+                        },
+                        "Marine biodegradable litter": {
+                            "type": "string"
+                        },
+                        "Non-biodegradable litter": {
+                            "type": "string"
+                        }
+                    }
                 },
                 "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
                     "type": "string",
