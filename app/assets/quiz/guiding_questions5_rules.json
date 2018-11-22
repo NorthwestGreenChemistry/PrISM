@@ -536,5 +536,21 @@
                 ]
             }
         }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.interferingChem"
+                ]
+            }
+        }
     }
 ]
