@@ -256,5 +256,329 @@
                 ]
             }
         }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Landfill:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Landfill:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Landfill:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Recycling:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Recycling:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Recycling:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Home composting:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Home composting:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Home composting:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Industrial composting:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Industrial composting:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Industrial composting:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Waste-to-energy:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Waste-to-energy:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Waste-to-energy:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.certificationVerification.Direct discharge to environement:.How is compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Direct discharge to environement:.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Direct discharge to environement:.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Home composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Home composting:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Industrial composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Industrial composting:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Landfill:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Landfill:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Waste-to-energy:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Waste-to-energy:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Recycling:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Recycling:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Wastewater treatment plant (down the drain):": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Wastewater treatment plant (down the drain):"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Direct discharge to environement:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification.Direct discharge to environement:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.certificationVerification"
+                ]
+            }
+        }
     }
 ]
