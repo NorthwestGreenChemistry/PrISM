@@ -90,7 +90,6 @@
                             "Industrial composting",
                             "Home composting",
                             "Wastewater treatment plant (down the drain)",
-                            "Direct discharge to environement",
                             "Other (fill in box)"
                         ]
                     },
@@ -166,10 +165,6 @@
                     "type": "string",
                     "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
                 },
-                "Direct discharge to environement:": {
-                    "type": "string",
-                    "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
-                },
                 "Other:": {
                     "type": "string",
                     "enum": ["Yes", "No", "Not relevant to product", "I don't know"]
@@ -182,205 +177,165 @@
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
                 },
-                "certificationVerification": {
-                    "title": "Compatibility Verficiation/Certification",
+                "Landfill Compatibility Verification/Certification": {
                     "type": "object",
                     "properties": {
-                        "Landfill:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is landfill compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "How is landfill compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
                         },
-                        "Waste-to-energy:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is waste-to-energy compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
                         },
-                        "Recycling:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is recycling compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
+                        }
+                    }
+                },
+                "Waste-to-energy Compatibility Verification/Certification": {
+                    "type": "object",
+                    "properties": {
+                        "How is waste-to-energy compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
                         },
-                        "Industrial composting:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is industrial composting compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
                         },
-                        "Home composting:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is home composting compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
+                        }
+                    }
+                },
+                "Recycling Compatibility Verification/Certification": {
+                    "type": "object",
+                    "properties": {
+                        "How is recycling compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
                         },
-                        "Wastewater treatment plant (down the drain):": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is wastewater treatment compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
                         },
-                        "Direct discharge to environement:": {
-                            "title": " ",
-                            "type": "object",
-                            "properties": {
-                                "How is direct discharge compatibility verified/certified?": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "string",
-                                        "enum": [
-                                            "In-house testing",
-                                            "3rd-party testing",
-                                            "Certification",
-                                            "Compatibility will not be certified or verified",
-                                            "Don't know"
-                                        ]
-                                    },
-                                    "uniqueItems": "true"
-                                },
-                                "Will testing/certification be completed for the final product, or only for the components?": {
-                                    "type": "string",
-                                    "enum": ["Final product", "Only components","I don't know"]
-                                },
-                                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                                    "type": "string",
-                                    "enum": ["Each variation", "Only one representative","I don't know"]
-                                }
-                            }
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
+                        }
+                    }
+                },
+                "Industrial Composting Compatibility Verification/Certification": {
+                    "type": "object",
+                    "properties": {
+                        "How is industrial composting compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
+                        },
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
+                        },
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
+                        }
+                    }
+                },
+                "Home Composting Compatibility Verification/Certification": {
+                    "type": "object",
+                    "properties": {
+                        "How is home composting compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
+                        },
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
+                        },
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
+                        }
+                    }
+                },
+                "Wastewater Treatment Plant Compatibility Verification/Certification": {
+                    "type": "object",
+                    "properties": {
+                        "How is wastewater treatment compatibility verified/certified?": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "In-house testing",
+                                    "3rd-party testing",
+                                    "Certification",
+                                    "Compatibility will not be certified or verified",
+                                    "Don't know"
+                                ]
+                            },
+                            "uniqueItems": "true"
+                        },
+                        "Will testing/certification be completed for the final product, or only for the components?": {
+                            "type": "string",
+                            "enum": ["Final product", "Only components","I don't know"]
+                        },
+                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                            "type": "string",
+                            "enum": ["Each variation", "Only one representative","I don't know"]
                         }
                     }
                 }
