@@ -20,7 +20,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.How is compatibility verified/certified?": {
+            "productCompatibility.certificationVerification.How is compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -40,8 +40,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Will testing/certfiication be completed for each variation of the product, or only one representative?"
+                    "productCompatibility.certificationVerification.Will testing/certification be completed for the final product, or only for the components?",
+                    "productCompatibility.certificationVerification.Will testing/certfiication be completed for each variation of the product, or only one representative?"
                 ]
             }
         }
