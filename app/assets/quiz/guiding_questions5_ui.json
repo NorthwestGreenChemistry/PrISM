@@ -49,6 +49,27 @@
         "What kinds of services are there for collecting materials for waste management in your region?": {
             "ui:widget": "radio"
         },
+        "Landfill:": {
+            "ui:widget": "radio"
+        },
+        "Waste-to-energy:": {
+            "ui:widget": "radio"
+        },
+        "Recycling:": {
+            "ui:widget": "radio"
+        },
+        "Industrial composting:": {
+            "ui:widget": "radio"
+        },
+        "Home composting:" : {
+            "ui:widget": "radio"
+        },
+        "Wastewater treatment plant (down the drain):": {
+            "ui:widget": "radio"
+        },
+        "Other:": {
+            "ui:widget": "radio"
+        },
         "What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?": {
             "ui:widget": "range"
         },
@@ -97,6 +118,9 @@
             "How is landfill compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
             },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
+            },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"
             },
@@ -107,6 +131,9 @@
         "Waste-to-energy Compatibility Verification/Certification": {
             "How is waste-to-energy compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
+            },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
             },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"
@@ -119,6 +146,9 @@
             "How is recycling compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
             },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
+            },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"
             },
@@ -129,6 +159,9 @@
         "Industrial Composting Compatibility Verification/Certification": {
             "How is industrial composting compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
+            },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
             },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"
@@ -141,6 +174,9 @@
             "How is home composting compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
             },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
+            },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"
             },
@@ -151,6 +187,9 @@
         "Wastewater Treatment Plant Compatibility Verification/Certification": {
             "How is wastewater treatment compatibility verified/certified?": {
                 "ui:widget": "checkboxes"
+            },
+            "Desrcibe the test method, ceritifcation and/or third party:": {
+                "ui:widget": "textarea"
             },
             "Will testing/certification be completed for the final product, or only for the components?": {
                 "ui:widget": "radio"

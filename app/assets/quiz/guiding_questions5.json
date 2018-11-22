@@ -97,6 +97,76 @@
                 },
                 "What kinds of services are there for collecting materials for waste management in your region?": {
                     "type": "string",
+                    "enum": []
+                },
+                "Landfill:": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Waste-to-energy:": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Recycling:": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Industrial composting:": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Home composting:": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Wastewater treatment plant (down the drain):": {
+                    "type": "string",
+                    "enum": [
+                        "Regular on-site pick-up",
+                        "Scheduled on-site pick-up only",
+                        "Regular drop-off hours",
+                        "Limited drop-off hours",
+                        "Scheduled drop-off hours",
+                        "Don't know"
+                    ]
+                },
+                "Other:": {
+                    "type": "string",
                     "enum": [
                         "Regular on-site pick-up",
                         "Scheduled on-site pick-up only",
@@ -194,6 +264,9 @@
                             },
                             "uniqueItems": "true"
                         },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
+                        },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
                             "enum": ["Final product", "Only components","I don't know"]
@@ -220,6 +293,9 @@
                                 ]
                             },
                             "uniqueItems": "true"
+                        },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
                         },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
@@ -248,6 +324,9 @@
                             },
                             "uniqueItems": "true"
                         },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
+                        },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
                             "enum": ["Final product", "Only components","I don't know"]
@@ -274,6 +353,9 @@
                                 ]
                             },
                             "uniqueItems": "true"
+                        },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
                         },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
@@ -302,6 +384,9 @@
                             },
                             "uniqueItems": "true"
                         },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
+                        },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
                             "enum": ["Final product", "Only components","I don't know"]
@@ -328,6 +413,9 @@
                                 ]
                             },
                             "uniqueItems": "true"
+                        },
+                        "Desrcibe the test method, ceritifcation and/or third party:": {
+                            "type": "string"
                         },
                         "Will testing/certification be completed for the final product, or only for the components?": {
                             "type": "string",
