@@ -52,7 +52,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Landfill:"
+                    "productCompatibility.Landfill:",
+                    "endOfLife.Landfill:"
                 ]
             }
         }
@@ -74,7 +75,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Waste-to-energy:"
+                    "productCompatibility.Waste-to-energy:",
+                    "endOfLife.Waste-to-energy:"
                 ]
             }
         }
@@ -96,7 +98,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Recycling:"
+                    "productCompatibility.Recycling:",
+                    "endOfLife.Recycling:"
                 ]
             }
         }
@@ -118,7 +121,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Industrial composting:"
+                    "productCompatibility.Industrial composting:",
+                    "endOfLife.Industrial composting:"
                 ]
             }
         }
@@ -140,7 +144,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Home composting:"
+                    "productCompatibility.Home composting:",
+                    "endOfLife.Home composting:"
                 ]
             }
         }
@@ -162,7 +167,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Wastewater treatment plant (down the drain):"
+                    "productCompatibility.Wastewater treatment plant (down the drain):",
+                    "endOfLife.Wastewater treatment plant (down the drain):"
                 ]
             }
         }
@@ -184,7 +190,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Other:"
+                    "productCompatibility.Other:",
+                    "endOfLife.Other:"
                 ]
             }
         }
