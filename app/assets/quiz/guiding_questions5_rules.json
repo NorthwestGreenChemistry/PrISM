@@ -37,6 +37,22 @@
     },
     {
         "conditions": {
+            "Does product durability match the use phase?": {
+                "not":
+                    {"equal": "No"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Does the product have other EOL options that require this mis-match?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
             "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
                 "or": [
                     "empty",
@@ -244,7 +260,7 @@
     },
     {
         "conditions": {
-            "productCompatibility.Landfill Compatibility Verification/Certification.How is landfill compatibility verified/certified?": {
+            "Landfill Compatibility Verification/Certification.How is landfill compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -264,16 +280,16 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Landfill Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Landfill Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Landfill Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Landfill Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Landfill Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Landfill Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "productCompatibility.Recycling Compatibility Verification/Certification.How is recycling compatibility verified/certified?": {
+            "Recycling Compatibility Verification/Certification.How is recycling compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -293,16 +309,16 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Recycling Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Recycling Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Recycling Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Recycling Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Recycling Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Recycling Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "productCompatibility.Home Composting Compatibility Verification/Certification.How is home composting compatibility verified/certified?": {
+            "Home Composting Compatibility Verification/Certification.How is home composting compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -322,16 +338,16 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Home Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Home Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Home Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Home Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Home Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Home Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "productCompatibility.Industrial Composting Compatibility Verification/Certification.How is industrial composting compatibility verified/certified?": {
+            "Industrial Composting Compatibility Verification/Certification.How is industrial composting compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -351,16 +367,16 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Industrial Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Industrial Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Industrial Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Industrial Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Industrial Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Industrial Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "productCompatibility.Waste-to-energy Compatibility Verification/Certification.How is waste-to-energy compatibility verified/certified?": {
+            "Waste-to-energy Compatibility Verification/Certification.How is waste-to-energy compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -380,16 +396,16 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Waste-to-energy Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Waste-to-energy Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Waste-to-energy Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Waste-to-energy Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Waste-to-energy Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Waste-to-energy Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "productCompatibility.Wastewater Treatment Plant Compatibility Verification/Certification.How is wastewater treatment compatibility verified/certified?": {
+            "Wastewater Treatment Plant Compatibility Verification/Certification.How is wastewater treatment compatibility verified/certified?": {
                 "or": [
                     "empty",
                     {
@@ -409,9 +425,9 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
-                    "productCompatibility.Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
-                    "productCompatibility.Wastewater Treatment Plant Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
                 ]
             }
         }
@@ -427,7 +443,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Home Composting Compatibility Verification/Certification"
+                    "Home Composting Compatibility Verification/Certification"
                 ]
             }
         }
@@ -443,7 +459,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Industrial Composting Compatibility Verification/Certification"
+                    "Industrial Composting Compatibility Verification/Certification"
                 ]
             }
         }
@@ -459,7 +475,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Landfill Compatibility Verification/Certification"
+                    "Landfill Compatibility Verification/Certification"
                 ]
             }
         }
@@ -475,7 +491,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Waste-to-energy Compatibility Verification/Certification"
+                    "Waste-to-energy Compatibility Verification/Certification"
                 ]
             }
         }
@@ -491,7 +507,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Recycling Compatibility Verification/Certification"
+                    "Recycling Compatibility Verification/Certification"
                 ]
             }
         }
@@ -507,7 +523,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.Wastewater Treatment Plant Compatibility Verification/Certification"
+                    "Wastewater Treatment Plant Compatibility Verification/Certification"
                 ]
             }
         }
@@ -548,7 +564,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "productCompatibility.interferingChem"
+                    "interferingChem"
                 ]
             }
         }

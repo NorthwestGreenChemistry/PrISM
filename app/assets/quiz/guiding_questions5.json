@@ -16,6 +16,10 @@
             "description": "For example, components of the built environment should match the intended longevity of the building.",
             "enum": ["Yes", "No","I don't know"]
         },
+        "Does the product have other EOL options that require this mis-match?": {
+            "type": "string",
+            "enum": ["Yes", "No","I don't know"]
+        },
         "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
             "type": "string",
             "enum": ["Yes", "No","I don't know"]
@@ -242,228 +246,228 @@
                 "Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable": {
                     "type": "string",
                     "enum": ["Yes", "No","I don't know"]
-                },
-                "interferingChem": {
-                    "title": " ",
-                    "type": "object",
-                    "properties": {
-                        "For each EOL pathway below, fill in what is interfering": {
-                            "description": "Leave blank if not relevent",
-                            "type": "string",
-                            "enum": []
-                        },
-                        "Landfill": {
-                            "type": "string"
-                        },
-                        "Wastewater treatment plant (down the drain)": {
-                            "type": "string"
-                        },
-                        "Waste-to-energy": {
-                            "type": "string"
-                        },
-                        "Recycling": {
-                            "type": "string"
-                        },
-                        "Industrial composting": {
-                            "type": "string"
-                        },
-                        "Home composting": {
-                            "type": "string"
-                        },
-                        "Land biodegradable litter": {
-                            "type": "string"
-                        },
-                        "Marine biodegradable litter": {
-                            "type": "string"
-                        },
-                        "Non-biodegradable litter": {
-                            "type": "string"
-                        }
-                    }
-                },
-                "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
+                }
+            }
+        },
+        "interferingChem": {
+            "title": " ",
+            "type": "object",
+            "properties": {
+                "For each EOL pathway below, fill in what is interfering": {
+                    "description": "Leave blank if not relevent",
                     "type": "string",
-                    "enum": ["Yes", "No","I don't know"]
+                    "enum": []
                 },
-                "Landfill Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is landfill compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Landfill": {
+                    "type": "string"
                 },
-                "Waste-to-energy Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is waste-to-energy compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Wastewater treatment plant (down the drain)": {
+                    "type": "string"
                 },
-                "Recycling Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is recycling compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Waste-to-energy": {
+                    "type": "string"
                 },
-                "Industrial Composting Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is industrial composting compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Recycling": {
+                    "type": "string"
                 },
-                "Home Composting Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is home composting compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Industrial composting": {
+                    "type": "string"
                 },
-                "Wastewater Treatment Plant Compatibility Verification/Certification": {
-                    "type": "object",
-                    "properties": {
-                        "How is wastewater treatment compatibility verified/certified?": {
-                            "type": "array",
-                            "items": {
-                                "type": "string",
-                                "enum": [
-                                    "In-house testing",
-                                    "3rd-party testing",
-                                    "Certification",
-                                    "Compatibility will not be certified or verified",
-                                    "Don't know"
-                                ]
-                            },
-                            "uniqueItems": "true"
-                        },
-                        "Desrcibe the test method, ceritifcation and/or third party:": {
-                            "type": "string"
-                        },
-                        "Will testing/certification be completed for the final product, or only for the components?": {
-                            "type": "string",
-                            "enum": ["Final product", "Only components","I don't know"]
-                        },
-                        "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
-                            "type": "string",
-                            "enum": ["Each variation", "Only one representative","I don't know"]
-                        }
-                    }
+                "Home composting": {
+                    "type": "string"
+                },
+                "Land biodegradable litter": {
+                    "type": "string"
+                },
+                "Marine biodegradable litter": {
+                    "type": "string"
+                },
+                "Non-biodegradable litter": {
+                    "type": "string"
+                }
+            }
+        },
+        "Will you test your materials for compatibility with available EOL options?  For example, is the product certified to be compostable?  Have you tested chemicals that will go to wastewater treatment for biodegradability in tests that reflect how they will perform in a wastewater treatment plant?  See Standards": {
+            "type": "string",
+            "enum": ["Yes", "No","I don't know"]
+        },
+        "Landfill Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is landfill compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
+                }
+            }
+        },
+        "Waste-to-energy Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is waste-to-energy compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
+                }
+            }
+        },
+        "Recycling Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is recycling compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
+                }
+            }
+        },
+        "Industrial Composting Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is industrial composting compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
+                }
+            }
+        },
+        "Home Composting Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is home composting compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
+                }
+            }
+        },
+        "Wastewater Treatment Plant Compatibility Verification/Certification": {
+            "type": "object",
+            "properties": {
+                "How is wastewater treatment compatibility verified/certified?": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "enum": [
+                            "In-house testing",
+                            "3rd-party testing",
+                            "Certification",
+                            "Compatibility will not be certified or verified",
+                            "Don't know"
+                        ]
+                    },
+                    "uniqueItems": "true"
+                },
+                "Desrcibe the test method, ceritifcation and/or third party:": {
+                    "type": "string"
+                },
+                "Will testing/certification be completed for the final product, or only for the components?": {
+                    "type": "string",
+                    "enum": ["Final product", "Only components","I don't know"]
+                },
+                "Will testing/certfiication be completed for each variation of the product, or only one representative?": {
+                    "type": "string",
+                    "enum": ["Each variation", "Only one representative","I don't know"]
                 }
             }
         },
@@ -643,25 +647,6 @@
                     "enum": ["Yes", "No","I don't know"]
                 }
             }
-        }
-    },
-    "dependencies": {
-        "Does product durability match the use phase?": {
-            "oneOf": [
-                {
-                    "properties" : {
-                        "Does product durability match the use phase?": {
-                            "enum": [
-                                "No"
-                            ]
-                        },
-                        "Does the product have other EOL options that require this mis-match?": {
-                            "type": "string",
-                            "enum": ["Yes", "No","I don't know"]
-                        }
-                    }
-                }
-            ]
         }
     }
 }
