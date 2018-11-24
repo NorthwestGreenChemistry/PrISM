@@ -40,7 +40,7 @@
         "Have you conducted a comprehensive chemical hazard assessment, particularly on chemicals for which there is worker and/or community exposure?": {
             "ui:widget": "radio"
         },
-        "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?": {
+        "Have you mapped chemical exposure to chemical hazards using a method such as control banding?": {
             "ui:widget": "radio"
         }
     },

@@ -3,7 +3,6 @@
     "type": "object",
     "properties": {
         "What is the base feedstock for the chemical, material or product you are making?": {
-            "description": "Goal: To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.",
             "type": "string"
         },
         "Select the following attributes that describe the base feedstock:": {
@@ -35,11 +34,34 @@
         "If so, fill in the certification": {
             "type": "string"
         },
-        "Is the biobased feedstock waste-based (exempli gratia, agricultural waste)?": {
+        "Is the biobased feedstock waste-based (eg, agricultural waste)?": {
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
         "Does the biobased feedstock compete for land use with social, ecological, or food production value?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Is the feedstock derived from agricultural waste?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Is the agricultural waste from sustainably harvested agriculture?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Is the agricultural waste from a rapidly renewable source?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "Does the agricultural waste compete with other social, ecological, or food production value?": {
+            "enum": ["Yes", "No","I don't know"],
+            "type": "string"
+        },
+        "To what extent can virgin feedstock be replaced by the waste feedstock?": {
+            "type": "integer"
+        },
+        "Is the feedstock derived from waste recycled?": {
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
@@ -55,11 +77,12 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products": {
+        "Have you requested information about the purity of the material?": {
+            "description": "Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products.",
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "Can the feedstock be depleted (id est, it is not renewable)?": {
+        "Can the feedstock be depleted (ie, it is not renewable)?": {
             "enum": ["Yes", "No","Don't know"],
             "type": "string"
         },

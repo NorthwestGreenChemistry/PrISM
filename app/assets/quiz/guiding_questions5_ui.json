@@ -225,7 +225,7 @@
             "ui:widget": "textarea"
         },
         "Does recycling it result in a higher, lower or equivalent quality material?": {
-            "ui:widget": "radio"
+            "ui:widget": "checkboxes"
         },
         "Does your product contain toxic ingredients/chemicals/additives that could contaminate the resulting recycled material and reduce its purity and value in its next iteration? For example, many flame retardants used in plastics can contaminate the recycling stream and prevent its use in higher value products.": {
             "ui:widget": "radio"

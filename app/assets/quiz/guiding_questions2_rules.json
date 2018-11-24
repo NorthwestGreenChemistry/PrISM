@@ -18,7 +18,7 @@
                     "Is it certified sustainably harvested?",
                     "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?",
                     "If so, fill in the certification",
-                    "Is the biobased feedstock waste-based (exempli gratia, agricultural waste)?",
+                    "Is the biobased feedstock waste-based (eg, agricultural waste)?",
                     "Does the biobased feedstock compete for land use with social, ecological, or food production value?"
                 ]
             }
@@ -39,17 +39,63 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "Is the recycled material post consumer?",
-                    "Is the recycled material post industrial?",
-                    "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?",
-                    "Have you requested information about the purity of the material? Some materials, such as those derived from mixed plastics may contain residual toxic chemicals that were added as flame retardants or plasticizers in the previous products"
+                    "Is the feedstock derived from waste recycled?",
+                    "Is the feedstock derived from agricultural waste?",
+                    "To what extent can virgin feedstock be replaced by the waste feedstock?"
                 ]
             }
         }
     },
     {
         "conditions": {
-            "Can the feedstock be depleted (id est, it is not renewable)?": {
+            "or": [
+                {"Is the feedstock derived from agricultural waste?": {
+                    "not":
+                        {"equal": "Yes"}
+                }},
+                {"Select the following attributes that describe the base feedstock:": {
+                    "or": [
+                        "empty",
+                         {
+                            "includes": "Biobased"
+                         }
+                    ]
+                }}
+            ]
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Is the agricultural waste from sustainably harvested agriculture?",
+                    "Is the agricultural waste from a rapidly renewable source?",
+                    "Does the agricultural waste compete with other social, ecological, or food production value?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Is the feedstock derived from waste recycled?": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Is the recycled material post consumer?",
+                    "Is the recycled material post industrial?",
+                    "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?",
+                    "Have you requested information about the purity of the material?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Can the feedstock be depleted (ie, it is not renewable)?": {
                 "not":
                     {"equal": "Yes"}
             }

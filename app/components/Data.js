@@ -32,8 +32,8 @@ class Data {
             let scopeStep = {
                 title: "Scoping, Problem Formulation & Design Goals",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step1-scoping-and-goals.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json",
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions1.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions1_ui.json",
                 nextStep: "2"
             };
 
@@ -42,9 +42,9 @@ class Data {
             let feedstockStep = {
                 title: "Feedstock",
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditionalOverhaul/app/assets/quiz/guiding_questions2_rules.json",
+                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions2.json",
+                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions2_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/conditional-2-dreams-come-true/app/assets/quiz/guiding_questions2_rules.json",
                 prevStep: "1",
                 nextStep: "3"
             };

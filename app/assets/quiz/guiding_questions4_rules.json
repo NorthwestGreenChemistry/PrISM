@@ -87,5 +87,22 @@
                 ]
             }
         }
+    },
+    {
+        "conditions": {
+            "stakeholderConsiderations.Do the hazards of the chemicals in the product pose a particular concern to vulnerable populations such as children, pregnant women, the elderly, or patients?  Are there some population segments who  would be placed at greater risk than other populations?": {
+                "not": {
+                    "equal": "Yes"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "stakeholderConsiderations.Please explain:"
+                ]
+            }
+        }
     }
 ]

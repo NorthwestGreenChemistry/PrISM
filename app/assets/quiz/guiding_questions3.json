@@ -85,8 +85,7 @@
                     "type": "string",
                     "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
                 },
-                "Have you mapped chemical exposure to chemical hazards using a method such as control banding described in the next column?": {
-                    "description": "LINK TO CONTROL BANDING",
+                "Have you mapped chemical exposure to chemical hazards using a method such as control banding?": {
                     "type": "string",
                     "enum": ["Yes - all", "Yes - some", "No", "I don't know"]
                 }
