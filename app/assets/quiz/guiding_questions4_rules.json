@@ -1,0 +1,108 @@
+[
+    {
+        "conditions": {
+            "hazardAssessment.Are there any chemicals with very high hazards to humans and the environment?": {
+                "not": {
+                    "equal": "Yes"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "hazardAssessment.What are the hazards?",
+                    "hazardAssessment. "
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "wasteConsiderations.Does use of the product generate waste?": {
+                "not": {
+                    "equal": "Yes"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "wasteConsiderations.Is the product designed to minimize waste generation during the use phase?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "wasteConsiderations.Does use of the product require the use of energy or water?": {
+                "not": {
+                    "equal": "Yes"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "wasteConsiderations.Is the product designed to minimize water or energy use?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "wasteConsiderations.Are the chemicals in the product stable, or will they result in unwanted or hazardous chemical emissions, especially if subjected to heat or other environmental conditions?": {
+                "not": {
+                    "or": [
+                        {"equal": "Yes - under intended use conditions"},
+                        {"equal": "Yes - but only under unintended use conditions"}
+                    ]
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "wasteConsiderations.What are the conditions in which unwanted or hazardous chemical emissions occur?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "wasteConsiderations.Are the chemicals in the product stable, or will they result in unwanted or hazardous chemical emissions, especially if subjected to heat or other environmental conditions?": {
+                "not": {
+                    "equal": "Yes - but only under unintended use conditions"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "wasteConsiderations.How will you ensure customers avoid these conditions?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "stakeholderConsiderations.Do the hazards of the chemicals in the product pose a particular concern to vulnerable populations such as children, pregnant women, the elderly, or patients?  Are there some population segments who  would be placed at greater risk than other populations?": {
+                "not": {
+                    "equal": "Yes"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "stakeholderConsiderations.Please explain:"
+                ]
+            }
+        }
+    }
+]

@@ -2,20 +2,67 @@
     "What is the base feedstock for the chemical, material or product you are making?": {
         "ui:widget": "textarea"
     },
-    "Feedstock Attributes": {
-        "Select the following attributes that describe the base feedstock:": {
-            "ui:widget": "checkboxes"
-        }
+    "Select the following attributes that describe the base feedstock:": {
+        "ui:widget": "checkboxes"
     },
-    "Can the feedstock be depleted (i.e., it is not renewable)?": {
+    "Is the biobased feedstock rapidly renewable?": {
         "ui:widget": "radio"
     },
-    "Feedstock Social/Env Issues": {
-        "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
-            "ui:widget": "checkboxes"
-        }
+    "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?": {
+        "ui:widget": "radio"
+    },
+    "Is it certified sustainably harvested?": {
+        "ui:widget": "radio"
+    },
+    "Is the biobased feedstock waste-based (eg, agricultural waste)?": {
+        "ui:widget": "radio"
+    },
+    "Does the biobased feedstock compete for land use with social, ecological, or food production value?": {
+        "ui:widget": "radio"
+    },
+    "Is the feedstock derived from agricultural waste?": {
+        "ui:widget": "radio"
+    },
+    "Is the agricultural waste from sustainably harvested agriculture?": {
+        "ui:widget": "radio"
+    },
+    "Is the agricultural waste from a rapidly renewable source?": {
+        "ui:widget": "radio"
+    },
+    "Does the agricultural waste compete with other social, ecological, or food production value?": {
+        "ui:widget": "radio"
+    },
+    "To what extent can virgin feedstock be replaced by the waste feedstock?": {
+        "ui:widget": "range"
+    },
+    "Is the feedstock derived from waste recycled?": {
+        "ui:widget": "radio"
+    },
+    "Is the recycled material post consumer?": {
+        "ui:widget": "radio"
+    },
+    "Is the recycled material post industrial?": {
+        "ui:widget": "radio"
+    },
+    "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?": {
+        "ui:widget": "radio"
+    },
+    "Have you requested information about the purity of the material?": {
+        "ui:widget": "radio"
+    },
+    "Can the feedstock be depleted (ie, it is not renewable)?": {
+        "ui:widget": "radio"
+    },
+    "Is that feedstock currently considered abundant or rare?": {
+        "ui:widget": "radio"
+    },
+    "Are there any known social and environmental issues associated with the raw material feedstock you are using?": {
+        "ui:widget": "checkboxes"
     },
     "Do you use catalysts?": {
         "ui:widget": "radio"
+    },
+    "Despite the relatively small quantity used, catalysts can have an outsized environmental footprint! Are the catalysts made from:": {
+        "ui:widget": "checkboxes"
     }
 }

@@ -15,9 +15,9 @@
         "What other products are used to provide this service?": {
             "type": "string"
         },
-        "What sustainability attributes are you prioritizing to include in the design?": {
-            "description": "Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities.",
-            "type": "string"
+        "What sustainability attributes are you prioritizing to include in the design? Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities.": {
+            "type": "string",
+            "enum": []
         },
         "feedstock": {
             "title": "Feedstock priorities",
