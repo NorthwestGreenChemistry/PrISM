@@ -34,6 +34,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step1-scoping-and-goals.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_rules.json",
                 nextStep: "2"
             };
 
@@ -92,6 +93,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step6-whole-product.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_rules.json",
                 prevStep: "5",
                 nextStep: "7"
             }
@@ -103,6 +105,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step7-evaluation-and-optimization.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_rules.json",
                 prevStep: "6"
             };
 
