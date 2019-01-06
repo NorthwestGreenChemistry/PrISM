@@ -12,7 +12,7 @@ Based on the initial problem formulation step, the designer may have established
 
 This green design and assessment workbook can help give you insight into all aspects of your product's life cycle. Critically, it can also help you identify what you DON'T know about your product. Honing in on missing pieces of the puzzle will highlight areas that need additional or deeper evaluation, opportunities for innovation and improvement or where your product really shines.
 
-![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/path-to-optimization.png)
+![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/path-to-optimization.png)
 
 Optimization is a process of continual improvement. Sometimes the first step is to simply eliminate chemicals or materials of high concern. That can have immediate benefits and it can get the product on the path to Sustainable Green Chemistry and Engineering design.
 
@@ -37,7 +37,7 @@ Fortunately, CHA methods are becoming increasingly standardized to allow for tra
 
 Tradeoffs also occur between different impact categories. For example, one option may use more water while another may generate more waste during use. These tradeoffs must be judged against product design goals and using all three Design Principles for Sustainable Green Chemistry and Engineering (below). What is important is that the designer avoids potential perverse outcomes by focusing on only one principle. And that the decisions are made in an informed and transparent way so as to avoid unintended consequences.
 
-![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/principles-of-sustainable-design.png)
+![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/principles-of-sustainable-design.png)
 
 
 ## Trade Offs
@@ -54,6 +54,6 @@ In decision analysis, you will use logic models to evaluate information in way t
 ## Example
 Sometimes it makes sense to phase out a problematic product and to start over. Other times it makes sense to improve its next incarnation informed by Design Principles for Sustainable Green Chemistry and Engineering.
 
-![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/7-evaluation-and-optimization/decision-logic.png)
+![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/decision-logic.png)
 
 [Learn more about Decision Analysis on page 48 of the IC2 Guide]("http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf")
