@@ -1,0 +1,571 @@
+[
+    {
+        "conditions": {
+            "endOfLife.What is the likelihood that your product will end up as litter or that it will otherwise leak into the environment?": {
+                "not": {
+                    "greater": "0"
+                }
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "endOfLife.Once in the environment, how quickly will the product biodegrade?",
+                    "endOfLife.Once in the environment, does the product leach hazardous chemicals?",
+                    "endOfLife.Once in the environment, does the product degrade into hazardous byproducts?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Have you designed your product with a particular waste management strategy or plan in mind?  If so, what is it?": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Describe the waste management strategy:",
+                    "End of Life Options"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Does product durability match the use phase?": {
+                "not":
+                    {"equal": "No"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Does the product have other EOL options that require this mis-match?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Landfill"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Landfill:",
+                    "endOfLife.Landfill:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Waste-to-energy"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Waste-to-energy:",
+                    "endOfLife.Waste-to-energy:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Recycling"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Recycling:",
+                    "endOfLife.Recycling:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Industrial composting"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Industrial composting:",
+                    "endOfLife.Industrial composting:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Home composting"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Home composting:",
+                    "endOfLife.Home composting:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Wastewater treatment plant (down the drain)"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Wastewater treatment plant (down the drain):",
+                    "endOfLife.Wastewater treatment plant (down the drain):"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "includes": "Other (fill in box)"
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Other:",
+                    "endOfLife.Other:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?":
+                "empty"
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "productCompatibility.Is your product compatible with the end of life management options that are available?  For example, if your product is a surfactant, will it biodegrade in a wastewater treatment facility?  If you intend it to be commercially composted, is compostable?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Industrial composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "standards.If the product is intended for commercial composting, has it been tested using standard test methods?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Home composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "standards.If the product after use is appropriate for home compostability, has it been tested using standards such as the DIN CERTCO (Germany) and Vinçotte (Belgium)?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Landfill Compatibility Verification/Certification.How is landfill compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Landfill Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Landfill Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Landfill Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Recycling Compatibility Verification/Certification.How is recycling compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or": [
+                                {"includes": "Certification"},
+                                {"includes": "3rd-party testing"},
+                                {"includes": "In-house testing"}
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Recycling Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Recycling Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Recycling Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Home Composting Compatibility Verification/Certification.How is home composting compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Home Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Home Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Home Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Industrial Composting Compatibility Verification/Certification.How is industrial composting compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Industrial Composting Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Industrial Composting Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Industrial Composting Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Waste-to-energy Compatibility Verification/Certification.How is waste-to-energy compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Waste-to-energy Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Waste-to-energy Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Waste-to-energy Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "Wastewater Treatment Plant Compatibility Verification/Certification.How is wastewater treatment compatibility verified/certified?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or":
+                                [
+                                    {"includes": "Certification"},
+                                    {"includes": "3rd-party testing"},
+                                    {"includes": "In-house testing"}
+                                ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certification be completed for the final product, or only for the components?",
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Will testing/certfiication be completed for each variation of the product, or only one representative?",
+                    "Wastewater Treatment Plant Compatibility Verification/Certification.Desrcibe the test method, ceritifcation and/or third party:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Home composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Home Composting Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Industrial composting:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Industrial Composting Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Landfill:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Landfill Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Waste-to-energy:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Waste-to-energy Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Recycling:": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Recycling Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Wastewater treatment plant (down the drain):": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "Wastewater Treatment Plant Compatibility Verification/Certification"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "endOfLife.This section will help identify the likely end of life pathways that your product will undergo once it is used Consider that waste infrastructure that is available and how it varies by region Does your region have a landfill, a waste to energy incinerator, commercial compost, recycling opportunities, etc?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or": [
+                                {"includes": "Home composting"},
+                                {"includes": "Industrial composting"}
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "wasteTreatmentAndMSI3.Are there ingredients/chemicals/additives in your product that are toxic, persistent or bioaccumulative that will not degrade in compost or decrease the quality of compost produced?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "productCompatibility.Are there chemicals in your material that will impact its ability to undergo certain EOL pathways? For example, if the base polymer is compostable but the additives will not biodegrade, then the product is not fully compostable": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "interferingChem"
+                ]
+            }
+        }
+    }
+]

@@ -1,0 +1,75 @@
+[
+    {
+        "conditions": {
+            "chemicalInventory.Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?": {
+                "not":
+                    {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "chemicalInventory.What is the hazard?"
+                ]
+            }
+        }
+    }, 
+    {
+        "conditions": {
+            "stakeholder.Are there potential impacts be to workers and those who live around the production or manufacturing facility who may be exposed to chemicals used in production and manufacturing?": {
+                "not":
+                {"equal": "Yes"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "stakeholder.Impacts:",
+                    "stakeholder.Quantity, frequency and level of annoyance:"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "lifecycle.How are these wastes disposed of?": {
+                "or": [
+                    "empty",
+                    {"not":
+                        {"includes": "Wastewater treatment plant (down the drain)"}
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "lifecycle.Are the wastes removed by the wastewater treatment plant?"
+                ]
+            }
+        }
+    },
+    {
+        "conditions": {
+            "lifecycle.How are these wastes disposed of?": {
+                "or": [
+                    "empty",
+                    {"not":
+                        {"includes": "Direct discharge to environement"}
+                    }
+                ] 
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "lifecycle.Are hazardous components removed prior to discharge?"
+                ]
+            }
+        }
+    }
+]

@@ -22,7 +22,7 @@ An LCA includes:
 ## Overview of a Typical Product Life Cycle
 Life cycle thinking will help you consider the various inputs and outputs your product will require from raw material extraction through end of life. 
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-life-cycle-considerations/lca-infographic.png" alt="Common phases in the life cycle of a product include material extraction and processing, manufacturing of product, packaging and distribution, produce use, and end of life. Each of these steps involves using materials and/or energy, and releasing waste and/or pollution.">
+![Common phases in the life cycle of a product include material extraction and processing, manufacturing of product, packaging and distribution, produce use, and end of life. Each of these steps involves using materials and/or energy, and releasing waste and/or pollution.](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-life-cycle-considerations/lca-infographic.png)
 
 [Image Credit: Design Technology (Western Academy of Beijing)](http://www.ruthtrumpold.id.au/destech/?page_id=1765)
 
@@ -33,7 +33,7 @@ We recommend the following approach to using LCT and LCA:
 - Obtain standardized, certified LCAs for chemicals, materials or products with a focus only on those impacts that are likely to be substantively different.
 - Use information gathered from LCT and LCAs to identify "hot spots" -- areas with the most significant sustainability impacts -- and leverage this knowledge to identify opportunities for improvement across the life cycle.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-life-cycle-considerations/lca-key-steps.png" alt="Quantify or otherwise characterize all the inputs and outputs over a product's life span. Specify the potential environmental impacts of these material flows. Consider alternative approaches that change those impacts for the better. Common inputs are energy, water, and raw materials. Common outputs are usable products, water effluents, airborne emissions, solid wastes, and other other environmental releases.">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-life-cycle-considerations/lca-key-steps.png)
 
 [Image Source: General Services Administration (GSA)](https://sftool.gov/learn/about/400/life-cycle-assessment-lca-overview)
 
@@ -41,7 +41,7 @@ We recommend the following approach to using LCT and LCA:
 
 You can use a matrix like this to compare alternatives across relevant life cycle stages:
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-life-cycle-considerations/alternatives-across-lca.png" alt="Table compares product and alternatives on various impacts (e.g. human health, air quality, and water quality) for each life cycle phase assessed (e.g. raw material extraction, manufacture, use, and disposal), with each intersection rated as low, moderate, or high.">
+![Table compares product and alternatives on various impacts (e.g. human health, air quality, and water quality) for each life cycle phase assessed (e.g. raw material extraction, manufacture, use, and disposal), with each intersection rated as low, moderate, or high.](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-life-cycle-considerations/alternatives-across-lca.png)
 
 ## Tools for Evaluating Life Cycle Sustainability 
 LCA can provide a comprehensive picture of the impacts that a chemical, product or process has on aspects of human health and the environment and can help to manage trade offs.  It is also an important tool that can be used to check assumptions. Given the scope and depth of a standard LCA, the biggest challenge can be data availability and understanding the most important system inputs.  This can be especially challenging when manufacturing processes and chemical ingredients are held as proprietary information. The CalEPA Alternatives Analysis Guide provides an extensive list of LCA tools in its Appendix 7-2 including the following leading examples:

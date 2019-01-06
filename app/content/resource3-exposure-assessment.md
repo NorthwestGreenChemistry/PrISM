@@ -17,7 +17,7 @@ Consider the life cycle stages of the product to map out where potential exposur
 
 Consider the amount of the chemical that will be used, the frequency of exposure and the amount of time that exposure will occur.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/exposure-map-humans.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/exposure-map-humans.png)
 
 Chemicals can travel through different environmental media and be taken up by humans primarily through inhalation, ingestion and through the skin.
 
@@ -25,19 +25,18 @@ Prepare a conceptual exposure model or map that illustrates the likely exposures
 
 A measles chart such as the one illustrated below, is a structured, prepared form for collecting and analyzing data that provides a visual image of the item being evaluated so that data can be collected visually. It is called a measles chart because of the visual array of spots that may result.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/measles-chart.png" width="80%">
-
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/measles-chart.png)
 
 [Qualitative approach to comparative exposure in alternatives assessment](https://setac.onlinelibrary.wiley.com/doi/full/10.1002/ieam.4070)
 
 
 ## Generalized Environmental Exposure Map
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/environmental-exposure-map.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/environmental-exposure-map.png)
 
 [More Exposure Assessment Resources from the U.S. EPA](https://www.epa.gov/expobox/exposure-assessment-tools-approaches-indirect-estimation-scenario-evaluation)
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/exposure-pathways.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/exposure-pathways.png)
 
 Considering exposure pathways to humans
 
@@ -58,7 +57,7 @@ A number of useful exposure models such as the Product Intake Fraction can also 
 ## Control Banding
 Control banding is an assessment method that can be used to manage workplace risks. It is a process that matches, for example, a control measure (e.g., ventilation, engineering controls, containment, etc.) to a range or "band" of hazards (e.g., skin/eye irritation, very toxic, carcinogenic, etc.). The control banding method also groups chemicals according to similar physical or chemical characteristics, how the chemical will be handled or processed, and what the anticipated exposure is expected to be. The method then determines a set of controls chosen to help prevent harm to workers.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/economy-society-environment.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/economy-society-environment.png)
 
 In general, bands represent:
 - health hazards or risk (e.g., skin/eye irritation, carcinogenic, etc.),
@@ -67,7 +66,7 @@ In general, bands represent:
 
 A control banding grid like the one below can be created to assess risk level. This helps indicate which hazards require the greatest control measures.  The best form of occupational control for a very hazardous chemical is to eliminate it and replace it with a safer chemical or process. 
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/severity-score.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/severity-score.png)
 
 ### Additional Resources on Control Banding 
 [Source: Canadian Center for Occupational Health and Safety](https://www.ccohs.ca/oshanswers/chemicals/control_banding.html)<br>
@@ -79,7 +78,7 @@ PROSCALE is a new method for comparing hazard, exposure and risk from production
 ## Example
 Floral Soil solutions recognized that florists don't wear personal protective equipment, and they are therefore exposed to hazardous chemicals while they work. Floral Soil solutions designed a product that doesn't contain those chemicals of concern, therefore eliminating florist exposure to them.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-exposure-assessment/floral-foam.png" width="80%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/floral-foam.png)
 
 [Learn more about Floral Soil](https://www.floralsoilsolutions.com/)
 

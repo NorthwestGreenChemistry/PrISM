@@ -34,6 +34,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step1-scoping-and-goals.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_rules.json",
                 nextStep: "2"
             };
 
@@ -44,6 +45,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_rules.json",
                 prevStep: "1",
                 nextStep: "3"
             };
@@ -55,6 +57,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step3-production-manufacturing.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_rules.json",
                 prevStep: "2",
                 nextStep: "4"
             };
@@ -66,6 +69,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step4-use.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_rules.json",
                 prevStep: "3",
                 nextStep: "5"
             };
@@ -77,6 +81,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step5-end-of-life.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_rules.json",
                 prevStep: "4",
                 nextStep: "6"
             }
@@ -88,6 +93,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step6-whole-product.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_rules.json",
                 prevStep: "5",
                 nextStep: "7"
             }
@@ -99,6 +105,7 @@ class Data {
                 content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step7-evaluation-and-optimization.md"],
                 questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7.json",
                 questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json",
+                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_rules.json",
                 prevStep: "6"
             };
 
@@ -138,7 +145,8 @@ class Data {
                 let answer = formData[formProp];
 
                 if (answer) {
-                    if (answer instanceof String || typeof answer === "string") {
+                    if ((answer instanceof String || typeof answer === "string")
+                        || answer instanceof Array) {
                         var qAndA = {
                             "question": question,
                             "answer": answer
@@ -204,7 +212,8 @@ class Data {
                 let answer = formData[formProp];
 
                 if (answer) {
-                    if (answer instanceof String || typeof answer === "string") {
+                    if ((answer instanceof String || typeof answer === "string")
+                        || answer instanceof Array) {
                         var qAndA = {
                             "question": question,
                             "answer": answer
@@ -299,6 +308,12 @@ class Data {
         let stepString = localStorage.getItem(step);
         let stepObj = JSON.parse(stepString);
         return stepObj.questionsUI;
+    }
+
+    getQuestionRulesFile = (step) => {
+        let stepString = localStorage.getItem(step);
+        let stepObj = JSON.parse(stepString);
+        return stepObj.questionRules;
     }
 
     getContentList = (step) => {

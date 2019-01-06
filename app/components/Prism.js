@@ -22,7 +22,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import Modal from 'react-modal'
-import Form from "react-jsonschema-form"
+import Form from 'react-jsonschema-form'
+import applyRules from 'react-jsonschema-form-conditionals'
+import Engine from 'json-rules-engine-simplified'
 import ReactMarkdown from 'react-markdown'
 import electron from 'electron'
 
@@ -30,8 +32,6 @@ import electron from 'electron'
 const ipcRenderer = electron.ipcRenderer;
 
 Modal.setAppElement('#root');
-
-type Props = {};
 
 const STEP_TITLES = [
     "01 Design Goals", "02 Feedstock", "03 Production", "04 Use",
@@ -54,6 +54,7 @@ export default class Prism extends Component<Props> {
         markdownFiles: [],
         products: this.data.getAllProducts()
     }
+    submitAnswersCallback = null
 
     constructor(props) {
         super(props)
@@ -72,8 +73,8 @@ export default class Prism extends Component<Props> {
             modalIsOpen: true
         })
 
-        this.loadMDFiles(step)
-        this.loadSchemaFiles(step)
+        this.loadMDFiles(step);
+        this.loadSchemaFiles(step);
     }
 
     handleClose = (reason) => {
@@ -147,31 +148,17 @@ export default class Prism extends Component<Props> {
             displayStep: prevStep,
             markdownFiles: [],
             activeForm: {},
-        })
+        });
 
         this.loadMDFiles(prevStep);
         this.loadSchemaFiles(prevStep);
     }
 
-    navNext = (event) => {
-        this.state.modalForm.onSubmit(event);
-    }
-
-    submitAnswers = (form) => {
-        this.data.storeAnswer(
-            this.state.activeProductId,
-            this.state.displayStep,
-            form.formData);
 
 
-        this.data.setPDFStepResults(
-            this.state.activeProductId,
-            this.state.displayStep,
-            form.formData
-        );
-
+    // goes to next page in the navigation, does not save answers
+    navNext = () => {
         let nextStep = this.data.getNextStep(this.state.displayStep);
-
         if (!nextStep) { //if there's no next step then we're on the final step
             this.closeModal();
             return;
@@ -185,6 +172,43 @@ export default class Prism extends Component<Props> {
 
         this.loadMDFiles(nextStep);
         this.loadSchemaFiles(nextStep);
+    }
+
+    navPrevHandler = (event) => {
+        this.submitAnswersCallback = this.navPrev;
+        this.state.modalForm.props.onSubmit(event);
+    }
+
+    navNextHandler = (event) => {
+        this.submitAnswersCallback = this.navNext;
+        this.state.modalForm.props.onSubmit(event);
+    }
+
+    navCloseHandler = (event) => {
+        this.submitAnswersCallback = this.closeModal;
+        this.state.modalForm.props.onSubmit(event);
+    }
+
+    submitAnswers = (form) => {
+        let productId = this.state.activeProductId,
+            step = this.state.displayStep;
+
+        this.data.storeAnswer(
+            productId,
+            step,
+            this.state.modalForm.formData
+        );
+
+        this.data.setPDFStepResults(
+            productId,
+            step,
+            this.state.modalForm.formData
+        );
+
+        if (typeof this.submitAnswersCallback == 'function') {
+            this.submitAnswersCallback();
+            this.submitAnswersCallback = null;
+        }
     }
 
     closeModal = () => {
@@ -217,7 +241,9 @@ export default class Prism extends Component<Props> {
                 })
                 .then((text) =>{
                     let mdFiles = this.state.markdownFiles;
-                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
+                    mdFiles.push(<ReactMarkdown
+                        key={mdPath + step}
+                        source={text} />)
                     this.setState({
                         markdownFiles: mdFiles
                     })
@@ -230,6 +256,7 @@ export default class Prism extends Component<Props> {
         if (step > 0) {
             let questionFile = this.data.getQuestionFile(step);
             let questionUIFile = this.data.getQuestionUIFile(step);
+            let questionRulesFile = this.data.getQuestionRulesFile(step);
 
             fetch(questionFile)
                 .then((resp) => {
@@ -250,6 +277,19 @@ export default class Prism extends Component<Props> {
                     formSchemaObj.uiSchema = json
                     this.setState(prevState => ({activeForm: formSchemaObj}))
                 })
+
+            if (questionRulesFile) {
+                fetch(questionRulesFile)
+                    .then((resp) => {
+                        return resp.json();
+                    })
+                    .then((json) => {
+                        let formSchemaObj = {...this.state.activeForm}
+                        formSchemaObj.rules = json
+                        console.log(json);
+                        this.setState(prevState => ({activeForm: formSchemaObj}))
+                    });
+            }
         }
     }
 
@@ -260,6 +300,19 @@ export default class Prism extends Component<Props> {
             formData = allAnswers[this.state.displayStep]
         }
 
+
+        let rules = [];
+        if (this.state.activeForm.rules) {
+            rules = this.state.activeForm.rules;
+        }
+
+        let FormWithConditionals;
+        if (this.state.activeProductId && this.state.displayStep > 0
+                && this.state.activeForm.schema && this.state.activeForm.uiSchema) {
+            FormWithConditionals = applyRules(this.state.activeForm.schema,
+                this.state.activeForm.uiSchema, rules, Engine)(Form);
+        }
+
         return (
             <div className={styles.root}>
                 <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
@@ -268,13 +321,12 @@ export default class Prism extends Component<Props> {
 
                 {/* PRODUCT MENU */}
                 <FormControl variant="outlined" className={styles.selector}>
-                    <InputLabel htmlFor="product_name" className={styles.defaultLabel} shrink={true}>
+                    <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
                         Product Name
                     </InputLabel>
                     <Select
                         className={styles.selectorDropdown}
                         value={this.state.dropdownSelection}
-                        defaultValue=""
                         onChange={this.handleDropdownChange}
                         input={
                             <OutlinedInput
@@ -342,7 +394,7 @@ export default class Prism extends Component<Props> {
                 <Modal isOpen={this.state.modalIsOpen} contentLabel="Step Modal">
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
-                            <Button onClick={this.navPrev}
+                            <Button onClick={this.navPrevHandler}
                                     className={styles.leftButton}
                                     variant="contained" color="default"
                             >
@@ -354,7 +406,7 @@ export default class Prism extends Component<Props> {
                             {this.state.displayStep > 0 ? this.data.getTitle(this.state.displayStep) : null}
                         </h2>
                         { this.state.displayStep < 7 &&
-                            <Button onClick={this.navNext}
+                            <Button onClick={this.navNextHandler}
                                     className={styles.rightButton}
                                     variant="contained" color="default"
                             >
@@ -363,7 +415,7 @@ export default class Prism extends Component<Props> {
                             </Button>
                         }
                     </div>
-                    <Button className={styles.button} variant="outlined" onClick={this.closeModal}>
+                    <Button className={styles.button} variant="outlined" onClick={this.navCloseHandler}>
                         Close and Return to PrISM
                     </Button>
 
@@ -381,22 +433,19 @@ export default class Prism extends Component<Props> {
                         && this.state.activeForm.schema && this.state.activeForm.uiSchema ?
                         <Fragment>
                             <h1 style={{textAlign: 'center'}}>Guiding Questions</h1>
-
-                            <Form noValidate={true} formData={formData}
-                                  schema={this.state.activeForm.schema}
-                                  uiSchema={this.state.activeForm.uiSchema}
-                                  onSubmit={this.submitAnswers}
-                                  onError={(errors) => console.log("errors in form", errors)}
-                                  ref={(form) => {this.state.modalForm = form;}}
-                            >
+                            <FormWithConditionals noValidate={true}
+                                formData={formData}
+                                onSubmit={this.submitAnswers}
+                                onError={(errors) => console.log("errors in form", errors)}
+                                ref={(form) => {this.state.modalForm = form;}}>
                                 <button type="submit" className={styles.hidden}>Submit</button>
-                            </Form>
+                            </FormWithConditionals>
                         </Fragment>: null
                     }
 
                     <div className={styles.navArrows}>
                         { this.state.displayStep > 1 &&
-                            <Button onClick={this.navPrev}
+                            <Button onClick={this.navPrevHandler}
                                     className={styles.leftButton}
                                     variant="contained" color="default"
                             >
@@ -405,7 +454,7 @@ export default class Prism extends Component<Props> {
                             </Button>
                         }
 
-                        <Button onClick={this.navNext}
+                        <Button onClick={this.navNextHandler}
                                 className={styles.rightButton}
                                 variant="contained" color="primary">
                             Save and {this.state.displayStep < 7 ? 'Continue' : 'Close'} &nbsp;
