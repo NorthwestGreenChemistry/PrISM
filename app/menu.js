@@ -1,5 +1,6 @@
 // @flow
-import { app, Menu, shell, BrowserWindow } from 'electron';
+import { app, Menu, shell, BrowserWindow, dialog } from 'electron';
+const pjson = require('./package.json');
 
 
 export default class MenuBuilder {
@@ -175,6 +176,20 @@ export default class MenuBuilder {
         const subMenuHelp = {
             label: 'Help',
             submenu: [
+                {
+                    label: 'About',
+                    click() {
+                        dialog.showMessageBox(null, {
+                            type:'info',
+                            buttons: ['Ok'],
+                            defaultId: 0,
+                            title:'hey',
+                            message: pjson.productName,
+                            detail: 'Version: ' + pjson.version + 
+                                    '\nDescription: ' + pjson.description
+                        });
+                    }
+                },
                 {
                     label: 'Learn More',
                     click() {
