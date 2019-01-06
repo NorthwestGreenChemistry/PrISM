@@ -6,11 +6,17 @@
 
 .container p {
     text-align: left;
+    /*text-align: center;*/
+}
+
+.container p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container h2 {
     font-size: 5rem;
-
 }
 
 .container a {

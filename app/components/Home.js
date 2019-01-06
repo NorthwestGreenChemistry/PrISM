@@ -29,7 +29,7 @@ export default class Home extends Component<Props> {
                 })
                 .then((text) => {
                     let mdFiles = this.state.markdownFiles;
-                    mdFiles.push(<ReactMarkdown key={mdPath + 'intro'} source={text} />)
+                    mdFiles.push(<ReactMarkdown key={mdPath + 'intro'} source={text}/>)
                     console.log('updated md files', mdFiles);
                     this.setState({
                         markdownFiles: mdFiles
@@ -41,12 +41,12 @@ export default class Home extends Component<Props> {
     render() {
         return (
             <Paper className={styles.container} data-tid="container" elevation={1}>
-                
+
                 <div className={styles.intro} data-tid="intro">
                     <img src={require('../assets/ngc-logo.png')} />
                     <br />
                     <Button
-                        component={Link} to={routes.PRISM} 
+                        component={Link} to={routes.PRISM}
                         className={styles.button}
                         onClick={() => {this.data.openedApp()}}
                         variant="contained" color="default"
@@ -62,7 +62,7 @@ export default class Home extends Component<Props> {
                     </div>
                     <hr />
                     <Button
-                        component={Link} to={routes.PRISM} 
+                        component={Link} to={routes.PRISM}
                         className={styles.primaryButton}
                         onClick={() => {this.data.openedApp()}}
                         variant="contained" color="primary"

@@ -72,6 +72,12 @@
     padding: 20px 0;
 }
 
+p img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .contentMarkdown {
     color: darkslategray;
     margin-bottom: 60px;
