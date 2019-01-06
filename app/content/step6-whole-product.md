@@ -24,12 +24,12 @@ In some cases, there may be entirely different pathways to achieving the desired
 
 ### GO Box
 One example of an innovative product that is an alternative to single-use food packaging is GO Box. The start-up created a reusable plastic food container to eliminate waste from take-out food from your favorite food trucks. [Learn more about GO Box.]("https://www.goboxpdx.com")
-![Eat, return, repeat! Use the app to get your meal served in a GO Box from your favorite participating vendor. When you're finished, simply return your empty GO Box at a nearby drop site. And now you're ready for your next meal in a GO Box!](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/6-whole-product/eat-return-repeat.png)
+![Eat, return, repeat! Use the app to get your meal served in a GO Box from your favorite participating vendor. When you're finished, simply return your empty GO Box at a nearby drop site. And now you're ready for your next meal in a GO Box!](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/eat-return-repeat.png)
 
 ### Drive-in Boatwash
 Drive-In Boatwash is another example of a disruptive innovation. Copper-based antifouling boat paints are common and effective, but they are toxic to aquatic life. The drive-in boatwash is an alternatives solution to non-copper-containing boat paints that also reduces the risk to marine life.
 
 [Learn more about the Drive-in Boatwash's visit to Washington State](https://www.northwestgreenchemistry.org/news/drive-in-boatwash-visits-washington-state). [Visit their website](https://driveinboatwash.com/en/).
-![The boatwash is moored in the marina, and boats drive-in for automated bottom-hull cleaning.](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/6-whole-product/drive-in-boat-wash.png)
+![The boatwash is moored in the marina, and boats drive-in for automated bottom-hull cleaning.](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/drive-in-boat-wash.png)
 
 [Image Source: Drive-in Boatwash](http://driveinboatwash.com/en/how-it-works/)

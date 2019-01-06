@@ -241,7 +241,9 @@ export default class Prism extends Component<Props> {
                 })
                 .then((text) =>{
                     let mdFiles = this.state.markdownFiles;
-                    mdFiles.push(<ReactMarkdown key={mdPath + step} source={text}/>)
+                    mdFiles.push(<ReactMarkdown
+                        key={mdPath + step}
+                        source={text} />)
                     this.setState({
                         markdownFiles: mdFiles
                     })
@@ -309,7 +311,7 @@ export default class Prism extends Component<Props> {
                 && this.state.activeForm.schema && this.state.activeForm.uiSchema) {
             FormWithConditionals = applyRules(this.state.activeForm.schema,
                 this.state.activeForm.uiSchema, rules, Engine)(Form);
-        } 
+        }
 
         return (
             <div className={styles.root}>

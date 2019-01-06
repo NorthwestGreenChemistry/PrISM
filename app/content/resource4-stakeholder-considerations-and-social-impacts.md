@@ -8,12 +8,13 @@ Stakeholders can be defined as “those groups who can affect or are affected by
 
 This can also be viewed as a 2x2 interest versus power grid such as the one below.  Stakeholder considerations range from the most immediate, workers to regional  to the global environment. The stakeholder impact map has overlap with the exposure mapping since exposure to chemicals is important to health and safety.
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-stakeholder-considerations/power-v-interest-grid.png" width="65%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-stakeholder-considerations/power-v-interest-grid.png)
+
 Power versus Interest Grid
 
 ### Tools & Resources
 
 Use this chart to think through who might be affected and how at each stage of your product's life cycle 
 
-<img src="https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/tool-stakeholder-considerations/key-stakeholder-impact-table.png" width="65%">
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-stakeholder-considerations/key-stakeholder-impact-table.png)
 Example chart developed to consider stakeholder exposures and impacts across the life cycle of a product.
