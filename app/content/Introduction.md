@@ -27,7 +27,7 @@ The tools and decision frameworks in AA can also support product design. Product
 * [California Safer Consumer Products Alternatives Assessment Guide v1.0]("http://www.dtsc.ca.gov/SCP/AlternativesAnalysisGuidance.cfm")
 
 # Circular Design
-![image](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/typical-product-life-cycle.png)
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/typical-product-life-cycle.png)
 
 There is growing momentum toward a 'Circular Economy'. It's a simple idea but difficult to do. As chemicals, materials and products move through their life cycle stages and come to the end of life (Product Disposal), the product then becomes raw material for new iterations of products. To do so requires innovative ways of making products from which materials can be recovered and reused or the molecular design of chemicals and materials that degrade completely and harmlessly. A big challenge to a Circular Economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy Circular Economy.
 
@@ -37,7 +37,7 @@ There is growing momentum toward a 'Circular Economy'. It's a simple idea but di
 
 The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. This workbook is based on The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([5](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)): 
 
-![image](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/principles-of-sustainable-design.png)
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/principles-of-sustainable-design.png)
 
 **Design systems holistically and use life cycle thinking.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
 
@@ -61,7 +61,7 @@ As you work through this toolkit, think through each step of the supply chain an
 
 Consider including some (screening) or all (advanced) of the unit processes in the life cycle stages as illustrated in the graphic below ([7](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)).
 
-![image](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/life-cycle-schematic.png)
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/000-introduction/life-cycle-schematic.png)
 
 # How to Use this Guide
 
@@ -69,12 +69,12 @@ This workbook is designed to be used in an iterative way. Start by laying out yo
 
 At any time you can link to the Tools section
 
-1. [Chemical Inventory](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md#resource-1-chemical-inventory-identifying-chemicals-in-products-and-processes)
-2. [Chemical Hazard Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md#resource-chemical-hazard-assessment)
-3. [Exposure Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource3-exposure-assessment.md#resource-3-exposure-assessment)
-4. [Stakeholder Considerations](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource4-stakeholder-considerations-and-social-impacts.md#resource-4-stakeholder-considerations--social-impacts) 
-5. [Life Cycle Considerations](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md#resource--life-cycle-considerations)
-6. [Decision Analysis](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md#resource-7-decision-analysis)
+1. [Chemical Inventory](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md#resource-1-chemical-inventory-identifying-chemicals-in-products-and-processes)
+2. [Chemical Hazard Assessment](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md#resource-chemical-hazard-assessment)
+3. [Exposure Assessment](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource3-exposure-assessment.md#resource-3-exposure-assessment)
+4. [Stakeholder Considerations](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource4-stakeholder-considerations-and-social-impacts.md#resource-4-stakeholder-considerations--social-impacts) 
+5. [Life Cycle Considerations](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md#resource--life-cycle-considerations)
+6. [Decision Analysis](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md#resource-7-decision-analysis)
 
 ## Acknowledgements 
 NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle Products Innovation Institute, formerly UC Berkeley), Tom McKeag ( UC Berkeley Greener Solutions Course and Berkeley Center for Green Chemistry), Saskia van Bergen and Ken Zarker (Washington Department of Ecology), Mark Goedkoop (PRe Consulting), Margaret Whittaker (ToxServices), Jeremey Faludi (Dartmouth College), Mark Buczek, Ashley Baker and Amelia Nestler (Northwest Green Chemistry), participants in the 3D Printing Roundtable, Mikhail Davies and Connie Hensler (Interface Carpet), and [Seattle GiveCamp 2018](http://seattlegivecamp.org/). 
