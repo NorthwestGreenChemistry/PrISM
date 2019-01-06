@@ -2,7 +2,7 @@
   "name": "PrISM",
   "productName": "Northwest Green Chemistry PrISM",
   "version": "0.1.4",
-  "description": "Questionnaire app to help clarify sustainable product design objectives.",
+  "description": "Questionnaire app to help clarify sustainable product design objectives",
   "main": "./main.prod.js",
   "author": {
     "name": "Seattle GiveCamp",
