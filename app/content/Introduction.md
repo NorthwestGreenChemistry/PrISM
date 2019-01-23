@@ -12,7 +12,7 @@ Chemical and product designers have the power to change this trajectory of hazar
 
 The impacts of a product over the course of its lifetime are incredibly complex. While a product might excel in one aspect of the life cycle, it may create negative impacts in another. The tradeoffs we make throughout the design process are often nuanced and complicated. This makes it challenging to effectively compare the sustainability of different products that all have different strengths and weaknesses. It also underscores the importance of clearly articulating the boundaries you are able ot address in your design process. But it is possible to increase one's awareness of the impacts and to make more informed decisions in product design and development. Product design is not a static activity, design decisions made early in the process may be revisited at later stages to continue to drive innovation and continual improvement.
 
-To compare chemicals, materials and products for Sustainable Green Chemistry and Engineering Design principles requires that one defines the life cycle stages, identifies all of the the chemicals used and produced and identifies the main impacts and exposures on stakeholders at each life cycle stage.
+To compare chemicals, materials and products for Product Assessment, Safety, and Sustainability (PASS) principles requires that one defines the life cycle stages, identifies all of the the chemicals used and produced and identifies the main impacts and exposures on stakeholders at each life cycle stage.
 
 # Using PrISM
 
@@ -24,6 +24,7 @@ PrISM is applicable for designers at all levels who are interested in applying a
 - Entrepreneurs
 - Someone with their first great product idea
 - Students of chemistry, designer, and related disciplines
+
 PrISM should be used early in the design process, before significant time and resources have been invested. And then it should be used again and again as the design evolves. In some cases, the user will complete step 7 and then cycle through PrISM again with new ideas. In other cases, the user will move forward with product or chemical design before returning to PrISM. Early use of PrISM encourages innovative and disruptive design changes that often discounted later in the process due to the resources already invested in the existing design. Iterative application of PrISM helps product and chemical designers continuously improve the design.
 
 # Additional Resources
@@ -38,6 +39,37 @@ Embedded in PrISM are additional resources and tools that will aid designers in 
 6. [Life Cycle Considerations](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md#resource--life-cycle-considerations)
 7. [Decision Analysis](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md#resource-7-decision-analysis)
 
+# Product Assessment, Safety, and Sustainability (PASS) principles
+
+The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. PrISM is founded on Product Assessment, Safety, and Sustainability (PASS) principles, which provide a vision that any sustainable product:
+- Supports a circular economy
+- Creates life-friendly chemistry
+- Restores natural capital
+- Supports a just and inclusive society
+
+PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([5a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([5b](http://www.oecd.org/env/waste/46111789.pdf)).
+
+**Supports a circular economy.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
+
+There is growing momentum toward a 'Circular Economy'. It's a simple idea but difficult to do. As chemicals, materials and products move through their life cycle stages and come to the end of life (Product Disposal), the product then becomes raw material for new iterations of products. To do so requires innovative ways of making products from which materials can be recovered and reused or the molecular design of chemicals and materials that degrade completely and harmlessly. A big challenge to a Circular Economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy Circular Economy.
+
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/typical-product-life-cycle.png)
+[Learn more about Circular Design](https://www.circulardesignguide.com/)
+
+**Creates life-friendly chemistry.** Life-friendly chemistry is compatible with life and inherently low hazard. Risk is a function of hazard and exposure. Reducing the inherent hazards of chemicals can help to reduce risk from chemicals, materials and products. Hazards may also be physical. For example, litter is a form of unmanaged waste that can cause physical entrapment and may be mistaken as food by wildlife when it leaks into the environment. 
+
+**Restores natural capital.** Resource efficiency is not just about being efficient and doing more with less. It also includes the imperative to preserve natural capital. Resources that are renewable should not be used faster than they can be regenerated. And resources that are depleting, should not be dissipated and lost to recovery, reuse and recycling. Waste is a sign of inefficiency in a system. 
+
+**Supports a just and inclusive society.** Historically underserved populations are more frequently exposed to environmental hazards and chemicals of concern than those in affluent communities. This contributes to disproportionate health impacts, higher healthcare costs, and a continuing cycle of needless barriers to the best quality of life. This ultimately hinders the diversity of professionals in the field, limiting our collective perspective and ability to solve problems. Sustainable design improvements require that the negative impacts of products are not merely shifted from one population to another. 
+
+A number of useful tools already exist to measure various aspects of sustainability. These will help you quantify how products fulfill the vision set forth by these design principles. They include life cycle assessment (LCA), chemical hazard assessment (CHA), exposure assessment (EA), and others. Information about these tools is linked to throughout this workbook.
+
+However, each of these tools only evaluates one sustainability attribute. In reality sustainability attributes are heavily interrelated. Improvement in one area may result in changes in performance in another.
+
+For example, a material such as a plastic may be made only from chemicals with low inherent hazard. If it ends up in a product that is likely to end up as litter and degrades into microplastics, then it is not sustainable. Likewise, extremely toxic chemicals can be made from rapidly renewable feedstock and very efficient processes. 
+
+PrISM uses the tools and methods of alternatives assessment and adapts them for use in product design and development. “The objective of an alternatives assessment is to replace chemicals of concern in products or processes with inherently safer alternatives, thereby protecting and enhancing human health and the environment” (Interstate Chemicals Clearinghouse (IC2)). Inherently safer alternatives may be alternative chemicals, materials, or very different product designs that provide the same product service. See the Whole Product Systems (section 6) for examples.
+
 # Alternatives Assessment
 
 Alternatives assessment (AA) is a structured method to evaluate alternatives to chemicals of concern in products and processes. Alternatives may include chemical substitutes, alternative materials or product and business model designs that eliminate the need for the chemical of concern altogether. 
@@ -46,46 +78,18 @@ AA helps to ensure that designers make changes with their eyes wide open. The in
 
 The tools and decision frameworks in AA can also support product design. Product assessment and product design are closely related. In the design process, the designer considers his or her options for chemicals, materials, business models, manufacturing options and more. Each of these options can be evaluated from a holistic perspective to inform decisions along the way. That is why this workbook builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions. Alternatives assessment, like all assessment tools is limited by the availability of good data. Despite that drawback, approaching design from a life cycle perspective and using the tools of alternatives assessment to assess various options can help stimulate ideas for product innovation.
 
-
 * [Visit the IC2 website to access the complete IC2 Alternatives Assessment Guide](http://theic2.org/alternatives_assessment_guide)
 * [A Framework to Guide Selection of Chemical Alternatives (National Research Council)](https://www.nap.edu/catalog/18872/a-framework-to-guide-selection-of-chemical-alternatives)
 * [Washington State Alternatives Assessment Guide for Small and Medium Businesses](https://fortress.wa.gov/ecy/publications/documents/1504002.pdf)
 * [California Safer Consumer Products Alternatives Assessment Guide v1.0](http://www.dtsc.ca.gov/SCP/AlternativesAnalysisGuidance.cfm)
 
-# Circular Design
-![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/typical-product-life-cycle.png)
-
-There is growing momentum toward a 'Circular Economy'. It's a simple idea but difficult to do. As chemicals, materials and products move through their life cycle stages and come to the end of life (Product Disposal), the product then becomes raw material for new iterations of products. To do so requires innovative ways of making products from which materials can be recovered and reused or the molecular design of chemicals and materials that degrade completely and harmlessly. A big challenge to a Circular Economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy Circular Economy.
-
-[Learn more about Circular Design](https://www.circulardesignguide.com/)
-
-# Design Principles for Sustainable Green Chemistry and Engineering
-
-The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. This workbook is based on The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([5](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)): 
-
-![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/principles-of-sustainable-design.png)
-
-**Design systems holistically and use life cycle thinking.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
-
-**Maximize resource efficiency.** Resource efficiency is not just about being efficient and doing more with less. It also includes the imperative to preserve natural capital. Resources that are renewable should not be used faster than they can be regenerated. And resources that are depleting, should not be dissipated and lost to recovery, reuse and recycling. Waste is a sign of inefficiency in a system. 
-
-**Eliminate and minimize hazards and pollution.** Risk is a function of hazard and exposure. Reducing the inherent hazards of chemicals can help to reduce risk from chemicals, materials and products. Hazards may also be physical. For example, litter is a form of unmanaged waste that can cause physical entrapment and may be mistaken as food by wildlife when it leaks into the environment. 
-
-A number of useful tools already exist to measure various aspects of sustainability. These will help you quantify how products fulfill the vision set forth by these design principles. They include life cycle assessment (LCA), chemical hazard assessment (CHA), exposure assessment (EA), and others. Information about these tools is linked to throughout this workbook.
-
-However, each of these tools only evaluates one sustainability attribute. In reality sustainability attributes are heavily interrelated. Improvement in one area may result in changes in performance in another.
-
-For example, a material such as a plastic may be made only from chemicals with low inherent hazard. If it ends up in a product that is likely to end up as litter and degrades into microplastics, then it is not sustainable. Likewise, extremely toxic chemicals can be made from rapidly renewable feedstock and very efficient processes. 
-
-This workbook uses the tools and methods of alternatives assessment and adapts them for use in product design and development. “The objective of an alternatives assessment is to replace chemicals of concern in products or processes with inherently safer alternatives, thereby protecting and enhancing human health and the environment” (Interstate Chemicals Clearinghouse (IC2)). Inherently safer alternatives may be alternative chemicals, materials, or very different product designs that provide the same product service. See the Whole Product Systems (section 6) for examples.
-
 # Introduction to Life Cycle Stages
 
 Every chemical, material and product has a different life cycle. Depending on the supply chain associated with a chemical, material or product, it may be necessary to separate out production and manufacturing into multiple stages. 
 
-As you work through this toolkit, think through each step of the supply chain and the individual 'unit processes' that bring the product from conception to production and manufacture to delivery to the user to the end of its useful life and hopefully into future materials and products. Where possible, map out the life cycle stages. This information will also support better understanding of the chemical ingredients used throughout the life cycle and potential stakeholder impacts including exposures. 
+As you work through PrISM, think through each step of the supply chain and the individual 'unit processes' that bring the product from conception to production and manufacture to delivery to the user to the end of its useful life and hopefully into future materials and products. Where possible, map out the life cycle stages. This information will also support better understanding of the chemical ingredients used throughout the life cycle and potential stakeholder impacts including exposures. 
 
-Consider including some (screening) or all (advanced) of the unit processes in the life cycle stages as illustrated in the graphic below ([7](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)).
+Consider including some (screening) or all (advanced) of the unit processes in the life cycle stages as illustrated in the graphic below ([7](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)). The life cycle of an ideal product is circular.
 
 ![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/life-cycle-schematic.png)
 
@@ -99,6 +103,6 @@ NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle 
 2. [The Top 10 Countries Turning the Corner on Toxic Pollution 2014](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf)
 3. [Waste Sites and Property Values: A Meta-Analysis](https://link.springer.com/article/10.1007/s10640-011-9467-9)
 4. [Impacts of Mismanaged Trash (EPA)](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)
-5. [American Chemical Society Green Chemisry Institute Sustainable Design Principles](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)						
+5. [American Chemical Society Green Chemisry Institute Sustainable Design Principles](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf). Organization for Economic Cooperation and Development (OECD), 2010. [OECD Global Forum on Environment Focusing on Sustainable Materials Management](http://www.oecd.org/env/waste/111789.pdf), OECD Environment Directorate, 2010, 55 pages.
 6. [World Forum on Natural Capital](https://naturalcapitalforum.com/about/)
 7. [Lithner, Delilah. 2011. Environmental and Health Hazards of Chemicals in Plastic Polymers and Products. Ph.D. thesis. Dept. of Plant and Environmental Sciences. University of Gothenburg.](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)
