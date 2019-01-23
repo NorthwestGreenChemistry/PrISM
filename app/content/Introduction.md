@@ -1,12 +1,17 @@
 
 # Introduction
-Toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. 
+
+## Goal
+The Goal of PrISM is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
+
+## Why is PrISM important?
+Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. 
 
 Many of the chemicals on the US market have never been fully tested for safety. Toxic chemicals not only influence human health but have detrimental effects on animals, plants, and ecosystems. Harmful chemicals cost the US more than $737 billion (4.4% of GDP) in healthcare costs and lost earnings ([1a](https://www.ncbi.nlm.nih.gov/pubmed/27765541), [1b](https://www.sciencedirect.com/science/article/pii/S0301421515302494)). 
 
 There are also significant negative impacts from waste: costs for wastewater treatment, reduced property value, harm to wildlife, and many more. Millions of people around the world face increased risk of disease from toxic waste sites, particularly in low- and middle-income regions ([2](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf), [3](https://link.springer.com/article/10.1007/s10640-011-9467-9), [4](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)). 
 
-Designers have the power to change this trajectory of hazardous chemical use and waste generation through sustainable new product development. Using life cycle thinking, considering end-of-life possibilities, eliminating toxic chemicals and preserving natural resources, you can design more economical, more sustainable, more desirable products. You can use existing tools in concert to create products that are safe from their beginnings as raw materials to the end of their useful life and back into new materials. This can be done with design principles for sustainable green chemistry and engineering as a consistent backdrop. 
+Chemical and product designers have the power to change this trajectory of hazardous chemical use and waste generation through sustainable new product development. Using life cycle thinking, considering end-of-life possibilities, eliminating toxic chemicals and preserving natural resources, you can design more economical, more sustainable, more desirable products. You can use existing tools in concert to create products that are safe from their beginnings as raw materials to the end of their useful life and back into new materials. This can be done with design principles for sustainable green chemistry and engineering as a consistent backdrop. 
 
 The impacts of a product over the course of its lifetime are incredibly complex. While a product might excel in one area, it may create negative impacts in another. This makes it challenging to effectively compare the sustainability of different products that all have different strengths and weaknesses. But it is possible to increase one's awareness of the impacts and to make more informed decisions in product design and development. Product design is not a static activity, design decisions made early in the process may be revisited at later stages to continue to drive innovation and continual improvement.
 
