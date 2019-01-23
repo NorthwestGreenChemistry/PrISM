@@ -1,10 +1,7 @@
-
-# Introduction
-
-## Goal
+# Goal
 The Goal of PrISM is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
 
-## Why is PrISM important?
+# Why is PrISM important?
 Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. 
 
 Many of the chemicals on the US market have never been fully tested for safety. Toxic chemicals not only influence human health but have detrimental effects on animals, plants, and ecosystems. Harmful chemicals cost the US more than $737 billion (4.4% of GDP) in healthcare costs and lost earnings ([1a](https://www.ncbi.nlm.nih.gov/pubmed/27765541), [1b](https://www.sciencedirect.com/science/article/pii/S0301421515302494)). 
