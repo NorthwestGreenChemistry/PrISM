@@ -19,11 +19,11 @@ To compare chemicals, materials and products for Product Assessment, Safety, and
 PrISM walks chemical and product designers through a series of modules, applying life cycle thinking and alternative assessment concepts to allow the user to make informed decisions about their design. PrISM builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions.
 
 PrISM is applicable for designers at all levels who are interested in applying a holistic framework:
-- Product designers
-- Chemical designers
-- Entrepreneurs
-- Someone with their first great product idea
-- Students of chemistry, designer, and related disciplines
+* Product designers
+* Chemical designers
+* Entrepreneurs
+* Someone with their first great product idea
+* Students of chemistry, designer, and related disciplines
 
 PrISM should be used early in the design process, before significant time and resources have been invested. And then it should be used again and again as the design evolves. In some cases, the user will complete step 7 and then cycle through PrISM again with new ideas. In other cases, the user will move forward with product or chemical design before returning to PrISM. Early use of PrISM encourages innovative and disruptive design changes that often discounted later in the process due to the resources already invested in the existing design. Iterative application of PrISM helps product and chemical designers continuously improve the design.
 
