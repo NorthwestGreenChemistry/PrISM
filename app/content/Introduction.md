@@ -2,11 +2,11 @@
 The Goal of Product Innovation and Social Mapping (PrISM) is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
 
 # Why is PrISM important?
-Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. Chemicals have benefits and hazards, which must both be considered together ([0](https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00174)).
+Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. Chemicals have benefits and hazards, which must both be considered together ([1](https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00174)).
 
-Many of the chemicals on the US market have never been fully tested for safety. Toxic chemicals not only influence human health but have detrimental effects on animals, plants, and ecosystems. Harmful chemicals cost the US more than $737 billion (4.4% of GDP) in healthcare costs and lost earnings ([1a](https://www.ncbi.nlm.nih.gov/pubmed/27765541), [1b](https://www.sciencedirect.com/science/article/pii/S0301421515302494)). 
+Many of the chemicals on the US market have never been fully tested for safety. Toxic chemicals not only influence human health but have detrimental effects on animals, plants, and ecosystems. Harmful chemicals cost the US more than $737 billion (4.4% of GDP) in healthcare costs and lost earnings ([2a](https://www.ncbi.nlm.nih.gov/pubmed/27765541), [2b](https://www.sciencedirect.com/science/article/pii/S0301421515302494)). 
 
-There are also significant negative impacts from waste: costs for wastewater treatment, reduced property value, harm to wildlife, and many more. Millions of people around the world face increased risk of disease from toxic waste sites, particularly in low- and middle-income regions ([2](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf), [3](https://link.springer.com/article/10.1007/s10640-011-9467-9), [4](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)). 
+There are also significant negative impacts from waste: costs for wastewater treatment, reduced property value, harm to wildlife, and many more. Millions of people around the world face increased risk of disease from toxic waste sites, particularly in low- and middle-income regions ([3](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf), [4](https://link.springer.com/article/10.1007/s10640-011-9467-9), [5](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)). 
 
 Chemical and product designers have the power to change this trajectory of hazardous chemical use and waste generation through sustainable new product development. Using life cycle thinking, considering material sourcing, health and safety exposures, end-of-life possibilities, and eliminating toxic chemicals, you can design more economical, more sustainable, more desirable products. You can use existing design tools and efficiency metrics in concert to create products that are safe from their beginnings as raw materials to the end of their useful life and back into new materials. This can be done with design principles for sustainable green chemistry and engineering as a consistent backdrop. 
 
@@ -19,7 +19,6 @@ To compare chemicals, materials and products for Product Assessment, Safety, and
 PrISM walks chemical and product designers through a series of modules, applying life cycle thinking and alternative assessment concepts to allow the user to make informed decisions about their design. PrISM builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions.
 
 PrISM is applicable for designers at all levels who are interested in applying a holistic framework:
-
 * Product designers
 * Chemical designers
 * Entrepreneurs
@@ -48,11 +47,13 @@ The concepts and methods described in this workbook stem from established design
 * Restores natural capital
 * Supports a just and inclusive society
 
-PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([5a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([5b](http://www.oecd.org/env/waste/46111789.pdf)).
+PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([6a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([6b](http://www.oecd.org/env/waste/46111789.pdf)).
 
-**Supports a circular economy.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product (material for brevity) is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems. 
+**Supports a circular economy.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems.
 
-There is growing momentum toward a 'Circular Economy'. It's a simple idea but difficult to do. As chemicals, materials and products move through their life cycle stages and come to the end of life (Product Disposal), the product then becomes raw material for new iterations of products. To do so requires innovative ways of making products from which materials can be recovered and reused or the molecular design of chemicals and materials that degrade completely and harmlessly. A big challenge to a Circular Economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy Circular Economy.
+The circular economy concept is simple but difficult to implement. In a linear economy, as chemicals, materials, and products move through their life cycle stages and come to the end of life, they are disposed of as waste. In a circular economy, instead of disposing of products as waste, they become raw material for new iterations of products. To do so requires innovative ways of making products from which materials can be recovered and reused, or the molecular design of chemicals and materials that degrade completely and harmlessly.
+
+A big challenge to a circular economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy circular economy. Products that support a circular economy avoid hazardous components and include plans for maximizing value recovery at end of life.
 
 ![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/typical-product-life-cycle.png)
 [Learn more about Circular Design](https://www.circulardesignguide.com/)
@@ -78,7 +79,6 @@ Alternatives assessment (AA) is a structured method to evaluate alternatives to 
 AA helps to ensure that designers make changes with their eyes wide open. The intent is to avoid negative 'unintended consequences'. That is, to make sure that one does not move away from a chemical of concern in a product to an alternative that is unknown or potentially more problematic from the health and sustainability perspective. AA supports informed decision making. A number of AA guides are listed below. They provide resources for assessing alternatives for chemical hazard, exposure, economic impacts, performance, life cycle impacts, materials management, social impacts and more. 
 
 The tools and decision frameworks in AA can also support product design. Product assessment and product design are closely related. In the design process, the designer considers his or her options for chemicals, materials, business models, manufacturing options and more. Each of these options can be evaluated from a holistic perspective to inform decisions along the way. That is why this workbook builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions. Alternatives assessment, like all assessment tools is limited by the availability of good data. Despite that drawback, approaching design from a life cycle perspective and using the tools of alternatives assessment to assess various options can help stimulate ideas for product innovation.
-
 * [Visit the IC2 website to access the complete IC2 Alternatives Assessment Guide](http://theic2.org/alternatives_assessment_guide)
 * [A Framework to Guide Selection of Chemical Alternatives (National Research Council)](https://www.nap.edu/catalog/18872/a-framework-to-guide-selection-of-chemical-alternatives)
 * [Washington State Alternatives Assessment Guide for Small and Medium Businesses](https://fortress.wa.gov/ecy/publications/documents/1504002.pdf)
@@ -90,7 +90,7 @@ Every chemical, material and product has a different life cycle. Depending on th
 
 As you work through PrISM, think through each step of the supply chain and the individual 'unit processes' that bring the product from conception to production and manufacture to delivery to the user to the end of its useful life and hopefully into future materials and products. Where possible, map out the life cycle stages. This information will also support better understanding of the chemical ingredients used throughout the life cycle and potential stakeholder impacts including exposures. 
 
-Consider including some (screening) or all (advanced) of the unit processes in the life cycle stages as illustrated in the graphic below ([7](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)). The life cycle of an ideal product is circular.
+Consider including some (screening) or all (advanced) of the unit processes in the life cycle stages as illustrated in the graphic below ([8](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)). The life cycle of an ideal product is circular.
 
 ![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/life-cycle-schematic.png)
 
@@ -99,11 +99,11 @@ NGC gratefully acknowledges the contributions of Justin Bours (Cradle to Cradle 
 
 ## References
 	
-0. Holme, T. A., & Hutchison, J. E. (2018). [A Central Learning Outcome for the Central Science.] (https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00174)
-1. Attina, T. M., Hauser, R., Sathyanarayana, S., Hunt, P. A., Bourguignon, J., Myers, J. P., Trasande, L. (2016). [Exposure to endocrine-disrupting chemicals in the USA: A population-based disease burden and cost analysis](https://www.ncbi.nlm.nih.gov/pubmed/27765541). The Lancet Diabetes & Endocrinology, 4(12), 996-1003; Jaramillo, P., & Muller, N. Z. (2016). [Air pollution emissions and damages from energy production in the US: 2002–2011]
-2. [The Top 10 Countries Turning the Corner on Toxic Pollution 2014](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf)
-3. [Waste Sites and Property Values: A Meta-Analysis](https://link.springer.com/article/10.1007/s10640-011-9467-9)
-4. [Impacts of Mismanaged Trash (EPA)](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)
-5. [American Chemical Society Green Chemisry Institute Sustainable Design Principles](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf). Organization for Economic Cooperation and Development (OECD), 2010. [OECD Global Forum on Environment Focusing on Sustainable Materials Management](http://www.oecd.org/env/waste/111789.pdf), OECD Environment Directorate, 2010, 55 pages.
-6. [World Forum on Natural Capital](https://naturalcapitalforum.com/about/)
-7. [Lithner, Delilah. 2011. Environmental and Health Hazards of Chemicals in Plastic Polymers and Products. Ph.D. thesis. Dept. of Plant and Environmental Sciences. University of Gothenburg.](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)
+1. Holme, T. A., & Hutchison, J. E. (2018). [A Central Learning Outcome for the Central Science.] (https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00174)
+2. Attina, T. M., Hauser, R., Sathyanarayana, S., Hunt, P. A., Bourguignon, J., Myers, J. P., Trasande, L. (2016). [Exposure to endocrine-disrupting chemicals in the USA: A population-based disease burden and cost analysis](https://www.ncbi.nlm.nih.gov/pubmed/27765541). The Lancet Diabetes & Endocrinology, 4(12), 996-1003; Jaramillo, P., & Muller, N. Z. (2016). [Air pollution emissions and damages from energy production in the US: 2002–2011]
+3. [The Top 10 Countries Turning the Corner on Toxic Pollution 2014](https://www.greencross.ch/wp-content/uploads/uploads/media/pollution_report_2014_top_ten_wwpp.pdf)
+4. [Waste Sites and Property Values: A Meta-Analysis](https://link.springer.com/article/10.1007/s10640-011-9467-9)
+5. [Impacts of Mismanaged Trash (EPA)](https://www.epa.gov/trash-free-waters/impacts-mismanaged-trash)
+6. [American Chemical Society Green Chemisry Institute Sustainable Design Principles](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf). Organization for Economic Cooperation and Development (OECD), 2010. [OECD Global Forum on Environment Focusing on Sustainable Materials Management](http://www.oecd.org/env/waste/111789.pdf), OECD Environment Directorate, 2010, 55 pages.
+7. [World Forum on Natural Capital](https://naturalcapitalforum.com/about/)
+8. [Lithner, Delilah. 2011. Environmental and Health Hazards of Chemicals in Plastic Polymers and Products. Ph.D. thesis. Dept. of Plant and Environmental Sciences. University of Gothenburg.](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)
