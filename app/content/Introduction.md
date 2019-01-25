@@ -1,11 +1,3 @@
-# Introduction
-
-## Goal
-The Goal of PrISM is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
-
-## Why is PrISM important?
-Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. 
-
 # Goal
 The Goal of Product Innovation and Social Mapping (PrISM) is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
 
@@ -51,10 +43,10 @@ Embedded in PrISM are additional resources and tools that will aid designers in 
 # Product Assessment, Safety, and Sustainability (PASS) principles
 
 The concepts and methods described in this workbook stem from established design principles and tools. Designing products that embody sustainable design principles helps to ensure that products are sustainable and safe. While these design principles do not translate directly into metrics, they do provide a directional compass for the criteria, tools and metrics that allow for measurement. PrISM is founded on Product Assessment, Safety, and Sustainability (PASS) principles, which provide a vision that any sustainable product:
-- Supports a circular economy
-- Creates life-friendly chemistry
-- Restores natural capital
-- Supports a just and inclusive society
+* Supports a circular economy
+* Creates life-friendly chemistry
+* Restores natural capital
+* Supports a just and inclusive society
 
 PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([5a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([5b](http://www.oecd.org/env/waste/46111789.pdf)).
 
