@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # Introduction
 
 ## Goal
@@ -7,13 +5,12 @@ The Goal of PrISM is to empower designers to support a circular economy, create 
 
 ## Why is PrISM important?
 Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. 
-=======
+
 # Goal
 The Goal of Product Innovation and Social Mapping (PrISM) is to empower designers to support a circular economy, create life-friendly chemistry, restore natural capital, and support a just and inclusive society.
 
 # Why is PrISM important?
 Chemicals enable our lives as we know them, from personal care products to cell phones. However, the use of toxic chemicals create public health problems including cancers, heart disease, stroke, asthma, reduced fertility, birth defects, and intellectual disabilities. Poor health outcomes from exposure to chemicals disproportionately impact vulnerable populations and economically disadvantaged communities. Chemicals have benefits and hazards, which must both be considered together ([0](https://pubs.acs.org/doi/10.1021/acs.jchemed.8b00174)).
->>>>>>> parent of e9e71b1... Update Introduction.md
 
 Many of the chemicals on the US market have never been fully tested for safety. Toxic chemicals not only influence human health but have detrimental effects on animals, plants, and ecosystems. Harmful chemicals cost the US more than $737 billion (4.4% of GDP) in healthcare costs and lost earnings ([1a](https://www.ncbi.nlm.nih.gov/pubmed/27765541), [1b](https://www.sciencedirect.com/science/article/pii/S0301421515302494)). 
 
@@ -30,6 +27,7 @@ To compare chemicals, materials and products for Product Assessment, Safety, and
 PrISM walks chemical and product designers through a series of modules, applying life cycle thinking and alternative assessment concepts to allow the user to make informed decisions about their design. PrISM builds on alternatives assessment in combination with Design Principles to empower designers to make more informed decisions.
 
 PrISM is applicable for designers at all levels who are interested in applying a holistic framework:
+
 * Product designers
 * Chemical designers
 * Entrepreneurs
