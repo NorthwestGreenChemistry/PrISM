@@ -47,7 +47,7 @@ The concepts and methods described in this workbook stem from established design
 * Restores natural capital
 * Supports a just and inclusive society
 
-PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([6a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([6b](http://www.oecd.org/env/waste/46111789.pdf)).
+PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([6a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([6b](http://www.oecd.org/env/waste/46111789.pdf)). PASS principles were developed in collaboration with Interface.
 
 **Supports a circular economy.** This is a broad and overarching principle that applies to the design of sustainable chemicals materials and products. A chemical, material or product is not sustainable inherently. Rather, sustainability is tied to the dynamic context in which materials flow in environmental and economic systems.
 
