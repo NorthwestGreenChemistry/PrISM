@@ -1,6 +1,7 @@
 # Scoping, Problem Formulation, and Design Goals
 ## Goal:
-To help clarify your sustainable product design objectives. You will consider:                                                                                                                         
+To help clarify your sustainable product design objectives. You will consider:  
+
 1. Your product sustainability goals and priorities
 2. The various life cycle stages of your product
 
