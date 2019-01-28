@@ -2,7 +2,7 @@
 # End of Life Considerations
 
 ## Goal
-To maximize resource efficiency by eliminating waste, hazards and pollution associated with the fate of chemicals, materials and products after use. Waste may be mitigated by designing a product for longevity and durability or for reuse and recycling.
+To restore natural capital and support life-friendly chemistry by eliminating waste, hazards and pollution associated with the fate of chemicals, materials and products after use. Waste may be mitigated by designing a product for longevity and durability or for reuse and recycling. 
 
 ## Introduction
 
