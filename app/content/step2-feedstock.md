@@ -1,7 +1,7 @@
 # Feedstock Concerns
 
 ## Goal: 
-To use base feedstock that preserves natural capital (maximizes resource efficiency) while providing performance and other sustainability benefits.
+To use base feedstock that preserves and/or restores natural capital while providing performance and other sustainability benefits.
 
 ## Introduction to Feedstock Concerns
 According to the [World Forum on Natural Capital](https://naturalcapitalforum.com/about/), natural capital is defined as the world’s stocks of natural assets that include geology, soil, air, water and all living things. Humans depend on natural capital for a wide range of ecosystem services. Poorly managed natural capital can destroy productivity and resilience, making it more difficult for humans and other species to sustain themselves ([6](https://naturalcapitalforum.com/about/)). To meet the design principle of Maximizing Resource Efficiency, it is necessary to preserve natural capital. The choice of feedstock can have significant impacts on natural capital.
