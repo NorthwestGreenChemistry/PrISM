@@ -16,8 +16,8 @@
             "type": "string"
         },
         "What sustainability attributes are you prioritizing to include in the design? Consider the product overall and at each life cycle stage.": {
-            "type": "string",
-            "enum": []
+            "description": "Write down your top priorities here. Next, we will walk you through some additional priorities to consider.",
+            "type": "string"
         },
         "feedstock": {
             "title": "Feedstock priorities",
