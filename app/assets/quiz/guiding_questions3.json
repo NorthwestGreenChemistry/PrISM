@@ -7,7 +7,7 @@
             "type": "object",
             "properties": {
                 "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.": {
-                    "description" : "[(See Chemical Inventory)](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md)",
+                    "description" : "(See Resource 1 - Chemical Inventory)",
                     "type": "string"
                 },
                 "Are the chemicals used during production and manufacturing hazardous?": {
@@ -16,7 +16,7 @@
                     "enum": ["Yes", "No", "I don't know"]
                 },
                 "What chemicals and materials are produced during production and manufacturing?": {
-                    "description": "(See Chemical Inventory)",
+                    "description": "(See See Resource 1 - Chemical Inventory)",
                     "type" : "string"
                 },
                 "Are the chemicals produced during production and manufacturing hazardous?": {
