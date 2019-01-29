@@ -1,4 +1,3 @@
-# Scoping, Problem Formulation, and Design Goals
 ## Goal:
 To help clarify your sustainable product design objectives. You will consider:  
 

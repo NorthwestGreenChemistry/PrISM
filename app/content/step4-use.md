@@ -1,5 +1,3 @@
-# Sustainable Product Design for the Use Phase
-
 ## Goal
 
 To minimize or eliminate hazards in products and pollution and increase the use of life-friendly chemistry during the use stage of the product's life cycle. To restore and preserve natural capital by preventing the generation of waste.

@@ -1,6 +1,3 @@
-
-# Evaluation and Optimization
-
 ## Goal
 To encourage transparency, to identify opportunities for improvement, to avoid unacceptable tradeoffs and to ensure consideration of all of the sustainable design principles. 
 

@@ -1,5 +1,3 @@
-# Feedstock Concerns
-
 ## Goal: 
 To use base feedstock that preserves and/or restores natural capital while providing performance and other sustainability benefits.
 

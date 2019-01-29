@@ -1,7 +1,7 @@
-# Whole Product Assessment
-
 ## Goal
-To maximize resource efficiency and to eliminate toxins and pollution over the entire life cycle of the product.  To drive innovation and not just incremental improvements.
+To drive innovation and not just incremental improvements. To restore natural capital and to use life-friendly chemistry over the entire life cycle of the product.
+
+## Introduction
 
 Remember that there is no one tool or metric that used alone is sufficient for credible and meaningful comparisons. As mentioned previously, it is always useful to check one's assumptions -- a product that appears the most sustainable should always be checked against other products and services that perform the same function. 
 

@@ -1,5 +1,3 @@
-# Production & Manufacturing
-
 ## Goal
 
 To produce and manufacture products in a way that restores natural capital and utilizes life-friendly chemistry in order to protect workers and those who live around the production or manufacturing facility who may be exposed to chemicals and other emissions from production and manufacturing.
