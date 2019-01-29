@@ -19,6 +19,8 @@ Consider how your product will have the least impact on human health and the env
 
 ![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/5-end-of-life/lansinks-ladder.png)
 
+Plastic straws are an example of an exception. When used on beaches, they are frequently littered as opposed to properly disposed of, so it is unlikely that a recyclable straw would actually be recycled. A biodegradable straw is a better fit considering the likely end of life pathways. Another preferrable alternative could be re-usable straws paired with programs to ensure their return, minimizing litter. 
+
 ## Possible End of Life Pathways for Products After Use
 Waste mismanagement and littering are forms of what is called 'leakage' to the environment. It is an all too frequent and very undesirable waste pathway. Estimate how likely it is that leakage to the environment will occur. Using global statistics based on types of waste found in the environment is recommended. Estimates based on regional differences are relevant. For example, some of the more frequently found litter includes cigarette butts and plastic bags.
 
@@ -30,6 +32,8 @@ Waste mismanagement and littering are forms of what is called 'leakage' to the e
 - Compost (commercial)
 - Compost (backyard)
 - Other biodegradation (aquatic (fresh, marine), aerobic, anaerobic)
+
+Be sure to include only pathways that are actually available in the area your product is used. While food packaging made from PLA may be potentially compostable in industrial facilities, this is not relevant if the area does not have industrial composting facilities, or if those facilities have chosen to not accept plastic products.
 
 ## Examples
 
