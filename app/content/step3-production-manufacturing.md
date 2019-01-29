@@ -15,7 +15,9 @@ Building a chemical inventory is an important step for knowing all of the chemic
 * Be hazardous to workers, the environment, and users
 * Leak into the environment after disposal
 * Affect the quality of recycled materials and how they can be used in future products
-The more you know about what is in the material and what was used to create the material, the better you can identify areas for improvement. Gather as much information as possible now, and identify your data gaps where you are unsure of the chemicals used. Researching and filling in those data gaps is potentially an important action item, as is substituting out known hazardous chemicals.
+The more you know about what is in the material and what was used to create the material, the better you can identify areas for improvement. Gather as much information as possible now, and identify your data gaps where you are unsure of the chemicals used. Researching and filling in those data gaps is potentially an important action item, as is substituting out known hazardous chemicals. 
+
+Once you have built your chemical inventory, you can determine which chemicals are hazardous and may need to be substituted out. See [Resource 2 - Chemical Hazard Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md) for guidance and suggestions on learning about the hazards of the chemicals in your inventory.
 
 Restoring natural capital requires measuring the use of energy, water, materials used and the generation of waste in order to benchmark a product against other products or to guide efficiency improvements. Many of these are measured in a Life Cycle Assessment. See [Resource 6 - Life Cycle Assessment](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md) for guidance and suggestions.
 
