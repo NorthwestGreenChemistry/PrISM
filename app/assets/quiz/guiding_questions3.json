@@ -11,6 +11,7 @@
                     "type": "string"
                 },
                 "Are the chemicals used during production and manufacturing hazardous?": {
+                    "description": "Hazardous chemicals include PBTs (persistent, bioaccumulative, and toxic chemicals), SVHCs (Substances of Very High Concern), and more. Review Resource 2 - Chemical Hazard Assessment - for more information about how to tell if a chemical is hazardous or not.",
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
