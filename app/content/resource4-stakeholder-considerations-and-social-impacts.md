@@ -6,7 +6,7 @@
 ### Life Cycle Considerations 
 Stakeholders can be defined as “those groups who can affect or are affected by the achievement of an organization’s purpose” Stakeholders can be divided into those who are affected by the material impacts (affected), and those who affect the development of that material (affecters) ([8](https://books.google.com/books?id=NpmA_qEiOpkC&lpg=PP1&pg=PP1#v=onepage&q&f=false)).
 
-This can also be viewed as a 2x2 interest versus power grid such as the one below.  Stakeholder considerations range from the most immediate, workers to regional  to the global environment. The stakeholder impact map has overlap with the exposure mapping since exposure to chemicals is important to health and safety.
+This can also be viewed as a 2x2 interest versus power grid such as the one below. Stakeholder considerations range from the most immediate, workers to regional to the global environment. The stakeholder impact map has overlap with the exposure mapping since exposure to chemicals is important to health and safety.
 
 ![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-stakeholder-considerations/power-v-interest-grid.png)
 

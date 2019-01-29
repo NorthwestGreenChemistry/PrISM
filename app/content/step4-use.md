@@ -4,11 +4,11 @@ To minimize or eliminate hazards in products and pollution and increase the use 
 
 ## Strategies
 
--   Use low hazard chemicals in materials and products
--   Use especially low hazard chemicals in applications where high exposure is likely to occur
--   Make products that are intended to last
--   Make products from materials that are readily recovered and recycled after use
--   Make sure that the user knows what to do with the product after use
+- Use low hazard chemicals in materials and products
+- Use especially low hazard chemicals in applications where high exposure is likely to occur
+- Make products that are intended to last
+- Make products from materials that are readily recovered and recycled after use
+- Make sure that the user knows what to do with the product after use
 
 Building a chemical inventory is an important step for knowing all of the chemicals in your product. This is the first step to understanding if the chemicals used support life-friendly chemistry, or if they are hazardous. See [Resource 1 - Chemical Inventory](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md) for guidance and suggestions. The chemical inventory will help you answer guiding questions in multiple PrISM steps as well. While identifying all of the chemicals involved can feel like a daunting task, even small amounts of hazardous chemical ingredient additives or residuals from processing aids can impact the sustainability of the product. The more you know about what is in the material and what was used to create the material, the better you can identify areas for improvement. Gather as much information as possible now, and identify your data gaps where you are unsure of the chemicals used. Researching and filling in those data gaps is potentially an important action item, as is substituting out known hazardous chemicals. 
 

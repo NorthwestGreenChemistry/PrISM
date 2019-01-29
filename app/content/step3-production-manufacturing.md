@@ -4,7 +4,7 @@ To produce and manufacture products in a way that restores natural capital and u
 
 ## Introduction
 
-All chemicals used in production and manufacturing have the potential for exposure to workers, neighboring communities, and the environment. Even chemicals not intentially added to a product, such as mold release agents or cleaning agents,  may still end up in the product as residuals.
+All chemicals used in production and manufacturing have the potential for exposure to workers, neighboring communities, and the environment. Even chemicals not intentially added to a product, such as mold release agents or cleaning agents, may still end up in the product as residuals.
 
 Strategies for meeting the goal require knowing the chemicals used and produced and understanding their inherent hazards and potential exposure pathways. Exposure levels do not need to be quantitatively measured in most cases. Rather, qualitative exposure assessment may be based on the presence of a chemical in a form that can be inhaled, ingested or absorbed through the skin.
 
