@@ -11,8 +11,8 @@
     "What other products are used to provide this service?": {
         "ui:widget": "textarea"
     },
-    "What sustainability attributes are you prioritizing to include in the design? Consider the product overall and at each life cycle stage. We'll guide you through some examples first and then allow you to set your priorities.": {
-        "ui:widget": "radio"
+    "What sustainability attributes are you prioritizing to include in the design? Consider the product overall and at each life cycle stage.": {
+        "ui:widget": "textarea"
     },
     "feedstock": {
         "What is the preferred feedstock goal or goals? Please select all that apply.": {
