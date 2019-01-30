@@ -18,7 +18,7 @@
         "What is the preferred feedstock goal or goals? Please select all that apply.": {
             "ui:widget": "checkboxes"
         },
-        "If you've selected 'Bio-based' for the previous question: ": {
+        "If you've selected 'Bio-based' for the previous question:": {
             "ui:widget": "radio"
         }
     },

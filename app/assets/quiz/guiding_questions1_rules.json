@@ -5,7 +5,7 @@
                 "or": [
                         "empty",
                         {"not":
-                          {"includes": "other"}
+                          {"includes": "Bio-based"}
                         }
                 ]
             }
@@ -14,7 +14,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "If you've selected 'Other' for the previous question:"
+                    "If you've selected 'Bio-based' for the previous question:"
                 ]
             }
         }
