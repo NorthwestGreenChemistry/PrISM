@@ -14,7 +14,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "If you've selected 'Other' for the previous question: "
+                    "If you've selected 'Other' for the previous question:"
                 ]
             }
         }
