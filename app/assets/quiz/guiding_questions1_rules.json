@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "conditions": {
+            "What is the preferred feedstock goal or goals? Please select all that apply.": {
+                "not":
+                    {"equal": "other"}
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "If you've selected 'Other' for the previous question: "
+                ]
+            }
+        }
+    }
+]
