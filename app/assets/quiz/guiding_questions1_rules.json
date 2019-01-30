@@ -2,8 +2,12 @@
     {
         "conditions": {
             "What is the preferred feedstock goal or goals? Please select all that apply.": {
-                "not":
-                    {"equal": "other"}
+                "or": [
+                        "empty",
+                        {"not":
+                          {"includes": "other"}
+                        }
+                ]
             }
         },
         "event": {
