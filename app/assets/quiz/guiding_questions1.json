@@ -202,7 +202,8 @@
                                             "FMD",
                                             "C2C",
                                             "Safer Choice",
-                                            "Energy Start"
+                                            "Energy Start",
+                                            "Other"
                                         ]
                                     },
                                     "uniqueItems": "true"
