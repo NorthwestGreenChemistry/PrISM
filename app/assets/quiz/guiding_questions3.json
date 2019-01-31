@@ -7,7 +7,7 @@
             "type": "object",
             "properties": {
                 "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.": {
-                    "description" : "See Resource 1 - Chemical Inventory",
+                    "description" : "See Resource 1 - Chemical Inventory - for suggestions and guidance on building a Chemical Inventory for your product.",
                     "type": "string"
                 },
                 "Are the chemicals used during production and manufacturing hazardous?": {
