@@ -1,5 +1,5 @@
 ## Goal
-To encourage transparency, to identify opportunities for improvement, to avoid unacceptable tradeoffs and to ensure consideration of all of the sustainable design principles. 
+To encourage transparency, to identify opportunities for improvement and data gaps that need to be researched, to avoid unacceptable tradeoffs and to ensure consideration of all of the PASS principles. 
 
 ## Introduction
 In the introduction at the start of PrISM, we discussed the importance of taking a holistic approach to product design and using PASS Principles to guide holistic design. Product design as a creative endeavor requires tradeoffs. While tradeoffs are inevitable and challenging, there are different ways to manage them.
