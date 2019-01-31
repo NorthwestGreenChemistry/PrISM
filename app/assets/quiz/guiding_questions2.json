@@ -77,7 +77,7 @@
             "type": "string"
         },
         "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?": {
-            "enum": ["Yes", "No","I don't know"],
+            "enum": ["Downcycling", "Maintains value","Upcycling","I don't know"],
             "type": "string"
         },
         "Have you requested information about the purity of the material?": {
