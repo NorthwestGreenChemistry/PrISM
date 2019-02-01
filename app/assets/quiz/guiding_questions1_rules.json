@@ -1,7 +1,7 @@
 [
     {
         "conditions": {
-            "What is the preferred feedstock goal or goals? Please select all that apply.": {
+            "feedstock.What is the preferred feedstock goal or goals? Please select all that apply.": {
                 "or": [
                         "empty",
                         {"not":
@@ -14,7 +14,7 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "If you've selected 'Bio-based' for the previous question:"
+                    "feedstock.If you've selected 'Bio-based' for the previous question:"
                 ]
             }
         }
