@@ -2,7 +2,8 @@
     "title": "Sustainable Product Design for the Use Phase",
     "type": "object",
     "properties": {
-        "How long is this product designed to be used for? For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.": {
+        "How long is this product designed to be used for?": {
+            "description": "For example, LEGO blocks are designed for a long use phase, even multi-generational: Blocks made today fit those made more than 50 years ago.",
             "type": "string",
             "enum": [
                 "Very short use phase (<1 day)",
