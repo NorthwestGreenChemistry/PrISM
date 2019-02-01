@@ -8,7 +8,7 @@
     "Are there data gaps that must be filled in order for you to make more informed decisions for product design?": {
         "ui:widget": "textarea"
     },
-    "What 'hot spots' or areas of high negative impact,  have become apparent to you?": {
+    "What 'hot spots' or areas of high negative impact, have become apparent to you?": {
         "ui:widget": "textarea"
     },
     "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?": {

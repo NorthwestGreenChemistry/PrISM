@@ -3,18 +3,23 @@
     "type": "object",
     "properties": {
         "Does this product meet the sustainable design objectives you set out at the beginning?": {
+            "description": "Review your answers to the Guiding Questions in Step 1: Design Goals. Which of these objectives have you met? Which need the most improvements? Which objectives are you not sure about because you are missing data?",
             "type": "string"
         },
         "What tradeoffs have become apparent to you?": {
+            "description": "For example, you may be able to switch to a recycled feedstock, but you're concerned about potential impurities in the recycled material compared to virgin. What actions could you take to resolve these tradeoffs, or are they inevitable?",
             "type": "string"
         },
         "Are there data gaps that must be filled in order for you to make more informed decisions for product design?": {
+            "description": "Review the questions you skipped and the ones that you answered, I don't know, to. Which of these will inform your upcoming decisions and need to be researched? What steps are needed to fill in these data gaps? Are there any answers you aren't very sure of, and would like to confirm?",
             "type": "string"
         },
-        "What 'hot spots' or areas of high negative impact,  have become apparent to you?": {
+        "What 'hot spots' or areas of high negative impact, have become apparent to you?": {
+            "description": "For example, look through your answers for the use and generation of hazardous chemicals. Look for waste generated. How are users disposing of your product(s)? Is it limited by available infrastructure, or are significant quantities being littered? What prevents your product from participating in the circular economy? What are the first steps you need to take to begin to address these hot spots?",
             "type": "string"
         },
         "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?" : {
+            "description": "Consider every step, from resource extraction to disposal at end of life. How could your product better support a circular economy? Which impacts can be mitigated, reduced, or eliminated, and which are inevitable without further research and development? What are the next steps you need to take to make these improvements?",
             "type": "string"
         }
     }

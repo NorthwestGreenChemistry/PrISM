@@ -61,4 +61,10 @@ Sometimes it makes sense to phase out a problematic product and to start over. O
 
 ![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/decision-logic.png)
 
-[Learn more about Decision Analysis on page 48 of the IC2 Guide]("http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf")
+[Learn more about Decision Analysis on page 48 of the IC2 Guide](http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf)
+
+## Reviewing your answers
+
+We recommend generating a pdf report and having it open in another window, or printing it out for easy viewing, while answering these questions. You will be reviewing your previous answers and working to identify data gaps, hot spots, and your next steps for product optimization. 
+
+You can generate a pdf report by clicking on the "save and close" button at the bottom of this page, or the "close and return to PrISM" button at the top of this page. Then, on the main dashboard, click on the "generate report PDF" button. You will be prompted to designate a file name and save location. You can then open the pdf in your standard pdf viewer, and either keep the window open side-by-side or print it.
