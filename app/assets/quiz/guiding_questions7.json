@@ -21,6 +21,10 @@
         "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?" : {
             "description": "Consider every step, from resource extraction to disposal at end of life. How could your product better support a circular economy? Which impacts can be mitigated, reduced, or eliminated, and which are inevitable without further research and development? What are the next steps you need to take to make these improvements?",
             "type": "string"
+        },
+        "Describe how your products achieves each of the four PASS principles:": {
+            "description": "PASS (Produce Assessment, Safety, and Sustainability) Principles provide a vision that any sustainable product: 1) Supports a circular economy, 2) Creates life-friendly chemistry, 3) Restores natural capital, and 4) Supports a just and inclusive society. How does your product realize this vision? What are the next actions you need to take to bring your product further into alignment with these principles?",
+            "type": "string" 
         }
     }
 }

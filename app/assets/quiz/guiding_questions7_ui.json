@@ -13,5 +13,8 @@
     },
     "What changes could you make across the life cycle of the product that would improve individual impacts and the overall evaluation of the product?": {
         "ui:widget": "textarea"
+    },
+    "Describe how your products achieves each of the four PASS principles:": {
+        "ui:widget": "textarea"
     }
 }
