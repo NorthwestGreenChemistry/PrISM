@@ -340,6 +340,24 @@ class Data {
         localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
     }
 
+    deleteProduct = (id) => {
+        if (id === undefined || id === '') {
+            return new Error;
+        }
+
+        let productTable = JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+
+        if (!productTable || !productTable[id]) {
+            return new Error;
+        }
+        delete productTable[id];
+
+        localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
+
+        localStorage.removeItem(id);
+        localStorage.removeItem("pdf-" + id);
+    }
+
     // object id key and value prettyname
     getAllProducts = () => {
         return getNonNull(JSON.parse(localStorage.getItem(ALL_PRODUCTS)), {});
