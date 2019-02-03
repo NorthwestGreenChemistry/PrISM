@@ -353,6 +353,8 @@ class Data {
 
         productTable[id] = prettyName;
         localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
+
+        return id;
     }
 
     deleteProduct = (id) => {
@@ -411,10 +413,10 @@ class Data {
             return new Error;
         }
 
-        const id = product.product.id;
+        let id = product.product.id;
         const name = product.product.name;
 
-        this.createProduct(id, name);
+        id = this.createProduct(id, name);
 
         localStorage.setItem(id, JSON.stringify(product.responses));
 

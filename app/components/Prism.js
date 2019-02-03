@@ -512,7 +512,7 @@ export default class Prism extends Component<Props> {
 
                         <Button onClick={this.navNextHandler}
                                 className={styles.rightButton}
-                                variant="contained" color="primary">
+                                variant="contained" color="primary" id="deleteButton">
                             Save and {this.state.displayStep < 7 ? 'Continue' : 'Close'} &nbsp;
                             <i className = "fa fa-arrow-right fa-3x" />
                         </Button>
