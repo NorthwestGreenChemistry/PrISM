@@ -68,8 +68,9 @@ export default class Prism extends Component<Props> {
     }
 
     handleClick = (step) => {
-        console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
-        if (!this.state.activeProductId || this.state.activeProductId === "") {
+        if (!this.state.activeProductId
+            || this.state.activeProductId === ""
+            || this.state.activeProductId === "new-product") {
             this.setState({ alertOpen: true })
             return;
         }
@@ -97,7 +98,8 @@ export default class Prism extends Component<Props> {
         console.log('inside of handle dropdown change', event.target.value);
         this.setState({
             dropdownSelection: event.target.value,
-            activeProductId: event.target.value
+            activeProductId: event.target.value,
+            alertOpen: false
         })
     }
 
