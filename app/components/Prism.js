@@ -31,6 +31,7 @@ import applyRules from 'react-jsonschema-form-conditionals'
 import Engine from 'json-rules-engine-simplified'
 import ReactMarkdown from 'react-markdown'
 import electron from 'electron'
+import NWChemLogo from '../assets/ngc-logo.png';
 
 
 const ipcRenderer = electron.ipcRenderer;
@@ -341,52 +342,58 @@ export default class Prism extends Component<Props> {
 
         return (
             <div className={styles.root}>
-                <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
-                    <i className="fa fa-arrow-left fa-3x" />
-                </Button>
+                <div className={styles.headerBar}>
 
-                {/* PRODUCT MENU */}
-                <FormControl variant="outlined" className={styles.selector}>
-                    <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
-                        Product Name
-                    </InputLabel>
-                    <Select
-                        className={styles.selectorDropdown}
-                        value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange}
-                        input={
-                            <OutlinedInput
-                                labelWidth={120}
-                                value="Product Name"
-                                name="product_name"
-                                id="product_name"
-                            />
-                        }
-                    >
-                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
-                            return <MenuItem className={styles.selectorOption} key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        }) : null }
-                        <MenuItem className={styles.selectorOption} value="new-product">--New Product--</MenuItem>
-                    </Select>
-                </FormControl>
+                    <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
+                        <i className="fa fa-arrow-left fa-3x" />
+                    </Button>
 
-                {this.state.dropdownSelection === 'new-product' ?
+                    <img src={NWChemLogo} className={styles.logoImg}/>
+
+                    {/* PRODUCT MENU */}
                     <FormControl variant="outlined" className={styles.selector}>
-                        <TextField
-                            label="Product Name"
-                            className={styles.createInput}
-                            value={this.state.productName}
-                            onChange={this.handleProductNameChange}
-                        />
-                        <Button className={styles.createButton}
-                                variant="contained" color="primary"
-                                onClick={this.createProduct}
+                        <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
+                            Product Name
+                        </InputLabel>
+                        <Select
+                            className={styles.selectorDropdown}
+                            value={this.state.dropdownSelection}
+                            onChange={this.handleDropdownChange}
+                            input={
+                                <OutlinedInput
+                                    labelWidth={120}
+                                    value="Product Name"
+                                    name="product_name"
+                                    id="product_name"
+                                />
+                            }
                         >
-                            Create
-                        </Button>
-                    </FormControl> : null
-                }
+                            {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
+                                return <MenuItem className={styles.selectorOption} key={key} value={key}>{this.state.products[key]}</MenuItem>
+                            }) : null }
+                            <MenuItem className={styles.selectorOption} value="new-product">--New Product--</MenuItem>
+                        </Select>
+                    </FormControl>
 
+                    {this.state.dropdownSelection === 'new-product' ?
+                        <FormControl variant="outlined" className={styles.selector}>
+                            <TextField
+                                label="Product Name"
+                                className={styles.createInput}
+                                value={this.state.productName}
+                                onChange={this.handleProductNameChange}
+                            />
+                            <Button className={styles.createButton}
+                                    variant="contained" color="primary"
+                                    onClick={this.createProduct}
+                            >
+                                Create
+                            </Button>
+                        </FormControl> : null
+                    }
+
+
+                </div>
                 {/* PRISM WHEEL & STEPS */}
                 <Grid container spacing={0}>
                     <Grid className={styles.wheel} item xs={7}>
