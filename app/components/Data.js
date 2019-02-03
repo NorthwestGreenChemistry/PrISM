@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const fs = require('fs');
 
 
 type Props = {};
@@ -325,6 +326,15 @@ class Data {
         return stepObj.content;
     }
 
+    //generates random guuid, all credit goes to
+    //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
+    uuidv4 = () => {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
     createProduct = (id, prettyName) => {
         if (id === undefined || id === '') {
             return new Error;
@@ -336,8 +346,81 @@ class Data {
             productTable = {};
         }
 
+        // If there's an id conflict make a new one
+        while (productTable[id]) {
+            id = this.uuidv4();
+        }
+
         productTable[id] = prettyName;
         localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
+
+        return id;
+    }
+
+    deleteProduct = (id) => {
+        if (id === undefined || id === '') {
+            return new Error;
+        }
+
+        let productTable = JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+
+        if (!productTable || !productTable[id]) {
+            return new Error;
+        }
+        delete productTable[id];
+
+        localStorage.setItem(ALL_PRODUCTS, JSON.stringify(productTable));
+
+        localStorage.removeItem(id);
+        localStorage.removeItem("pdf-" + id);
+    }
+
+    exportProduct = (id, file) => {
+        if (id === undefined || id === '') {
+            return new Error;
+        }
+
+        let productTable = JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+        if (!productTable) {
+            return new Error;
+        }
+
+        const product = localStorage.getItem(id);
+
+        let exportData = {};
+        exportData['product'] = {'name': productTable[id], 'id': id};
+        exportData['responses'] = JSON.parse(product);
+
+        try {
+            fs.writeFileSync(file, JSON.stringify(exportData, null, 2), 'utf-8');
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
+    importProduct = (file) => {
+        console.log(file);
+        try {
+            let product = JSON.parse(fs.readFileSync(file));
+            return this.importProductData(product);
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
+    importProductData = (product) => {
+        if (!product) {
+            return new Error;
+        }
+
+        let id = product.product.id;
+        const name = product.product.name;
+
+        id = this.createProduct(id, name);
+
+        localStorage.setItem(id, JSON.stringify(product.responses));
+
+        return id;
     }
 
     // object id key and value prettyname

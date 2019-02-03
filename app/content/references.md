@@ -8,7 +8,7 @@
 6. [World Forum on Natural Capital](https://naturalcapitalforum.com/about/)
 7. [Lithner, Delilah. 2011. Environmental and Health Hazards of Chemicals in Plastic Polymers and Products. Ph.D. thesis. Dept. of Plant and Environmental Sciences. University of Gothenburg.](https://www.subsport.eu/wp-content/uploads/2011/10/Lithner_chemicals_in_plastic.pdf)
 8. [Freeman R. E. (1984), Strategic Management: A Stakeholder Approach. Pitman, Boston, MA.](https://books.google.com/books?id=NpmA_qEiOpkC&lpg=PP1&pg=PP1#v=onepage&q&f=false)
-9. [Environmental Protection Agency (EPA). (n.d.).](http://www.epa.gov/compliance/environmentaljustice/index.html).
-10. Cole, L. W., & Foster, S. R. (2001). From the ground up: Environmental racism and the rise of the environmental justice movement. NYC: NYU Press.
-11. Schlosberg, D. (2009). Defining environmental justice: Theories, movements, and nature. Oxford University Press.							
+9. [Environmental Protection Agency (EPA). (n.d.).]
+10.  Cole, L. W., & Foster, S. R. (2001). [From the ground up: Environmental racism and the rise of the environmental justice movement. NYC: NYU Press](https://nyupress.org/books/9780814715376/).
+11. Schlosberg, D. (2009). [Defining environmental justice: Theories, movements, and nature](http://www.oxfordscholarship.com/view/10.1093/acprof:oso/9780199286294.001.0001/acprof-9780199286294). Oxford University Press.							
 							

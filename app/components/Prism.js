@@ -16,7 +16,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
-
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
 import Snackbar from '@material-ui/core/Snackbar'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
@@ -27,6 +31,7 @@ import applyRules from 'react-jsonschema-form-conditionals'
 import Engine from 'json-rules-engine-simplified'
 import ReactMarkdown from 'react-markdown'
 import electron from 'electron'
+import NWChemLogo from '../assets/ngc-logo.png';
 
 
 const ipcRenderer = electron.ipcRenderer;
@@ -44,6 +49,7 @@ export default class Prism extends Component<Props> {
     data = Data.getInstance()
     state = {
         alertOpen: false,
+        deleteDialogOpen: false,
         modalIsOpen: false,
         displayStep: 0,
         dropdownSelection: "",
@@ -57,13 +63,16 @@ export default class Prism extends Component<Props> {
     submitAnswersCallback = null
 
     constructor(props) {
-        super(props)
-        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
+        super(props);
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
+        ipcRenderer.on('EXPORT', this.exportProduct.bind(this));
+        ipcRenderer.on('IMPORT', this.importProduct.bind(this));
     }
 
     handleClick = (step) => {
-        console.log('ACTIVE PRODUCT ID', this.state.activeProductId);
-        if (!this.state.activeProductId || this.state.activeProductId === "") {
+        if (!this.state.activeProductId
+            || this.state.activeProductId === ""
+            || this.state.activeProductId === "new-product") {
             this.setState({ alertOpen: true })
             return;
         }
@@ -91,7 +100,8 @@ export default class Prism extends Component<Props> {
         console.log('inside of handle dropdown change', event.target.value);
         this.setState({
             dropdownSelection: event.target.value,
-            activeProductId: event.target.value
+            activeProductId: event.target.value,
+            alertOpen: false
         })
     }
 
@@ -100,7 +110,7 @@ export default class Prism extends Component<Props> {
     }
 
     createProduct = () => {
-        let id = this.uuidv4()
+        let id = this.data.uuidv4()
         this.data.createProduct(id, this.state.productName)
         console.log('creating product', this.state.productName);
         console.log('all products', this.data.getAllProducts());
@@ -114,6 +124,29 @@ export default class Prism extends Component<Props> {
         })
     }
 
+    exportProduct = (event, file) => {
+        if (this.state.activeProductId && this.state.activeProductId !== "new-product") {
+            this.data.exportProduct(this.state.activeProductId, file);
+        } else {
+            this.setState({
+                alertOpen: true
+            });
+        }
+    }
+
+    importProduct = (event, files) => {
+        const id = this.data.importProduct(files[0]);
+
+        this.setState({
+            products: {
+                ...this.data.getAllProducts(),
+            },
+            activeProductId: id,
+            dropdownSelection: id,
+            productName: ""
+        });
+    }
+
     makePDF = () => {
         let pdfData = this.data.getPDFContent(this.state.activeProductId);
         if (!pdfData) {
@@ -122,6 +155,27 @@ export default class Prism extends Component<Props> {
         }
         let pdf = new Pdf(pdfData);
         pdf.savePdf();
+    }
+
+    warnDeleteProduct = () => {
+        this.setState({deleteDialogOpen: true});
+    }
+
+    deleteProduct = () => {
+        this.setState({deleteDialogOpen: false});
+        this.data.deleteProduct(this.state.activeProductId);
+        this.setState({
+            products: {
+                ...this.data.getAllProducts()
+            },
+            activeProductId: "",
+            dropdownSelection: "",
+            productName: ""
+        });
+    }
+
+    handleDeleteClose = () => {
+        this.setState({deleteDialogOpen: false});
     }
 
     stepsData = () => {
@@ -153,7 +207,6 @@ export default class Prism extends Component<Props> {
         this.loadMDFiles(prevStep);
         this.loadSchemaFiles(prevStep);
     }
-
 
 
     // goes to next page in the navigation, does not save answers
@@ -217,15 +270,6 @@ export default class Prism extends Component<Props> {
             markdownFiles: [],
             activeForm: {},
         })
-    }
-
-    //generates random guuid, all credit goes to
-    //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
-    uuidv4 = () => {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
     }
 
     wheelClick = (step) => {
@@ -315,52 +359,58 @@ export default class Prism extends Component<Props> {
 
         return (
             <div className={styles.root}>
-                <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
-                    <i className="fa fa-arrow-left fa-3x" />
-                </Button>
+                <div className={styles.headerBar}>
 
-                {/* PRODUCT MENU */}
-                <FormControl variant="outlined" className={styles.selector}>
-                    <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
-                        Product Name
-                    </InputLabel>
-                    <Select
-                        className={styles.selectorDropdown}
-                        value={this.state.dropdownSelection}
-                        onChange={this.handleDropdownChange}
-                        input={
-                            <OutlinedInput
-                                labelWidth={120}
-                                value="Product Name"
-                                name="product_name"
-                                id="product_name"
-                            />
-                        }
-                    >
-                        {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
-                            return <MenuItem className={styles.selectorOption} key={key} value={key}>{this.state.products[key]}</MenuItem>
-                        }) : null }
-                        <MenuItem className={styles.selectorOption} value="new-product">--New Product--</MenuItem>
-                    </Select>
-                </FormControl>
+                    <Button component={Link} to={routes.HOME} className={styles.backButton} color="default" data-tid="backButton" >
+                        <i className="fa fa-arrow-left fa-3x" />
+                    </Button>
 
-                {this.state.dropdownSelection === 'new-product' ?
+                    <img src={NWChemLogo} className={styles.logoImg}/>
+
+                    {/* PRODUCT MENU */}
                     <FormControl variant="outlined" className={styles.selector}>
-                        <TextField
-                            label="Product Name"
-                            className={styles.createInput}
-                            value={this.state.productName}
-                            onChange={this.handleProductNameChange}
-                        />
-                        <Button className={styles.createButton}
-                                variant="contained" color="primary"
-                                onClick={this.createProduct}
+                        <InputLabel htmlFor="product_name" className={styles.defaultLabel}>
+                            Product Name
+                        </InputLabel>
+                        <Select
+                            className={styles.selectorDropdown}
+                            value={this.state.dropdownSelection}
+                            onChange={this.handleDropdownChange}
+                            input={
+                                <OutlinedInput
+                                    labelWidth={120}
+                                    value="Product Name"
+                                    name="product_name"
+                                    id="product_name"
+                                />
+                            }
                         >
-                            Create
-                        </Button>
-                    </FormControl> : null
-                }
+                            {this.state.products != undefined ? Object.keys(this.state.products).map((key) => {
+                                return <MenuItem className={styles.selectorOption} key={key} value={key}>{this.state.products[key]}</MenuItem>
+                            }) : null }
+                            <MenuItem className={styles.selectorOption} value="new-product">--New Product--</MenuItem>
+                        </Select>
+                    </FormControl>
 
+                    {this.state.dropdownSelection === 'new-product' ?
+                        <FormControl variant="outlined" className={styles.selector}>
+                            <TextField
+                                label="Product Name"
+                                className={styles.createInput}
+                                value={this.state.productName}
+                                onChange={this.handleProductNameChange}
+                            />
+                            <Button className={styles.createButton}
+                                    variant="contained" color="primary"
+                                    onClick={this.createProduct}
+                            >
+                                Create
+                            </Button>
+                        </FormControl> : null
+                    }
+
+
+                </div>
                 {/* PRISM WHEEL & STEPS */}
                 <Grid container spacing={0}>
                     <Grid className={styles.wheel} item xs={7}>
@@ -387,6 +437,12 @@ export default class Prism extends Component<Props> {
                                 variant="contained" color="default">
                             Generate Report PDF
                         </Button>
+
+                        {(this.state.dropdownSelection !== "" && this.state.dropdownSelection !== "new-product") ?
+                        <Button onClick={this.warnDeleteProduct} className={styles.button}
+                            variant="contained" color="default" id="deleteButton">
+                            Delete Product
+                        </Button> : null }
                     </Grid>
                 </Grid>
 
@@ -495,6 +551,22 @@ export default class Prism extends Component<Props> {
                         </IconButton>,
                     ]}
                 />
+                {/* Dialog warning for deleting items */}
+                <Dialog
+                    open={this.state.deleteDialogOpen}
+                    onClose={this.handleDeleteClose}
+                >
+                    <DialogTitle>{'Are you sure you want to delete product "' + this.state.products[this.state.dropdownSelection] + '"?'}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            You won't be able to undo this action.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.deleteProduct}>Yes</Button>
+                        <Button onClick={this.handleDeleteClose}>No</Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         );
     }

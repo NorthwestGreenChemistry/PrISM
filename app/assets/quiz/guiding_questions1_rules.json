@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "conditions": {
+            "feedstock.What is the preferred feedstock goal or goals? Please select all that apply": {
+                "or": [
+                        "empty",
+                        {"not":
+                          {"includes": "Bio-based"}
+                        }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "feedstock.If you've selected 'Bio-based' for the previous question:"
+                ]
+            }
+        }
+    }
+]
