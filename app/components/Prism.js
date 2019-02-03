@@ -16,7 +16,11 @@ import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
-
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
 import Snackbar from '@material-ui/core/Snackbar'
 import MenuItem from '@material-ui/core/MenuItem'
 import TextField from '@material-ui/core/TextField'
@@ -44,6 +48,7 @@ export default class Prism extends Component<Props> {
     data = Data.getInstance()
     state = {
         alertOpen: false,
+        deleteDialogOpen: false,
         modalIsOpen: false,
         displayStep: 0,
         dropdownSelection: "",
@@ -122,6 +127,27 @@ export default class Prism extends Component<Props> {
         }
         let pdf = new Pdf(pdfData);
         pdf.savePdf();
+    }
+
+    warnDeleteProduct = () => {
+        this.setState({deleteDialogOpen: true});
+    }
+
+    deleteProduct = () => {
+        this.handleDeleteClose();
+        this.data.deleteProduct(this.state.activeProductId);
+        this.setState({
+            products: {
+                ...this.data.getAllProducts()
+            },
+            activeProductId: "",
+            dropdownSelection: "",
+            productName: ""
+        });
+    }
+
+    handleDeleteClose = () => {
+        this.setState({deleteDialogOpen: false});
     }
 
     stepsData = () => {
@@ -387,6 +413,12 @@ export default class Prism extends Component<Props> {
                                 variant="contained" color="default">
                             Generate Report PDF
                         </Button>
+
+                        {(this.state.dropdownSelection !== "" && this.state.dropdownSelection !== "new-product") ?
+                        <Button onClick={this.warnDeleteProduct} className={styles.button}
+                            variant="contained" color="default">
+                            Delete Product
+                        </Button> : null }
                     </Grid>
                 </Grid>
 
@@ -495,6 +527,22 @@ export default class Prism extends Component<Props> {
                         </IconButton>,
                     ]}
                 />
+                {/* Dialog warning for deleting items */}
+                <Dialog
+                    open={this.state.deleteDialogOpen}
+                    onClose={this.handleDeleteClose}
+                >
+                    <DialogTitle>{'Are you sure you want to delete product "' + this.state.products[this.state.dropdownSelection] + '"?'}</DialogTitle>
+                    <DialogContent>
+                        <DialogContentText>
+                            You won't be able to undo this action.
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={this.deleteProduct}>Yes</Button>
+                        <Button onClick={this.handleDeleteClose}>No</Button>
+                    </DialogActions>
+                </Dialog>
             </div>
         );
     }
