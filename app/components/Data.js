@@ -359,7 +359,7 @@ class Data {
         localStorage.removeItem("pdf-" + id);
     }
 
-    exportProduct = (id) => {
+    exportProduct = (id, file) => {
         if (id === undefined || id === '') {
             return new Error;
         }
@@ -377,7 +377,7 @@ class Data {
         exportData['responses'] = JSON.parse(product);
 
         try {
-            fs.writeFileSync('PrISM' + productTable[id] + '.json', JSON.stringify(exportData, null, 2), 'utf-8');
+            fs.writeFileSync(file, JSON.stringify(exportData, null, 2), 'utf-8');
         } catch (ex) {
             console.log(ex);
         }

@@ -105,13 +105,19 @@ export default class MenuBuilder {
                     }
                 },
                 {
-                    label: 'Export Data',
+                    label: 'Export Product',
                     click: () => {
-                        this.mainWindow.webContents.send('EXPORT');
+                        dialog.showSaveDialog({
+                            defaultPath: "PrISMProduct.json"
+                        }, (file) => {
+                            if (file !== undefined) {
+                                this.mainWindow.webContents.send('EXPORT', file);
+                            }
+                        });
                     }
                 },
                 {
-                    label: 'Import Data',
+                    label: 'Import Product',
                     click: () => {
                         dialog.showOpenDialog({
                             properties: ["openFile"]

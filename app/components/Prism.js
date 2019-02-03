@@ -124,8 +124,14 @@ export default class Prism extends Component<Props> {
         })
     }
 
-    exportProduct = () => {
-        this.data.exportProduct(this.state.activeProductId);
+    exportProduct = (event, file) => {
+        if (this.state.activeProductId && this.state.activeProductId !== "new-product") {
+            this.data.exportProduct(this.state.activeProductId, file);
+        } else {
+            this.setState({
+                alertOpen: true
+            });
+        }
     }
 
     importProduct = (event, files) => {
