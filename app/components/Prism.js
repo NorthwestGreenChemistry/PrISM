@@ -110,7 +110,7 @@ export default class Prism extends Component<Props> {
     }
 
     createProduct = () => {
-        let id = this.uuidv4()
+        let id = this.data.uuidv4()
         this.data.createProduct(id, this.state.productName)
         console.log('creating product', this.state.productName);
         console.log('all products', this.data.getAllProducts());
@@ -209,7 +209,6 @@ export default class Prism extends Component<Props> {
     }
 
 
-
     // goes to next page in the navigation, does not save answers
     navNext = () => {
         let nextStep = this.data.getNextStep(this.state.displayStep);
@@ -271,15 +270,6 @@ export default class Prism extends Component<Props> {
             markdownFiles: [],
             activeForm: {},
         })
-    }
-
-    //generates random guuid, all credit goes to
-    //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
-    uuidv4 = () => {
-        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-            return v.toString(16);
-        });
     }
 
     wheelClick = (step) => {

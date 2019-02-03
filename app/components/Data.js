@@ -326,6 +326,15 @@ class Data {
         return stepObj.content;
     }
 
+    //generates random guuid, all credit goes to
+    //https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript#answer-2117523
+    uuidv4 = () => {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
     createProduct = (id, prettyName) => {
         if (id === undefined || id === '') {
             return new Error;
@@ -335,6 +344,11 @@ class Data {
 
         if (!productTable) {
             productTable = {};
+        }
+
+        // If there's an id conflict make a new one
+        while (productTable[id]) {
+            id = this.uuidv4();
         }
 
         productTable[id] = prettyName;
@@ -370,7 +384,6 @@ class Data {
         }
 
         const product = localStorage.getItem(id);
-        // What about if they have no answers?
 
         let exportData = {};
         exportData['product'] = {'name': productTable[id], 'id': id};
@@ -386,7 +399,7 @@ class Data {
     importProduct = (file) => {
         console.log(file);
         try {
-            let product = fs.readFileSync(file);
+            let product = JSON.parse(fs.readFileSync(file));
             return this.importProductData(product);
         } catch (ex) {
             console.log(ex);
@@ -397,8 +410,6 @@ class Data {
         if (!product) {
             return new Error;
         }
-
-        product = JSON.parse(product);
 
         const id = product.product.id;
         const name = product.product.name;
