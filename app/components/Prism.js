@@ -440,7 +440,7 @@ export default class Prism extends Component<Props> {
 
                         {(this.state.dropdownSelection !== "" && this.state.dropdownSelection !== "new-product") ?
                         <Button onClick={this.warnDeleteProduct} className={styles.button}
-                            variant="contained" color="default">
+                            variant="contained" color="default" id="deleteButton">
                             Delete Product
                         </Button> : null }
                     </Grid>
@@ -512,7 +512,7 @@ export default class Prism extends Component<Props> {
 
                         <Button onClick={this.navNextHandler}
                                 className={styles.rightButton}
-                                variant="contained" color="primary" id="deleteButton">
+                                variant="contained" color="primary">
                             Save and {this.state.displayStep < 7 ? 'Continue' : 'Close'} &nbsp;
                             <i className = "fa fa-arrow-right fa-3x" />
                         </Button>

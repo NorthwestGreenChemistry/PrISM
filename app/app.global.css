@@ -24,6 +24,10 @@ h2 {
     color: #fff;
 }
 
+#deleteButton {
+    margin-left: 10px;
+}
+
 li {
     text-align: left;
 }
