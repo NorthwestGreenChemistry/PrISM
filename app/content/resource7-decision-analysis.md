@@ -53,4 +53,4 @@ The Hybrid Framework combines elements of the Sequential approach and the Simult
 Using the parameters of Hazard, Performance, Cost & Availability and Exposure, the above flow chart illustrates how the Hybrid approach to decision support would help to identify preferred alternatives.
 
 ### Tools and Resources
-[Learn more about Decision Analysis on page 48 of the IC2 Guide, Image Source](http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf)
+[Learn more about Decision Analysis in the IC2 Alternatives Assessment Guide. Images on this page are sourced from the Guide.](http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf)
