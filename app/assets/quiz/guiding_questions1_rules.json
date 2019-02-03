@@ -1,7 +1,7 @@
 [
     {
         "conditions": {
-            "feedstock.What is the preferred feedstock goal or goals? Please select all that apply.": {
+            "feedstock.What is the preferred feedstock goal or goals? Please select all that apply": {
                 "or": [
                         "empty",
                         {"not":

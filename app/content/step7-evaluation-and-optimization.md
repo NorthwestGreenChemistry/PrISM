@@ -61,7 +61,9 @@ Sometimes it makes sense to phase out a problematic product and to start over. O
 
 ![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/decision-logic.png)
 
-[Learn more about Decision Analysis on page 48 of the IC2 Guide](http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf)
+[Image source: Page 18 (page 28 pdf) of the IC2 Alternatives Assessment Guide](http://theic2.org/article/download-pdf/file_name/IC2_AA_Guide_Version_1.1.pdf)
+
+[Learn more about decision analysis in Resource 7 - Decision Analysis](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md)
 
 ## Reviewing your answers
 
