@@ -160,6 +160,54 @@ export default class MenuBuilder {
                 }
             ]
         };
+        const subMenuResources = {
+            label: 'Resources',
+            submenu: [
+                {
+                    label: '1. Chemical Inventory',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md');
+                    }
+                },
+                {
+                    label: '2. Chemical Hazard Assessment',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md');
+                    }
+                },
+                {
+                    label: '3. Exposure Assessment',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource3-exposure-assessment.md');
+                    }
+                },
+                {
+                    label: '4. Stakeholder Considerations and Social Impacts',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource4-stakeholder-considerations-and-social-impacts.md');
+                    }
+                },
+                {
+                    label: '5. Social and Environmental Justice',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource5-social-and-env-justice.md');
+                    }
+                },
+                {
+                    label: '6. Life Cycle Considerations',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md');
+                    }
+                },
+                {
+                    label: '7. Decision Analysis',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md');
+                    }
+                }
+            ]
+        };
+
         const subMenuWindow = {
             label: 'Window',
             submenu: [
@@ -185,7 +233,7 @@ export default class MenuBuilder {
                             defaultId: 0,
                             title:'hey',
                             message: pjson.productName,
-                            detail: 'Version: ' + pjson.version + 
+                            detail: 'Version: ' + pjson.version +
                                     '\nDescription: ' + pjson.description
                         });
                     }
@@ -222,7 +270,7 @@ export default class MenuBuilder {
         const subMenuView =
             process.env.NODE_ENV === 'development' ? subMenuViewDev : subMenuViewProd;
 
-        return [subMenuAbout, subMenuFile, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp];
+        return [subMenuAbout, subMenuFile, subMenuEdit, subMenuView, subMenuWindow, subMenuHelp, subMenuResources];
     }
 
     buildDefaultTemplate() {
