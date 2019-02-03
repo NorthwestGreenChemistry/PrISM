@@ -63,8 +63,10 @@ export default class Prism extends Component<Props> {
     submitAnswersCallback = null
 
     constructor(props) {
-        super(props)
-        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this))
+        super(props);
+        ipcRenderer.on('SAVE_PDF', this.makePDF.bind(this));
+        ipcRenderer.on('EXPORT', this.exportProduct.bind(this));
+        ipcRenderer.on('IMPORT', this.importProduct.bind(this));
     }
 
     handleClick = (step) => {
@@ -122,6 +124,23 @@ export default class Prism extends Component<Props> {
         })
     }
 
+    exportProduct = () => {
+        this.data.exportProduct(this.state.activeProductId);
+    }
+
+    importProduct = (event, files) => {
+        const id = this.data.importProduct(files[0]);
+
+        this.setState({
+            products: {
+                ...this.data.getAllProducts(),
+            },
+            activeProductId: id,
+            dropdownSelection: id,
+            productName: ""
+        });
+    }
+
     makePDF = () => {
         let pdfData = this.data.getPDFContent(this.state.activeProductId);
         if (!pdfData) {
@@ -137,7 +156,7 @@ export default class Prism extends Component<Props> {
     }
 
     deleteProduct = () => {
-        this.handleDeleteClose();
+        this.setState({deleteDialogOpen: false});
         this.data.deleteProduct(this.state.activeProductId);
         this.setState({
             products: {

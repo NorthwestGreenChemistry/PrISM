@@ -101,7 +101,25 @@ export default class MenuBuilder {
                     label: 'Generate PDF Report',
                     accelerator: 'Command+Shift+E',
                     click: () => {
-                        this.mainWindow.webContents.send('SAVE_PDF')
+                        this.mainWindow.webContents.send('SAVE_PDF');
+                    }
+                },
+                {
+                    label: 'Export Data',
+                    click: () => {
+                        this.mainWindow.webContents.send('EXPORT');
+                    }
+                },
+                {
+                    label: 'Import Data',
+                    click: () => {
+                        dialog.showOpenDialog({
+                            properties: ["openFile"]
+                        }, (files) => {
+                            if (files !== undefined) {
+                                this.mainWindow.webContents.send('IMPORT', files);
+                            }
+                        })
                     }
                 }
             ]

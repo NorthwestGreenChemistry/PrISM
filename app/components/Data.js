@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+const fs = require('fs');
 
 
 type Props = {};
@@ -356,6 +357,57 @@ class Data {
 
         localStorage.removeItem(id);
         localStorage.removeItem("pdf-" + id);
+    }
+
+    exportProduct = (id) => {
+        if (id === undefined || id === '') {
+            return new Error;
+        }
+
+        let productTable = JSON.parse(localStorage.getItem(ALL_PRODUCTS));
+        if (!productTable) {
+            return new Error;
+        }
+
+        const product = localStorage.getItem(id);
+        // What about if they have no answers?
+
+        let exportData = {};
+        exportData['product'] = {'name': productTable[id], 'id': id};
+        exportData['responses'] = JSON.parse(product);
+
+        try {
+            fs.writeFileSync('PrISM' + productTable[id] + '.json', JSON.stringify(exportData, null, 2), 'utf-8');
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
+    importProduct = (file) => {
+        console.log(file);
+        try {
+            let product = fs.readFileSync(file);
+            return this.importProductData(product);
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
+    importProductData = (product) => {
+        if (!product) {
+            return new Error;
+        }
+
+        product = JSON.parse(product);
+
+        const id = product.product.id;
+        const name = product.product.name;
+
+        this.createProduct(id, name);
+
+        localStorage.setItem(id, JSON.stringify(product.responses));
+
+        return id;
     }
 
     // object id key and value prettyname
