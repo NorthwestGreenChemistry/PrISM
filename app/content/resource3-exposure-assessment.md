@@ -2,7 +2,7 @@
 # Resource 3: Exposure Assessment
 
 ## Goal
-To understand potential exposure scenarios.  It is especially important to ensure that hazards are reduced when exposure is likely.
+To understand potential exposure scenarios. It is especially important to ensure that hazards are reduced when exposure is likely.
 
 ## Introduction
 
@@ -10,9 +10,9 @@ At each step of the product life cycle, who is most likely to be exposed? Consid
 
 What are the most likely routes of exposure (dermal, inhalation and/or ingestion)? Develop a template that supports your consideration of alternatives.
 
-What are the relative scale of exposure?  How much of the chemical is present?  How frequently will exposure occur?  And for how long?
+What are the relative scale of exposure? How much of the chemical is present? How frequently will exposure occur? And for how long?
 
-## Screening Exposure Assessment:  Exposure Mapping
+## Screening Exposure Assessment: Exposure Mapping
 Consider the life cycle stages of the product to map out where potential exposures to hazardous chemicals might occur and who or what will be affected. For example, during production of agricultural feedstock, are workers likely to be exposed to pesticides? When a product is discarded, will it harm fish because aquatic toxicants have leached out? Include the likely routes of exposure (oral, dermal, ingestion, inhalation) in your map.
 
 Consider the amount of the chemical that will be used, the frequency of exposure and the amount of time that exposure will occur.
@@ -64,7 +64,7 @@ In general, bands represent:
 - exposure potentials (e.g., quantity used, or characteristics of the products),
 - control measures that should be taken to protect workers (e.g., types of ventilation, engineering controls, containment, etc.)
 
-A control banding grid like the one below can be created to assess risk level. This helps indicate which hazards require the greatest control measures.  The best form of occupational control for a very hazardous chemical is to eliminate it and replace it with a safer chemical or process. 
+A control banding grid like the one below can be created to assess risk level. This helps indicate which hazards require the greatest control measures. The best form of occupational control for a very hazardous chemical is to eliminate it and replace it with a safer chemical or process. 
 
 ![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/tool-exposure-assessment/severity-score.png)
 
@@ -73,7 +73,7 @@ A control banding grid like the one below can be created to assess risk level. T
 [National Center for Biotechnology Information](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5146680/)<br>
 [Image Source: Center for Disease Control and Prevention (CDC)](https://stacks.cdc.gov/view/cdc/10943)
 
-PROSCALE is a new method for comparing hazard, exposure and risk from production and manufacturing processes used to make products. It considers chemical hazards associated with each unit process along with exposure routes, amounts, frequency and duration. Results from each unit process can be summed to reflect the entire production and manufacturing process. PROSCALE provides a score that allows for easy comparison between products.  It does NOT address the inherent hazards of chemicals in product and exposure to those chemicals. It currently focuses exclusively on production and manufacturing. 
+PROSCALE is a new method for comparing hazard, exposure and risk from production and manufacturing processes used to make products. It considers chemical hazards associated with each unit process along with exposure routes, amounts, frequency and duration. Results from each unit process can be summed to reflect the entire production and manufacturing process. PROSCALE provides a score that allows for easy comparison between products. It does NOT address the inherent hazards of chemicals in product and exposure to those chemicals. It currently focuses exclusively on production and manufacturing. 
 
 ## Example
 Floral Soil solutions recognized that florists don't wear personal protective equipment, and they are therefore exposed to hazardous chemicals while they work. Floral Soil solutions designed a product that doesn't contain those chemicals of concern, therefore eliminating florist exposure to them.

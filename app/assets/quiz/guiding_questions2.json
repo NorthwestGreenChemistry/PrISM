@@ -23,18 +23,21 @@
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
-        "Is the biobased feedstock sustainably harvested, such as wood certified by the Forest Stewardship Council (FSC)?" : {
+        "Is the biobased feedstock sustainably harvested?" : {
+            "description": "Sustainable harvesting maintains or restores the ecosystem, allowing the population to be maintained or even increase over time.",
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
         "Is it certified sustainably harvested?": {
+            "description": "For example, wood or wood products may be certified by the Forest Stewardship Council (FSC).",
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
         "If so, fill in the certification": {
             "type": "string"
         },
-        "Is the biobased feedstock waste-based (eg, agricultural waste)?": {
+        "Is the biobased feedstock waste-based?": {
+            "description": "An example of agricultural waste feedstock is bagasse, which is the fibrous remains of sugarcane after extraction of juice.",
             "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
@@ -74,7 +77,7 @@
             "type": "string"
         },
         "Does generation of your product from this feedstock result in downcycling, or does it maintain the value level, or increase the value level?": {
-            "enum": ["Yes", "No","I don't know"],
+            "enum": ["Downcycling", "Maintains value","Upcycling","I don't know"],
             "type": "string"
         },
         "Have you requested information about the purity of the material?": {

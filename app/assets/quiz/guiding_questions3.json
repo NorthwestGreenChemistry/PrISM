@@ -7,18 +7,20 @@
             "type": "object",
             "properties": {
                 "What chemicals and materials are used during production and manufacturing?  Consider reagents, catalysts, auxiliaries, and ingredients intentionally added to provide performance properties.": {
-                    "description" : "(See Chemical Inventory)",
+                    "description" : "See Resource 1 - Chemical Inventory - for suggestions and guidance on building a Chemical Inventory for your product.",
                     "type": "string"
                 },
                 "Are the chemicals used during production and manufacturing hazardous?": {
+                    "description": "Hazardous chemicals include PBTs (persistent, bioaccumulative, and toxic chemicals), SVHCs (Substances of Very High Concern), and more. Review Resource 2 - Chemical Hazard Assessment - for more information about how to tell if a chemical is hazardous or not.",
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
                 "What chemicals and materials are produced during production and manufacturing?": {
-                    "description": "(See Chemical Inventory)",
+                    "description": "See See Resource 1 - Chemical Inventory",
                     "type" : "string"
                 },
                 "Are the chemicals produced during production and manufacturing hazardous?": {
+                    "description": "In some situations, such as the 3D printing example above, hazardous chemicals are generated during production.",
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
@@ -26,7 +28,8 @@
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
-                "Are the chemicals used or produced in a form that is hazardous to workers?  For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?": {
+                "Are the chemicals used or produced in a form that is hazardous to workers?": {
+                    "description": "For example, if wood is used in manufacturing, are you producing wood dust which is an inhalation hazard?",
                     "type": "string",
                     "enum": ["Yes", "No", "I don't know"]
                 },
