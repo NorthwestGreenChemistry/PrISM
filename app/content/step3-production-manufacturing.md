@@ -24,7 +24,8 @@ For a comprehensive sustainability assessment, manufacturing must consider econo
 * Creates life-friendly chemistry
 * Restores natural capital
 * Supports a just and inclusive society
-![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/3-production/OECDtoolkit.jpg)
+![](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/3-production/OECDToolkit.jpg)
+
 
 [Image Source: OECD Sustainable Manufacturing Toolkit](https://www.oecd.org/innovation/green/toolkit/aboutsustainablemanufacturingandthetoolkit.htm)
 
