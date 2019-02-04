@@ -23,7 +23,7 @@
             "type": "string"
         },
         "Describe how your products achieves each of the four PASS principles:": {
-            "description": "PASS (Produce Assessment, Safety, and Sustainability) Principles provide a vision that any sustainable product: 1) Supports a circular economy, 2) Creates life-friendly chemistry, 3) Restores natural capital, and 4) Supports a just and inclusive society. How does your product realize this vision? What are the next actions you need to take to bring your product further into alignment with these principles?",
+            "description": "PASS (Product Assessment, Safety, and Sustainability) Principles provide a vision that any sustainable product: 1) Supports a circular economy, 2) Creates life-friendly chemistry, 3) Restores natural capital, and 4) Supports a just and inclusive society. How does your product realize this vision? What are the next actions you need to take to bring your product further into alignment with these principles?",
             "type": "string" 
         }
     }
