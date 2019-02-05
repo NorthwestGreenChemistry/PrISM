@@ -30,6 +30,7 @@ Some fiber-based food take-out containers contain highly fluorinated organic che
 
 ![Image of different kinds of food packaging, including a pizza box, an egg carton, hot and cold take-away cups, plasticware, and a food take-out clamshell](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/4-use/food-packaging1.png)
 ![Image of different kinds of food packaging, including a pizza box, an egg carton, hot and cold take-away cups, plasticware, and a food take-out clamshell](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/4-use/food-packaging2.png)
+
 Image Source: City of Plymouth Minnesota
 
 Which of these compostable items probably contains fluorinated additives? A chemical inventory must be completed in order to know. See [Resource 1 - Chemistry Inventory](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md) for guidance and suggestions.
