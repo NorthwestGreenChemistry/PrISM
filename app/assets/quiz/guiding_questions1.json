@@ -62,14 +62,14 @@
                     "items": {
                         "type": "string",
                         "enum": [
+                            "Reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
+                            "Reduce/eliminate process carcinogens.",
+                            "Reduce other hazard process chemicals (fill in the the blank below).",
                             "Minimize water consumption.",
                             "Minimize waste generation.",
                             "Minimize energy usage.",
                             "Reduce GHG emissions / carbon neutral / carbon negative.",
                             "Reduce/eliminate other life cycle impacts (fill in the the blank below).",
-                            "Reduce/eliminate process chemicals on Restricted Substances Lists (RSLs).",
-                            "Reduce/eliminate process carcinogens.",
-                            "Reduce other hazard process chemicals (fill in the the blank below).",
                             "Other (fill in the the blank below).",
                             "Production & Manufacturing not a priority."
                         ]
