@@ -42,7 +42,7 @@ Fortunately, CHA methods are becoming increasingly standardized to allow for tra
 
 Tradeoffs also occur between different impact categories. For example, one option may use more water while another may generate more waste during use. These tradeoffs must be judged against product design goals and using all three Design Principles for Sustainable Green Chemistry and Engineering (below). What is important is that the designer avoids potential perverse outcomes by focusing on only one principle. And that the decisions are made in an informed and transparent way so as to avoid unintended consequences.
 
-![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/7-evaluation-and-optimization/principles-of-sustainable-design.png)
+![PASS Principles](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/NGCPASSPrinciples.png)
 
 
 ## Trade Offs
