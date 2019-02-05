@@ -30,6 +30,7 @@ One example of an innovative product that is an alternative to single-use food p
 Drive-In Boatwash is another example of a disruptive innovation. Copper-based antifouling boat paints are common and effective, but they are toxic to aquatic life. The drive-in boatwash is an alternative solution to non-copper-containing boat paints that also reduces the risk to marine life.
 
 [Learn more about the Drive-in Boatwash's visit to Washington State](https://www.northwestgreenchemistry.org/news/drive-in-boatwash-visits-washington-state). [Visit their website](https://driveinboatwash.com/en/).
+
 ![The boatwash is moored in the marina, and boats drive-in for automated bottom-hull cleaning.](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/drive-in-boat-wash.png)
 
 [Image Source: Drive-in Boatwash](http://driveinboatwash.com/en/how-it-works/)
