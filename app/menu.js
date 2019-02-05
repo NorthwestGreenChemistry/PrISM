@@ -255,7 +255,6 @@ export default class MenuBuilder {
                             type:'info',
                             buttons: ['Ok'],
                             defaultId: 0,
-                            title:'hey',
                             message: pjson.productName,
                             detail: 'Version: ' + pjson.version +
                                     '\nDescription: ' + pjson.description
@@ -298,97 +297,207 @@ export default class MenuBuilder {
     }
 
     buildDefaultTemplate() {
-        const templateDefault = [
-            {
-                label: '&File',
-                submenu: [
-                    {
-                        label: '&Open',
-                        accelerator: 'Ctrl+O'
-                    },
-                    {
-                        label: '&Close',
-                        accelerator: 'Ctrl+W',
-                        click: () => {
-                            this.mainWindow.close();
-                        }
+        const subMenuFile = {
+            label: '&File',
+            submenu: [
+                {
+                    label: '&Open',
+                    accelerator: 'Ctrl+O'
+                },
+                {
+                    label: '&Close',
+                    accelerator: 'Ctrl+W',
+                    click: () => {
+                        this.mainWindow.close();
                     }
-                ]
-            },
-            {
-                label: '&View',
-                submenu:
-                    process.env.NODE_ENV === 'development'
-                        ? [
-                                {
-                                    label: '&Reload',
-                                    accelerator: 'Ctrl+R',
-                                    click: () => {
-                                        this.mainWindow.webContents.reload();
-                                    }
-                                },
-                                {
-                                    label: 'Toggle &Full Screen',
-                                    accelerator: 'F11',
-                                    click: () => {
-                                        this.mainWindow.setFullScreen(
-                                            !this.mainWindow.isFullScreen()
-                                        );
-                                    }
-                                },
-                                {
-                                    label: 'Toggle &Developer Tools',
-                                    accelerator: 'Alt+Ctrl+I',
-                                    click: () => {
-                                        this.mainWindow.toggleDevTools();
-                                    }
-                                }
-                            ]
-                        : [
-                                {
-                                    label: 'Toggle &Full Screen',
-                                    accelerator: 'F11',
-                                    click: () => {
-                                        this.mainWindow.setFullScreen(
-                                            !this.mainWindow.isFullScreen()
-                                        );
-                                    }
-                                }
-                            ]
-            },
-            {
-                label: 'Help',
-                submenu: [
-                    {
-                        label: 'Learn More',
-                        click() {
-                            shell.openExternal('http://electron.atom.io');
-                        }
-                    },
-                    {
-                        label: 'Documentation',
-                        click() {
-                            shell.openExternal(
-                                'https://github.com/atom/electron/tree/master/docs#readme'
-                            );
-                        }
-                    },
-                    {
-                        label: 'Community Discussions',
-                        click() {
-                            shell.openExternal('https://discuss.atom.io/c/electron');
-                        }
-                    },
-                    {
-                        label: 'Search Issues',
-                        click() {
-                            shell.openExternal('https://github.com/atom/electron/issues');
-                        }
+                },
+                { type: 'separator' },
+                {
+                    label: 'Generate PDF Report',
+                    accelerator: 'Ctrl+Shift+E',
+                    click: () => {
+                        this.mainWindow.webContents.send('SAVE_PDF');
                     }
-                ]
-            }
-        ];
+                },
+                {
+                    label: 'Export Product',
+                    click: () => {
+                        dialog.showSaveDialog({
+                            defaultPath: "PrISMProduct.json"
+                        }, (file) => {
+                            if (file !== undefined) {
+                                this.mainWindow.webContents.send('EXPORT', file);
+                            }
+                        });
+                    }
+                },
+                {
+                    label: 'Import Product',
+                    click: () => {
+                        dialog.showOpenDialog({
+                            properties: ["openFile"]
+                        }, (files) => {
+                            if (files !== undefined) {
+                                this.mainWindow.webContents.send('IMPORT', files);
+                            }
+                        })
+                    }
+                }
+            ]
+        };
 
-        return templateDefault;
+        const subMenuEdit = {
+            label: 'Edit',
+            submenu: [
+                { label: 'Undo', accelerator: 'Ctrl+Z', selector: 'undo:' },
+                { label: 'Redo', accelerator: 'Shift+Ctrl+Z', selector: 'redo:' },
+                { type: 'separator' },
+                { label: 'Cut', accelerator: 'Ctrl+X', selector: 'cut:' },
+                { label: 'Copy', accelerator: 'Ctrl+C', selector: 'copy:' },
+                { label: 'Paste', accelerator: 'Ctrl+V', selector: 'paste:' },
+                {
+                    label: 'Select All',
+                    accelerator: 'Ctrl+A',
+                    selector: 'selectAll:'
+                }
+            ]
+        };
+
+        const subMenuView = {
+            label: '&View',
+            submenu:
+                process.env.NODE_ENV === 'development'
+                    ? [
+                            {
+                                label: '&Reload',
+                                accelerator: 'Ctrl+R',
+                                click: () => {
+                                    this.mainWindow.webContents.reload();
+                                }
+                            },
+                            {
+                                label: 'Toggle &Full Screen',
+                                accelerator: 'F11',
+                                click: () => {
+                                    this.mainWindow.setFullScreen(
+                                        !this.mainWindow.isFullScreen()
+                                    );
+                                }
+                            },
+                            {
+                                label: 'Toggle &Developer Tools',
+                                accelerator: 'Alt+Ctrl+I',
+                                click: () => {
+                                    this.mainWindow.toggleDevTools();
+                                }
+                            }
+                        ]
+                    : [
+                            {
+                                label: 'Toggle &Full Screen',
+                                accelerator: 'F11',
+                                click: () => {
+                                    this.mainWindow.setFullScreen(
+                                        !this.mainWindow.isFullScreen()
+                                    );
+                                }
+                            }
+                        ]
+        };
+
+        const subMenuHelp = {
+            label: 'Help',
+            submenu: [
+                {
+                    label: 'About',
+                    click() {
+                        dialog.showMessageBox(null, {
+                            type:'info',
+                            buttons: ['Ok'],
+                            defaultId: 0,
+                            message: pjson.productName,
+                            detail: 'Version: ' + pjson.version +
+                                    '\nDescription: ' + pjson.description
+                        });
+                    }
+                },
+                {
+                    label: 'Learn More',
+                    click() {
+                        shell.openExternal('http://electron.atom.io');
+                    }
+                },
+                {
+                    label: 'Documentation',
+                    click() {
+                        shell.openExternal(
+                            'https://github.com/atom/electron/tree/master/docs#readme'
+                        );
+                    }
+                },
+                {
+                    label: 'Community Discussions',
+                    click() {
+                        shell.openExternal('https://discuss.atom.io/c/electron');
+                    }
+                },
+                {
+                    label: 'Search Issues',
+                    click() {
+                        shell.openExternal('https://github.com/atom/electron/issues');
+                    }
+                }
+            ]
+        };
+
+        const subMenuResources = {
+            label: 'Resources',
+            submenu: [
+                {
+                    label: '1. Chemical Inventory',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md');
+                    }
+                },
+                {
+                    label: '2. Chemical Hazard Assessment',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md');
+                    }
+                },
+                {
+                    label: '3. Exposure Assessment',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource3-exposure-assessment.md');
+                    }
+                },
+                {
+                    label: '4. Stakeholder Considerations and Social Impacts',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource4-stakeholder-considerations-and-social-impacts.md');
+                    }
+                },
+                {
+                    label: '5. Social and Environmental Justice',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource5-social-and-env-justice.md');
+                    }
+                },
+                {
+                    label: '6. Life Cycle Considerations',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md');
+                    }
+                },
+                {
+                    label: '7. Decision Analysis',
+                    click() {
+                        shell.openExternal('https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource7-decision-analysis.md');
+                    }
+                }
+            ]
+        };
+
+        return [subMenuFile, subMenuEdit, subMenuView, subMenuHelp, subMenuResources];
     }
 }
