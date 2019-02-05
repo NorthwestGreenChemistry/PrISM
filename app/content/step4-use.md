@@ -28,8 +28,8 @@ Image source: NASA
 
 Some fiber-based food take-out containers contain highly fluorinated organic chemical additives to prevent wet or oily food from leaking through the container. However, it's nearly impossible to tell just by looking at a product, like the ones pictured below, whether or not they contain such chemicals. In the case of food packaging materials, toxic, extremely persistent, environmentally-harmful chemicals are of particular concern because they come in contact with our food. This is why it's so critical to design products from the outset to be functional during use without the need for hazardous additives.
 
-![Image of different kinds of food packaging, including a pizza box, an egg carton, hot and cold take-away cups, plasticware, and a food take-out clamshell](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/4-use/food-packaging.png)
-
+![Image of different kinds of food packaging, including a pizza box, an egg carton, hot and cold take-away cups, plasticware, and a food take-out clamshell](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/4-use/food-packaging1.png)
+![Image of different kinds of food packaging, including a pizza box, an egg carton, hot and cold take-away cups, plasticware, and a food take-out clamshell](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/4-use/food-packaging2.png)
 Image Source: City of Plymouth Minnesota
 
 Which of these compostable items probably contains fluorinated additives? A chemical inventory must be completed in order to know. See [Resource 1 - Chemistry Inventory](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource1-chemical-inventory.md) for guidance and suggestions.
