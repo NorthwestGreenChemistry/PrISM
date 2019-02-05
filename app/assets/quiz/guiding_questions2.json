@@ -86,7 +86,7 @@
             "type": "string"
         },
         "Can the feedstock be depleted (ie, it is not renewable)?": {
-            "enum": ["Yes", "No","Don't know"],
+            "enum": ["Yes", "No","I don't know"],
             "type": "string"
         },
         "Is that feedstock currently considered abundant or rare?": {
