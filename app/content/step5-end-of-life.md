@@ -17,7 +17,7 @@ See [Resource 2 - Chemical Hazard Assessment](https://github.com/NorthwestGreenC
 
 Consider how your product will have the least impact on human health and the environment after use by striving to be near the top of the waste hierarchy. While there are exceptions to the waste hierarchy, the idea of first preventing waste, then recovering the most material value with the least negative life cycle impacts still holds.
 
-![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/5-end-of-life/lansinks-ladder.png)
+![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/5-end-of-life/lansinks-ladder.jpg)
 
 Plastic straws are an example of an exception. When used on beaches, they are frequently littered as opposed to properly disposed of, so it is unlikely that a recyclable straw would actually be recycled. A biodegradable straw is a better fit considering the likely end of life pathways. Another preferrable alternative could be re-usable straws paired with programs to ensure their return, minimizing litter. 
 
