@@ -25,7 +25,7 @@ For a comprehensive sustainability assessment, manufacturing must consider econo
 * Restores natural capital
 * Supports a just and inclusive society
 
-![Aspects of economy, society, and environment to consider during manufacturing](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/assets/3-production/OECDToolkit.jpg)
+![Aspects of economy, society, and environment to consider during manufacturing](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/3-production/OECDToolkit.jpg)
 
 
 [Image Source: OECD Sustainable Manufacturing Toolkit](https://www.oecd.org/innovation/green/toolkit/aboutsustainablemanufacturingandthetoolkit.htm)
