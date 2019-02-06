@@ -203,10 +203,13 @@
                                             "C2C",
                                             "Safer Choice",
                                             "Energy Start",
-                                            "Other"
+                                            "Other (fill in the blank below)"
                                         ]
                                     },
                                     "uniqueItems": "true"
+                                },
+                                " " : {
+                                    "type" : "string"
                                 }
                             }
                         }
