@@ -39,6 +39,7 @@ Drive-In Boatwash is another example of a disruptive innovation. Copper-based an
 Nature uses life-friendly chemistry to achieve diverse functions. Nature can inspire innovative solutions to today's sustainability problems. One example is photosynthesis-inspired solar power. Plants convert solar energy into chemical energy, fueling growth. Solar cells perform a similar function, ultimately converting solar energy into electrical energy to power homes, factories, and more.
 
 ![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/Leaf.jpg)
+
 [Image source: Aldo C. Zavala, CC BY ND](https://asknature.org/strategy/photosynthesis-converts-solar-energy-into-chemical-energy/#jp-carousel-7098)
 
 Explore [asknature.org](https://asknature.org/) for ideas relating to your product.
