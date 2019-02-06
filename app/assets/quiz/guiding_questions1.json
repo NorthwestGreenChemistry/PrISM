@@ -30,7 +30,7 @@
                         "enum": [
                             "Renewable",
                             "Waste-based",
-                            "Bio-based",
+                            "Biobased",
                             "Recyclable",
                             "GHG/Carbon-neutral",
                             "Other",
