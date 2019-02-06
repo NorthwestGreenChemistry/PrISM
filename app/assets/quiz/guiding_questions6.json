@@ -9,6 +9,10 @@
         "Where are the 'hotspots' or primary impact areas in your products versus other products that provide the same service?": {
             "description": "How might you make improvements?",
             "type": "string"
+        },
+        "Are there any examples in nature that provide the same kind of service as your product?": {
+            "description": "For example, lotus leaves use nanostructures to provide water repellence, and this is being applied to water repellence in apparel and footware today.",
+            "type": "string"
         }
     }
 }
