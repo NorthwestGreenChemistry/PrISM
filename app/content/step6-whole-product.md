@@ -34,3 +34,14 @@ Drive-In Boatwash is another example of a disruptive innovation. Copper-based an
 ![The boatwash is moored in the marina, and boats drive-in for automated bottom-hull cleaning.](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/drive-in-boat-wash.png)
 
 [Image Source: Drive-in Boatwash](http://driveinboatwash.com/en/how-it-works/)
+
+### Bio-inspired innovations
+Nature uses life-friendly chemistry to achieve diverse functions. Nature can inspire innovative solutions to today's sustainability problems. The most simple example is photosynthesis-inspired solar power. Plants convert solar energy into chemical energy, fueling growth. Solar cells perform a similar function, ultimately converting solar energy into electrical energy to power homes, factories, and more.
+
+![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/Leaf.jpg)
+[Image source: Aldo C. Zavala, CC BY ND](https://asknature.org/strategy/photosynthesis-converts-solar-energy-into-chemical-energy/#jp-carousel-7098)
+
+Explore [asknature.org](https://asknature.org/) for ideas relating to your product.
+
+## What next?
+Your innovative ideas may represent an enormous departure from your current product. It will be important to compare your current product and your innovation(s). Numerous tools can assist with this process, like [life cycle assessment (LCA) - covered in Resource 6 -](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource6-life-cycle-assessment.md) and [chemical hazard assessment (CHA) - covered in Resource 2](https://github.com/NorthwestGreenChemistry/PrISM/blob/develop/app/content/resource2-chemical-hazard-assessment.md). If you are not sure which resources and tools to start with, use PrISM on the innovative alternative to identify differences. Alternatives Assessment, which is discussed in the introduction, can be a valuable tool for comparing disparate products. The Interstate Chemicals Clearinghouse (IC2) publishes a comprehensive [guide to Alternatives Assessment](http://theic2.org/alternatives_assessment_guide). The Washington State Department of Ecology has published a complimentary [guide for small and medium business](https://fortress.wa.gov/ecy/publications/SummaryPages/1504002.html).  
