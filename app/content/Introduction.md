@@ -47,7 +47,7 @@ The concepts and methods described in this workbook stem from established design
 * Restores natural capital
 * Supports a just and inclusive society
 
-![PASS Principles](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/NGCPASSPrinciples.png)
+![PASS Principles](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/NGCPASSPrinciples_FullSize.png)
 
 PASS principles are founded on existing designed principles, including The American Chemical Society Green Chemistry Institute's Sustainable Design Principles which are derived from the Principles of Green Chemistry and Engineering ([6a](http://www.acs.org/content/dam/acsorg/greenchemistry/resources/2015-gci-design-principles.pdf)), and the OECD's Broad Policy Principles for Sustainable Materials Management ([6b](http://www.oecd.org/env/waste/46111789.pdf)). PASS principles were developed in collaboration with Interface.
 
@@ -57,7 +57,7 @@ The circular economy concept is simple but difficult to implement. In a linear e
 
 A big challenge to a circular economy is the presence of toxic and persistent chemicals in products. Toxic and persistent chemicals in products can spoil opportunities for reuse, recycling and other aspects of a healthy circular economy. Products that support a circular economy avoid hazardous components and include plans for maximizing value recovery at end of life.
 
-![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/ProductLifeCycle.png)
+![image](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/000-introduction/ProductLifeCycle_FullSize.png)
 [Learn more about Circular Design](https://www.circulardesignguide.com/)
 
 **Creates life-friendly chemistry.** Life-friendly chemistry is compatible with life and inherently low hazard. Risk is a function of hazard and exposure. Reducing the inherent hazards of chemicals can help to reduce risk from chemicals, materials and products. Hazards may also be physical. For example, litter is a form of unmanaged waste that can cause physical entrapment and may be mistaken as food by wildlife when it leaks into the environment. 
