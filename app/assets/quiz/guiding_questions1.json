@@ -33,13 +33,13 @@
                             "Biobased",
                             "Recyclable",
                             "GHG/Carbon-neutral",
-                            "Other",
+                            "Other (fill in the blank below)",
                             "Feedstock not a priority."
                         ]
                     },
                     "uniqueItems": "true"
                 },
-                "If you've selected 'Other' for the previous question:": {
+                " ": {
                     "type": "string"
                 },
                 "If you've selected 'Bio-based' for the previous question:": {
