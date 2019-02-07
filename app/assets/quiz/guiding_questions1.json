@@ -154,7 +154,7 @@
                         "type": "string",
                         "enum": [
                             "Recyclable",
-                            "Biodegradable (Litter, marine or other).",
+                            "Biodegradable (Litter, marine or other)",
                             "Home compostable",
                             "Industrial compostable",
                             "Biodegradable (WWTP)",
@@ -168,9 +168,11 @@
                     "type": "string"
                 },
                 "What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?": {
+                    "description": "For example, ASTM D6400, EN13432, and AS 4736 describe tests and standards for a product to be considered compostable in industrial facilities.",
                     "type": "string"
                 },
                 "What certification(s) will you pursue to guarantee your product is biodegradable or compostable in these conditions?":{
+                    "description": "For example, TÜV AUSTRIA, DIN CERTCO, the Australasian Bioplastics Association (ABA), the Biodegradable Products Institute (BPI), and Cedar Grove all over certifications in industrial compostability, and some offer certifications for home compostability as well.",
                     "type": "string"
                 }
 
