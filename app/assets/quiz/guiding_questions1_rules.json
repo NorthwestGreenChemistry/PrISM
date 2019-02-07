@@ -27,7 +27,7 @@
                     {
                         "not": {
                             "or": [
-                                {"includes":"Biodegradable (Marine/Litter)"},
+                                {"includes":"Biodegradable (Litter, marine or other)"},
                                 {"includes":"Home compostable"},
                                 {"includes":"Industrial compostable"},
                                 {"includes":"Biodegradable (WWTP)"}

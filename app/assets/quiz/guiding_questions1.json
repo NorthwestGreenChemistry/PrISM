@@ -154,7 +154,7 @@
                         "type": "string",
                         "enum": [
                             "Recyclable",
-                            "Biodegradable (Marine/Litter).",
+                            "Biodegradable (Litter, marine or other).",
                             "Home compostable",
                             "Industrial compostable",
                             "Biodegradable (WWTP)",
