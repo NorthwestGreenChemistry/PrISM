@@ -82,6 +82,9 @@
         },
         "Describe the product or products you are comparing to: ": {
             "ui:widget": "textarea"
+        },
+        "Are there any required certifications, RSLs, or other standards or tests that must be complied with to be considered an improvement?": {
+            "ui:widget": "textarea"
         }
     }
 }

@@ -250,6 +250,10 @@
                                 },
                                 "Describe the product or products you are comparing to: ": {
                                     "type": "string"
+                                },
+                                "Are there any required certifications, RSLs, or other standards or tests that must be complied with to be considered an improvement?" : {
+                                    "description": "For example, if the product you are comparing with is Cradle-to-Cradle (C2C) bronze certified, will you need to achieve C2C silver or better certification to be considered an improvement? Or will it be sufficient to achieve C2C bronze, or even no certification as long as other improvements are made?",
+                                    "type": "string"
                                 }
                             }
                         }
