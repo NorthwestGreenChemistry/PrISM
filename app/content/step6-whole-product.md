@@ -40,6 +40,7 @@ Nature uses life-friendly chemistry to achieve diverse functions. Nature can ins
 
 ![](https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/6-whole-product/Leaf.jpg)
 
+
 [Image source: Aldo C. Zavala, CC BY ND](https://asknature.org/strategy/photosynthesis-converts-solar-energy-into-chemical-energy/#jp-carousel-7098)
 
 Explore [asknature.org](https://asknature.org/) for ideas relating to your product.
