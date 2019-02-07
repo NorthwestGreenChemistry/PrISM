@@ -59,6 +59,9 @@
         },
         " ": {
             "ui:widget": "textarea"
+        },
+        "What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?": {
+            "ui:widget": "textarea"
         }
     },
     "overall": {

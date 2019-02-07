@@ -18,5 +18,30 @@
                 ]
             }
         }
+    },
+    {
+        "conditions": {
+            "waste3.Are you designing the product for recycling or for biodegradation in wastewater treatment plants or in commercial composting operations?": {
+                "or": [
+                    "empty",
+                    {
+                        "not": {
+                            "or": [
+                                {"includes":"Home compostable"},
+                                {"includes":"Industrial compostable"}
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "event": {
+            "type": "remove",
+            "params": {
+                "field": [
+                    "waste3.What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?"
+                ]
+            }
+        }
     }
 ]

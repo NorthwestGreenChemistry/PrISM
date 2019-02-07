@@ -166,7 +166,11 @@
                 },
                 " ": {
                     "type": "string"
+                },
+                "What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?": {
+                    "type": "string"
                 }
+
             }
         },
         "overall": {
