@@ -27,8 +27,10 @@
                     {
                         "not": {
                             "or": [
+                                {"includes":"Biodegradable (Marine/Litter)"},
                                 {"includes":"Home compostable"},
-                                {"includes":"Industrial compostable"}
+                                {"includes":"Industrial compostable"},
+                                {"includes":"Biodegradable (WWTP)"}
                             ]
                         }
                     }
@@ -39,7 +41,8 @@
             "type": "remove",
             "params": {
                 "field": [
-                    "waste3.What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?"
+                    "waste3.What test(s) will you perform to ensure your product is biodegradable or compostable in these conditions?",
+                    "waste3.What certification(s) will you pursue to guarantee your product is biodegradable or compostable in these conditions?"
                 ]
             }
         }
