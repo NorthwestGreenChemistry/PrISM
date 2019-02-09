@@ -420,6 +420,10 @@ class Data {
 
         localStorage.setItem(id, JSON.stringify(product.responses));
 
+        Object.entries(product.responses).forEach(([step, answers]) => {
+            this.setPDFStepResults(id, step, answers); 
+        });
+
         return id;
     }
 
