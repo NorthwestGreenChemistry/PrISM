@@ -1,0 +1,47 @@
+{
+  "product": {
+    "name": "February Bowl",
+    "id": "af326fbe-792d-413a-ae83-3765080a45e2"
+  },
+  "responses": {
+    "1": {
+      "feedstock": {},
+      "production": {},
+      "priorities": {},
+      "waste": {},
+      "waste2": {},
+      "waste3": {},
+      "overall": {},
+      "overall2": {}
+    },
+    "2": {},
+    "3": {
+      "chemicalInventory": {
+        "Are the chemicals used during production and manufacturing hazardous?": "I don't know"
+      },
+      "exposureAssessment": {},
+      "hazardAssessment": {},
+      "stakeholder": {},
+      "lifecycle": {}
+    },
+    "4": {
+      "chemInventory": {},
+      "exposureAssessment": {},
+      "hazardAssessment": {},
+      "stakeholderConsiderations": {},
+      "wasteConsiderations": {}
+    },
+    "5": {
+      "managementPlan": {},
+      "endOfLife": {},
+      "productCompatibility": {},
+      "recoveredMaterialsQuality": {},
+      "wasteTreatmentAndMSI": {},
+      "wasteTreatmentAndMSI2": {},
+      "wasteTreatmentAndMSI3": {},
+      "standards": {}
+    },
+    "6": {},
+    "7": {}
+  }
+}
