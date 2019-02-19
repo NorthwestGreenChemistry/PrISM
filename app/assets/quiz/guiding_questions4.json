@@ -117,6 +117,16 @@
                 },
                 "Please explain:": {
                     "type": "string"
+                },
+                "Have you considered other impacts to the community where your product will be used?": {
+                    "type": "string",
+                    "enum": ["Yes", "No", "I don't know"]
+                },
+                "Please describe:": {
+                    "type": "string"
+                },
+                "How will your product contribute to or hinder local economic development in the areas it is used?" : {
+                    "type" : "string"
                 }
             }
         },

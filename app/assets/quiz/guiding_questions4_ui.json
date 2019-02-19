@@ -50,7 +50,16 @@
         },
         "Please explain:": {
             "ui:widget": "textarea"
-        }
+        },
+        "Have you considered other impacts to the community where your product will be used?": {
+            "ui:widget": "radio"
+        },
+        "Please describe:": {
+            "ui:widget": "textarea"
+        },
+        "How will your product contribute to or hinder local economic development in the areas it is used?" : {
+            "ui:widget": "textarea"
+        }       
     }, 
     "wasteConsiderations": {
         "How long is the product intended to last?": {
