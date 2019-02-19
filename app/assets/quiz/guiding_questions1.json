@@ -261,9 +261,12 @@
                 }
             }
         },
-        " ": {
+        "Stakeholder Communication": {
             "type": "object",
             "properties": {
+                "What is your plan for transparent communication about your product and materials?": {
+                    "type": "string"
+                },
                 "Have you shared your design priorities with related stakeholders?": {
                     "description": "For example, in order to meet your feedstock goals, your supply chain may need to make changes as well. Learn more about relevant stakeholders in Resource 5 - Stakeholder Considerations.",
                     "type": "string"
