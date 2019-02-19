@@ -261,7 +261,7 @@
                 }
             }
         },
-        "social": {
+        " ": {
             "type": "object",
             "properties": {
                 "Have you shared your design priorities with related stakeholders?": {
