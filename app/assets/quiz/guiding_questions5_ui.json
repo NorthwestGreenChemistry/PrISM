@@ -296,10 +296,10 @@
     },
     "Stakeholder Considerations": {
         "Have you considered impacts to the community where your product will be disposed of?": {
-            "ui:widget": "string"
+            "ui:widget": "textarea"
         },
         "How will your product contribute to or hinder local economic development in the areas it is disposed of?": {
-            "uiwidget": "string"
+            "uiwidget": "textarea"
         }
     }
 }
