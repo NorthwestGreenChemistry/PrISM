@@ -86,5 +86,13 @@
         "Are there any required certifications, RSLs, or other standards or tests that must be complied with to be considered an improvement?": {
             "ui:widget": "textarea"
         }
+    },
+    "Stakeholder Communication": {
+        "What is your plan for transparent communication about your product and materials?": {
+            "ui:widget": "textarea"
+        },
+        "Have you shared your design priorities with related stakeholders?": {
+            "ui:widget": "textarea"
+        }
     }
 }

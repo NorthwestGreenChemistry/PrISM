@@ -53,6 +53,12 @@
         },
         "Quantity, frequency and level of annoyance:": {
             "ui:widget": "textarea"
+        },
+        "Will the materials and manufacturing related to your product create equal opportunities and fair labor conditions? Describe how.": {
+            "ui:widget": "textarea"
+        },
+        "How will your product contribute to or hinder local economic development in the area where it is produced?": {
+            "ui:widget": "textarea"
         }
     },
     "lifecycle": {
