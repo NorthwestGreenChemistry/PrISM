@@ -108,6 +108,13 @@
                 },
                 "Quantity, frequency and level of annoyance:": {
                     "type": "string"
+                },
+                "Will the materials and manufacturing related to your product create equal opportunities and fair labor conditions? Describe how.": {
+                    "description": "For example, how are you ensuring workers fair salary/wages, safe working conditions, freedom of association and collective bargain?",
+                    "type": "string"
+                },
+                "How will your product contribute to or hinder local economic development in the area where it is produced?": {
+                    "type": "string"
                 }
             }
         },
