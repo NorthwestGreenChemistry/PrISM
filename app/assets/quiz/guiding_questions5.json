@@ -651,6 +651,18 @@
                     "enum": ["Yes", "No","I don't know"]
                 }
             }
+        },
+        "Stakeholder Considerations": {
+            "title": "Stakeholder Considerations",
+            "type": "object",
+            "properties": {
+                "Have you considered impacts to the community where your product will be disposed of?": {
+                    "type": "string"
+                },
+                "How will your product contribute to or hinder local economic development in the areas it is disposed of?": {
+                    "type": "string"
+                }
+            }
         }
     }
 }

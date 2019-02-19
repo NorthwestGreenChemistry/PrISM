@@ -293,5 +293,13 @@
         "Have chemical products or chemical constituents in materials or product been tested for degradation in water, soil and sediment under aerobic and anaerobic conditions?": {
             "ui:widget": "radio"
         }
+    },
+    "Stakeholder Considerations": {
+        "Have you considered impacts to the community where your product will be disposed of?": {
+            "ui:widget": "string"
+        },
+        "How will your product contribute to or hinder local economic development in the areas it is disposed of?": {
+            "uiwidget": "string"
+        }
     }
 }
