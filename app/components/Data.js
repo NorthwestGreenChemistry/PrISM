@@ -1,5 +1,29 @@
+/**
+ Define the narrative and quiz content
+ (guiding questions) presented to the user
+ in each step.
+ */
+
 import React, { Component } from 'react';
 const fs = require('fs');
+
+/* A single point of configuration for content and quiz paths*/
+let protocol="https:";
+let topLevelDomain="//raw.githubusercontent.com";
+let organization="/NorthwestGreenChemistry";
+let repository="/PrISM";
+let branch="/develop";
+let directory="/app";
+
+let orb = organization
+          + repository
+          + branch;
+
+let base = protocol + topLevelDomain;
+
+let contentURL = base+orb+directory+"/content/";
+let quizURL = base+orb+directory+"/assets/quiz/";
+/* end configure content and quiz paths */
 
 
 type Props = {};
@@ -25,17 +49,17 @@ class Data {
             //TODO: have to do this seven times and match files up correctly
             let introStep = {
                 title: "Introduction and Design Principles",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/Introduction.md"],
+                content: [contentURL + "Introduction.md"],
             };
 
             localStorage.setItem("intro", JSON.stringify(introStep));
 
             let scopeStep = {
                 title: "Scoping, Problem Formulation & Design Goals",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step1-scoping-and-goals.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions1_rules.json",
+                content: [contentURL + "step1-scoping-and-goals.md"],
+                questions: quizURL + "guiding_questions1.json",
+                questionsUI: quizURL + "guiding_questions1_ui.json",
+                questionRules: quizURL + "guiding_questions1_rules.json",
                 nextStep: "2"
             };
 
@@ -43,10 +67,10 @@ class Data {
 
             let feedstockStep = {
                 title: "Feedstock",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step2-feedstock.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions2_rules.json",
+                content: [contentURL + "step2-feedstock.md"],
+                questions: quizURL + "guiding_questions2.json",
+                questionsUI: quizURL + "guiding_questions2_ui.json",
+                questionRules: quizURL + "guiding_questions2_rules.json",
                 prevStep: "1",
                 nextStep: "3"
             };
@@ -55,10 +79,10 @@ class Data {
 
             let productionStep = {
                 title: "Introduction to Production and Manufacturing",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step3-production-manufacturing.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions3_rules.json",
+                content: [contentURL + "step3-production-manufacturing.md"],
+                questions: quizURL + "guiding_questions3.json",
+                questionsUI: quizURL + "guiding_questions3_ui.json",
+                questionRules: quizURL + "guiding_questions3_rules.json",
                 prevStep: "2",
                 nextStep: "4"
             };
@@ -67,10 +91,10 @@ class Data {
 
             let useStep = {
                 title: "Sustainable Product Design for the Use Phase",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step4-use.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions4_rules.json",
+                content: [contentURL + "step4-use.md"],
+                questions: quizURL + "guiding_questions4.json",
+                questionsUI: quizURL + "guiding_questions4_ui.json",
+                questionRules: quizURL + "guiding_questions4_rules.json",
                 prevStep: "3",
                 nextStep: "5"
             };
@@ -79,10 +103,10 @@ class Data {
 
             let endOfLifeStep = {
                 title: "End of Life Considerations",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step5-end-of-life.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions5_rules.json",
+                content: [contentURL + "step5-end-of-life.md"],
+                questions: quizURL + "guiding_questions5.json",
+                questionsUI: quizURL + "guiding_questions5_ui.json",
+                questionRules: quizURL + "guiding_questions5_rules.json",
                 prevStep: "4",
                 nextStep: "6"
             }
@@ -91,10 +115,10 @@ class Data {
 
             let lifeCycleStep = {
                 title: "Whole Product Assessment ",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step6-whole-product.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions6_rules.json",
+                content: [contentURL + "step6-whole-product.md"],
+                questions: quizURL + "guiding_questions6.json",
+                questionsUI: quizURL + "guiding_questions6_ui.json",
+                questionRules: quizURL + "guiding_questions6_rules.json",
                 prevStep: "5",
                 nextStep: "7"
             }
@@ -103,10 +127,10 @@ class Data {
 
             let finalStep = {
                 title: "Decision Analysis",
-                content: ["https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/content/step7-evaluation-and-optimization.md"],
-                questions: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7.json",
-                questionsUI: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_ui.json",
-                questionRules: "https://raw.githubusercontent.com/NorthwestGreenChemistry/PrISM/develop/app/assets/quiz/guiding_questions7_rules.json",
+                content: [contentURL + "step7-evaluation-and-optimization.md"],
+                questions: quizURL + "guiding_questions7.json",
+                questionsUI: quizURL + "guiding_questions7_ui.json",
+                questionRules: quizURL + "guiding_questions7_rules.json",
                 prevStep: "6"
             };
 
