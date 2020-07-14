@@ -1,5 +1,5 @@
 {
-    "How would you describe the type of product are you planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?": {
+    "How would you describe the type of product you are planning to make? For example, is the product a substance, a formulated chemical product, a material, or an article? Is it a homogenous or heterogenous material? What is the product?": {
         "ui:widget": "textarea"
     },
     "Who are the intended users?": {
