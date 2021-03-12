@@ -246,7 +246,7 @@
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
     "json-rules-engine-simplified": "^0.1.17",
-    "jspdf": "^1.4.1",
+    "jspdf": "^2.3.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
